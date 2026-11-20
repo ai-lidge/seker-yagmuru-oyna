@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <meta content="#241448" name="theme-color"/>
 <meta content="Şeker Yağmuru — telefon ve bilgisayarda oynanabilen renkli eşleştirme oyunu." name="description"/>
-<title>Şeker Yağmuru 4.8.2 🍬</title>
+<title>Şeker Yağmuru 5.0.0 🍬</title>
 <meta content="Şeker Yağmuru" name="application-name"/>
 <meta content="Şeker Yağmuru" name="apple-mobile-web-app-title"/>
 <meta content="yes" name="mobile-web-app-capable"/>
@@ -1583,6 +1583,64 @@ body:not(.sy-home-ambient) #syFloat{display:none!important}
 }
 body.reduce-motion .sy-sheen::before{display:none!important}
 @media(prefers-reduced-motion:reduce){.sy-sheen::before{display:none!important}}
+
+/* 5.0.0 · Bölüm haritası: yalnızca açıldığında oluşturulan hafif düğmeler */
+#homeScreen .sy-level-entry{width:100%;min-height:40px;display:flex;align-items:center;justify-content:center;gap:10px;margin:5px 0 2px;font-weight:850;font-size:13px;background:linear-gradient(120deg,#f8d8ff,#e4d4ff);color:#552b86;border:1px solid #ffffff91;border-radius:14px;box-shadow:0 3px 10px #210d4618}
+#homeScreen .sy-level-entry:hover{filter:brightness(1.025)}
+.sy-level-page{max-width:630px;margin-inline:auto}
+.sy-level-intro{color:#5b4c7e;font-size:13px;line-height:1.55;margin:8px 2px 14px}
+.sy-level-legend{display:flex;gap:12px;flex-wrap:wrap;color:#71588a;font-size:11px;font-weight:750;margin-bottom:13px}
+.sy-level-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.sy-level-tile{min-width:0;min-height:64px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:3px;border:1px solid #d7bfe9;border-radius:13px;background:#fffcff;color:#5d2d87;box-shadow:0 2px 5px #3f256011;font:900 16px/1.1 system-ui,sans-serif;touch-action:manipulation;cursor:pointer}
+.sy-level-tile .sy-level-rating{font-size:11px;letter-spacing:0;min-height:12px;line-height:1;color:#be8633}
+.sy-level-tile.is-complete{background:linear-gradient(160deg,#fff6df,#fffaf1);border-color:#e9cb88}
+.sy-level-tile.is-current{outline:2px solid #a76de4;outline-offset:0;background:linear-gradient(145deg,#f0e4ff,#e9daff)}
+.sy-level-tile.is-locked{background:#f1edf4;color:#a29aab;box-shadow:none;border-color:#e5e0ea;cursor:not-allowed;opacity:.8}
+.sy-level-tile:not(:disabled):active{transform:scale(.97)}
+.sy-level-tile:focus-visible{outline:3px solid #a961e5;outline-offset:2px}
+.sy-level-footnote{font-size:11px;color:#765c89;line-height:1.55;margin:16px 2px 2px}
+@media(min-width:390px){.sy-level-grid{grid-template-columns:repeat(6,minmax(0,1fr))}}
+@media(max-width:350px){.sy-level-grid{gap:5px}.sy-level-tile{min-height:56px;font-size:14px;border-radius:11px}.sy-level-tile .sy-level-rating{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.sy-level-tile{transition:none!important}}
+
+
+/* 5.0.0 · compact, low-cost quality-of-life and accessibility UI. No idle animations. */
+#homeScreen .sy-daily-shortcut{background:linear-gradient(125deg,#fff1cf,#f6dbfd);color:#553480}
+.sy-records-page{max-width:630px;margin-inline:auto}
+.sy-record-sub{color:#68577d;font-size:13px;line-height:1.5;margin:10px 2px 15px}
+.sy-record-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:10px 0}
+.sy-record-stat{border-radius:15px;background:linear-gradient(135deg,#f7edff,#fff7f3);border:1px solid #e9d7fb;padding:12px;min-width:0}
+.sy-record-stat b{display:block;font-size:20px;line-height:1.2;color:#512586;font-variant-numeric:tabular-nums}
+.sy-record-stat small{color:#765b86;font-size:11px;line-height:1.4;display:block;margin-top:3px}
+.sy-record-daily{padding:13px 14px;border:1px solid #e0c7ee;background:#fff8e6;border-radius:14px;font-size:13px;color:#62417b;margin-bottom:14px;line-height:1.55}
+.sy-record-details{background:#faf5ff;border:1px solid #e4d4f1;border-radius:13px;padding:12px}
+.sy-record-details summary{font-weight:800;color:#5f2e8d;cursor:pointer}
+.sy-record-levels{margin-top:12px;max-height:45vh;overflow-y:auto;overscroll-behavior:contain}
+.sy-record-item{display:flex;justify-content:space-between;gap:8px;align-items:center;border-bottom:1px solid #e9dff0;padding:8px 0;font-size:12px;color:#583d71}
+.sy-record-item:last-child{border-bottom:0}
+.sy-record-item strong{font-size:12px;color:#68328e;white-space:nowrap}
+.syv5-tutorial{position:fixed;inset:0;z-index:150;background:rgba(24,10,52,.79);display:grid;place-items:center;padding:16px;overflow-y:auto}
+.syv5-tutorial.hidden{display:none!important}
+.syv5-tutorial-card{background:linear-gradient(160deg,#fffdfd,#f3e5ff);border:2px solid #efd3ff;border-radius:24px;padding:24px 18px;max-width:390px;width:100%;text-align:center;box-shadow:0 20px 70px #1b093d66;color:#45256b}
+.syv5-tutorial-card h2{font-weight:900;font-size:23px;margin:6px 0 12px}
+.syv5-tutorial-card p{font-size:14px;line-height:1.6;margin-bottom:18px}
+.syv5-tutorial-icon{font-size:38px}
+.syv5-tutorial-preview{display:flex;justify-content:center;gap:12px;align-items:center;font-size:30px;padding:10px;background:#e6d4f6;border-radius:14px;margin-bottom:15px}
+.syv5-tutorial-preview span:nth-child(2){font-size:37px;filter:drop-shadow(0 2px 3px #45257140)}
+.syv5-tutorial-card .menu-button{width:100%;min-height:47px}
+body.syv5-boss-stage .game-frame{outline:2px solid rgba(255,201,99,.75);outline-offset:1px}
+body.syv5-boss-stage .sy-status-head b{color:#ffe29a}
+body.syv5-boss-stage .board{box-shadow:0 0 0 2px rgba(255,223,126,.34),0 0 24px rgba(255,200,110,.13)}
+body.syv5-low-moves #moves{color:#ffe27b!important;text-shadow:0 0 10px rgba(255,214,98,.44)}
+body.syv5-high-contrast #moves,body.syv5-high-contrast #timeLeft,body.syv5-high-contrast #levelNumber{font-weight:950!important;text-shadow:0 1px 2px #130928!important}
+body.syv5-high-contrast .sy-candy-guard,body.syv5-high-contrast .sy-stone-guard{filter:contrast(1.35)}
+body.syv5-daily .sy-status-head{filter:saturate(1.2)}
+.syv5-update{position:fixed;z-index:160;bottom:env(safe-area-inset-bottom,0px);left:10px;right:10px;max-width:440px;margin:auto;background:#fff8ed;color:#49306d;border:2px solid #dfbbfa;border-radius:15px;box-shadow:0 6px 28px #1a0b3a55;padding:12px;display:flex;gap:8px;align-items:center;font-size:12px;font-weight:750}
+.syv5-update.hidden{display:none!important}
+.syv5-update span{flex:1}.syv5-update button{background:#6335a2;color:white;border:0;border-radius:8px;padding:9px;cursor:pointer;font-weight:800}.syv5-update button:last-child{background:#eee2f5;color:#6b448e}
+@media(max-width:350px){.sy-record-stat{padding:9px}.syv5-tutorial-card{padding:18px 12px}.syv5-update{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.syv5-tutorial,.syv5-update{animation:none!important}}
+
 </style>
 <!--
   ŞEKER YAĞMURU — SAHİPLİK / KAYNAK BİLGİSİ
@@ -1750,15 +1808,32 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
 <div class="home-personal"><span aria-hidden="true" class="hello-dot">✷</span><span id="menuGreeting">Tatlı macera seni bekliyor!</span></div>
 <div class="menu-buttons premium-menu-buttons">
 <button class="menu-button primary" id="playBtn" type="button"><span aria-hidden="true" class="play-btn-emblem">▶</span><span class="play-btn-copy"><strong id="playBtnText">OYNA</strong><small>ŞEKERLİ MACERAYA ATIL</small></span><span aria-hidden="true" class="play-btn-arrow">➜</span></button>
+<button class="menu-button sy-level-entry" id="levelsBtn" type="button"><span aria-hidden="true">🗺️</span><span>Bölüm Haritası</span><span aria-hidden="true">›</span></button>
 <div class="home-shortcuts">
+<button class="menu-button sy-daily-shortcut" id="dailyBtn" type="button"><span class="shortcut-icon">☀️</span><span>Günlük Mücadele</span></button>
+<button class="menu-button" id="recordsBtn" type="button"><span class="shortcut-icon">🏅</span><span>Rekorlarım</span></button>
 <button class="menu-button" id="howBtn" type="button"><span class="shortcut-icon">📖</span><span>Nasıl Oynanır?</span></button>
 <button class="menu-button" id="settingsBtn" type="button"><span class="shortcut-icon">⚙️</span><span>Ayarlar</span></button>
 <button class="menu-button" id="creditsBtn" type="button"><span class="shortcut-icon">✨</span><span>Emeği Geçenler</span></button>
 <button class="menu-button feedback-entry" id="feedbackBtn" type="button"><span class="shortcut-icon">💬</span><span>Hata / Öneri</span></button>
 </div>
 </div>
-<div class="home-footer"><span id="menuRecord">🏅 Bölüm 1 · Rekor 0</span><span>Sürüm 4.8.2</span></div>
+<div class="home-footer"><span id="menuRecord">🏅 Bölüm 1 · Rekor 0</span><span>Sürüm 5.0.0</span></div>
 <div class="home-credits"><span>✦</span> TATLI BİR OYUN DENEYİMİ</div><p class="sy-owner-notice">© 2026 <strong>Arif Şahin</strong> · Şeker Yağmuru · İzinsiz sahiplenilemez</p>
+</section>
+<section class="screen-page hidden sy-level-page" id="levelsScreen" aria-labelledby="levelsTitle">
+<div class="menu-top"><button aria-label="Ana menüye dön" class="menu-back" data-back="1" type="button">←</button><h2 id="levelsTitle">🗺️ Bölüm Haritası</h2></div>
+<p class="sy-level-intro">Açtığın bölümleri dilediğin zaman yeniden oynayabilirsin. Önceki bölümünü seçersen mevcut yarım kalan tahta yeniden başlayacaktır.</p>
+<div class="sy-level-legend"><span>⭐ Tamamlandı</span><span>✦ Şu anki bölüm</span><span>🔒 Kilitli</span></div>
+<div class="sy-level-grid" id="levelPicker" aria-label="Bölüm seçme düğmeleri"></div>
+<p class="sy-level-footnote">Yıldızlar ve açtığın bölümler korunur. Daha önce kazandığın puan, aynı bölümü tekrar kazanarak iki kez eklenmez.</p>
+</section>
+<section class="screen-page hidden sy-records-page" id="recordsScreen" aria-labelledby="recordsTitle">
+<div class="menu-top"><button aria-label="Ana menüye dön" class="menu-back" data-back="1" type="button">←</button><h2 id="recordsTitle">🏅 Kişisel Rekorlarım</h2></div>
+<p class="sy-record-sub">Bu istatistikler yalnızca bu tarayıcıda tutulur; oyuncular arası çevrimiçi sıralama değildir.</p>
+<div class="sy-record-summary" id="statsSummary" aria-live="polite"></div>
+<div class="sy-record-daily" id="statsDaily"></div>
+<details class="sy-record-details"><summary>Bölüm bölüm performansım</summary><div class="sy-record-levels" id="statsLevels"></div></details>
 </section>
 <section class="screen-page hidden" id="settingsScreen">
 <div class="menu-top"><button aria-label="Geri" class="menu-back" data-back="1" type="button">←</button><h2>⚙️ Ayarlar</h2></div>
@@ -1776,6 +1851,8 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
 </div>
 <div class="settings-row"><div><b>Animasyonlar</b><small>Kaydırma, düşüş ve özel efektler</small></div><button class="toggle-button active" id="settingsMotionBtn" type="button">Açık ✨</button></div>
 <div class="settings-row"><div><b>Şeker harfleri</b><small>Renklerden bağımsız K, T, Y, Ş, E, M işaretleri · isteğe bağlı</small></div><button class="toggle-button" id="settingsCandyLabelsBtn" type="button" aria-pressed="false">Kapalı ◇</button></div>
+<div class="settings-row"><div><b>Hafif titreşim</b><small>Destekleyen telefonlarda geçerli hamlede kısa dokunsal geri bildirim; varsayılan kapalı.</small></div><button class="toggle-button" id="settingsHapticBtn" type="button" aria-pressed="false">Kapalı</button></div>
+<div class="settings-row"><div><b>Yüksek kontrast</b><small>Kalan hamle ve engel işaretlerini daha belirgin gösterir.</small></div><button class="toggle-button" id="settingsContrastBtn" type="button" aria-pressed="false">Kapalı</button></div>
 <div class="settings-row"><div><b>Otomatik kayıt</b><small>Her tamamlanan hamle kaydedilir</small></div><span style="font-size:19px">💾</span></div>
 <div class="save-transfer"><button class="menu-button tiny" id="exportSave" type="button">Kaydı indir</button></div>
 
@@ -1786,6 +1863,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
 <section class="screen-page hidden" id="howScreen">
 <div class="menu-top"><button aria-label="Geri" class="menu-back" data-back="1" type="button">←</button><h2>📖 Nasıl Oynanır?</h2></div>
 <div class="help-scroll syg-manual">
+<div class="syg-intro syv5-help"><strong>☀️ Günlük Mücadele</strong><p>Her UTC gününde aynı başlangıç tahtası ve 18 başlangıç hamlesi. Hedefin en yüksek kişisel puanını yapmak; 60 bölümlük ilerlemen değişmez. Gerçek oyuncular arası sıralama yoktur.</p><strong>🏅 Rekorlar ve bölüm finalleri</strong><p>Rekorlarım sayfasından tamamladığın bölümlerdeki deneme sayısını, en yüksek puanını, en az harcadığın hamleyi ve en kısa süreni gör. Her 10. bölüm özel final görseli taşır. Bir engeli ilk kez gördüğünde kısa ipucu gösterilir.</p><strong>📱 Erişilebilirlik</strong><p>Ayarlardan şeker harfleri, yüksek kontrast ve destekleyen telefonlarda hafif titreşim açılabilir.</p></div>
 <div class="syg-intro"><strong>GERÇEK ŞEKERLER · GERÇEK OYUN KURALLARI</strong><p>Şekerleri kaydırarak veya iki komşu şekere dokunarak eşleştir. 8×8 tahtada özel eşleşmeleri aşağıdaki hareketli örneklerden öğren; sekmeleri yana kaydırabilirsin.</p></div>
 <div aria-label="Örnek eşleşme türünü seç" class="syg-selector" role="group">
 <button aria-pressed="true" data-guide="three" type="button">3'lü</button>
@@ -1849,7 +1927,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
 <div class="credit-box">🤖 <b>Tasarım, programlama ve geliştirme desteği</b> ChatGPT · OpenAI</div>
 <div class="credit-box">✨ <b>Görsel yükseltme ve hata denetimi (4.4.0)</b> Claude · Anthropic</div>
 <div class="credit-box">💖 <b>Özel teşekkür</b> Oyunu deneyen ve geliştirmemize katkı sağlayan herkese.</div>
-<p class="menu-sub">Bağımsız bir eşleştirme oyunu · Sürüm 4.8.2</p>
+<p class="menu-sub">Bağımsız bir eşleştirme oyunu · Sürüm 5.0.0</p>
 </section>
 <section class="screen-page hidden" id="feedbackScreen">
 <div class="menu-top"><button aria-label="Geri" class="menu-back" data-back="1" type="button">←</button><h2>💬 Hata ve Öneriler</h2></div>
@@ -1865,6 +1943,10 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
 </section>
 </div>
 </div>
+<div id="syTutorial" class="syv5-tutorial hidden" role="dialog" aria-modal="true" aria-labelledby="syTutorialTitle">
+<div class="syv5-tutorial-card"><div class="syv5-tutorial-icon" id="syTutorialIcon">🍬</div><h2 id="syTutorialTitle">Yeni mekanik</h2>
+<p id="syTutorialText"></p><div class="syv5-tutorial-preview" aria-hidden="true"><span>🍬</span><span id="syTutorialObstacle">🔒</span><span>🍬</span></div>
+<button id="syTutorialContinue" class="menu-button primary" type="button">Anladım, oynayalım →</button></div></div>
 <div aria-labelledby="dialogTitle" aria-modal="true" class="overlay hidden" id="overlay" role="dialog"><div class="dialog"><div class="dialog-icon" id="dialogIcon">🎉</div><h2 id="dialogTitle">Harika!</h2><p id="dialogText"></p><div id="resultStars" role="img"></div><p id="resultCriteria"></p><p id="resultBadges"></p><div class="dialog-score"><span id="dialogScoreLabel">BÖLÜM PUANIN</span><strong id="dialogScore">0</strong></div><div class="final-only hidden" id="finalArea"><canvas aria-label="Oyunu tamamladınız başarı kartı" height="1350" id="finalCanvas" width="1080"></canvas><div class="final-actions"><button class="save-action" id="savePngBtn" type="button">📥 PNG Kaydet</button><button class="save-action" id="saveJpgBtn" type="button">📥 JPG Kaydet</button><button class="share-action" id="shareWinBtn" type="button">🟢 WhatsApp / Paylaş</button></div><a class="wa-card-link" hidden="" id="waCardLink" rel="noopener noreferrer" target="_blank">Skor mesajını WhatsApp’ta aç ↗</a><small class="share-hint">Paylaş menüsünde WhatsApp'ı seçebilirsin. Desteklenmezse kartı kaydedip WhatsApp'ta görsel olarak gönder.</small></div><div class="result-navigation"><button class="cta" id="dialogBtn" type="button">Devam et →</button><button class="cta result-menu-cta" id="dialogMenuBtn" type="button">⌂ Ana Menüye Dön</button></div></div></div>
 <div aria-live="polite" class="toast" id="toast" role="status"></div>
 <audio aria-hidden="true" id="menuThemeMusic" loop="" playsinline="" preload="auto" src="music-1-aef72e2273a9.mp3"></audio>
@@ -1913,11 +1995,26 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
   const BOARD_THEME_KEY='sy_board_theme_411';
   const CANDY_LABELS_KEY='sy_candy_labels_v1';
   const BOARD_THEMES=['ocean','mint','peach','violet','night','wood'];
-  const wait=ms=>new Promise(resolve=>setTimeout(resolve,document.body.classList.contains('reduce-motion')?Math.min(15,ms):ms));
-  const pick=a=>a[Math.floor(Math.random()*a.length)];
-  const fmt=n=>Number(n).toLocaleString('tr-TR');
   const getLocal=(k,d=null)=>{try{const v=localStorage.getItem(k);return v===null?d:v}catch{return d}};
   const setLocal=(k,v)=>{try{localStorage.setItem(k,String(v))}catch{}};
+  const wait=ms=>new Promise(resolve=>setTimeout(resolve,document.body.classList.contains('reduce-motion')?Math.min(15,ms):ms));
+  // Günlük mücadele: tarih UTC, aynı ilk tahta ve aynı RNG sırası.
+  let dailyMode=false,dailyReturnState=null,dailyRandom=null,dailyDate='',dailyDuration=180;
+  const gameRandom=()=>dailyMode&&dailyRandom?dailyRandom():Math.random();
+  const pick=a=>a[Math.floor(gameRandom()*a.length)];
+  function hashDailyDate(value){let h=2166136261;for(const ch of value){h^=ch.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0;}
+  function dailyRng(seed){let state=seed>>>0;return ()=>{state=(state+0x6D2B79F5)|0;let t=state;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296;};}
+  const utcDay=()=>new Date().toISOString().slice(0,10);
+  const dailyStageFor=date=>[1,17,27,37,42,48,53,58][hashDailyDate(date)%8];
+  const DAILY_KEY='sy_daily_scores_v500', STATS_KEY='sy_stats_v500',TUTORIAL_KEY='sy_tutorial_seen_v500';
+  function readObject(key){try{const val=JSON.parse(getLocal(key,'{}'));return val&&typeof val==='object'&&!Array.isArray(val)?val:{}}catch{return {}}}
+  let dailyRecords=readObject(DAILY_KEY),stats=readObject(STATS_KEY);
+  function saveStats(){setLocal(STATS_KEY,JSON.stringify(stats))}
+  function saveDaily(){const keys=Object.keys(dailyRecords).sort();for(const k of keys.slice(0,Math.max(0,keys.length-90)))delete dailyRecords[k];setLocal(DAILY_KEY,JSON.stringify(dailyRecords));}
+  let hapticOn=getLocal('sy_haptic_v500','off')==='on',contrastOn=getLocal('sy_contrast_v500','off')==='on';
+  function vibrateTick(kind='tap'){if(!hapticOn||typeof navigator.vibrate!=='function')return;try{navigator.vibrate(kind==='win'?[18,35,18]:kind==='warn'?14:7)}catch{}}
+
+  const fmt=n=>Number(n).toLocaleString('tr-TR');
   let protectedSave=false, lastStored=null, turnCheckpoint=null, lossReason=null;
   let noticePending='';
   function storageNotice(message){
@@ -2111,7 +2208,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
       const spaced=available.filter(t=>!t.shield&&seeded.every(x=>Math.abs(t.r-x.r)+Math.abs(t.c-x.c)>1));
       const candidates=spaced.length?spaced:available.filter(t=>!t.shield);
       if(!candidates.length)return;
-      const picked=candidates[Math.floor(Math.random()*candidates.length)];
+      const picked=candidates[Math.floor(gameRandom()*candidates.length)];
       picked.shield={kind,hp};seeded.push(picked);
     }
     for(let i=0;i<counts.lock;i++)choose('lock',1);
@@ -2159,7 +2256,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
       if(!options.includes(next))options.push(next);
     }
     for(let tries=0;tries<Math.min(24,options.length);tries++){
-      const index=Math.floor(Math.random()*options.length),t=options.splice(index,1)[0];
+      const index=Math.floor(gameRandom()*options.length),t=options.splice(index,1)[0];
       t.shield={kind:'choco',hp:1};
       if(!possibleMove(board)){t.shield=null;continue;}
       paintTile(t);if(!reduceMotion&&t.el){const flash=document.createElement('span');flash.className='sy-choco-spread-flash';flash.setAttribute('aria-hidden','true');t.el.appendChild(flash);setTimeout(()=>flash.remove(),600)}return true;
@@ -2174,7 +2271,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
       const t=tiles.get(id);
       if(!t?.gift)continue;
       t.gift=false;
-      rewards.push(Math.random()<.40?'points':Math.random()<.65?'move':'rainbow');
+      rewards.push(gameRandom()<.40?'points':gameRandom()<.65?'move':'rainbow');
     }
     return rewards;
   }
@@ -2248,15 +2345,42 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     const best=run.map((s,i)=>Math.max(s,starAt(d.bestStars,i)));
     return {run,best,feats:{rainbow:d.feats?.rainbow===true,chain:d.feats?.chain===true}};
   }
+  function recordLevelFinish(win){
+    const key=String(level), data=stats[key]&&typeof stats[key]==='object'?stats[key]:{tries:0,wins:0,best:0,minMoves:null,bestSeconds:null};
+    data.tries=Math.min(999999,(Number(data.tries)||0)+1);
+    if(win){
+      data.wins=Math.min(data.tries,(Number(data.wins)||0)+1);
+      data.best=Math.max(Number(data.best)||0,score);
+      const spent=Math.max(0,moveCount); // Sürpriz şekerler +2 hamle verebilir; gerçek hamle sayısını kullan.
+      const elapsed=Math.max(0,Math.round(levelConfig(level).seconds-timeLeft));
+      data.minMoves=data.minMoves===null||!Number.isFinite(data.minMoves)?spent:Math.min(data.minMoves,spent);
+      data.bestSeconds=data.bestSeconds===null||!Number.isFinite(data.bestSeconds)?elapsed:Math.min(data.bestSeconds,elapsed);
+    }
+    stats[key]=data;saveStats();
+  }
   const badges=[
     ['first','İlk zafer','Bir bölüm tamamla.'],
     ['rainbow','Gökkuşağı ustası','Bir gökkuşağı şekeri oluştur.'],
     ['chain','Zincir ustası','Tek hamlede üç patlama dalgasına ulaş.'],
-    ['final','Macera şampiyonu','60. bölümü tamamla.']
+    ['final','Macera şampiyonu','60. bölümü tamamla.'],
+    ['ten','Tatlı başlangıç','10 bölümü tamamla.'],
+    ['thirty','Macera tutkunu','30 bölümü tamamla.'],
+    ['threeStar','Parlak koleksiyon','10 bölümde 3 yıldız kazan.'],
+    ['half','Yıldız avcısı','Toplam 60 yıldız topla.'],
+    ['daily','Günlük maceracı','En az bir günlük mücadele tamamla.'],
+    ['choco','Çikolata kaşifi','41. bölüm veya sonrasını tamamla.'],
+    ['repeat','İstikrarlı oyuncu','Bir bölümü 2 kez kazan.']
   ];
   function badgeEarned(key){
     if(key==='first')return bestStars.some(n=>n>0);
     if(key==='final')return bestStars[MAX_LEVEL-1]>0;
+    if(key==='ten')return bestStars.filter(x=>x>0).length>=10;
+    if(key==='thirty')return bestStars.filter(x=>x>0).length>=30;
+    if(key==='threeStar')return bestStars.filter(x=>x===3).length>=10;
+    if(key==='half')return bestStars.reduce((a,b)=>a+b,0)>=60;
+    if(key==='daily')return Object.values(dailyRecords).some(x=>x&&Number.isFinite(x.best));
+    if(key==='choco')return bestStars.slice(40).some(x=>x>0);
+    if(key==='repeat')return Object.values(stats).some(x=>x&&Number(x.wins)>=2);
     return feats[key];
   }
   function setAlbum(){
@@ -2292,7 +2416,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
       board:board.map(row=>row.map(({id,type,special,shield,gift})=>({id,type,special,shield:shield?{kind:shield.kind,hp:shield.hp}:null,gift:!!gift})))};
   }
   function saveGame(){
-    if(!ready||!board.length)return;
+    if(dailyMode||!ready||!board.length)return;
     if(!$('screenLayer').classList.contains('hidden'))updateMenuRecord();
     if(protectedSave)return;
     const state=busy&&gameStatus==='playing'?turnCheckpoint:snapshot();
@@ -2342,16 +2466,16 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     // Completed levels and newly started levels use the tuned 4.8.2 goals.
     const legacyGoal=lvl>=46&&lvl<=55?LEGACY_LEVEL_TARGETS_46_TO_55[lvl-46]:null;
     const keepGoal=d.version<=11&&d.gameStatus==='playing'&&d.moveCount>0&&d.target===legacyGoal;
-    const resumedGoal=keepGoal?legacyGoal:cfg.target;
+    const resumedGoal=dailyMode&&d.target===24000?24000:(keepGoal?legacyGoal:cfg.target);
     const num=(v,fallback=0)=>Number.isFinite(v)&&v>=0?v:fallback;
-    const remaining=d.version>=3?Math.min(cfg.seconds,num(d.timeLeft,cfg.seconds)):cfg.seconds;
+    const remaining=d.version>=3?Math.min(dailyMode?dailyDuration:cfg.seconds,num(d.timeLeft,cfg.seconds)):cfg.seconds;
     const past=Array.isArray(d.completedScores)?d.completedScores.slice(0,MAX_LEVEL).map(v=>num(v)): [];
     const cleared=d.version>=5?Math.floor(num(d.candiesCleared)):Math.floor(d.score/95);
     const skill=!!d.skillGoalMet;
     let status=['playing','won','lost'].includes(d.gameStatus)?d.gameStatus:'playing';
     let total=num(d.scoreTotal);
     if(status==='playing'){
-      if(levelComplete(d.score,resumedGoal)){status='won';past[lvl-1]=d.score;total+=d.score}
+      if(!dailyMode&&levelComplete(d.score,resumedGoal)){status='won';past[lvl-1]=d.score;total+=d.score}
       else if(!d.moves||remaining<=0)status='lost';
     }
     return {awards:readAwards(d,past,lvl,status),grid,lvl,score:d.score,moves:d.moves,target:resumedGoal,time:remaining,total,past,cleared,skill,status,
@@ -2634,16 +2758,26 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     const displayedScore=fmt(scoreTotal+(gameStatus==='won'?0:score));
     if(els.score.textContent!==displayedScore)els.score.textContent=displayedScore;
     if(els.moves.textContent!==String(moves))els.moves.textContent=moves;
+    document.body.classList.toggle('syv5-low-moves',gameStatus==='playing'&&moves<=5);
+    document.body.classList.toggle('syv5-boss-stage',!dailyMode&&level%10===0);
+    document.body.classList.toggle('syv5-daily',dailyMode);
     const percent=levelPercent(score,target);
-    els.goalPercent.textContent=percent+'%';
-    els.progress.setAttribute('aria-valuetext','Bölüm hedefinin yüzde '+percent+' kadarı tamamlandı. Hedef yüzde 100.');
+    els.goalPercent.textContent=dailyMode?fmt(score):percent+'%';
+    const goalLabel=document.querySelector('.sy-progress-card .sy-meter-name');
+    if(goalLabel){const last=goalLabel.lastChild;if(last&&last.nodeType===Node.TEXT_NODE){
+      const text=dailyMode?' GÜNLÜK PUAN':' BÖLÜM İLERLEMESİ';
+      if(last.textContent!==text)last.textContent=text;
+    }}
+    els.progress.setAttribute('aria-label',dailyMode?'Günlük puan göstergesi':'Bölüm tamamlama yüzdesi');
+    els.progress.setAttribute('aria-valuetext',dailyMode?('Günlük puan: '+fmt(score)+'. Hamle veya süre dolana kadar devam et.'):'Bölüm hedefinin yüzde '+percent+' kadarı tamamlandı. Hedef yüzde 100.');
     els.progressFill.style.width=`${percent}%`;els.progress.setAttribute('aria-valuenow',percent);
-    const levelNumber=$('levelNumber');if(levelNumber)levelNumber.textContent=String(level).padStart(2,'0');
-    const levelTotal=$('levelTotal');if(levelTotal)levelTotal.textContent=MAX_LEVEL;
+    const levelLabel=document.querySelector('.sy-level-card .stat-label');if(levelLabel)levelLabel.textContent=dailyMode?'GÜNLÜK':'BÖLÜM';
+    const levelNumber=$('levelNumber');    if(levelNumber)levelNumber.textContent=dailyMode?'☀':String(level).padStart(2,'0');
+    const levelTotal=$('levelTotal');    if(levelTotal)levelTotal.textContent=dailyMode?'GÜN':MAX_LEVEL;
     updateTimerUI();
     const feature=$('stageFeature');
     if(feature){
-      const hint=stageTheme(level)==='chocolate'?'🍫 Çikolata yayılır · yanında eşleştir':
+      const hint=dailyMode?'☀️ Günlük görev · kalan hamlelerle en yüksek puan':level%10===0?'🏆 ÖZEL BÖLÜM FİNALİ':stageTheme(level)==='chocolate' ?'🍫 Çikolata yayılır · yanında eşleştir':
         stageTheme(level)==='stone'?'🪨 Taşı komşu 2 patlamayla kır':
         stageTheme(level)==='gift'?'🎁 Sürprizi eşleştir · ödül kazan':
         stageTheme(level)==='grand'?'🏆 Final · bütün engeller birlikte':'💾 Otomatik kayıt';
@@ -2714,7 +2848,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
   }
 
   const isMenuVisible=()=>!document.hidden&&!$('screenLayer').classList.contains('hidden')&&els.overlay.classList.contains('hidden');
-  const isGameVisible=()=>gameStatus==='playing'&&!document.hidden&&$('screenLayer').classList.contains('hidden')&&els.overlay.classList.contains('hidden');
+  const isGameVisible=()=>gameStatus==='playing'&&!document.hidden&&$('screenLayer').classList.contains('hidden')&&els.overlay.classList.contains('hidden')&&$('syTutorial').classList.contains('hidden');
   // Embedded mobile browsers: effects already work through Web Audio, but
   // independent HTMLAudio MP3 tracks can remain silent in embedded viewers.
   // Decode the EXACT embedded MP3 bytes and render music through the same
@@ -2975,15 +3109,15 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
   }
   let lastTimerDisplayKey='';
   function updateTimerUI(){
-    const seconds=Math.max(0,Math.ceil(timeLeft)),full=levelConfig(level).seconds;
-    const key=level+'|'+seconds+'|'+gameStatus;
+    const seconds=Math.max(0,Math.ceil(timeLeft)),full=dailyMode?dailyDuration:levelConfig(level).seconds;
+    const key=level+'|'+seconds+'|'+gameStatus+'|'+dailyMode;
     if(key===lastTimerDisplayKey)return;
     lastTimerDisplayKey=key;
     const clock=`${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`;
     if(els.timeLeft.textContent!==clock)els.timeLeft.textContent=clock;
     const fill=`${Math.round(Math.max(0,Math.min(100,seconds/full*100))*2)/2}%`;
     if(els.timerFill.style.width!==fill)els.timerFill.style.width=fill;
-    const stage=`${level} / ${MAX_LEVEL} BÖLÜM`;
+    const stage=dailyMode?'☀️ GÜNLÜK MÜCADELE':`${level} / ${MAX_LEVEL} BÖLÜM`;
     if(els.timerStage.textContent!==stage)els.timerStage.textContent=stage;
     const urgent=timeLeft<=30&&gameStatus==='playing';
     els.timeLeft.closest('.timer-wrap').classList.toggle('urgent',urgent);
@@ -3224,7 +3358,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
   function shuffleExisting(){
     const all=board.flat();if(all.length!==SIZE*SIZE||all.some(t=>!t))return false;
     for(let attempt=0;attempt<400;attempt++){
-      const shuffled=all.slice();for(let i=shuffled.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]]}
+      const shuffled=all.slice();for(let i=shuffled.length-1;i>0;i--){const j=Math.floor(gameRandom()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]]}
       const proposal=Array.from({length:SIZE},(_,r)=>shuffled.slice(r*SIZE,(r+1)*SIZE));
       if(!findGroups(proposal).length&&possibleMove(proposal)){board=proposal;return true}
     }
@@ -3400,7 +3534,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
       [board[r][c],board[nr][nc]]=[board[nr][nc],board[r][c]];
       render();chirp('bad');await wait(250);busy=false;startDecisionClock();refreshUI();showToast('Bu hamlede eşleşme yok — tekrar dene!');return;
     }
-    moves--;moveCount++;
+    moves--;moveCount++;vibrateTick();
     if(areaCombo)await resolveStripeBombSwap(a,b,direction);
     else if(doubleStripe)await resolveDoubleStripeSwap(a,b,false,direction);
     else if(color)await resolveColorSwap(a,b,direction);
@@ -3408,7 +3542,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
       // Direct 4-candy line and 2x2 square blasts are handled in clearMatches.
       await resolveNormalMatches(groups,[a.id,b.id],direction);
     }
-    if(levelComplete(score,target)){endGame(true);return}
+    if(!dailyMode&&levelComplete(score,target)){endGame(true);return}
     spreadChocolateAfterMove();
     if(moves<=0||timeLeft<=0||countdownExpired){endGame(false,moves<=0?'moves':'time');return}
     if(!possibleMove(board)){
@@ -3426,7 +3560,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
       if(keyboardMove&&isGameVisible()&&!els.board.contains(document.activeElement))board[nr][nc].el?.focus({preventScroll:true});
     }
   }
-  function shareSummary(){return `🍬 ${playerName||'Bir oyuncu'} Şeker Yağmuru 4.8.2 oyununu bitirdi!
+  function shareSummary(){return `🍬 ${playerName||'Bir oyuncu'} Şeker Yağmuru 5.0.0 oyununu bitirdi!
 🏆 ${MAX_LEVEL}/${MAX_LEVEL} bölüm tamamlandı
 ⭐ Bu macera: ${runStars.reduce((a,b)=>a+b,0)} / ${MAX_LEVEL*3} yıldız
 🏅 Toplam puan: ${fmt(scoreTotal)}
@@ -3466,7 +3600,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     ctx.fillStyle='#f8ecff';ctx.font='bold 33px sans-serif';ctx.fillText('EN İYİ BÖLÜM  ·  '+fmt(Math.max(0,...completedScores)),540,1005);
     ctx.fillStyle='#ffe9ff';ctx.font='bold 38px sans-serif';ctx.fillText('ŞAMPİYON  ·  '+(playerName||'Oyuncu'),540,1060,870);
     ctx.fillStyle='#f5e5ff';ctx.font='29px sans-serif';ctx.fillText('MACERA YILDIZLARI  ·  '+runStars.reduce((a,b)=>a+b,0)+' / '+(MAX_LEVEL*3),540,1110);
-    ctx.fillStyle='#ffebff';ctx.font='28px sans-serif';ctx.fillText('Şeker Yağmuru 4.8.2  •  Arif Şahin',540,1250);
+    ctx.fillStyle='#ffebff';ctx.font='28px sans-serif';ctx.fillText('Şeker Yağmuru 5.0.0  •  Arif Şahin',540,1250);
   }
   async function cardBlob(type='image/png'){
     return new Promise((resolve,reject)=>els.finalCanvas.toBlob(b=>b?resolve(b):reject(new Error('Kart hazırlanamadı')),type,type==='image/jpeg'?.94:undefined));
@@ -3489,24 +3623,30 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     showToast('WhatsApp bağlantısı hazır. Görseli de eklemek için kartı indir.');
   }
   function endGame(win,reason='moves'){
+    if(dailyMode){finishDaily(reason);return}
     const firstResult=gameStatus==='playing';
     lossReason=win?null:(firstResult?reason:(lossReason||reason));reason=lossReason||reason;
+    if(firstResult)recordLevelFinish(win);
     if(win&&firstResult){
       runStars[level-1]=rateWin(level,moves,timeLeft);
       bestStars[level-1]=Math.max(bestStars[level-1],runStars[level-1]);
-      scoreTotal+=score;completedScores[level-1]=score;maxLevel=Math.max(maxLevel,Math.min(MAX_LEVEL,level+1))}
+      // Kişisel en iyi bölüm puanı toplamına yalnızca yeni farkı ekle.
+      // Aynı bölümü tekrar oynamak, toplam puanı sınırsız yükseltmemeli.
+      const oldBest=Number.isFinite(completedScores[level-1])?Math.max(0,completedScores[level-1]):0;
+      if(score>oldBest){scoreTotal+=score-oldBest;completedScores[level-1]=score;}
+      maxLevel=Math.max(maxLevel,Math.min(MAX_LEVEL,level+1))}
     gameStatus=win?'won':'lost';busy=true;lastTick=0;countdownExpired=false;refreshUI();syncSoundtrack();
     const finished=win&&level===MAX_LEVEL;
     els.finalArea.classList.toggle('hidden',!finished); if(!finished)$('waCardLink').hidden=true;
     els.dialogIcon.textContent=finished?'👑':win?'🏆':reason==='time'?'⏳':'🍭';
-    els.dialogTitle.textContent=finished?'Oyunu bitirdin!':win?'Bölüm tamamlandı!':reason==='time'?'Süren doldu!':'Hamlelerin bitti!';
+    els.dialogTitle.textContent=finished?'Oyunu bitirdin!':win?(level%10===0?'🏆 Bölüm finali tamamlandı!':'Bölüm tamamlandı!'):reason==='time'?'Süren doldu!':'Hamlelerin bitti!';
     els.dialogText.textContent=finished?`${MAX_LEVEL} bölümün tamamını bitirdin! Başarı kartını kaydet veya arkadaşlarınla paylaş.`:win?`${moves} hamlen ve ${els.timeLeft.textContent} süren kaldı. Yeni bölüme hazırsın.`:reason==='time'?'Süren doldu. Bu bölümü yeniden deneyebilirsin.':'Hamlelerin bitti. Aynı bölümü yeniden deneyebilirsin.';
     presentResult(win);
     els.dialogScoreLabel.textContent=finished?'TOPLAM MACERA PUANIN':'BÖLÜM PUANIN';
     els.dialogScore.textContent=fmt(finished?scoreTotal:score);
     els.dialogBtn.textContent=finished?'🔁 Macerayı yeniden oyna':win?'Sonraki bölüm →':'↻ Bölümü yeniden dene';
     if(finished){$('waCardLink').hidden=true;paintFinalCard();if(!reduceMotion)showVictoryBurst();}
-    if(win&&firstResult)chirp('win');
+    if(win&&firstResult){chirp('win');vibrateTick('win');}
     saveGame();
     els.dialogBtn.onclick=()=>{els.overlay.classList.add('hidden');if(finished){hintLeft=5;scoreTotal=0;completedScores=[];startLevel(1,true)}else if(win)startLevel(Math.min(MAX_LEVEL,level+1));else startLevel(level);syncSoundtrack()};
     $('dialogMenuBtn').onclick=()=>{clearTimeout(endGame._revealTimer);els.overlay.classList.add('hidden');els.overlay.classList.remove('final-reveal');switchScreen('home');saveGame()};
@@ -3530,7 +3670,107 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     if(resetRun||!ready&&level===1){hintLeft=5;scoreTotal=0;completedScores=[];runStars=blankStars();if(resetRun)maxLevel=1;}
     moveCount=0;shuffleLeft=1;selected=null;busy=false;gameStatus='playing';lossReason=null;turnCheckpoint=null;
     tiles.clear();els.board.replaceChildren();board=newLevelBoard(level);render();ready=true;syncLayers();startDecisionClock();refreshUI();saveGame();syncSoundtrack();
+    if(!dailyMode)showTutorialIfNeeded(level);
     if([41,46,51,56].includes(level))showToast({41:'🍫 Yeni engel: çikolata yayılıyor!',46:'🪨 Yeni engel: taşlar iki darbede kırılır!',51:'🎁 Yeni ödül: sürpriz şekerler!',56:'🏆 Final serisi: bütün mekanikler birlikte!'}[level]);
+  }
+  // 5.0 · first-visit mechanic explainers. Pause clock, never remove attempts.
+  const tutorialTopics={
+    16:['🔒','Kilitli şeker','Kilidi açmak için hemen yanındaki şekerlerden birini eşleştirerek patlat. Kilit bir komşu patlamayla açılır.','🔒'],
+    26:['❄️','Buzlu şeker','Buz iki AYRI komşu patlama gerektirir. Önce çatlar, sonra çözülür; o zamana kadar oynatılamaz.','❄️'],
+    36:['🔒❄️','Karma kilit ve buz','Kilit bir, buz iki komşu patlamayla çözülür. Hamlelerini doğru tarafa yönlendir.','🔒❄️'],
+    41:['🍫','Yayılan çikolata','Her geçerli hamleden sonra zarar görmediyse komşu kareye yayılabilir. Yanında patlama yaparak durdur.','🍫'],
+    46:['🪨','Taş blok','Taş renk eşleşmesine katılmaz. Komşusunda iki ayrı patlama yaparak kırabilirsin.','🪨'],
+    51:['🎁','Sürpriz şeker','Sürpriz şeker patlayınca puan, ek hamle veya gökkuşağı ödülü kazandırabilir.','🎁'],
+    56:['🏆','Büyük final','Son beş bölümde öğrendiğin tüm engeller birleşir. Puan hedefi yine %100; başka zorunlu hedef yok.','🏆']
+  };
+  function showTutorialIfNeeded(stage){
+    const item=tutorialTopics[stage];if(!item)return;
+    const seen=readObject(TUTORIAL_KEY);if(seen[stage])return;
+    seen[stage]=true;setLocal(TUTORIAL_KEY,JSON.stringify(seen));
+    $('syTutorialIcon').textContent=item[0];$('syTutorialTitle').textContent=item[1];
+    $('syTutorialText').textContent=item[2];$('syTutorialObstacle').textContent=item[3];
+    $('syTutorial').classList.remove('hidden');pauseDecisionClock();syncLayers();
+    $('syTutorialContinue').focus({preventScroll:true});
+  }
+  function closeTutorial(){
+    $('syTutorial').classList.add('hidden');syncLayers();startDecisionClock();
+    $('menuBtn').focus({preventScroll:true});
+  }
+  $('syTutorialContinue').addEventListener('click',closeTutorial);
+  // Daily is UTC based; no server-wide leaderboard and no change to main save.
+  function startDaily(replay=false){
+    if(protectedSave){showToast('Önce oyun kaydını güvenceye al.');return}
+    if(!replay){
+      if(dailyMode)return;
+      dailyReturnState=snapshot();
+    }
+    const day=utcDay();dailyDate=day;
+    dailyMode=true;dailyRandom=dailyRng(hashDailyDate(day)^0x5CA11D4);
+    nextId=1;
+    startLevel(dailyStageFor(day));
+    scoreTotal=0;score=0;target=24000;moves=18;timeLeft=dailyDuration;
+    hintLeft=0;shuffleLeft=0;lastTick=0;lastTimerDisplayKey='';
+    document.body.classList.add('syv5-daily');
+    $('screenLayer').classList.add('hidden');els.overlay.classList.add('hidden');
+    syncLayers();startDecisionClock();refreshUI();syncSoundtrack();
+    showToast('☀️ '+day+' UTC · 18 başlangıç hamlesi · en yüksek puan');
+  }
+  function finishDaily(reason='moves'){
+    if(!dailyMode||gameStatus!=='playing')return;
+    pauseDecisionClock();gameStatus='won';busy=true;
+    const prev=dailyRecords[dailyDate]&&typeof dailyRecords[dailyDate]==='object'?dailyRecords[dailyDate]:{};
+    const best=Math.max(0,Number(prev.best)||0,score);
+    dailyRecords[dailyDate]={best,played:Math.min(999,Math.max(0,Number(prev.played)||0)+1)};
+    saveDaily();
+    els.finalArea.classList.add('hidden');$('waCardLink').hidden=true;
+    els.dialogIcon.textContent='☀️';els.dialogTitle.textContent='Günlük mücadele tamamlandı!';
+    els.dialogText.textContent='18 hamlelik günlük tahtada puanın: '+fmt(score)+'. Kendi en iyi puanın: '+fmt(best)+'. Macera kaydın etkilenmedi.';
+    $('resultStars').textContent='☀️  GÜNLÜK REKOR';$('resultCriteria').textContent='Gün: '+dailyDate+' UTC · Başlangıç tahtası her oyuncu için aynıdır. Sıralama bu cihazdaki kişisel rekordur.';
+    $('resultBadges').textContent='Deneme sayısı: '+dailyRecords[dailyDate].played;
+    els.dialogScoreLabel.textContent='GÜNLÜK PUAN';els.dialogScore.textContent=fmt(score);
+    els.dialogBtn.textContent='↻ Günlük mücadeleyi tekrarla';
+    els.overlay.classList.remove('hidden');syncLayers();syncSoundtrack();
+    els.dialogBtn.onclick=()=>{els.overlay.classList.add('hidden');startDaily(true)};
+    $('dialogMenuBtn').onclick=exitDaily;
+    els.dialogBtn.focus({preventScroll:true});
+    setAlbum();
+  }
+  function exitDaily(){
+    if(!dailyMode)return;
+    clearTimeout(endGame._revealTimer);
+    els.overlay.classList.add('hidden');$('syTutorial').classList.add('hidden');
+    dailyMode=false;dailyRandom=null;dailyDate='';document.body.classList.remove('syv5-daily');
+    const saved=dailyReturnState;dailyReturnState=null;
+    if(saved){
+      installState(decodeState(saved));
+      // Günlük mücadele sırasında elde edilen puan ana rekoru kirletmesin.
+      bestScore=Math.max(0,Number(saved.bestScore)||0);
+    }
+    lastTimerDisplayKey='';refreshUI();switchScreen('home');syncLayers();syncSoundtrack();
+  }
+  // Records are intentionally local-only and never disclose player details.
+  function fillStats(){
+    const rows=Object.entries(stats).filter(([key,r])=>Number(key)>=1&&Number(key)<=60&&r&&typeof r==='object');
+    const tries=rows.reduce((n,[,r])=>n+(Number(r.tries)||0),0);
+    const wins=rows.reduce((n,[,r])=>n+(Number(r.wins)||0),0);
+    const stars=bestStars.reduce((a,b)=>a+b,0);
+    const cards=[['Deneme',fmt(tries)],['Galibiyet',fmt(wins)],['Toplam yıldız',stars+' / 180'],['Başarı rozeti',badges.filter(([key])=>badgeEarned(key)).length+' / '+badges.length]];
+    $('statsSummary').replaceChildren(...cards.map(([name,num])=>{
+      const box=document.createElement('div');box.className='sy-record-stat';
+      const bold=document.createElement('b'),small=document.createElement('small');bold.textContent=num;small.textContent=name;box.append(bold,small);return box;
+    }));
+    const day=utcDay(),rec=dailyRecords[day];
+    $('statsDaily').textContent='☀️ '+day+' UTC günlük mücadele: '+(rec&&Number.isFinite(rec.best)?fmt(rec.best)+' puan · '+rec.played+' deneme':'Henüz oynanmadı')+'. Günlük sıralama yalnızca kişiseldir.';
+    const list=document.createDocumentFragment();
+    for(let i=1;i<=60;i++){
+      const row=document.createElement('div');row.className='sy-record-item';
+      const left=document.createElement('span'),right=document.createElement('strong'),r=stats[i];
+      left.textContent=String(i).padStart(2,'0')+'. bölüm · '+(bestStars[i-1]||0)+' ★';
+      right.textContent=r&&r.wins?('Rekor '+fmt(r.best||0)+' · '+r.minMoves+' hamle · '+r.bestSeconds+' sn'):completedScores[i-1]>0?('Önceki skor '+fmt(completedScores[i-1])):'Henüz veri yok';
+      row.append(left,right);list.append(row);
+    }
+    $('statsLevels').replaceChildren(list);
+    setAlbum();
   }
   function updateMenuRecord(){
     setAlbum();
@@ -3549,10 +3789,43 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     if($('playBtn'))$('playBtn').setAttribute('aria-label',continuing?'Oyuna devam et':'Oyuna başla');
     updatePlayerUI();
   }
+  // Önceki bölümleri seçme: kayıt biçimini, bölüm kilitlerini ve yıldızları koru.
+  function populateLevelPicker(){
+    const picker=$('levelPicker');if(!picker)return;
+    const fragment=document.createDocumentFragment();
+    for(let i=1;i<=MAX_LEVEL;i++){
+      const open=i<=maxLevel||bestStars[i-1]>0;
+      const stars=bestStars[i-1]||0;
+      const button=document.createElement('button');button.type='button';
+      button.className='sy-level-tile'+(stars?' is-complete':'')+(i===level?' is-current':'')+(!open?' is-locked':'');
+      button.disabled=!open;button.dataset.level=String(i);
+      button.setAttribute('aria-label',`${i}. bölüm${!open?', kilitli':`, ${stars} yıldız${i===level?', şu anki bölüm':''}`}`);
+      if(i===level)button.setAttribute('aria-current','step');
+      const number=document.createElement('span');number.textContent=String(i).padStart(2,'0');
+      const rating=document.createElement('span');rating.className='sy-level-rating';
+      rating.textContent=!open?'🔒':stars?'★'.repeat(stars)+'☆'.repeat(3-stars):i===level?'✦':'·';
+      button.append(number,rating);
+      fragment.appendChild(button);
+    }
+    picker.replaceChildren(fragment);
+  }
+  function chooseUnlockedLevel(next){
+    if(!Number.isInteger(next)||next<1||next>MAX_LEVEL||(next>maxLevel&&!bestStars[next-1]))return;
+    if(protectedSave){showToast('Başka sekmede kayıt değişti. Önce sayfayı yenile.');return;}
+    if(next!==level&&gameStatus==='playing'&&(moveCount>0||timeLeft<levelConfig(level).seconds-1||shuffleLeft!==1)){
+      if(!window.confirm('Yarım kalan mevcut bölüm baştan başlayacak. Kazandığın yıldızlar ve açılan bölümler korunur. Devam edilsin mi?'))return;
+    }
+    if(next===level&&gameStatus==='playing'){
+      switchScreen('home');showToast('Mevcut bölüme devam etmek için Oyna düğmesini kullan.');return;
+    }
+    startLevel(next);
+    $('screenLayer').classList.add('hidden');
+    syncLayers();startDecisionClock();syncSoundtrack();saveGame();
+  }
   function switchScreen(name){
-    for(const id of ['home','settings','how','credits','feedback'])$(id+'Screen').classList.toggle('hidden',id!==name);
+    for(const id of ['home','levels','records','settings','how','credits','feedback'])$(id+'Screen').classList.toggle('hidden',id!==name);
     $('screenLayer').classList.remove('hidden');
-    if(name==='home')updateMenuRecord();if(name==='settings')refreshSettings();
+    if(name==='home')updateMenuRecord();if(name==='levels')populateLevelPicker();if(name==='records')fillStats();if(name==='settings')refreshSettings();
     if(name==='how')guideStart();else guideStop();
     syncLayers();tickTimer();if(ready)saveGame();syncSoundtrack();
     const page=$(name+'Screen');(name==='home'?$('playBtn'):page.querySelector('[data-back]'))?.focus({preventScroll:true});
@@ -3570,6 +3843,9 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     const m=$('settingsMotionBtn');m.textContent=reduceMotion?'Kapalı':'Açık ✨';m.classList.toggle('active',!reduceMotion);
     const labels=$('settingsCandyLabelsBtn');labels.textContent=candyLabelsOn?'Açık · Harfler':'Kapalı ◇';labels.classList.toggle('active',candyLabelsOn);labels.setAttribute('aria-pressed',String(candyLabelsOn));
     refreshVolumeUI();
+    $('settingsHapticBtn').textContent=hapticOn?'Açık':'Kapalı';$('settingsHapticBtn').setAttribute('aria-pressed',String(hapticOn));
+    $('settingsContrastBtn').textContent=contrastOn?'Açık':'Kapalı';$('settingsContrastBtn').setAttribute('aria-pressed',String(contrastOn));
+    document.body.classList.toggle('syv5-high-contrast',contrastOn);
     document.body.classList.toggle('reduce-motion',reduceMotion);
   }
   function refreshBoardTheme(){
@@ -3637,9 +3913,13 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
   $('settingsVolumeRange').addEventListener('input',e=>changeVolume(e.target.value));
   document.addEventListener('pointerdown',e=>{if(!els.volumeControl.contains(e.target))closeVolumePopover()});
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeVolumePopover()});
-  $('menuBtn').addEventListener('click',()=>{closeVolumePopover();switchScreen('home')});
+  $('menuBtn').addEventListener('click',()=>{closeVolumePopover();if(dailyMode){if(window.confirm('Günlük mücadele sona erecek, 60 bölümlük maceraya döneceksin. Çıkılsın mı?'))exitDaily();return}switchScreen('home')});
   $('playBtn').addEventListener('click',closeMenu);
   $('howPlayBtn').addEventListener('click',closeMenu);
+  $('levelsBtn').addEventListener('click',()=>switchScreen('levels'));
+  $('levelPicker').addEventListener('click',event=>{const button=event.target.closest('button[data-level]');if(button&&!button.disabled)chooseUnlockedLevel(Number(button.dataset.level))});
+  $('dailyBtn').addEventListener('click',()=>startDaily());
+  $('recordsBtn').addEventListener('click',()=>switchScreen('records'));
   $('settingsBtn').addEventListener('click',()=>switchScreen('settings'));
   $('howBtn').addEventListener('click',()=>switchScreen('how'));
   $('creditsBtn').addEventListener('click',()=>switchScreen('credits'));
@@ -3651,6 +3931,8 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
   $('settingsMotionBtn').addEventListener('click',()=>{
     reduceMotion=!reduceMotion;setLocal('sy_motion_v2',reduceMotion?'off':'on');refreshSettings();
   });
+  $('settingsHapticBtn').addEventListener('click',()=>{hapticOn=!hapticOn;setLocal('sy_haptic_v500',hapticOn?'on':'off');refreshSettings();if(hapticOn)vibrateTick()});
+  $('settingsContrastBtn').addEventListener('click',()=>{contrastOn=!contrastOn;setLocal('sy_contrast_v500',contrastOn?'on':'off');refreshSettings()});
   $('settingsCandyLabelsBtn').addEventListener('click',()=>{
     candyLabelsOn=!candyLabelsOn;setLocal(CANDY_LABELS_KEY,candyLabelsOn?'on':'off');
     document.body.classList.toggle('sy-candy-labels',candyLabelsOn);render();refreshSettings();
@@ -3698,10 +3980,11 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
   els.playerNameSaveBtn.addEventListener('click',commitPlayerName);
   els.playerNameInput.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();commitPlayerName()}});
   $('resetProgressBtn').addEventListener('click',()=>{
-    if(!window.confirm('Tüm bölüm ilerlemesini, yıldızları, rozetleri ve rekoru silip 1. bölümden başlamak istiyor musun? Oyuncu adın korunur.'))return;
+    if(!window.confirm('Tüm bölüm ilerlemesini, günlük rekorları, yıldızları ve istatistikleri silip 1. bölümden başlamak istiyor musun? Oyuncu adın korunur.'))return;
     try{for(const k of [SAVE_KEY,V6_SAVE_KEY,PREVIOUS_SAVE_KEY,BACKUP_KEY,'sy_best','sy_level'])localStorage.removeItem(k)}
     catch{showToast('Tarayıcı kayıt silmeye izin vermedi.');return}
     protectedSave=false;lastStored=null;storageNotice('');
+    stats={};dailyRecords={};saveStats();saveDaily();setLocal(TUTORIAL_KEY,'{}');
     bestStars=blankStars();feats={rainbow:false,chain:false};bestScore=0;maxLevel=1;scoreTotal=0;completedScores=[];hintLeft=5;startLevel(1,true);switchScreen('home');showToast('İlerleme sıfırlandı');
   });
 
@@ -3709,7 +3992,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     return {name:playerName,theme:boardTheme,volume:masterVolume,music:musicOn,motion:reduceMotion,candyLabels:candyLabelsOn};
   }
   $('exportSave').addEventListener('click',()=>{
-    const data={format:'seker-yagmuru',profile:profileSnapshot(),game:snapshot()};
+    const data={format:'seker-yagmuru',profile:profileSnapshot(),game:snapshot(),stats,dailyRecords};
     const blob=new Blob([JSON.stringify(data)],{type:'application/json'});
     const url=URL.createObjectURL(blob),a=document.createElement('a');
     a.href=url;a.download='Seker-Yagmuru-Kayit.json';document.body.appendChild(a);a.click();a.remove();
@@ -3718,7 +4001,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
   function feedbackMessage(){
     const message=$('feedbackText').value.trim();
     if(message.length<8){$('feedbackText').focus();showToast('Lütfen en az 8 karakterlik açıklama yaz.');return null}
-    return `SEKER YAGMURU 4.8.2 - GERI BILDIRIM\nOyuncu: ${playerName||'Oyuncu'}\nTur: ${$('feedbackKind').value}\nBolum: ${level} / ${MAX_LEVEL}\n\nAciklama:\n${message}\n\nOyun baglantisi: ${PUBLIC_GAME_URL}\nOyuncu geri bildirimi`;
+    return `SEKER YAGMURU 5.0.0 - GERI BILDIRIM\nOyuncu: ${playerName||'Oyuncu'}\nTur: ${$('feedbackKind').value}\nBolum: ${level} / ${MAX_LEVEL}\n\nAciklama:\n${message}\n\nOyun baglantisi: ${PUBLIC_GAME_URL}\nOyuncu geri bildirimi`;
   }
   $('shareFeedbackBtn').addEventListener('click',()=>{
     const msg=feedbackMessage();if(!msg)return;
@@ -3840,10 +4123,31 @@ if(sc&&window.MutationObserver){
   queue();
 })();
 </script>
+<div id="syUpdateBanner" class="syv5-update hidden" role="status" aria-live="polite"><span>🍬 Yeni sürüm hazır. Kaydın korunarak güncellenebilir.</span><button id="syUpdateNow" type="button">Güncelle</button><button id="syUpdateLater" type="button" aria-label="Daha sonra">×</button></div>
 <script>
 // Site-only PWA registration. The standalone HTML deliberately has no worker.
 if('serviceWorker' in navigator && window.isSecureContext && /^https?:$/.test(location.protocol)){
-  addEventListener('load',()=>navigator.serviceWorker.register('./sw.js',{scope:'./'}).catch(e=>console.info('Çevrimdışı kurulum kullanılamıyor:',e?.message||e)),{once:true});
+  addEventListener('load',()=>{
+    navigator.serviceWorker.register('./sw.js',{scope:'./'}).then(reg=>{
+      let updated=false;
+      const banner=document.getElementById('syUpdateBanner');
+      const show=()=>{if(banner){updated=true;banner.classList.remove('hidden')}};
+      const monitor=()=>{
+        const worker=reg.installing;
+        worker?.addEventListener('statechange',()=>{if(worker.state==='installed'&&navigator.serviceWorker.controller)show()});
+      };
+      reg.addEventListener('updatefound',monitor);
+      if(reg.waiting&&navigator.serviceWorker.controller)show();
+      document.getElementById('syUpdateLater')?.addEventListener('click',()=>banner.classList.add('hidden'));
+      document.getElementById('syUpdateNow')?.addEventListener('click',()=>{
+        if(!updated)return;
+        // Save is flushed by the game's pagehide handler. Do not erase browser data.
+        if(!window.confirm('Yeni sürüme geçilecek. Ana macera kaydın korunur; yarım günlük mücadele yeniden başlar. Yenilensin mi?'))return;
+        location.reload();
+      });
+      reg.update().catch(()=>{});
+    }).catch(e=>console.info('Çevrimdışı kurulum kullanılamıyor:',e?.message||e));
+  },{once:true});
 }
 </script>
 </body>
