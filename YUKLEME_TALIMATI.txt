@@ -1,9 +1,0 @@
-Seker Yagmuru 4.8.0 GitHub Pages telefon yukleme paketi
-
-ZIP dosyasini cikar. Github judge98judge/seker-yagmuru-oyna
-deposunda Add file -> Upload files ac. Bu klasordeki dosyalari
-secip yukle. Ozellikle index.html, sw.js, manifest.webmanifest,
-uc MP3 ve uc PNG dosyasinin hepsi ayni kok dizinde olmali.
-Commit changes ile kaydet. GitHub Pages main / (root) yayini
-ayni https://judge98judge.github.io/seker-yagmuru-oyna/ adresini kullanir.
-NOT: Bu paket onceki index.html dosyasini yeni surumle degistirir.
