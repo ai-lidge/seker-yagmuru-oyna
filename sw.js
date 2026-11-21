@@ -1,5 +1,5 @@
-// Şeker Yağmuru 4.8.3 · fast startup: media fetched and cached on demand.
-const CACHE='sy-game-web-v500-release-1';
+// Şeker Yağmuru 5.5.2 · fast startup: media fetched and cached on demand.
+const CACHE='sy-game-web-v552-records-daily-1';
 const PRECACHE=['./','./index.html','./manifest.webmanifest',"./game-icon-256.png","./icon-192.png","./icon-512.png"];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(PRECACHE)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(Promise.all([caches.keys().then(names=>Promise.all(names.filter(n=>n.startsWith('sy-game-web-')&&n!==CACHE).map(n=>caches.delete(n)))),self.clients.claim()]))});

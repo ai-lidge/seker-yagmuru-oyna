@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <meta content="#241448" name="theme-color"/>
 <meta content="Şeker Yağmuru — telefon ve bilgisayarda oynanabilen renkli eşleştirme oyunu." name="description"/>
-<title>Şeker Yağmuru 5.0.0 🍬</title>
+<title>Şeker Yağmuru 5.5.2 🍬</title>
 <meta content="Şeker Yağmuru" name="application-name"/>
 <meta content="Şeker Yağmuru" name="apple-mobile-web-app-title"/>
 <meta content="yes" name="mobile-web-app-capable"/>
@@ -1584,7 +1584,7 @@ body:not(.sy-home-ambient) #syFloat{display:none!important}
 body.reduce-motion .sy-sheen::before{display:none!important}
 @media(prefers-reduced-motion:reduce){.sy-sheen::before{display:none!important}}
 
-/* 5.0.0 · Bölüm haritası: yalnızca açıldığında oluşturulan hafif düğmeler */
+/* 5.5.2 · Bölüm haritası: yalnızca açıldığında oluşturulan hafif düğmeler */
 #homeScreen .sy-level-entry{width:100%;min-height:40px;display:flex;align-items:center;justify-content:center;gap:10px;margin:5px 0 2px;font-weight:850;font-size:13px;background:linear-gradient(120deg,#f8d8ff,#e4d4ff);color:#552b86;border:1px solid #ffffff91;border-radius:14px;box-shadow:0 3px 10px #210d4618}
 #homeScreen .sy-level-entry:hover{filter:brightness(1.025)}
 .sy-level-page{max-width:630px;margin-inline:auto}
@@ -1604,7 +1604,7 @@ body.reduce-motion .sy-sheen::before{display:none!important}
 @media(prefers-reduced-motion:reduce){.sy-level-tile{transition:none!important}}
 
 
-/* 5.0.0 · compact, low-cost quality-of-life and accessibility UI. No idle animations. */
+/* 5.5.2 · compact, low-cost quality-of-life and accessibility UI. No idle animations. */
 #homeScreen .sy-daily-shortcut{background:linear-gradient(125deg,#fff1cf,#f6dbfd);color:#553480}
 .sy-records-page{max-width:630px;margin-inline:auto}
 .sy-record-sub{color:#68577d;font-size:13px;line-height:1.5;margin:10px 2px 15px}
@@ -1641,6 +1641,114 @@ body.syv5-daily .sy-status-head{filter:saturate(1.2)}
 @media(max-width:350px){.sy-record-stat{padding:9px}.syv5-tutorial-card{padding:18px 12px}.syv5-update{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.syv5-tutorial,.syv5-update{animation:none!important}}
 
+
+/* 5.5.2: eight lightweight adventure landscapes, no full-screen animation loop. */
+.sy-world-journey{display:grid;gap:12px;max-width:630px;margin:auto}
+.sy-world-overview{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:11px 13px;background:linear-gradient(110deg,#f8edff,#ffeaf5);border:1px solid #e8d2f7;border-radius:15px;color:#572d7d;font-size:13px}
+.sy-world-overview strong{font-size:16px}.sy-world-overview span{font-variant-numeric:tabular-nums;font-weight:800;font-size:12px}
+.sy-world-navigation{display:flex;gap:7px;overflow-x:auto;scrollbar-width:thin;padding:3px 1px 10px;overscroll-behavior-x:contain}
+.sy-world-nav{min-height:42px;flex:0 0 auto;border:1px solid #e2c8f6;border-radius:999px;padding:7px 11px;background:#fff7ff;color:#603786;font:800 11px/1.1 system-ui,sans-serif;cursor:pointer}
+.sy-world-nav:focus-visible,.sy-world-node:focus-visible{outline:3px solid #faaf4a;outline-offset:2px}
+.sy-world-nav.is-active{background:#62348e;color:#fff;border-color:#62348e}
+.sy-world-collection{display:grid;gap:18px;padding-bottom:12px}
+.sy-world-card{--wsky:#f6b7cf;--wground:#a6df99;--wglow:#ffd78b;--wshade:#63398b;position:relative;isolation:isolate;overflow:hidden;border-radius:24px;border:2px solid #ffffffae;box-shadow:0 9px 24px #35206426;background:linear-gradient(180deg,var(--wsky) 0%,var(--wglow) 48%,var(--wground) 100%);padding:17px 12px 18px;color:#442563}
+.sy-world-card::before{content:'';position:absolute;inset:25% -15% -8%;z-index:-1;background:radial-gradient(ellipse 50% 55% at 17% 100%,#ffffff56 0 65%,transparent 66%),radial-gradient(ellipse 50% 42% at 79% 104%,#5a36702b 0 60%,transparent 61%),radial-gradient(ellipse 31% 18% at 56% 100%,#ffffff69 0 60%,transparent 63%)}
+.sy-world-card::after{content:'✦　✧　✦';position:absolute;right:17px;top:12px;color:#fffde9cc;text-shadow:0 0 8px #fff;pointer-events:none;font-size:14px;letter-spacing:6px}
+.sy-world-garden{--wsky:#ffb9d9;--wglow:#ffe6b4;--wground:#b3e8aa}
+.sy-world-castle{--wsky:#ddbbff;--wglow:#ffe6bf;--wground:#b59cdd}
+.sy-world-ice{--wsky:#a3dbfb;--wglow:#effaff;--wground:#a8d8ed}
+.sy-world-crystal{--wsky:#d3b4ff;--wglow:#f9d6f9;--wground:#a9bdf1}
+.sy-world-chocolate{--wsky:#e8b78b;--wglow:#ffe4b7;--wground:#bd8869}
+.sy-world-stone{--wsky:#b4c6de;--wglow:#e4d0ab;--wground:#b5a38c}
+.sy-world-gift{--wsky:#f8bddb;--wglow:#fff2b1;--wground:#ecc7ff}
+.sy-world-finale{--wsky:#bc96f6;--wglow:#ffe6a5;--wground:#8f78c9}
+.sy-world-card.is-locked-world{filter:saturate(.78)}
+.sy-world-card-top{position:relative;z-index:1;display:flex;align-items:center;gap:11px;margin-bottom:10px;background:#ffffffdc;border:1px solid #ffffffac;border-radius:17px;padding:10px 12px;box-shadow:0 4px 13px #35165113}
+.sy-world-emblem{font-size:34px;line-height:1.2;filter:drop-shadow(0 2px 1px #6c38843f)}
+.sy-world-heading{min-width:0;flex:1}.sy-world-heading small{display:block;font-size:10px;letter-spacing:.6px;color:#88699e;font-weight:800}
+.sy-world-heading h3{font-size:18px;font-weight:950;margin:0;color:#492a79;line-height:1.2}
+.sy-world-heading p{font-size:11px;line-height:1.3;margin:3px 0 0;color:#74598e}
+.sy-world-score{text-align:right;min-width:59px}.sy-world-score b{display:block;font-size:13px;font-variant-numeric:tabular-nums}.sy-world-score small{font-size:10px;color:#77558e}
+.sy-world-meter{height:5px;border-radius:999px;background:#ffffffbd;margin:0 9px 12px;overflow:hidden}.sy-world-meter span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#e95dbb,#7744bd)}
+.sy-world-landscape{position:absolute;bottom:10px;left:0;right:0;font-size:clamp(23px,7vw,43px);pointer-events:none;text-align:justify;text-align-last:justify;opacity:.19;filter:blur(.15px);padding:0 10px;z-index:-1}
+.sy-world-path{position:relative;z-index:1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px 4px;padding:14px 5px 9px;min-height:92px}
+.sy-world-route{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;overflow:visible}
+.sy-world-route path{stroke:#ffffffb5;stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2 0;filter:drop-shadow(0 1px 1px #5d3a8160)}
+.sy-world-node{justify-self:center;align-self:center;position:relative;min-width:0;width:min(100%,57px);aspect-ratio:1;border-radius:50%;border:3px solid #fff8e5;background:linear-gradient(145deg,#fff9dc,#ffdfa7);color:#624075;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;box-shadow:0 4px 0 #55357042,0 6px 13px #42205b40;font:950 15px/1 system-ui,sans-serif;cursor:pointer;touch-action:manipulation}
+.sy-world-node .sy-level-rating{font-size:9px;color:#a16722;white-space:nowrap;letter-spacing:-1px;line-height:1.1;min-height:10px}
+.sy-world-node.is-complete{background:linear-gradient(145deg,#fff3a1,#ffd16a);border-color:#fff5cf}
+.sy-world-node.is-current{background:linear-gradient(140deg,#d885ff,#7838cb);color:#fff;border-color:#fff;box-shadow:0 0 0 3px #eeffb9,0 5px 12px #51238866}
+.sy-world-node.is-current .sy-level-rating{color:#ffec9d}
+.sy-world-node.is-locked{background:linear-gradient(140deg,#e3deea,#cbc4d4);color:#766c83;opacity:.79;box-shadow:0 2px 4px #49324f23;cursor:not-allowed;border-color:#f2edf8}
+.sy-world-node.is-locked .sy-level-rating{color:#867a92}
+.sy-world-node.is-boss{border-radius:35%;transform:rotate(-6deg)}.sy-world-node.is-boss span{transform:rotate(6deg)}
+.sy-world-node:disabled{pointer-events:none}.sy-world-node:not(:disabled):active{transform:scale(.95)}
+.sy-world-bottom{position:relative;z-index:1;background:#ffffffc8;border-radius:12px;padding:7px 10px;display:flex;justify-content:space-between;gap:8px;font-size:10px;font-weight:800;color:#62427d;line-height:1.4}
+.sy-daily-streak-label{font-size:10px;font-weight:850;color:#8159aa;text-align:center;margin:-4px 0 3px;grid-column:1/-1}
+.sy-daily-week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin:-5px 0 14px}
+.sy-daily-day{background:#f4ecfb;border:1px solid #e5d5f3;border-radius:10px;padding:8px 2px;display:grid;place-items:center;gap:3px;color:#6f4b8f;font-size:9px;font-weight:750;min-width:0}
+.sy-daily-day strong{font-size:18px}.sy-daily-day.done{background:#fff1c9;border-color:#e5c276;color:#7a4b37}
+.sy-star-milestones{display:flex;gap:5px;flex-wrap:wrap;justify-content:center;margin:4px auto 10px;max-width:360px}
+.sy-star-item{background:#f0e7fa;color:#76538f;border-radius:999px;padding:6px 9px;font-size:10px;font-weight:800;border:1px solid #e3d0f3}
+.sy-star-item.earned{background:#ffefd0;border-color:#f0cb7e;color:#794b1d}
+#resultStars .sy-star-award{display:inline-block;font-size:29px;color:#ffbf45;text-shadow:0 2px #955a28;animation:syStarAward .43s both cubic-bezier(.2,1.4,.5,1)}
+#resultStars .sy-star-award.unearned{color:#c1b4cf;text-shadow:none;animation:none}
+@keyframes syStarAward{from{opacity:0;transform:translateY(12px) scale(.4) rotate(-25deg)}to{opacity:1;transform:translateY(0) scale(1) rotate(0)}}
+.sy-quality-setting select{font:800 12px system-ui,sans-serif;color:#573287;background:#f4eafd;border:1px solid #d5b9ed;border-radius:12px;min-height:40px;max-width:140px;padding:8px;flex-shrink:0}
+body.sy-quality-eco .sy-sheen::before,body.sy-quality-eco .premium-particles,body.sy-quality-eco .hero-orbit,body.sy-quality-eco .hero-star{animation:none!important;display:none!important}
+body.sy-quality-eco #syFloat{display:none!important}
+body.sy-quality-eco .hero-halo{filter:none!important}
+@media(max-width:370px){.sy-world-card{padding:13px 7px 13px;border-radius:20px}.sy-world-card-top{padding:9px 7px;gap:6px}.sy-world-heading h3{font-size:16px}.sy-world-node{width:min(100%,48px);font-size:13px;border-width:2px}.sy-world-path{gap:10px 1px;padding:10px 2px}.sy-world-score{min-width:45px}.sy-world-score b{font-size:11px}}
+@media(prefers-reduced-motion:reduce){#resultStars .sy-star-award{animation:none!important}}
+
+.sy-world-result{margin:5px auto 10px;max-width:345px;background:linear-gradient(120deg,#fff0c9,#f7e6ff);color:#6a3d87;border:1px solid #e6c27b;padding:9px 11px;border-radius:12px;font-size:11px;font-weight:850;line-height:1.5;text-align:center}
+.sy-world-result[hidden]{display:none!important}
+
+
+/* 5.5.2 — daily activity is a primary game mode, not a small utility shortcut. */
+#homeScreen .home-shortcuts .menu-button.sy-daily-shortcut{
+  grid-column:1/-1;box-sizing:border-box;width:100%;height:auto!important;min-height:76px!important;
+  justify-content:flex-start;text-align:left;gap:12px;padding:12px 15px;
+  border-radius:17px;border:1px solid #ffeeb9;
+  background:linear-gradient(115deg,#ffeeb2 0%,#ffcf7b 49%,#f9b1dc 100%);
+  color:#5b2874;box-shadow:inset 0 1px 2px #fff9,0 5px 0 #ae7291,0 8px 20px #180a3c39;
+  white-space:normal!important
+}
+#homeScreen .home-shortcuts .menu-button.sy-daily-shortcut:hover{background:linear-gradient(115deg,#fff2c1,#ffda92 48%,#ffc0e3)}
+#homeScreen .home-shortcuts .menu-button.sy-daily-shortcut:active{transform:translateY(3px);box-shadow:inset 0 1px 2px #fff9,0 2px 0 #ae7291}
+#homeScreen .sy-daily-symbol{font-size:31px;line-height:1;flex:none;display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:#fff6d2b8;box-shadow:inset 0 1px 2px #fff9}
+#homeScreen .sy-daily-copy{display:flex;flex:1 1 auto;min-width:0;flex-direction:column;gap:4px;line-height:1.15}
+#homeScreen .sy-daily-copy strong{font-size:clamp(15px,4.3vw,19px);font-weight:1000;letter-spacing:.1px;white-space:normal}
+#homeScreen .sy-daily-streak-label{grid-column:auto;margin:0!important;max-width:100%;font-size:11px;font-weight:750;line-height:1.32;color:#754477;text-align:left;white-space:normal;overflow-wrap:anywhere}
+#homeScreen .sy-daily-arrow{font-size:25px;line-height:1;flex:none;color:#9f517a;font-weight:900}
+/* One unambiguous completion counter, instead of repeated counts in the footer. */
+#homeScreen .home-progress-top strong{font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums;flex:none}
+#homeScreen .home-progress-top .progress-heading{white-space:normal}
+#homeScreen .home-progress-track{position:relative}
+/* Daily is a high-score challenge with no mandatory 24k completion target. */
+body.syv5-daily .sy-hud-grid.sy-hud-grid-compact .sy-progress-card .progress{visibility:hidden!important}
+body.syv5-daily .sy-level-card .sy-inline-total{display:none!important}
+body.syv5-daily .sy-progress-card .sy-goal-detail{font-size:11px;line-height:1.5;text-align:left;padding-top:9px}
+/* Stars, personal bests and achievements share a single, scroll-safe Records screen. */
+.sy-record-details{margin-top:12px}
+.sy-record-details p{font-size:11px;line-height:1.55;color:#786189;margin:9px 0 6px}
+.sy-record-achievements summary,.sy-record-level-detail summary{font-size:14px;line-height:1.4}
+.sy-record-achievements summary::marker,.sy-record-level-detail summary::marker{color:#9666b3}
+#badgeList.sy-record-badges{list-style:none;padding:0;margin:12px 0 1px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#badgeList.sy-record-badges .sy-badge-card{display:flex;gap:9px;align-items:flex-start;min-width:0;padding:10px 8px;border:1px solid #e8daf1;background:#fff;border-radius:12px;color:#78678c}
+#badgeList.sy-record-badges .sy-badge-card[data-earned=true]{background:#fff5d9;border-color:#f1d396;color:#633d73}
+.sy-badge-card .sy-badge-symbol{font-size:20px;flex:none;line-height:1.2}
+.sy-badge-card strong{display:block;font-size:12px;line-height:1.3;overflow-wrap:anywhere}
+.sy-badge-card small{display:block;color:#83758e;font-size:10px;line-height:1.4;margin-top:3px;overflow-wrap:anywhere}
+.sy-badge-card[data-earned=true] small{color:#76586f}
+.sy-record-item{flex-wrap:wrap;align-items:flex-start;gap:6px 12px}
+.sy-record-item .sy-record-level-name{display:block;font-weight:850;color:#573577}
+.sy-record-item .sy-record-level-stars{display:block;color:#c48832;font-size:14px;letter-spacing:1.3px;line-height:1.35}
+.sy-record-item .sy-record-level-stars[data-earned=false]{color:#b2a5bd}
+.sy-record-item strong{font-size:11px;line-height:1.45;white-space:normal;text-align:right;overflow-wrap:anywhere;flex:1 1 145px}
+@media(max-width:380px){#badgeList.sy-record-badges{grid-template-columns:1fr}#homeScreen .home-shortcuts .menu-button.sy-daily-shortcut{min-height:74px!important;padding:10px 12px}#homeScreen .sy-daily-symbol{font-size:28px;width:43px;height:43px}#homeScreen .sy-daily-arrow{font-size:20px}}
+@media(prefers-reduced-motion:reduce){#homeScreen .home-shortcuts .menu-button.sy-daily-shortcut{transition:none}}
+
 </style>
 <!--
   ŞEKER YAĞMURU — SAHİPLİK / KAYNAK BİLGİSİ
@@ -1668,6 +1776,10 @@ body.syv5-daily .sy-status-head{filter:saturate(1.2)}
 .settings-note{font-size:12px;line-height:1.5;color:var(--text-secondary,#e8d9f5);margin:8px 0 12px}
 .save-transfer{grid-template-columns:1fr;gap:8px}
 #exportSave{min-height:44px;max-width:100%;width:100%}
+.sy-goal-detail{padding-top:5px;font-size:10px;line-height:1.3;font-weight:800;text-align:center;color:inherit;opacity:.88;font-variant-numeric:tabular-nums;white-space:normal;overflow-wrap:anywhere}
+.save-transfer{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.save-transfer #exportSave,.save-transfer #importSaveBtn{min-width:0;width:100%;max-width:none;justify-content:center}
+@media(max-width:350px){.save-transfer{grid-template-columns:1fr}}
 </style>
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Şeker Yağmuru 🍬 | 60 Bölüm"/>
@@ -1700,6 +1812,112 @@ body.syv5-daily .sy-status-head{filter:saturate(1.2)}
 .sy-device-check output[hidden]{display:none}
 @media(prefers-reduced-motion:reduce){#board .piece .sy-obstacle-impact,#board .piece .sy-choco-spread-flash{animation:none!important}}
 body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .piece .sy-choco-spread-flash{animation:none!important}
+<style id="sy-world-playstyle">
+/* 5.5.2 — Oyun içi sekiz dünya. Tamamı statik CSS; 64 şeker ve patlama katmanı değişmedi. */
+body[data-sy-world]{
+ --sy-sky:#2d164b;--sy-sky2:#56296e;--sy-aurora:#ed8ab050;
+ --sy-rim:#ffd9c1;--sy-rim2:#af6fc8;--sy-deep:#44265f;
+ --sy-board-a:#6b458c;--sy-board-b:#9662a6;--sy-board-c:#543777;
+ --sy-panel:#472a69;--sy-badge:#fff1bd;--sy-world-emblem:'🍬';
+}
+body[data-sy-world="garden"]{--sy-sky:#4f214f;--sy-sky2:#744275;--sy-aurora:#ffafd372;--sy-rim:#ffe3a3;--sy-rim2:#ed84b7;--sy-deep:#63305b;--sy-board-a:#8850a1;--sy-board-b:#a5639b;--sy-board-c:#6c3d88;--sy-panel:#753f80;--sy-badge:#ffe7b9;--sy-world-emblem:'🌸'}
+body[data-sy-world="castle"]{--sy-sky:#1b194e;--sy-sky2:#44316b;--sy-aurora:#b090fa6e;--sy-rim:#e7d5ff;--sy-rim2:#a38bda;--sy-deep:#29265d;--sy-board-a:#50438f;--sy-board-b:#7066ac;--sy-board-c:#43377f;--sy-panel:#51417d;--sy-badge:#eadbff;--sy-world-emblem:'🏰'}
+body[data-sy-world="ice"]{--sy-sky:#12395f;--sy-sky2:#236a91;--sy-aurora:#b5f6ff6d;--sy-rim:#effcff;--sy-rim2:#72d7ee;--sy-deep:#174b77;--sy-board-a:#2c6996;--sy-board-b:#67abd0;--sy-board-c:#295b85;--sy-panel:#2a7296;--sy-badge:#e7faff;--sy-world-emblem:'❄️'}
+body[data-sy-world="crystal"]{--sy-sky:#27215f;--sy-sky2:#5858ac;--sy-aurora:#d9b8ff83;--sy-rim:#f4deff;--sy-rim2:#9dc5ff;--sy-deep:#343270;--sy-board-a:#68569d;--sy-board-b:#8480c4;--sy-board-c:#54458e;--sy-panel:#5b4f95;--sy-badge:#f3e9ff;--sy-world-emblem:'💎'}
+body[data-sy-world="chocolate"]{--sy-sky:#352119;--sy-sky2:#755039;--sy-aurora:#eab7825e;--sy-rim:#ffdb9f;--sy-rim2:#b67756;--sy-deep:#3d251e;--sy-board-a:#805346;--sy-board-b:#b08064;--sy-board-c:#6c453b;--sy-panel:#80533f;--sy-badge:#fff0c8;--sy-world-emblem:'🍫'}
+body[data-sy-world="stone"]{--sy-sky:#202c43;--sy-sky2:#4d596a;--sy-aurora:#c1d4e254;--sy-rim:#e9ddbc;--sy-rim2:#9aa6b8;--sy-deep:#293445;--sy-board-a:#54657e;--sy-board-b:#8393a6;--sy-board-c:#495b73;--sy-panel:#576a80;--sy-badge:#f4e7ca;--sy-world-emblem:'🪨'}
+body[data-sy-world="gift"]{--sy-sky:#4c1c62;--sy-sky2:#a04b85;--sy-aurora:#ffcf86ad;--sy-rim:#fff1a3;--sy-rim2:#fe8ccb;--sy-deep:#653269;--sy-board-a:#99528e;--sy-board-b:#c16fa5;--sy-board-c:#80427e;--sy-panel:#9a538e;--sy-badge:#fff4bc;--sy-world-emblem:'🎁'}
+body[data-sy-world="finale"]{--sy-sky:#1f164f;--sy-sky2:#6942a6;--sy-aurora:#fbe7b381;--sy-rim:#fff2b3;--sy-rim2:#ce99ff;--sy-deep:#2b1a66;--sy-board-a:#654aaf;--sy-board-b:#8c70d4;--sy-board-c:#50399b;--sy-panel:#7853ab;--sy-badge:#fff4c5;--sy-world-emblem:'👑'}
+body[data-sy-world="daily"]{--sy-sky:#60412e;--sy-sky2:#9f6a53;--sy-aurora:#ffe69888;--sy-rim:#fff0a7;--sy-rim2:#ffb57c;--sy-deep:#64412d;--sy-board-a:#8a6784;--sy-board-b:#b99091;--sy-board-c:#7c5369;--sy-panel:#94646e;--sy-badge:#fff5bd;--sy-world-emblem:'☀️'}
+/* Dünya görünümü yalnızca oyun ekranında aktif; menü/rehber aynı kalır. */
+body[data-sy-world]:not(.screen-locked){
+ background:radial-gradient(ellipse 72vw 360px at 14% 10%,var(--sy-aurora),transparent 75%),radial-gradient(ellipse 64vw 380px at 90% 95%,#ffffff19,transparent 74%),linear-gradient(145deg,var(--sy-sky),var(--sy-sky2) 72%,var(--sy-sky))!important;
+ background-attachment:scroll!important;
+}
+body[data-sy-world] .game-frame{
+ background:linear-gradient(145deg,var(--sy-rim),var(--sy-rim2) 53%,var(--sy-deep))!important;
+ border:2px solid var(--sy-rim)!important;
+ box-shadow:0 8px 0 var(--sy-deep),0 19px 30px #180e3780,0 0 0 2px #ffffff47!important;
+}
+body[data-sy-world] .game-frame::before{background:linear-gradient(145deg,#ffffff3d,transparent 47%,#1c143a25)!important}
+body[data-sy-world] #board{
+ background:repeating-linear-gradient(0deg,transparent 0,transparent calc(12.5% - 1px),#ffffff24 calc(12.5% - 1px),#ffffff24 12.5%),repeating-linear-gradient(90deg,transparent 0,transparent calc(12.5% - 1px),#ffffff24 calc(12.5% - 1px),#ffffff24 12.5%),radial-gradient(circle at 16% 4%,#ffffff1f,transparent 55%),linear-gradient(137deg,var(--sy-board-a),var(--sy-board-b) 49%,var(--sy-board-c))!important;
+ box-shadow:inset 0 6px 13px #1d12345f,inset 0 0 0 1px #ffffff40!important;
+}
+body[data-sy-world] .match-dashboard.modern-dashboard{
+ background:linear-gradient(130deg,var(--sy-panel),var(--sy-sky2))!important;
+ border:1px solid #ffffff4a!important;box-shadow:0 6px 16px #130e2a36!important;
+}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-mini-card,
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-status-card{
+ background:linear-gradient(150deg,#ffffff30,#ffffff0b)!important;
+ border:1px solid #ffffff47!important;
+}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-mini-card .stat-label,
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-meter-name{color:#fff4e5!important}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .stat-value,
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-status-head b{color:#ffffff!important;text-shadow:0 1px 2px #26132a88}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-level-card .stat-value,
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-progress-card .sy-status-head b{color:var(--sy-badge)!important}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-timer-card .timer-fill{background:linear-gradient(90deg,var(--sy-rim2),var(--sy-rim))!important}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-progress-card .progress-fill{background:linear-gradient(90deg,var(--sy-rim2),var(--sy-badge))!important}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-level-card .stat-symbol{background:#ffffff25!important;color:var(--sy-badge)!important}
+body[data-sy-world] .player-strip{
+ background:linear-gradient(100deg,#ffffff2a,var(--sy-panel))!important;
+ border:1px solid #ffffff51!important;border-radius:14px!important;
+ box-shadow:0 3px 9px #160d2930!important;
+}
+body[data-sy-world] #welcomeLine{color:var(--sy-badge)!important;font-weight:950!important;letter-spacing:.05px}
+body[data-sy-world] .player-badge{color:#ffffff!important}
+body[data-sy-world] .player-badge strong{color:var(--sy-badge)!important}
+body[data-sy-world] .brand h1,body[data-sy-world] .brand p{color:#fff5ed!important}
+body[data-sy-world] .icon-button{background:#ffffff2b!important;border-color:#ffffff60!important;color:white!important}
+/* 5.5.2: Detached corner world icon removed; world sweets live on the actual board. */
+/* Alternatif görünümde eski tahta teması tekrar etkinleşir. */
+@media(max-width:370px){body[data-sy-world] #welcomeLine{font-size:10px!important}}
+@media(prefers-reduced-motion:reduce){}
+
+/* 5.5.2 · Bölüm haritasında gerçek oyun şekerlerinden oluşan ikonlar */
+.sy-world-node.sy54-candy-node{position:relative;gap:0;padding:1px;overflow:visible}
+.sy-world-node .sy54-map-sweet{width:clamp(24px,8vw,34px);height:clamp(24px,8vw,34px);display:block;object-fit:contain;pointer-events:none;filter:drop-shadow(0 2px 3px #39226065);flex:none}
+.sy-world-node.sy54-candy-node .sy54-level-number{position:absolute;top:-8px;right:-8px;min-width:21px;height:21px;display:grid;place-items:center;border:1.5px solid white;border-radius:9px;background:#513080;color:#fff;box-shadow:0 2px 5px #2d174c66;font-size:11px;line-height:1;font-weight:950;z-index:2;padding:0 2px}
+.sy-world-node.sy54-candy-node.is-current .sy54-level-number{background:#f7c44f;color:#422555}
+.sy-world-node.sy54-candy-node .sy-level-rating{position:absolute;bottom:0;left:0;right:0;line-height:1.1;min-height:9px;white-space:nowrap;pointer-events:none;font-size:9px}
+.sy-world-node.sy54-candy-node.is-boss{box-shadow:0 0 0 3px #ffe6908a,0 5px 12px #42205b55}
+.sy-world-node.sy54-candy-node.is-locked .sy54-map-sweet{filter:grayscale(.9);opacity:.6}
+
+.sy-level-card .sy54-hud-candy{width:29px;height:29px;object-fit:contain;filter:drop-shadow(0 2px 2px #17143366)}
+/* The per-level highlighted standard candy was replaced with the real world candy. */
+.sy54-soundtrack-line{display:inline-flex;align-items:center;gap:5px;max-width:100%;font-size:10px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--sy-badge,#ffe6c2);padding:1px 4px;border:1px solid #ffffff45;border-radius:8px;background:#ffffff1c}
+.sy54-soundtrack-line img{width:17px;height:17px;object-fit:contain}
+@media(max-width:370px){.sy-world-node .sy54-map-sweet{width:24px;height:24px}.sy-world-node.sy54-candy-node .sy54-level-number{font-size:9px;min-width:17px;height:17px;right:-5px;top:-6px}.sy54-soundtrack-line{font-size:9px}}
+
+/* 5.5.2 — one native illustrated candy per world, throughout its board and map. */
+.sy-world-emblem.sy541-world-sweet{display:block;width:48px;height:48px;object-fit:contain;filter:drop-shadow(0 2px 5px #26194c66);background:none;border:0;padding:0;flex-shrink:0}
+.sy-world-nav .sy541-nav-sweet{width:21px;height:21px;object-fit:contain;vertical-align:middle;flex-shrink:0;margin-right:5px}
+.sy-world-node.sy54-candy-node .sy54-map-sweet{width:clamp(26px,8vw,36px);height:clamp(26px,8vw,36px)}
+.sy-level-card .stat-symbol{font-size:20px!important}
+</style>
+<style id="sy55-unique-world-candies">
+/* Sekiz dünya = sekiz benzersiz dış hat; sahte emoji bindirmesi kullanılmaz. */
+.sy55-world-shard{z-index:17;border-radius:15%;box-shadow:0 0 6px #fff9,inset 1px 1px 1px #fffa;animation:sy55CandyShatter .55s cubic-bezier(.13,.55,.5,1) both!important;will-change:transform,opacity}
+.sy55-shard-garden{clip-path:ellipse(42% 50% at 50% 50%);border-radius:50% 18% 55% 20%}
+.sy55-shard-castle{clip-path:polygon(9% 8%,100% 0,89% 91%,4% 100%)}
+.sy55-shard-ice{clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+.sy55-shard-crystal{clip-path:polygon(50% 0,100% 35%,64% 100%,0 69%)}
+.sy55-shard-chocolate{clip-path:polygon(4% 7%,85% 0,100% 78%,16% 100%)}
+.sy55-shard-stone{clip-path:polygon(28% 0,92% 18%,100% 69%,46% 100%,0 57%)}
+.sy55-shard-gift{clip-path:polygon(0 32%,29% 36%,36% 0,69% 0,74% 36%,100% 31%,84% 67%,99% 91%,65% 78%,50% 100%,32% 78%,0 91%,14% 62%)}
+.sy55-shard-finale{clip-path:polygon(50% 0,64% 35%,100% 22%,74% 55%,98% 88%,60% 72%,50% 100%,40% 72%,2% 88%,26% 55%,0 22%,36% 35%)}
+.sy55-burst-ring{border-color:var(--sy55-ring,#fff7d3)!important;box-shadow:0 0 19px var(--sy55-ring,#fff7d3),0 0 4px #fff}
+.sy55-ring-garden{--sy55-ring:#ff93c9}.sy55-ring-castle{--sy55-ring:#b595f0}
+.sy55-ring-ice{--sy55-ring:#93f4ff}.sy55-ring-crystal{--sy55-ring:#95caff}
+.sy55-ring-chocolate{--sy55-ring:#e1a46a}.sy55-ring-stone{--sy55-ring:#c9e6dd}
+.sy55-ring-gift{--sy55-ring:#ffbf78}.sy55-ring-finale{--sy55-ring:#ffe275}
+@keyframes sy55CandyShatter{0%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(0)}48%{opacity:1;transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(1.15) rotate(30deg)}100%{opacity:0;transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(.08) rotate(var(--sy55-rotation,130deg))}}
+@media(prefers-reduced-motion:reduce){.sy55-world-shard{animation:none!important;display:none!important}}
+/* The level badge stays clean even when old CSS/classes are present. */
+.sy-level-card img.sy54-hud-candy{display:none!important}
 </style>
 </head>
 <body>
@@ -1714,12 +1932,12 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
 <div class="volume-popover-title"><span>🎚️ Ses seviyesi</span><strong id="volumeValue">72%</strong></div>
 <input aria-label="Genel ses seviyesi" class="volume-slider" id="volumeRange" max="100" min="0" step="1" type="range" value="72"/>
 <div class="volume-scale"><span>🔇 Sessiz</span><span>🔊 Yüksek</span></div>
-<div class="volume-footnote">Müzik ve patlama sesleri birlikte ayarlanır.</div>
+<div class="volume-footnote">Dünya müziği, bölüme özgü melodi ve patlama sesleri birlikte ayarlanır.</div>
 
 </div>
 </div><button aria-label="Bölümü yeniden başlat" class="icon-button" id="restartBtn" title="Bölümü yeniden başlat" type="button">↻ <span>Yenile</span></button></div>
 </header>
-<div class="player-strip"><div class="player-badge">👤 Oyuncu: <strong id="playerNameDisplay">Oyuncu</strong></div><div class="player-tip" id="welcomeLine">Tatlı macera seni bekliyor.</div></div>
+<div class="player-strip"><div class="player-badge">👤 Oyuncu: <strong id="playerNameDisplay">Oyuncu</strong></div><div class="player-tip" id="welcomeLine">Tatlı macera seni bekliyor.</div><span class="sy54-soundtrack-line" id="sy54TrackBadge" aria-label="Bölüm müziği"></span></div>
 <main class="layout">
 <section aria-label="Oyun alanı" class="primary">
 <section aria-label="Bölüm durumu" class="match-dashboard modern-dashboard">
@@ -1753,7 +1971,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
 </div>
 <div class="sy-status-card sy-progress-card goal-box compact">
 <div class="sy-status-head goal-top"><span class="sy-meter-name"><span aria-hidden="true" class="sy-meter-symbol">◇</span> BÖLÜM İLERLEMESİ</span><b id="goalPercent">0%</b></div>
-<div aria-label="Bölüm tamamlama yüzdesi" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="progress" id="progress" role="progressbar"><div class="progress-fill" id="progressFill"></div></div>
+<div aria-label="Bölüm tamamlama yüzdesi" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="progress" id="progress" role="progressbar"><div class="progress-fill" id="progressFill"></div></div><div id="syGoalDetail" class="sy-goal-detail" aria-live="off">Puan hedefi yükleniyor…</div>
 </div>
 </div>
 </section>
@@ -1802,15 +2020,13 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
 <div class="home-metric"><span class="metric-symbol">🏅</span><div><small>EN YÜKSEK SKOR</small><strong id="menuHighScore">0</strong></div></div>
 </div>
 </div>
-<details id="album"><summary id="albumSummary">Yıldızlarım ve başarılarım</summary>
-<p>Her bölümün en iyi sonucu burada saklanır. Bölümü geçince bir yıldız, hamlelerin en az yarısı ve sürenin en az %60’ı kaldığında birer ek yıldız kazanırsın. Süre eşiği tam saniyeye yukarı yuvarlanır.</p>
-<ul id="levelStars" aria-label="Bölümlerin en iyi yıldızları"></ul><ul id="badgeList" aria-label="Başarı rozetleri"></ul></details>
+
 <div class="home-personal"><span aria-hidden="true" class="hello-dot">✷</span><span id="menuGreeting">Tatlı macera seni bekliyor!</span></div>
 <div class="menu-buttons premium-menu-buttons">
 <button class="menu-button primary" id="playBtn" type="button"><span aria-hidden="true" class="play-btn-emblem">▶</span><span class="play-btn-copy"><strong id="playBtnText">OYNA</strong><small>ŞEKERLİ MACERAYA ATIL</small></span><span aria-hidden="true" class="play-btn-arrow">➜</span></button>
 <button class="menu-button sy-level-entry" id="levelsBtn" type="button"><span aria-hidden="true">🗺️</span><span>Bölüm Haritası</span><span aria-hidden="true">›</span></button>
 <div class="home-shortcuts">
-<button class="menu-button sy-daily-shortcut" id="dailyBtn" type="button"><span class="shortcut-icon">☀️</span><span>Günlük Mücadele</span></button>
+<button class="menu-button sy-daily-shortcut" id="dailyBtn" type="button" aria-label="Günlük mücadeleyi başlat"><span class="sy-daily-symbol" aria-hidden="true">☀️</span><span class="sy-daily-copy"><strong>GÜNLÜK MÜCADELE</strong><small id="dailyStreakLine" class="sy-daily-streak-label">Her gün yeni bir oyun · Başlamak için dokun</small></span><span class="sy-daily-arrow" aria-hidden="true">➜</span></button>
 <button class="menu-button" id="recordsBtn" type="button"><span class="shortcut-icon">🏅</span><span>Rekorlarım</span></button>
 <button class="menu-button" id="howBtn" type="button"><span class="shortcut-icon">📖</span><span>Nasıl Oynanır?</span></button>
 <button class="menu-button" id="settingsBtn" type="button"><span class="shortcut-icon">⚙️</span><span>Ayarlar</span></button>
@@ -1818,22 +2034,27 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
 <button class="menu-button feedback-entry" id="feedbackBtn" type="button"><span class="shortcut-icon">💬</span><span>Hata / Öneri</span></button>
 </div>
 </div>
-<div class="home-footer"><span id="menuRecord">🏅 Bölüm 1 · Rekor 0</span><span>Sürüm 5.0.0</span></div>
+<div class="home-footer"><span>✓ İlerlemen otomatik kaydedilir</span><span>Sürüm 5.5.2</span></div>
 <div class="home-credits"><span>✦</span> TATLI BİR OYUN DENEYİMİ</div><p class="sy-owner-notice">© 2026 <strong>Arif Şahin</strong> · Şeker Yağmuru · İzinsiz sahiplenilemez</p>
 </section>
 <section class="screen-page hidden sy-level-page" id="levelsScreen" aria-labelledby="levelsTitle">
 <div class="menu-top"><button aria-label="Ana menüye dön" class="menu-back" data-back="1" type="button">←</button><h2 id="levelsTitle">🗺️ Bölüm Haritası</h2></div>
-<p class="sy-level-intro">Açtığın bölümleri dilediğin zaman yeniden oynayabilirsin. Önceki bölümünü seçersen mevcut yarım kalan tahta yeniden başlayacaktır.</p>
-<div class="sy-level-legend"><span>⭐ Tamamlandı</span><span>✦ Şu anki bölüm</span><span>🔒 Kilitli</span></div>
-<div class="sy-level-grid" id="levelPicker" aria-label="Bölüm seçme düğmeleri"></div>
-<p class="sy-level-footnote">Yıldızlar ve açtığın bölümler korunur. Daha önce kazandığın puan, aynı bölümü tekrar kazanarak iki kez eklenmez.</p>
+<p class="sy-level-intro">Sekiz şeker dünyasını keşfet, yıldızları tamamla ve açtığın bölümlere geri dön. Açılmamış bölümler kilitlidir. Yarım kalan bölümü değiştirmek istersen önce onay isteriz.</p>
+<div class="sy-level-legend"><span>★ Tamamlanan yıldız</span><span>✦ Şu anki bölüm</span><span>🔒 Kilitli bölüm</span></div>
+<div class="sy-world-journey" id="worldJourney" aria-label="Şeker dünyaları macera rotası">
+<div class="sy-world-overview"><strong>🌟 Şeker Dünyaları</strong><span id="worldJourneyProgressText">0 / 60 bölüm</span></div>
+<div class="sy-world-navigation" id="worldNavigation" aria-label="Dünyalar arası geçiş"></div>
+<div id="levelPicker" class="sy-world-collection" aria-label="Dünyalara ayrılmış 60 bölüm"></div>
+</div>
+<p class="sy-level-footnote">⭐ Her bölümde 3 yıldız mümkün: bölümü bitirmek, yeterli hamle ve yeterli süre bırakmak. Eski başarılar ve kayıtlar korunur. Yeniden oynadığında toplam puana yalnızca yeni rekor farkı eklenir.</p>
 </section>
 <section class="screen-page hidden sy-records-page" id="recordsScreen" aria-labelledby="recordsTitle">
 <div class="menu-top"><button aria-label="Ana menüye dön" class="menu-back" data-back="1" type="button">←</button><h2 id="recordsTitle">🏅 Kişisel Rekorlarım</h2></div>
-<p class="sy-record-sub">Bu istatistikler yalnızca bu tarayıcıda tutulur; oyuncular arası çevrimiçi sıralama değildir.</p>
+<p class="sy-record-sub">Bu istatistikler yalnızca bu tarayıcıda tutulur. Günlük seri ve başarılar kişiseldir; çevrimiçi oyuncu sıralaması değildir.</p>
 <div class="sy-record-summary" id="statsSummary" aria-live="polite"></div>
-<div class="sy-record-daily" id="statsDaily"></div>
-<details class="sy-record-details"><summary>Bölüm bölüm performansım</summary><div class="sy-record-levels" id="statsLevels"></div></details>
+<div class="sy-record-daily" id="statsDaily"></div><div class="sy-daily-week" id="dailyWeek" aria-label="Son yedi günün günlük mücadele sonuçları"></div>
+<details class="sy-record-details sy-record-achievements" id="recordsAchievements"><summary id="recordsAchievementsSummary">🏅 Başarı rozetlerim</summary><p>Kazandığın ve henüz kilitli olan rozetler. Bütün başarılar mevcut kaydından hesaplanır.</p><ul aria-label="Başarı rozetleri" class="sy-record-badges" id="badgeList"></ul></details>
+<details class="sy-record-details sy-record-level-detail" id="recordsLevelsDetails"><summary>⭐ Bölüm yıldızlarım ve rekorlarım</summary><p>Her bölümde en fazla 3 yıldız kazanabilirsin. Skorlar ve yıldızlar mevcut oyun kaydından alınır.</p><div class="sy-record-levels" id="statsLevels"></div></details>
 </section>
 <section class="screen-page hidden" id="settingsScreen">
 <div class="menu-top"><button aria-label="Geri" class="menu-back" data-back="1" type="button">←</button><h2>⚙️ Ayarlar</h2></div>
@@ -1853,12 +2074,14 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
 <div class="settings-row"><div><b>Şeker harfleri</b><small>Renklerden bağımsız K, T, Y, Ş, E, M işaretleri · isteğe bağlı</small></div><button class="toggle-button" id="settingsCandyLabelsBtn" type="button" aria-pressed="false">Kapalı ◇</button></div>
 <div class="settings-row"><div><b>Hafif titreşim</b><small>Destekleyen telefonlarda geçerli hamlede kısa dokunsal geri bildirim; varsayılan kapalı.</small></div><button class="toggle-button" id="settingsHapticBtn" type="button" aria-pressed="false">Kapalı</button></div>
 <div class="settings-row"><div><b>Yüksek kontrast</b><small>Kalan hamle ve engel işaretlerini daha belirgin gösterir.</small></div><button class="toggle-button" id="settingsContrastBtn" type="button" aria-pressed="false">Kapalı</button></div>
+<div class="settings-row sy-quality-setting"><div><b>Görsel performans</b><small>Otomatik veya akıcı modda yalnızca arka plan süsleri hafifler. Şeker patlamaları ve kombo efektleri korunur.</small></div><select id="syQualitySelect" aria-label="Görsel performans seçimi"><option value="auto">Otomatik</option><option value="full">Tam kalite</option><option value="eco">Akıcı</option></select></div>
+<div class="settings-row"><div><b>Oyun içi dünya temaları</b><small>Her bölümün çerçevesi ve tahta zemini bulunduğun dünyaya uyar. Kapatırsan seçtiğin klasik tahta temasına dönersin.</small></div><button class="toggle-button" id="settingsWorldAppearanceBtn" type="button" aria-pressed="true">Açık 🌍</button></div>
 <div class="settings-row"><div><b>Otomatik kayıt</b><small>Her tamamlanan hamle kaydedilir</small></div><span style="font-size:19px">💾</span></div>
-<div class="save-transfer"><button class="menu-button tiny" id="exportSave" type="button">Kaydı indir</button></div>
+<div class="save-transfer"><button class="menu-button tiny" id="exportSave" type="button">⬇️ Kaydı indir (JSON)</button><button class="menu-button tiny" id="importSaveBtn" type="button">⬆️ Kaydı geri yükle</button><input id="importSaveFile" type="file" accept=".json,application/json" hidden aria-label="Şeker Yağmuru JSON yedeğini seç"/></div>
 
 <button class="menu-button tiny" id="changeNameBtn" type="button">✏️ Oyuncu adını değiştir</button><button class="menu-button tiny" id="resetProgressBtn" type="button">🗑️ Tüm ilerlemeyi sıfırla</button>
 <div class="sy-device-check"><button id="deviceCheckBtn" class="menu-button tiny" type="button">📱 Cihaz uyumluluğunu kontrol et</button><output id="deviceCheckResult" aria-live="polite" hidden></output><small>İsteğe bağlı yerel tanı; cihaz verisi hiçbir yere gönderilmez. Gerçek oyun FPS ölçümünün yerini tutmaz.</small></div>
-<p class="settings-warning" hidden="" id="storageNotice" role="status"></p><p class="settings-note">Aynı tarayıcı ve oyun adresinde ilerlemen otomatik korunur. İstersen “Kaydı indir” ile kişisel bir yedek alabilirsin. Tarayıcı verilerini silersen yerel kayıt kaybolabilir.</p>
+<p class="settings-warning" hidden="" id="storageNotice" role="status"></p><p class="settings-note">Aynı tarayıcı ve oyun adresinde ilerlemen otomatik korunur. “Kaydı indir” ile yedek alabilir, “Kaydı geri yükle” ile JSON yedeğini tekrar açabilirsin. Yedek yüklemek mevcut ilerlemeyi değiştirir; işlem öncesinde onay alınır. Tarayıcı verilerini silersen yerel kayıt kaybolabilir.</p>
 </section>
 <section class="screen-page hidden" id="howScreen">
 <div class="menu-top"><button aria-label="Geri" class="menu-back" data-back="1" type="button">←</button><h2>📖 Nasıl Oynanır?</h2></div>
@@ -1913,6 +2136,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
 <div class="syg-rule"><span class="syg-rule-number">10</span><div><h3>41–45 · Yayılan çikolata 🍫</h3><p>Her geçerli hamleden sonra, o hamlede hiç zarar görmediyse çikolata komşu bir şekere yayılabilir. Yanında eşleşme veya çizgi patlaması yaparak temizle. Yayılan çikolata bir hamle hakkı tüketmez; aynı hamlenin sonucudur.</p></div></div>
 <div class="syg-rule"><span class="syg-rule-number">11</span><div><h3>46–50 · Taş bloklar 🪨</h3><p>Taşlar hareket ettirilemez ve renk eşleşmesine katılamaz. Yanlarındaki <b>iki ayrı patlama dalgası</b> onları kırar; altlarından şeker çıkar.</p></div></div>
 <div class="syg-rule"><span class="syg-rule-number">12</span><div><h3>51–55 · Sürpriz şekerler 🎁</h3><p>Üzerinde hediye işareti bulunan şekeri patlatınca <b>puan</b>, <b>iki ek hamle</b> veya <b>gökkuşağı şekeri</b> kazanabilirsin. Hedef hâlâ yalnızca bölüm puanıdır.</p></div></div>
+<div class="syg-rule"><span class="syg-rule-number">14</span><div><h3>Şeker Dünyaları, günlük seri ve yıldızlar</h3><p>Bölüm Haritası sekiz tematik dünyadan oluşur. 5.5.2 ile sekiz dünyanın her birinin ayrı bir özel şekeri vardır; altı ana şekere ek olarak yedinci tür şeklinde eşleşir. Dünya boyunca aynı özel şeker tahtada ve haritada görünür. Bölüm kartındaki simge sadeleştirildi. Her dünyaya özgü beste çalar; her bölümde özgün melodik varyasyon bulunur. Her dünya artık oyun alanının renklerini, çerçevesini ve tahta zeminini de değiştirir; Ayarlar > Oyun içi dünya temaları ile istersen kapatabilirsin. Açtığın her bölüme haritadan geri dönebilirsin; tamamlanan bölümlerdeki yıldızları ve yeni rekorlarını görebilirsin. Günlük mücadele her gün UTC tarihine göre yenilenir. Arka arkaya oynadığın günler kişisel seri oluşturur; son yedi günü Rekorlarım ekranında izleyebilirsin. Ayarlarda akıcı görsel modu seçersen sadece dekorlar hafifler; patlama ve kombo efektleri kalır.</p></div></div>
 <div class="syg-rule"><span class="syg-rule-number">13</span><div><h3>56–60 · Büyük final 🏆</h3><p>Kilit, buz, yayılan çikolata, taş ve sürpriz şekerleri birlikte kullan. Her beşinci bölüm bir ustalık sınavıdır; özel zorunlu hedef eklenmez.</p></div></div>
 
 </div>
@@ -1927,7 +2151,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
 <div class="credit-box">🤖 <b>Tasarım, programlama ve geliştirme desteği</b> ChatGPT · OpenAI</div>
 <div class="credit-box">✨ <b>Görsel yükseltme ve hata denetimi (4.4.0)</b> Claude · Anthropic</div>
 <div class="credit-box">💖 <b>Özel teşekkür</b> Oyunu deneyen ve geliştirmemize katkı sağlayan herkese.</div>
-<p class="menu-sub">Bağımsız bir eşleştirme oyunu · Sürüm 5.0.0</p>
+<p class="menu-sub">Bağımsız bir eşleştirme oyunu · Sürüm 5.5.2</p>
 </section>
 <section class="screen-page hidden" id="feedbackScreen">
 <div class="menu-top"><button aria-label="Geri" class="menu-back" data-back="1" type="button">←</button><h2>💬 Hata ve Öneriler</h2></div>
@@ -1947,7 +2171,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
 <div class="syv5-tutorial-card"><div class="syv5-tutorial-icon" id="syTutorialIcon">🍬</div><h2 id="syTutorialTitle">Yeni mekanik</h2>
 <p id="syTutorialText"></p><div class="syv5-tutorial-preview" aria-hidden="true"><span>🍬</span><span id="syTutorialObstacle">🔒</span><span>🍬</span></div>
 <button id="syTutorialContinue" class="menu-button primary" type="button">Anladım, oynayalım →</button></div></div>
-<div aria-labelledby="dialogTitle" aria-modal="true" class="overlay hidden" id="overlay" role="dialog"><div class="dialog"><div class="dialog-icon" id="dialogIcon">🎉</div><h2 id="dialogTitle">Harika!</h2><p id="dialogText"></p><div id="resultStars" role="img"></div><p id="resultCriteria"></p><p id="resultBadges"></p><div class="dialog-score"><span id="dialogScoreLabel">BÖLÜM PUANIN</span><strong id="dialogScore">0</strong></div><div class="final-only hidden" id="finalArea"><canvas aria-label="Oyunu tamamladınız başarı kartı" height="1350" id="finalCanvas" width="1080"></canvas><div class="final-actions"><button class="save-action" id="savePngBtn" type="button">📥 PNG Kaydet</button><button class="save-action" id="saveJpgBtn" type="button">📥 JPG Kaydet</button><button class="share-action" id="shareWinBtn" type="button">🟢 WhatsApp / Paylaş</button></div><a class="wa-card-link" hidden="" id="waCardLink" rel="noopener noreferrer" target="_blank">Skor mesajını WhatsApp’ta aç ↗</a><small class="share-hint">Paylaş menüsünde WhatsApp'ı seçebilirsin. Desteklenmezse kartı kaydedip WhatsApp'ta görsel olarak gönder.</small></div><div class="result-navigation"><button class="cta" id="dialogBtn" type="button">Devam et →</button><button class="cta result-menu-cta" id="dialogMenuBtn" type="button">⌂ Ana Menüye Dön</button></div></div></div>
+<div aria-labelledby="dialogTitle" aria-modal="true" class="overlay hidden" id="overlay" role="dialog"><div class="dialog"><div class="dialog-icon" id="dialogIcon">🎉</div><h2 id="dialogTitle">Harika!</h2><p id="dialogText"></p><div id="resultStars" role="img"></div><div id="syStarMilestones" class="sy-star-milestones" aria-live="polite"></div><div id="syWorldResult" class="sy-world-result" hidden></div><p id="resultCriteria"></p><p id="resultBadges"></p><div class="dialog-score"><span id="dialogScoreLabel">BÖLÜM PUANIN</span><strong id="dialogScore">0</strong></div><div class="final-only hidden" id="finalArea"><canvas aria-label="Oyunu tamamladınız başarı kartı" height="1350" id="finalCanvas" width="1080"></canvas><div class="final-actions"><button class="save-action" id="savePngBtn" type="button">📥 PNG Kaydet</button><button class="save-action" id="saveJpgBtn" type="button">📥 JPG Kaydet</button><button class="share-action" id="shareWinBtn" type="button">🟢 WhatsApp / Paylaş</button></div><a class="wa-card-link" hidden="" id="waCardLink" rel="noopener noreferrer" target="_blank">Skor mesajını WhatsApp’ta aç ↗</a><small class="share-hint">Paylaş menüsünde WhatsApp'ı seçebilirsin. Desteklenmezse kartı kaydedip WhatsApp'ta görsel olarak gönder.</small></div><div class="result-navigation"><button class="cta" id="dialogBtn" type="button">Devam et →</button><button class="cta result-menu-cta" id="dialogMenuBtn" type="button">⌂ Ana Menüye Dön</button></div></div></div>
 <div aria-live="polite" class="toast" id="toast" role="status"></div>
 <audio aria-hidden="true" id="menuThemeMusic" loop="" playsinline="" preload="auto" src="music-1-aef72e2273a9.mp3"></audio>
 <audio aria-hidden="true" id="gameThemeMusic" loop="" playsinline="" preload="none" src="music-2-6fcd4246939e.mp3"></audio>
@@ -1956,6 +2180,8 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
 (() => {
   'use strict';
   const SIZE=8, MAX_LEVEL=60, TYPES=['kalp','portakal','yildiz','yesil','mavi','mor'];
+  // Seventh, fully matchable candy; its art belongs to the current world, not the stage.
+  const WORLD_TYPE='dunya', PLAY_TYPES=[...TYPES,WORLD_TYPE];
   const PUBLIC_GAME_URL='https://judge98judge.github.io/seker-yagmuru-oyna/';
   // Her bölüm yalnızca puanla dolan %100 ilerleme hedefine bağlıdır; şeker/zincir kotası yoktur.
   // İlk bölümler kolay, son bölümler daha zor; eski kayıtlar (v2-v8) korunur.
@@ -1966,7 +2192,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
   const levelConfig=l=>({target:LEVEL_SCORE_TARGETS[l-1],seconds:LEVEL_TIMES[l-1],moves:LEVEL_MOVES[l-1]});
   const levelPercent=(points,goal)=>Math.min(100,Math.max(0,Math.floor(points/goal*100)));
   const levelComplete=(points,goal)=>points>=goal;
-  const NAMES={kalp:'kırmızı kalp',portakal:'turuncu şeker',yildiz:'sarı yıldız',yesil:'yeşil şeker',mavi:'mavi elmas',mor:'mor şeker'};
+  const NAMES={kalp:'kırmızı kalp',portakal:'turuncu şeker',yildiz:'sarı yıldız',yesil:'yeşil şeker',mavi:'mavi elmas',mor:'mor şeker',dunya:'dünya şekeri'};
   const sprites={
     kalp:`<svg viewBox="0 0 100 100" aria-hidden="true"><defs><radialGradient id="c3r" cx="30%" cy="20%" r="88%"><stop stop-color="#ffbccf"/><stop offset=".28" stop-color="#ff6a9d"/><stop offset=".71" stop-color="#e93776"/><stop offset="1" stop-color="#a91657"/></radialGradient><linearGradient id="c3rh" x1="0" x2="0.38" y1="0" y2="1"><stop stop-color="#fff7fc" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><path d="M50 89C41 80 9 59 9 36 9 10 39 6 50 25 62 6 91 11 91 36c0 23-32 44-41 53Z" fill="#87224f"/><path d="M50 83C40 74 15 56 15 36c0-20 25-24 35-5 10-19 35-15 35 5 0 20-25 38-35 47Z" fill="url(#c3r)"/><path d="M22 37C21 23 35 20 44 33" stroke="url(#c3rh)" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M77 39C77 60 59 72 50 79" fill="none" stroke="#8d2053" stroke-opacity=".37" stroke-width="4" stroke-linecap="round"/></svg>`,
     portakal:`<svg viewBox="0 0 100 100" aria-hidden="true"><defs><radialGradient id="c3o" cx="30%" cy="19%" r="85%"><stop stop-color="#ffe3a7"/><stop offset=".24" stop-color="#ffc06a"/><stop offset=".57" stop-color="#ff9635"/><stop offset="1" stop-color="#bd4b19"/></radialGradient><linearGradient id="c3ob" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0c4" stop-opacity=".7"/><stop offset="1" stop-color="#fff0c4" stop-opacity="0"/></linearGradient></defs><g transform="rotate(-23 50 50)"><rect x="15" y="18" width="70" height="66" rx="29" fill="#9f4a1e"/><rect x="18" y="18" width="64" height="61" rx="27" fill="url(#c3o)"/><path d="M31 29c6-6 17-9 27-5" stroke="url(#c3ob)" stroke-width="8" stroke-linecap="round" fill="none"/><path d="M24 61c9 12 30 19 48 5" stroke="#cf581f" stroke-width="5" opacity=".31" fill="none"/><path d="M37 30c-8 10-9 25-6 31" stroke="#fff6d8" stroke-width="4" opacity=".56" fill="none" stroke-linecap="round"/></g></svg>`,
@@ -2007,11 +2233,83 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
   const utcDay=()=>new Date().toISOString().slice(0,10);
   const dailyStageFor=date=>[1,17,27,37,42,48,53,58][hashDailyDate(date)%8];
   const DAILY_KEY='sy_daily_scores_v500', STATS_KEY='sy_stats_v500',TUTORIAL_KEY='sy_tutorial_seen_v500';
+  const QUALITY_KEY='sy_visual_quality_v520',DAILY_META_KEY='sy_daily_meta_v520';
+  const WORLDS=[
+    {start:1,end:15,name:'Şeker Bahçesi',icon:'🌸',scene:'🍭 🌷 🌼 🍬 🌻',theme:'garden',desc:'Eşleştirme yolculuğunun ilk adımları'},
+    {start:16,end:25,name:'Kilitli Kale',icon:'🏰',scene:'🔑 🏰 🔒 ⚜️ 🔑',theme:'castle',desc:'Kilitlerin sırlarını çöz'},
+    {start:26,end:35,name:'Buz Vadisi',icon:'❄️',scene:'⛄ ❄️ 🧊 🏔️ ❄️',theme:'ice',desc:'İki darbede eriyen buzlu şekerler'},
+    {start:36,end:40,name:'Kristal Geçidi',icon:'💎',scene:'💎 ✨ 🔐 ❄️ 💎',theme:'crystal',desc:'Buz ve kilit bir arada'},
+    {start:41,end:45,name:'Çikolata Ormanı',icon:'🍫',scene:'🌳 🍫 🌲 🍩 🌳',theme:'chocolate',desc:'Yayılan çikolatanın arasından ilerle'},
+    {start:46,end:50,name:'Taş Kanyonu',icon:'🪨',scene:'⛰️ 🪨 ⛏️ 🧱 ⛰️',theme:'stone',desc:'Taş engelleri parçalayıp geç'},
+    {start:51,end:55,name:'Sürpriz Panayırı',icon:'🎁',scene:'🎪 🎈 🎁 🎉 🎡',theme:'gift',desc:'Ödüller ve renkli sürprizler'},
+    {start:56,end:60,name:'Şeker Krallığı',icon:'👑',scene:'🏰 🌟 👑 🍬 🎆',theme:'finale',desc:'Büyük final: tüm mekanikler birlikte'}
+  ];
+  const getWorld=l=>WORLDS.find(w=>l>=w.start&&l<=w.end)||WORLDS[0];
+  const WORLD_APPEARANCE_KEY='sy_world_appearance_v530';
+  let worldAppearanceOn=getLocal(WORLD_APPEARANCE_KEY,'on')!=='off';
+  function syncWorldAppearance(){
+    const current=dailyMode?null:getWorld(level);
+    const style=worldAppearanceOn?(dailyMode?'daily':current.theme):'';
+    if(style){if(document.body.dataset.syWorld!==style)document.body.dataset.syWorld=style;}
+    else if(document.body.hasAttribute('data-sy-world'))document.body.removeAttribute('data-sy-world');
+    const info=$('welcomeLine');
+    if(info){
+      const label=dailyMode?'☀️ Günlük Mücadele · Bugünün tahtası':
+        current.name+'  ·  '+String(level).padStart(2,'0')+'. bölüm';
+      if(info.textContent!==label)info.textContent=label;
+    }
+    const musicBadge=$('sy54TrackBadge');
+    if(musicBadge){
+      const key=dailyMode?'daily':String(level);
+      if(musicBadge.dataset.level!==key){
+        musicBadge.dataset.level=key;
+        musicBadge.textContent=dailyMode?'☀️ Günlük müzik':'♫ '+String(level).padStart(2,'0')+'. melodi';
+      }
+    }
+    const toggle=$('settingsWorldAppearanceBtn');
+    if(toggle){toggle.textContent=worldAppearanceOn?'Açık 🌍':'Kapalı';toggle.setAttribute('aria-pressed',String(worldAppearanceOn));}
+  }
+
   function readObject(key){try{const val=JSON.parse(getLocal(key,'{}'));return val&&typeof val==='object'&&!Array.isArray(val)?val:{}}catch{return {}}}
-  let dailyRecords=readObject(DAILY_KEY),stats=readObject(STATS_KEY);
+  let dailyRecords=readObject(DAILY_KEY),stats=readObject(STATS_KEY),dailyMeta=readObject(DAILY_META_KEY);
   function saveStats(){setLocal(STATS_KEY,JSON.stringify(stats))}
-  function saveDaily(){const keys=Object.keys(dailyRecords).sort();for(const k of keys.slice(0,Math.max(0,keys.length-90)))delete dailyRecords[k];setLocal(DAILY_KEY,JSON.stringify(dailyRecords));}
+  function saveDaily(){
+    // Keep the all-time streak even when old daily rows are pruned after 90 days.
+    dailyMeta.best=Math.max(Number(dailyMeta.best)||0,dailyStreak().best);
+    setLocal(DAILY_META_KEY,JSON.stringify(dailyMeta));
+    const keys=Object.keys(dailyRecords).sort();for(const k of keys.slice(0,Math.max(0,keys.length-90)))delete dailyRecords[k];
+    setLocal(DAILY_KEY,JSON.stringify(dailyRecords));
+  }
+  function utcDayOffset(offset){const d=new Date();d.setUTCHours(12,0,0,0);d.setUTCDate(d.getUTCDate()+offset);return d.toISOString().slice(0,10);}
+  function playedDaily(day){return /^\d{4}-\d{2}-\d{2}$/.test(day)&&dailyRecords[day]&&Number(dailyRecords[day].played)>0;}
+  function dailyStreak(){
+    let current=0,best=0,seq=0;
+    const dates=Object.keys(dailyRecords).filter(day=>playedDaily(day)).sort();
+    const stamp=day=>Date.parse(day+'T12:00:00Z');
+    for(let i=0;i<dates.length;i++){seq=(i&&stamp(dates[i])-stamp(dates[i-1])===86400000)?seq+1:1;best=Math.max(best,seq);}
+    const today=utcDay();let start=playedDaily(today)?0:-1;
+    if(!playedDaily(utcDayOffset(start)))return {current:0,best};
+    for(let n=start;n>-100;n--){if(!playedDaily(utcDayOffset(n)))break;current++;}
+    return {current,best:Math.max(best,Number(dailyMeta.best)||0)};
+  }
+  function fillDailyWeek(){
+    const el=$('dailyWeek');if(!el)return;const part=document.createDocumentFragment();
+    for(let offset=-6;offset<=0;offset++){
+      const key=utcDayOffset(offset),done=playedDaily(key),day=document.createElement('div');day.className='sy-daily-day'+(done?' done':'');
+      day.title=key+' (UTC)'+(done?' · '+(dailyRecords[key].best||0)+' puan':' · Oynanmadı');
+      const short=document.createElement('span');short.textContent=key.slice(5).replace('-','/');
+      const mark=document.createElement('strong');mark.textContent=done?'★':'·';day.append(short,mark);part.appendChild(day);
+    }
+    el.replaceChildren(part);
+  }
   let hapticOn=getLocal('sy_haptic_v500','off')==='on',contrastOn=getLocal('sy_contrast_v500','off')==='on';
+  let visualQuality=getLocal(QUALITY_KEY,'auto');if(!['auto','full','eco'].includes(visualQuality))visualQuality='auto';
+  function applyVisualQuality(){
+    const lowDevice=Number(navigator.deviceMemory||8)<=4||Number(navigator.hardwareConcurrency||8)<=4;
+    document.body.classList.toggle('sy-quality-eco',visualQuality==='eco'||visualQuality==='auto'&&lowDevice);
+    if($('syQualitySelect'))$('syQualitySelect').value=visualQuality;
+  }
+  applyVisualQuality();
   function vibrateTick(kind='tap'){if(!hapticOn||typeof navigator.vibrate!=='function')return;try{navigator.vibrate(kind==='win'?[18,35,18]:kind==='warn'?14:7)}catch{}}
 
   const fmt=n=>Number(n).toLocaleString('tr-TR');
@@ -2038,7 +2336,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     const shown=playerName||'Oyuncu';
     if(els.playerNameDisplay)els.playerNameDisplay.textContent=shown;
     if(els.menuGreeting)els.menuGreeting.textContent=playerName?`🍭 Hoş geldin ${playerName}! Hazırsan başla.`:'Tatlı macera seni bekliyor!';
-    if(els.welcomeLine)els.welcomeLine.textContent=playerName?`${playerName}, rekabetçi macera seni bekliyor!`:'Rekabetçi tatlı macera seni bekliyor.';
+    syncWorldAppearance();
     if(els.victoryPlayerLine)els.victoryPlayerLine.textContent=playerName?`Muhteşem iş çıkardın, ${playerName}!`:'Tatlı bir zafer!';
   }
   function showNameIntro(prefill=''){
@@ -2183,11 +2481,11 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
         if(c>=2&&b[r][c-1].type===b[r][c-2].type)forbidden.add(b[r][c-1].type);
         if(r>=2&&b[r-1][c].type===b[r-2][c].type)forbidden.add(b[r-1][c].type);
         if(r>=1&&c>=1&&b[r-1][c].type===b[r][c-1].type&&b[r-1][c].type===b[r-1][c-1].type)forbidden.add(b[r-1][c].type);
-        b[r][c]=tile(pick(TYPES.filter(t=>!forbidden.has(t))),r,c);
+        b[r][c]=tile(pick(PLAY_TYPES.filter(t=>!forbidden.has(t))),r,c);
       }
-      if(possibleMove(b))return b;
+      if(b.flat().filter(t=>t.type===WORLD_TYPE).length>=5&&possibleMove(b))return b;
     }
-    const b=Array.from({length:SIZE},(_,r)=>Array.from({length:SIZE},(_,c)=>tile(TYPES[(2*r+c)%TYPES.length],r,c)));
+    const b=Array.from({length:SIZE},(_,r)=>Array.from({length:SIZE},(_,c)=>tile(PLAY_TYPES[(2*r+c)%PLAY_TYPES.length],r,c)));
     b[0][2].type=b[0][0].type;b[1][1].type=b[0][0].type;
     return b;
   }
@@ -2202,7 +2500,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     return {lock:2+Math.floor((stage-56)/3),ice:2+Math.floor((stage-56)/3)};
   }
   function seedShields(b,stage,counts=shieldCounts(stage)){
-    const available=b.flat().filter(t=>t&&!t.special);
+    const available=b.flat().filter(t=>t&&!t.special&&t.type!==WORLD_TYPE);
     const seeded=[];
     function choose(kind,hp){
       const spaced=available.filter(t=>!t.shield&&seeded.every(x=>Math.abs(t.r-x.r)+Math.abs(t.c-x.c)>1));
@@ -2218,7 +2516,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
   function seedNewMechanics(b,stage){
     const theme=stageTheme(stage);
     if(theme==='classic')return;
-    const seeded=[],available=b.flat().filter(t=>t&&!t.special&&!t.shield);
+    const seeded=[],available=b.flat().filter(t=>t&&!t.special&&!t.shield&&t.type!==WORLD_TYPE);
     const choose=fn=>{
       const spaced=available.filter(t=>!t.shield&&!t.gift&&seeded.every(x=>Math.abs(t.r-x.r)+Math.abs(t.c-x.c)>1));
       const candidates=spaced.length?spaced:available.filter(t=>!t.shield&&!t.gift);
@@ -2252,7 +2550,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
       const r=source.r+dr,c=source.c+dc;
       if(!inBounds(r,c))continue;
       const next=board[r][c];
-      if(!next||protectedCandy(next)||next.special||next.gift)continue;
+      if(!next||protectedCandy(next)||next.special||next.gift||next.type===WORLD_TYPE)continue;
       if(!options.includes(next))options.push(next);
     }
     for(let tries=0;tries<Math.min(24,options.length);tries++){
@@ -2369,7 +2667,12 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     ['half','Yıldız avcısı','Toplam 60 yıldız topla.'],
     ['daily','Günlük maceracı','En az bir günlük mücadele tamamla.'],
     ['choco','Çikolata kaşifi','41. bölüm veya sonrasını tamamla.'],
-    ['repeat','İstikrarlı oyuncu','Bir bölümü 2 kez kazan.']
+    ['repeat','İstikrarlı oyuncu','Bir bölümü 2 kez kazan.'],
+    ['streak3','Üç günlük seri','Günlük mücadeleyi üç gün art arda tamamla.'],
+    ['streak7','Yedi günlük seri','Günlük mücadeleyi yedi gün art arda tamamla.'],
+    ['world4','Dünya gezgini','Dört dünyanın son bölümünü tamamla.'],
+    ['world8','Dünya fatihi','Sekiz dünyayı tamamla.'],
+    ['stars25','Yıldız ustası','25 bölümde üç yıldız kazan.']
   ];
   function badgeEarned(key){
     if(key==='first')return bestStars.some(n=>n>0);
@@ -2381,27 +2684,50 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     if(key==='daily')return Object.values(dailyRecords).some(x=>x&&Number.isFinite(x.best));
     if(key==='choco')return bestStars.slice(40).some(x=>x>0);
     if(key==='repeat')return Object.values(stats).some(x=>x&&Number(x.wins)>=2);
+    if(key==='streak3')return dailyStreak().best>=3;
+    if(key==='streak7')return dailyStreak().best>=7;
+    if(key==='world4')return WORLDS.filter(w=>bestStars[w.end-1]>0).length>=4;
+    if(key==='world8')return WORLDS.every(w=>bestStars[w.end-1]>0);
+    if(key==='stars25')return bestStars.filter(n=>n===3).length>=25;
     return feats[key];
   }
   function setAlbum(){
-    const total=bestStars.reduce((a,b)=>a+b,0);
-    $('albumSummary').textContent='Yıldızlarım ve başarılarım · '+total+' / '+(MAX_LEVEL*3)+' ★';
-    if(!$('album').open)return;
-    $('levelStars').replaceChildren(...bestStars.map((s,i)=>{
-      const cell=document.createElement('li');cell.textContent=String(i+1).padStart(2,'0')+' · '+'★'.repeat(s)+'☆'.repeat(3-s);
-      cell.dataset.earned=String(s>0);cell.setAttribute('aria-label',(i+1)+'. bölüm, '+s+' yıldız');return cell;
-    }));
+    const container=$('recordsAchievements');
+    const earned=badges.filter(([key])=>badgeEarned(key)).length;
+    $('recordsAchievementsSummary').textContent='🏅 Başarı rozetlerim · '+earned+' / '+badges.length;
+    if(!container.open)return;
     $('badgeList').replaceChildren(...badges.map(([key,name,rule])=>{
-      const cell=document.createElement('li');cell.textContent=(badgeEarned(key)?'✓ ':'○ ')+name+' · '+rule;
-      cell.dataset.earned=String(badgeEarned(key));return cell;
+      const awarded=badgeEarned(key),cell=document.createElement('li');
+      cell.className='sy-badge-card';cell.dataset.earned=String(awarded);
+      const symbol=document.createElement('span');symbol.className='sy-badge-symbol';symbol.textContent=awarded?'🏅':'🔒';symbol.setAttribute('aria-hidden','true');
+      const body=document.createElement('span'),title=document.createElement('strong'),detail=document.createElement('small');
+      title.textContent=name;detail.textContent=rule;body.append(title,detail);cell.append(symbol,body);
+      cell.setAttribute('aria-label',name+' · '+(awarded?'kazanıldı':'kilitli')+' · '+rule);return cell;
     }));
   }
-  $('album').addEventListener('toggle',setAlbum);
+  $('recordsAchievements').addEventListener('toggle',setAlbum);
 
   function presentResult(win){
     const n=win?runStars[level-1]:0;
-    $('resultStars').textContent='★'.repeat(n)+'☆'.repeat(3-n);
+    const starsEl=$('resultStars');starsEl.replaceChildren(...Array.from({length:3},(_,i)=>{
+      const st=document.createElement('span');st.className='sy-star-award'+(i<n?'':' unearned');
+      st.textContent=i<n?'★':'☆';st.style.animationDelay=(i*.16)+'s';return st;
+    }));
+    const limits=starLimits(level);const milestones=[
+      {pass:win,label:'★ Bölüm tamamlandı'},
+      {pass:win&&moves>=limits.moves,label:'★ En az '+limits.moves+' hamle kaldı'},
+      {pass:win&&timeLeft>=limits.seconds,label:'★ En az '+limits.seconds+' sn kaldı'}
+    ];
+    $('syStarMilestones').replaceChildren(...milestones.map(m=>{
+      const el=document.createElement('span');el.className='sy-star-item'+(m.pass?' earned':'');el.textContent=(m.pass?'✓ ':'○ ')+m.label;return el;
+    }));
     $('resultStars').setAttribute('aria-label',n+' yıldız');
+    const w=getWorld(level),worldResult=$('syWorldResult');
+    if(win&&level===w.end){
+      const next=WORLDS[WORLDS.indexOf(w)+1];
+      worldResult.hidden=false;
+      worldResult.textContent=w.icon+' '+w.name+' tamamlandı! '+(next?'Sıradaki dünya: '+next.icon+' '+next.name:'🏆 Sekiz dünya fethedildi!');
+    }else worldResult.hidden=true;
     const l=starLimits(level);
     $('resultCriteria').textContent=win
       ? 'Bölümü geçmek 1 yıldız. Ek yıldızlar için en az '+l.moves+' hamle ve '+l.seconds+' sn kalmalı. Her biri 1 yıldız.'
@@ -2445,7 +2771,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
        d.board.some(row=>!Array.isArray(row)||row.length!==SIZE))throw Error('Kayıt biçimi tanınmadı.');
     const seen=new Set();
     const grid=d.board.map((row,r)=>row.map((t,c)=>{
-      if(!t||!TYPES.includes(t.type)||!Number.isSafeInteger(t.id)||t.id<=0||t.id>1e12||seen.has(t.id)||
+      if(!t||!PLAY_TYPES.includes(t.type)||!Number.isSafeInteger(t.id)||t.id<=0||t.id>1e12||seen.has(t.id)||
          ![null,'row','column','color'].includes(t.special??null))throw Error('Kayıttaki şekerler okunamadı.');
       const rawShield=d.version>=10?t.shield:null;
       if(rawShield!==null&&rawShield!==undefined&&(typeof rawShield!=='object'||!['lock','ice','choco','stone'].includes(rawShield.kind)||!Number.isInteger(rawShield.hp)||rawShield.hp<1||rawShield.hp>(['lock','choco'].includes(rawShield.kind)?1:2)||t.special))throw Error('Kayıttaki kilit veya buz verisi geçersiz.');
@@ -2582,6 +2908,19 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
   const candyImageURLs=Object.fromEntries(Object.entries(sprites).map(([kind,svg])=>[
     kind,'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(svg.replace('<svg ','<svg xmlns="http://www.w3.org/2000/svg" '))
   ]));
+  // 5.5.2: One playable world candy per biome, beside the six familiar candy types.
+  // Vector artwork is static and cached; no new animation loop is added.
+  // 5.5.2: Eight fully sculpted, independent world candy silhouettes (not emblems on a round base).
+  const WORLD_CANDY_VECTORS={"garden":"<svg viewBox=\"0 0 100 100\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"sy55-garden-body\" x1=\"9%\" y1=\"9%\" x2=\"89%\" y2=\"93%\"><stop stop-color=\"#fff1f9\"/><stop offset=\".48\" stop-color=\"#ff78b6\"/><stop offset=\"1\" stop-color=\"#ba3477\"/></linearGradient><radialGradient id=\"sy55-garden-glaze\" cx=\"27%\" cy=\"17%\" r=\"82%\"><stop stop-color=\"#fff\" stop-opacity=\".66\"/><stop offset=\".48\" stop-color=\"#fff\" stop-opacity=\".11\"/><stop offset=\"1\" stop-color=\"#26093c\" stop-opacity=\".10\"/></radialGradient></defs><path d=\"M50 17 C58 4 75 13 73 29 C90 22 96 39 82 52 C96 66 82 83 65 76 C61 96 39 96 35 76 C16 83 4 66 18 51 C4 39 11 22 28 29 C27 12 43 5 50 17Z\" transform=\"translate(0 3)\" fill=\"#ba3477\" opacity=\".73\"/><path d=\"M50 17 C58 4 75 13 73 29 C90 22 96 39 82 52 C96 66 82 83 65 76 C61 96 39 96 35 76 C16 83 4 66 18 51 C4 39 11 22 28 29 C27 12 43 5 50 17Z\" fill=\"url(#sy55-garden-body)\" stroke=\"#ba3477\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><path d=\"M50 17 C58 4 75 13 73 29 C90 22 96 39 82 52 C96 66 82 83 65 76 C61 96 39 96 35 76 C16 83 4 66 18 51 C4 39 11 22 28 29 C27 12 43 5 50 17Z\" fill=\"url(#sy55-garden-glaze)\"/><g fill=\"none\" stroke=\"#fff0f7\" stroke-linecap=\"round\" opacity=\".66\" stroke-width=\"3.2\"><path d=\"M50 49Q44 27 45 20M50 49Q63 31 70 30M50 49Q72 45 80 53M50 49Q70 68 64 73M50 49Q49 75 39 76M50 49Q28 67 22 51M50 49Q31 34 28 30\"/></g><path d=\"M49 38Q57 36 62 44Q68 54 58 61Q47 67 39 59Q34 47 49 38Z\" fill=\"#ffe7a1\" stroke=\"#d85c80\" stroke-width=\"2.5\"/><path d=\"M46 43Q56 40 58 49\" fill=\"none\" stroke=\"#fff8d7\" stroke-width=\"3\" stroke-linecap=\"round\"/><ellipse cx=\"32\" cy=\"30\" rx=\"8\" ry=\"4\" transform=\"rotate(-28 32 30)\" fill=\"#fff\" opacity=\".48\"/><path d=\"M26 36Q35 18 48 20\" fill=\"none\" stroke=\"#fff\" stroke-width=\"4\" opacity=\".7\" stroke-linecap=\"round\"/></svg>","castle":"<svg viewBox=\"0 0 100 100\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"sy55-castle-body\" x1=\"9%\" y1=\"9%\" x2=\"89%\" y2=\"93%\"><stop stop-color=\"#f7e7ff\"/><stop offset=\".48\" stop-color=\"#b29af0\"/><stop offset=\"1\" stop-color=\"#6136ad\"/></linearGradient><radialGradient id=\"sy55-castle-glaze\" cx=\"27%\" cy=\"17%\" r=\"82%\"><stop stop-color=\"#fff\" stop-opacity=\".66\"/><stop offset=\".48\" stop-color=\"#fff\" stop-opacity=\".11\"/><stop offset=\"1\" stop-color=\"#26093c\" stop-opacity=\".10\"/></radialGradient></defs><path d=\"M19 22Q19 18 24 18H35V29H43V14Q50 10 57 14V29H65V18H76Q81 18 81 24V43L75 47V76Q75 86 65 87H35Q25 86 25 76V47L19 43Z\" transform=\"translate(0 3)\" fill=\"#6136ad\" opacity=\".73\"/><path d=\"M19 22Q19 18 24 18H35V29H43V14Q50 10 57 14V29H65V18H76Q81 18 81 24V43L75 47V76Q75 86 65 87H35Q25 86 25 76V47L19 43Z\" fill=\"url(#sy55-castle-body)\" stroke=\"#6136ad\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><path d=\"M19 22Q19 18 24 18H35V29H43V14Q50 10 57 14V29H65V18H76Q81 18 81 24V43L75 47V76Q75 86 65 87H35Q25 86 25 76V47L19 43Z\" fill=\"url(#sy55-castle-glaze)\"/><path d=\"M29 48L29 72Q30 78 36 79H66Q71 76 71 70V46\" fill=\"none\" stroke=\"#fce1ff\" stroke-width=\"4\" opacity=\".53\"/><g stroke=\"#7046ac\" stroke-linecap=\"round\" stroke-width=\"2.5\" opacity=\".65\"><path d=\"M36 54V72M50 49V80M64 54V72\"/></g><path d=\"M20 33H35V40H43V27H57V40H65V32H80\" fill=\"none\" stroke=\"#fff0ff\" stroke-width=\"4.3\" stroke-linejoin=\"round\" opacity=\".68\"/><path d=\"M37 41Q48 36 60 41\" stroke=\"#fff7ff\" stroke-width=\"3\" opacity=\".45\" fill=\"none\"/><path d=\"M34 56l6-8m19 3 5-6\" stroke=\"#fff\" stroke-width=\"2.8\" opacity=\".55\"/><path d=\"M24 30L24 41M46 21L46 31\" fill=\"none\" stroke=\"#fff\" stroke-width=\"4\" opacity=\".58\" stroke-linecap=\"round\"/></svg>","ice":"<svg viewBox=\"0 0 100 100\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"sy55-ice-body\" x1=\"9%\" y1=\"9%\" x2=\"89%\" y2=\"93%\"><stop stop-color=\"#f7ffff\"/><stop offset=\".48\" stop-color=\"#88e7ff\"/><stop offset=\"1\" stop-color=\"#2588b8\"/></linearGradient><radialGradient id=\"sy55-ice-glaze\" cx=\"27%\" cy=\"17%\" r=\"82%\"><stop stop-color=\"#fff\" stop-opacity=\".66\"/><stop offset=\".48\" stop-color=\"#fff\" stop-opacity=\".11\"/><stop offset=\"1\" stop-color=\"#26093c\" stop-opacity=\".10\"/></radialGradient></defs><path d=\"M50 6L61 27L80 19L73 41L92 50L73 61L80 82L61 74L50 95L39 74L20 82L27 61L8 50L27 39L20 19L39 27Z\" transform=\"translate(0 3)\" fill=\"#2588b8\" opacity=\".73\"/><path d=\"M50 6L61 27L80 19L73 41L92 50L73 61L80 82L61 74L50 95L39 74L20 82L27 61L8 50L27 39L20 19L39 27Z\" fill=\"url(#sy55-ice-body)\" stroke=\"#2588b8\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><path d=\"M50 6L61 27L80 19L73 41L92 50L73 61L80 82L61 74L50 95L39 74L20 82L27 61L8 50L27 39L20 19L39 27Z\" fill=\"url(#sy55-ice-glaze)\"/><path d=\"M50 13V87M13 50H87M29 29L71 71M71 29L29 71\" fill=\"none\" stroke=\"#e7ffff\" stroke-width=\"5\" opacity=\".71\" stroke-linecap=\"round\"/><path d=\"M50 14L58 39L50 50L42 39ZM50 50L73 42L84 50L73 58ZM50 50L58 72L50 88L42 72ZM50 50L28 58L16 50L28 42Z\" fill=\"#ecffff\" opacity=\".28\"/><path d=\"M50 15V44M16 50H44M56 50H84\" stroke=\"#fff\" stroke-width=\"2.4\" stroke-linecap=\"round\" opacity=\".92\"/><path d=\"M34 30L43 21M29 38L37 31\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3\" opacity=\".8\" stroke-linecap=\"round\"/></svg>","crystal":"<svg viewBox=\"0 0 100 100\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"sy55-crystal-body\" x1=\"9%\" y1=\"9%\" x2=\"89%\" y2=\"93%\"><stop stop-color=\"#f6faff\"/><stop offset=\".48\" stop-color=\"#9aaaff\"/><stop offset=\"1\" stop-color=\"#515dbb\"/></linearGradient><radialGradient id=\"sy55-crystal-glaze\" cx=\"27%\" cy=\"17%\" r=\"82%\"><stop stop-color=\"#fff\" stop-opacity=\".66\"/><stop offset=\".48\" stop-color=\"#fff\" stop-opacity=\".11\"/><stop offset=\"1\" stop-color=\"#26093c\" stop-opacity=\".10\"/></radialGradient></defs><path d=\"M28 23L42 7L55 20L68 12L84 33L76 74L57 92L30 82L13 55Z\" transform=\"translate(0 3)\" fill=\"#515dbb\" opacity=\".73\"/><path d=\"M28 23L42 7L55 20L68 12L84 33L76 74L57 92L30 82L13 55Z\" fill=\"url(#sy55-crystal-body)\" stroke=\"#515dbb\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><path d=\"M28 23L42 7L55 20L68 12L84 33L76 74L57 92L30 82L13 55Z\" fill=\"url(#sy55-crystal-glaze)\"/><path d=\"M42 8L44 59L30 82L13 55Z\" fill=\"#bceeff\" opacity=\".82\"/><path d=\"M42 8L55 20L44 59Z\" fill=\"#fff\" opacity=\".48\"/><path d=\"M55 20L68 12L84 33L64 57L44 59Z\" fill=\"#9d95f6\" opacity=\".62\"/><path d=\"M44 59L64 57L57 92L30 82Z\" fill=\"#4a81d0\" opacity=\".51\"/><path d=\"M64 57L84 33L76 74L57 92Z\" fill=\"#e1f4ff\" opacity=\".38\"/><path d=\"M28 24L42 9L44 58M68 13L64 57L58 90\" fill=\"none\" stroke=\"#fafdff\" opacity=\".82\" stroke-width=\"2.8\" stroke-linejoin=\"round\"/><path d=\"M24 40L41 13\" stroke=\"#fff\" stroke-width=\"3\" opacity=\".68\" stroke-linecap=\"round\"/></svg>","chocolate":"<svg viewBox=\"0 0 100 100\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"sy55-chocolate-body\" x1=\"9%\" y1=\"9%\" x2=\"89%\" y2=\"93%\"><stop stop-color=\"#ffe9c7\"/><stop offset=\".48\" stop-color=\"#c48661\"/><stop offset=\"1\" stop-color=\"#603522\"/></linearGradient><radialGradient id=\"sy55-chocolate-glaze\" cx=\"27%\" cy=\"17%\" r=\"82%\"><stop stop-color=\"#fff\" stop-opacity=\".66\"/><stop offset=\".48\" stop-color=\"#fff\" stop-opacity=\".11\"/><stop offset=\"1\" stop-color=\"#26093c\" stop-opacity=\".10\"/></radialGradient></defs><path d=\"M24 15Q31 10 40 12L63 8Q78 8 83 22L88 63Q88 74 76 82L39 90Q25 88 20 76L12 39Q13 25 24 15Z\" transform=\"translate(0 3)\" fill=\"#603522\" opacity=\".73\"/><path d=\"M24 15Q31 10 40 12L63 8Q78 8 83 22L88 63Q88 74 76 82L39 90Q25 88 20 76L12 39Q13 25 24 15Z\" fill=\"url(#sy55-chocolate-body)\" stroke=\"#603522\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><path d=\"M24 15Q31 10 40 12L63 8Q78 8 83 22L88 63Q88 74 76 82L39 90Q25 88 20 76L12 39Q13 25 24 15Z\" fill=\"url(#sy55-chocolate-glaze)\"/><path d=\"M24 26Q32 19 43 20L66 16Q76 17 78 28L81 64Q79 75 67 76L38 82Q28 80 25 70L18 42Q17 32 24 26Z\" fill=\"#6b3728\" opacity=\".78\" stroke=\"#e6ab79\" stroke-width=\"2.6\"/><g fill=\"#b67b58\" stroke=\"#572c25\" stroke-width=\"2.4\"><path d=\"M29 30L45 27L47 47L32 50Z\"/><path d=\"M50 26L69 22L72 42L51 46Z\"/><path d=\"M34 54L47 51L49 71L37 74Z\"/><path d=\"M52 50L74 46L76 65L54 70Z\"/></g><g fill=\"none\" stroke=\"#ffe2b5\" opacity=\".54\" stroke-width=\"2.5\" stroke-linecap=\"round\"><path d=\"M30 34L40 32M53 30L64 27M35 58L44 56\"/></g><path d=\"M23 31Q29 18 40 19\" fill=\"none\" stroke=\"#fff2d9\" stroke-width=\"4\" opacity=\".51\" stroke-linecap=\"round\"/></svg>","stone":"<svg viewBox=\"0 0 100 100\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"sy55-stone-body\" x1=\"9%\" y1=\"9%\" x2=\"89%\" y2=\"93%\"><stop stop-color=\"#f4ffff\"/><stop offset=\".48\" stop-color=\"#b5cad3\"/><stop offset=\"1\" stop-color=\"#5f7780\"/></linearGradient><radialGradient id=\"sy55-stone-glaze\" cx=\"27%\" cy=\"17%\" r=\"82%\"><stop stop-color=\"#fff\" stop-opacity=\".66\"/><stop offset=\".48\" stop-color=\"#fff\" stop-opacity=\".11\"/><stop offset=\"1\" stop-color=\"#26093c\" stop-opacity=\".10\"/></radialGradient></defs><path d=\"M46 8L70 20L88 43L80 70L57 90L29 82L12 60L20 30Z\" transform=\"translate(0 3)\" fill=\"#5f7780\" opacity=\".73\"/><path d=\"M46 8L70 20L88 43L80 70L57 90L29 82L12 60L20 30Z\" fill=\"url(#sy55-stone-body)\" stroke=\"#5f7780\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><path d=\"M46 8L70 20L88 43L80 70L57 90L29 82L12 60L20 30Z\" fill=\"url(#sy55-stone-glaze)\"/><path d=\"M20 30L46 8L50 43L31 59L12 60Z\" fill=\"#d7f2ee\" opacity=\".67\"/><path d=\"M46 8L70 20L88 43L50 43Z\" fill=\"#f7feff\" opacity=\".5\"/><path d=\"M50 43L88 43L80 70L57 90L45 67Z\" fill=\"#75929b\" opacity=\".43\"/><path d=\"M31 59L50 43L45 67L57 90L29 82L12 60Z\" fill=\"#b7dbd9\" opacity=\".52\"/><path d=\"M20 30L46 8L50 43L31 59L29 82M50 43L88 43M45 67L57 90\" stroke=\"#effcff\" stroke-width=\"2.3\" fill=\"none\" opacity=\".71\"/><path d=\"M32 31l10-11m17 8 9 8\" stroke=\"#fff\" stroke-width=\"3\" opacity=\".66\"/><path d=\"M23 34L42 16\" fill=\"none\" stroke=\"#fff\" stroke-width=\"4\" opacity=\".71\" stroke-linecap=\"round\"/></svg>","gift":"<svg viewBox=\"0 0 100 100\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"sy55-gift-body\" x1=\"9%\" y1=\"9%\" x2=\"89%\" y2=\"93%\"><stop stop-color=\"#fff3c4\"/><stop offset=\".48\" stop-color=\"#ffba68\"/><stop offset=\"1\" stop-color=\"#d25a90\"/></linearGradient><radialGradient id=\"sy55-gift-glaze\" cx=\"27%\" cy=\"17%\" r=\"82%\"><stop stop-color=\"#fff\" stop-opacity=\".66\"/><stop offset=\".48\" stop-color=\"#fff\" stop-opacity=\".11\"/><stop offset=\"1\" stop-color=\"#26093c\" stop-opacity=\".10\"/></radialGradient></defs><path d=\"M26 31L12 21L15 43L5 50L16 60L12 80L27 68Q36 84 50 83Q65 84 74 68L88 80L84 60L95 50L84 42L88 21L73 31Q62 15 50 19Q38 15 26 31Z\" transform=\"translate(0 3)\" fill=\"#d25a90\" opacity=\".73\"/><path d=\"M26 31L12 21L15 43L5 50L16 60L12 80L27 68Q36 84 50 83Q65 84 74 68L88 80L84 60L95 50L84 42L88 21L73 31Q62 15 50 19Q38 15 26 31Z\" fill=\"url(#sy55-gift-body)\" stroke=\"#d25a90\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><path d=\"M26 31L12 21L15 43L5 50L16 60L12 80L27 68Q36 84 50 83Q65 84 74 68L88 80L84 60L95 50L84 42L88 21L73 31Q62 15 50 19Q38 15 26 31Z\" fill=\"url(#sy55-gift-glaze)\"/><path d=\"M14 27L27 38L27 61L14 75L19 58L10 50L19 42Z\" fill=\"#ffd9a6\" stroke=\"#e67e83\" stroke-width=\"2\" opacity=\".88\"/><path d=\"M86 27L73 38L73 61L86 75L81 58L90 50L81 42Z\" fill=\"#ffe7a9\" stroke=\"#db668a\" stroke-width=\"2\" opacity=\".86\"/><path d=\"M31 34Q48 22 68 34Q75 46 69 66Q51 83 31 67Q25 51 31 34Z\" fill=\"#ffa766\" stroke=\"#e36c79\" stroke-width=\"2.7\"/><path d=\"M35 34Q45 42 34 66M48 28Q58 48 48 76M62 31Q71 48 62 72\" stroke=\"#fff1be\" stroke-width=\"6\" fill=\"none\" opacity=\".73\" stroke-linecap=\"round\"/><path d=\"M29 40Q42 28 55 32\" stroke=\"#fff\" stroke-width=\"3\" fill=\"none\" opacity=\".65\"/><path d=\"M34 34Q43 27 53 30\" fill=\"none\" stroke=\"#fff\" stroke-width=\"4\" opacity=\".72\" stroke-linecap=\"round\"/></svg>","finale":"<svg viewBox=\"0 0 100 100\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"sy55-finale-body\" x1=\"9%\" y1=\"9%\" x2=\"89%\" y2=\"93%\"><stop stop-color=\"#fff9d0\"/><stop offset=\".48\" stop-color=\"#ffd966\"/><stop offset=\"1\" stop-color=\"#a56719\"/></linearGradient><radialGradient id=\"sy55-finale-glaze\" cx=\"27%\" cy=\"17%\" r=\"82%\"><stop stop-color=\"#fff\" stop-opacity=\".66\"/><stop offset=\".48\" stop-color=\"#fff\" stop-opacity=\".11\"/><stop offset=\"1\" stop-color=\"#26093c\" stop-opacity=\".10\"/></radialGradient></defs><path d=\"M50 5L62 26L84 17L79 42L96 52L78 63L81 86L61 78L50 96L39 78L19 86L22 63L4 52L21 42L16 17L38 26Z\" transform=\"translate(0 3)\" fill=\"#a56719\" opacity=\".73\"/><path d=\"M50 5L62 26L84 17L79 42L96 52L78 63L81 86L61 78L50 96L39 78L19 86L22 63L4 52L21 42L16 17L38 26Z\" fill=\"url(#sy55-finale-body)\" stroke=\"#a56719\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><path d=\"M50 5L62 26L84 17L79 42L96 52L78 63L81 86L61 78L50 96L39 78L19 86L22 63L4 52L21 42L16 17L38 26Z\" fill=\"url(#sy55-finale-glaze)\"/><g fill=\"#fff1b4\" opacity=\".56\"><path d=\"M50 8L56 38L50 55L44 38Z\"/><path d=\"M18 19L41 41L47 56L26 45Z\"/><path d=\"M84 19L59 41L53 56L74 45Z\"/><path d=\"M20 84L39 65L50 56L44 78Z\"/><path d=\"M80 84L61 65L50 56L56 78Z\"/></g><path d=\"M50 21L55 42L77 50L57 59L50 80L43 59L24 50L45 42Z\" fill=\"#ffe7a4\" stroke=\"#c88b35\" stroke-width=\"2.7\" opacity=\".65\"/><path d=\"M37 33L49 15M62 34L76 24M33 67L22 78\" stroke=\"#fffaf0\" stroke-width=\"3\" stroke-linecap=\"round\" opacity=\".79\"/><circle cx=\"50\" cy=\"51\" r=\"8\" fill=\"#fff6cc\" stroke=\"#efad3a\" stroke-width=\"2.5\"/><circle cx=\"48\" cy=\"48\" r=\"2.3\" fill=\"#fff\"/><path d=\"M32 35L43 25M54 17L58 28\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3\" opacity=\".78\" stroke-linecap=\"round\"/></svg>"};
+  const WORLD_CANDY_ART=Object.fromEntries(Object.entries(WORLD_CANDY_VECTORS).map(([theme,svg])=>[theme,
+    'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(svg.replace('<svg ','<svg xmlns="http://www.w3.org/2000/svg" '))]));
+  const SY55_BURST_COLORS={garden:"#ffd1e9",castle:"#bc99ff",ice:"#cbfaff",crystal:"#a8c9ff",chocolate:"#e9ab76",stone:"#c1e1db",gift:"#ffd38b",finale:"#fff0a7"};
+  const WORLD_CANDY_GLOW={garden:"#e55993",castle:"#a67fe4",ice:"#7cdff8",crystal:"#89b3ff",chocolate:"#d99d68",stone:"#a7bac6",gift:"#f9b46e",finale:"#ffe28f"};
+  function worldCandyArt(stage){return WORLD_CANDY_ART[getWorld(stage).theme]}
+  function worldCandyName(stage){return getWorld(stage).name+' dünya şekeri'}
+  function worldCandyGlow(stage){return WORLD_CANDY_GLOW[getWorld(stage).theme]}
+
+  function stageMusicTitle(stage){const world=getWorld(stage);return world.icon+' '+world.name+' · '+String(stage).padStart(2,'0')+'. melodi'}
   decorateMenuCandies();
   const rainbowImageURL='data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(rainbowSprite.replace('<svg ','<svg xmlns="http://www.w3.org/2000/svg" '));
 
@@ -2717,22 +3056,22 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     const el=t.el;if(!el)return;
     const special=t.special||'';
     const shieldSignature=(t.shield?`${t.shield.kind}${t.shield.hp}`:'none')+'|'+(t.gift?'gift':'')+'|labels='+(candyLabelsOn?1:0);
-    const candyLetter={kalp:'K',portakal:'T',yildiz:'Y',yesil:'Ş',mavi:'E',mor:'M'}[t.type];
-    const name=t.special==='color'?'gökkuşağı bombası':`${NAMES[t.type]}${special==='row'?', parıltılı güçlü yatay şeker':special==='column'?', parıltılı güçlü dikey şeker':''}`;
-    if(el.dataset.visual!==`${t.type}|${special}|${shieldSignature}`){
+    const candyLetter={kalp:'K',portakal:'T',yildiz:'Y',yesil:'Ş',mavi:'E',mor:'M',dunya:'D'}[t.type];
+    const name=t.special==='color'?'gökkuşağı bombası':`${t.type===WORLD_TYPE?worldCandyName(level):NAMES[t.type]}${special==='row'?', parıltılı güçlü yatay şeker':special==='column'?', parıltılı güçlü dikey şeker':''}`;
+    if(el.dataset.visual!==`${t.type}|${special}|${shieldSignature}|${t.type===WORLD_TYPE?getWorld(level).theme:''}`){
       el.classList.remove('special-row','special-column','special-color','sy-candy-locked','sy-candy-iced','sy-candy-choco','sy-candy-stone','sy-candy-gift');
       if(protectedCandy(t))el.classList.add('sy-candy-'+({lock:'locked',ice:'iced',choco:'choco',stone:'stone'}[t.shield.kind]||'locked'));
       if(t.gift)el.classList.add('sy-candy-gift');
       if(special)el.classList.add(`special-${special}`);
-      el.style.setProperty('--candy-glow',GLOW_COLORS[t.type]);
-      el.innerHTML=`<span class="gem"><img class="candy-art" src="${special==='color'?rainbowImageURL:candyImageURLs[t.type]}" alt="" draggable="false"></span>${special==='color'?'<span class="color-aura" aria-hidden="true"></span><span class="color-spark" aria-hidden="true"></span>':''}${special==='row'||special==='column'?jewelOverlay:''}${(t.shield&&['lock','ice'].includes(t.shield.kind))?(t.shield.kind==='lock'?'<span class="sy-candy-guard sy-guard-lock" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M18 30V22a14 14 0 0 1 28 0v8" fill="none" stroke="#fff0b3" stroke-width="6"/><rect x="13" y="28" width="38" height="27" rx="8" fill="#a66c23" stroke="#ffe6a6" stroke-width="3"/><circle cx="32" cy="40" r="4" fill="#fff5d1"/><path d="M32 43v6" stroke="#fff5d1" stroke-width="4"/></svg></span>':`<span class="sy-candy-guard sy-guard-ice${t.shield.hp===1?' sy-ice-cracked':''}" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M32 7v50M7 32h50M14 14l36 36M50 14 14 50" stroke="#fff" stroke-width="4" stroke-linecap="round"/><path d="M18 9l-5 9 9 5M46 55l5-9-9-5" stroke="#fff" stroke-width="3" fill="none"/></svg></span>`):''}`;
+      el.style.setProperty('--candy-glow',t.type===WORLD_TYPE?worldCandyGlow(level):GLOW_COLORS[t.type]);
+      el.innerHTML=`<span class="gem"><img class="candy-art" src="${special==='color'?rainbowImageURL:(t.type===WORLD_TYPE?worldCandyArt(level):candyImageURLs[t.type])}" alt="" draggable="false"></span>${special==='color'?'<span class="color-aura" aria-hidden="true"></span><span class="color-spark" aria-hidden="true"></span>':''}${special==='row'||special==='column'?jewelOverlay:''}${(t.shield&&['lock','ice'].includes(t.shield.kind))?(t.shield.kind==='lock'?'<span class="sy-candy-guard sy-guard-lock" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M18 30V22a14 14 0 0 1 28 0v8" fill="none" stroke="#fff0b3" stroke-width="6"/><rect x="13" y="28" width="38" height="27" rx="8" fill="#a66c23" stroke="#ffe6a6" stroke-width="3"/><circle cx="32" cy="40" r="4" fill="#fff5d1"/><path d="M32 43v6" stroke="#fff5d1" stroke-width="4"/></svg></span>':`<span class="sy-candy-guard sy-guard-ice${t.shield.hp===1?' sy-ice-cracked':''}" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M32 7v50M7 32h50M14 14l36 36M50 14 14 50" stroke="#fff" stroke-width="4" stroke-linecap="round"/><path d="M18 9l-5 9 9 5M46 55l5-9-9-5" stroke="#fff" stroke-width="3" fill="none"/></svg></span>`):''}`;
       if(t.shield?.kind==='choco')el.insertAdjacentHTML('beforeend','<span class="sy-choco-guard" aria-hidden="true"><i></i><i></i><i></i><i></i></span>');
       if(t.shield?.kind==='stone')el.insertAdjacentHTML('beforeend','<span class="sy-stone-guard" aria-hidden="true"><span class="sy-stone-crack">'+(t.shield.hp===1?'✦':'')+'</span></span>');
       if(t.gift)el.insertAdjacentHTML('beforeend','<span class="sy-gift-guard" aria-hidden="true">🎁</span>');
       const overlay=el.querySelector('.sy-guard-ice,.sy-stone-guard');
       if(overlay)overlay.dataset.hits=String(t.shield.hp);
       if(candyLabelsOn&&!protectedCandy(t)&&special!=='color')el.insertAdjacentHTML('beforeend',`<span class="sy-candy-letter" aria-hidden="true">${candyLetter}</span>`);
-      el.dataset.visual=`${t.type}|${special}|${shieldSignature}`;
+      el.dataset.visual=`${t.type}|${special}|${shieldSignature}|${t.type===WORLD_TYPE?getWorld(level).theme:''}`;
     }
     const status=t.shield?(t.shield.kind==='lock'?'kilitli, açılmak için bir komşu patlama gerekli':t.shield.kind==='ice'?`buzlu, açılmak için ${t.shield.hp} komşu patlama gerekli`:t.shield.kind==='choco'?'yayılan çikolata, komşu patlama ile temizlenir':`taş blok, kırılmak için ${t.shield.hp} komşu patlama gerekli`):(t.gift?'sürpriz ödül şekeri':'');
     const label=`${t.r+1}. satır ${t.c+1}. sütun, ${name}${status?', '+status:''}`;
@@ -2761,27 +3100,38 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     document.body.classList.toggle('syv5-low-moves',gameStatus==='playing'&&moves<=5);
     document.body.classList.toggle('syv5-boss-stage',!dailyMode&&level%10===0);
     document.body.classList.toggle('syv5-daily',dailyMode);
+    syncWorldAppearance();
     const percent=levelPercent(score,target);
-    els.goalPercent.textContent=dailyMode?fmt(score):percent+'%';
+    els.goalPercent.textContent=dailyMode?'🏆':percent+'%';
+    const goalDetail=$('syGoalDetail');
+    if(goalDetail){
+      const detail=dailyMode?'En yüksek puanı topla!':
+        'Hedef puan: '+fmt(score)+' / '+fmt(target);
+      if(goalDetail.textContent!==detail)goalDetail.textContent=detail;
+    }
     const goalLabel=document.querySelector('.sy-progress-card .sy-meter-name');
     if(goalLabel){const last=goalLabel.lastChild;if(last&&last.nodeType===Node.TEXT_NODE){
-      const text=dailyMode?' GÜNLÜK PUAN':' BÖLÜM İLERLEMESİ';
+      const text=dailyMode?' REKOR HEDEFİ':' BÖLÜM İLERLEMESİ';
       if(last.textContent!==text)last.textContent=text;
     }}
-    els.progress.setAttribute('aria-label',dailyMode?'Günlük puan göstergesi':'Bölüm tamamlama yüzdesi');
-    els.progress.setAttribute('aria-valuetext',dailyMode?('Günlük puan: '+fmt(score)+'. Hamle veya süre dolana kadar devam et.'):'Bölüm hedefinin yüzde '+percent+' kadarı tamamlandı. Hedef yüzde 100.');
-    els.progressFill.style.width=`${percent}%`;els.progress.setAttribute('aria-valuenow',percent);
+    els.progress.setAttribute('aria-label',dailyMode?'Günlük yüksek puan denemesi':'Bölüm tamamlama yüzdesi');
+    els.progress.setAttribute('aria-valuetext',dailyMode?'Zorunlu puan hedefi yok. Amaç en yüksek skoru yapmak.':'Bölüm hedefinin yüzde '+percent+' kadarı tamamlandı. Hedef yüzde 100.');
+    els.progressFill.style.width=dailyMode?'0%':`${percent}%`;els.progress.setAttribute('aria-valuenow',dailyMode?0:percent);
     const levelLabel=document.querySelector('.sy-level-card .stat-label');if(levelLabel)levelLabel.textContent=dailyMode?'GÜNLÜK':'BÖLÜM';
     const levelNumber=$('levelNumber');    if(levelNumber)levelNumber.textContent=dailyMode?'☀':String(level).padStart(2,'0');
     const levelTotal=$('levelTotal');    if(levelTotal)levelTotal.textContent=dailyMode?'GÜN':MAX_LEVEL;
+    const hudSweet=document.querySelector('.sy-level-card .stat-symbol');
+    if(hudSweet&&hudSweet.textContent!=='◈')hudSweet.textContent='◈';
+
     updateTimerUI();
     const feature=$('stageFeature');
     if(feature){
       const hint=dailyMode?'☀️ Günlük görev · kalan hamlelerle en yüksek puan':level%10===0?'🏆 ÖZEL BÖLÜM FİNALİ':stageTheme(level)==='chocolate' ?'🍫 Çikolata yayılır · yanında eşleştir':
         stageTheme(level)==='stone'?'🪨 Taşı komşu 2 patlamayla kır':
         stageTheme(level)==='gift'?'🎁 Sürprizi eşleştir · ödül kazan':
-        stageTheme(level)==='grand'?'🏆 Final · bütün engeller birlikte':'💾 Otomatik kayıt';
-      if(feature.textContent!==hint)feature.textContent=hint;
+        stageTheme(level)==='grand'?'🏆 Final · bütün engeller birlikte':'🌍 '+getWorld(level).name+' · otomatik kayıt';
+      const enhanced=dailyMode?hint:hint+' · ♫'+String(level).padStart(2,'0');
+      if(feature.textContent!==enhanced)feature.textContent=enhanced;
     }
     els.bestScore.textContent=fmt(bestScore);els.shuffleBadge.textContent=shuffleLeft?`${shuffleLeft} hak`:'Bitti';
     if(els.hintBadge)els.hintBadge.textContent=hintLeft?`${hintLeft} hak`:'Bitti';
@@ -2811,6 +3161,10 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
   // Separate from the short WebAudio candy effects, which retain their own controlled gain.
   let musicMode='none',masterBus=null;
   const menuTheme=$('menuThemeMusic'),gameTheme=$('gameThemeMusic');
+  const SY54_TRACKS={"garden":"sy54-garden.mp3","castle":"sy54-castle.mp3","ice":"sy54-ice.mp3","crystal":"sy54-crystal.mp3","chocolate":"sy54-chocolate.mp3","stone":"sy54-stone.mp3","gift":"sy54-gift.mp3","finale":"sy54-finale.mp3"};
+  const ORIGINAL_GAME_SRC=gameTheme.getAttribute('src');
+  let sy54LoadedWorld='legacy';
+
   // Offline standalone builds may use inline audio; web build uses real cached MP3 URLs.
   const iosWebKit=/(iPhone|iPad|iPod)/i.test(navigator.userAgent)||
     (navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
@@ -2826,6 +3180,22 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
       const uri=track.getAttribute('src');
       if(uri)originalMusicSources.set(track,uri);
     }
+  }
+  function configureStageMusic(){
+    const selected=dailyMode?'legacy':getWorld(level).theme;
+    if(sy54LoadedWorld===selected)return;
+    const src=selected==='legacy'?ORIGINAL_GAME_SRC:SY54_TRACKS[selected];
+    if(!src)return;
+    sy54LoadedWorld=selected;
+    stopStageMotif();
+    // In-flight old MP3 decode must not replace the current world's music.
+    sy54DecodeEpoch++;
+    stopDecodedMusic();
+    gameTheme.pause();gameTheme.setAttribute('src',src);gameTheme.load();
+    initializedMediaTracks.delete(gameTheme);
+    if(mobileMusicCompat)originalMusicSources.set(gameTheme,src);
+    decodedMusic.delete('game');musicDecodeJobs.delete('game');musicDecodeFailed.delete('game');
+    musicMode='none';
   }
   // Only convert inline fallback data URLs; external HTTPS MP3 sources stream normally.
   function ensureMobileMediaSource(track){
@@ -2855,6 +3225,71 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
   // AudioContext, while retaining HTMLAudio as a per-track fallback.
   const decodedMusic=new Map(),musicDecodeJobs=new Map(),musicDecodeFailed=new Set();
   let decodedMusicNode=null,decodedMusicGain=null,decodedMusicMode='none';
+  let sy54DecodeEpoch=0,stageMotifNode=null,stageMotifGain=null,stageMotifLevel=-1;
+  const WORLD_SCORE={
+    garden:[112,62,[0,2,4,5,7,9,11],[0,4,5,3]],castle:[106,62,[0,2,3,5,7,8,10],[0,5,3,4]],
+    ice:[98,60,[0,2,3,5,7,8,10],[0,3,5,4]],crystal:[118,64,[0,2,3,5,7,8,10],[0,5,6,3]],
+    chocolate:[100,60,[0,2,4,5,7,9,11],[0,3,4,3]],stone:[110,57,[0,2,3,5,7,8,10],[0,5,6,4]],
+    gift:[132,62,[0,2,4,5,7,9,11],[0,4,5,3]],finale:[126,64,[0,2,3,5,7,8,10],[0,3,5,4]]
+  };
+  // Distinct deterministic melodic arrangement for each of 60 levels.
+  // Render only one short buffer (no per-frame JavaScript note timers).
+  function stageMotifBuffer(ctx,stage){
+    const world=getWorld(stage).theme,info=WORLD_SCORE[world],bpm=info[0],root=info[1],scale=info[2],progression=info[3];
+    const beat=60/bpm,duration=32*beat,rate=22050;
+    const buffer=ctx.createBuffer(1,Math.ceil(duration*rate),rate),data=buffer.getChannelData(0);
+    let seed=(stage*2654435761)>>>0;
+    const rand=()=>{seed^=seed<<13;seed^=seed>>>17;seed^=seed<<5;return (seed>>>0)/4294967296};
+    for(let bar=0;bar<8;bar++){
+      const degree=progression[bar%4];
+      for(let step=0;step<8;step++){
+        if((step+bar+stage)%4===0&&!((stage%10)===0))continue;
+        const chordTone=(degree+[0,2,4][(step+Math.floor(rand()*3))%3])%7;
+        const pitch=root+12+scale[chordTone]+(step%3===0?12:0)+(stage%3===0?-12:0);
+        const f=440*Math.pow(2,(pitch-69)/12),begin=(bar*4+step/2)*beat;
+        const n=Math.min(Math.floor(rate*beat*(stage%10===0?.39:.28)),data.length-Math.floor(begin*rate));
+        if(n<2)continue;
+        const at=Math.floor(begin*rate),amp=stage%10===0?.27:.21;
+        for(let i=0;i<n;i++){
+          const t=i/rate,env=(1-Math.exp(-t*85))*Math.exp(-t*9);
+          data[at+i]+=amp*env*(Math.sin(2*Math.PI*f*t)+.22*Math.sin(4*Math.PI*f*t));
+        }
+      }
+    }
+    return buffer;
+  }
+  function stopStageMotif(){
+    const node=stageMotifNode,gain=stageMotifGain;
+    stageMotifNode=null;stageMotifGain=null;stageMotifLevel=-1;
+    if(node){
+      try{
+        if(audio?.state==='running'&&gain){
+          const now=audio.currentTime;
+          gain.gain.cancelScheduledValues(now);
+          gain.gain.setValueAtTime(gain.gain.value,now);
+          gain.gain.linearRampToValueAtTime(.0001,now+.10);
+          node.onended=()=>{try{node.disconnect();gain.disconnect()}catch{}};
+          node.stop(now+.12);
+        }else{node.stop();node.disconnect();gain?.disconnect()}
+      }catch{try{node.disconnect();gain?.disconnect()}catch{}}
+    }else if(gain)try{gain.disconnect()}catch{}
+  }
+  function startStageMotif(){
+    if(dailyMode||musicMode!=='game'||!musicOn||masterVolume<=0||document.hidden)return;
+    if(stageMotifNode&&stageMotifLevel===level)return;
+    const ctx=audioContext();if(!ctx||ctx.state!=='running')return;
+    stopStageMotif();
+    try{
+      const node=ctx.createBufferSource(),gain=ctx.createGain();
+      node.buffer=stageMotifBuffer(ctx,level);node.loop=true;
+      const now=ctx.currentTime;
+      gain.gain.setValueAtTime(.0001,now);
+      gain.gain.linearRampToValueAtTime(.29*masterVolume/100,now+.15);
+      node.connect(gain);gain.connect(ctx.destination);node.start();
+      stageMotifNode=node;stageMotifGain=gain;stageMotifLevel=level;
+    }catch(e){console.warn('Bölüm melodisi hazırlanamadı; dünya müziği devam ediyor',e)}
+  }
+
   let audioGestureSeen=false;
   const trackForMode=mode=>mode==='menu'?menuTheme:mode==='game'?gameTheme:mode==='final'?els.menuMusic:null;
   const musicVolumeFactor=mode=>mode==='menu'?.85:mode==='game'?.88:.59;
@@ -2880,6 +3315,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
         const resuming=audio.resume();
         if(resuming?.then)resuming.then(()=>{
           if(mobileMusicCompat&&musicMode!=='none')startDecodedMusic(musicMode);
+          if(musicMode==='game')startStageMotif();
         }).catch(()=>{});
       }catch{}
     }
@@ -2888,8 +3324,18 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
   function stopDecodedMusic(){
     const node=decodedMusicNode,gain=decodedMusicGain;
     decodedMusicNode=null;decodedMusicGain=null;decodedMusicMode='none';
-    if(node){try{node.stop()}catch{}try{node.disconnect()}catch{}}
-    if(gain){try{gain.disconnect()}catch{}}
+    if(node){
+      try{
+        if(audio?.state==='running'&&gain){
+          const now=audio.currentTime;
+          gain.gain.cancelScheduledValues(now);
+          gain.gain.setValueAtTime(gain.gain.value,now);
+          gain.gain.linearRampToValueAtTime(.0001,now+.13);
+          node.onended=()=>{try{node.disconnect();gain.disconnect()}catch{}};
+          node.stop(now+.15);
+        }else{node.stop();node.disconnect();gain?.disconnect()}
+      }catch{try{node.disconnect();gain?.disconnect()}catch{}}
+    }else if(gain){try{gain.disconnect()}catch{}}
   }
   function prepareDecodedMusic(mode){
     if(!mobileMusicCompat||mode==='none'||decodedMusic.has(mode)||musicDecodeJobs.has(mode)||musicDecodeFailed.has(mode))return;
@@ -2910,10 +3356,11 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
         if(!response.ok)throw Error('Müzik yüklenemedi: '+response.status);
         return response.arrayBuffer();
       };
+      const expectedEpoch=sy54DecodeEpoch;
       // Some WebViews never resolve the decode promise. Do not remain silent.
       let settled=false;
       const watchdog=setTimeout(()=>{
-        if(settled)return;
+        if(settled||(mode==='game'&&expectedEpoch!==sy54DecodeEpoch))return;
         // A slow decode is NOT a failed decode. Continue the pending job and
         // let its eventual success replace HTMLAudio without losing music.
         console.warn('Mobil müzik çözümlemesi gecikti, HTML ses yedeği deneniyor:',mode);
@@ -2921,15 +3368,16 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
       },4500);
       const job=obtainAudioBytes().then(bytes=>ctx.decodeAudioData(bytes)).then(buffer=>{
         settled=true;clearTimeout(watchdog);
-        if(musicDecodeFailed.has(mode))return;
+        if(musicDecodeFailed.has(mode)||(mode==='game'&&expectedEpoch!==sy54DecodeEpoch))return;
         decodedMusic.set(mode,buffer);
         if(musicMode===mode)startDecodedMusic(mode);
       }).catch(err=>{
         settled=true;clearTimeout(watchdog);
+        if(mode==='game'&&expectedEpoch!==sy54DecodeEpoch)return;
         musicDecodeFailed.add(mode);
         console.warn('Mobil müzik çözümleme başarısız; HTML ses yedeği kullanılıyor',mode,err);
         if(musicMode===mode&&musicOn&&masterVolume>0)playTrack(track);
-      }).finally(()=>musicDecodeJobs.delete(mode));
+      }).finally(()=>{if(mode!=='game'||expectedEpoch===sy54DecodeEpoch)musicDecodeJobs.delete(mode)});
       musicDecodeJobs.set(mode,job);
     }catch(e){
       musicDecodeFailed.add(mode);
@@ -2957,11 +3405,14 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     stopDecodedMusic();
     try{
       const gain=ctx.createGain(),node=ctx.createBufferSource();
-      gain.gain.value=musicVolumeFactor(mode)*masterVolume/100;
+      const now=ctx.currentTime;
+      gain.gain.setValueAtTime(.0001,now);
+      gain.gain.linearRampToValueAtTime(musicVolumeFactor(mode)*masterVolume/100,now+.18);
       node.buffer=decodedMusic.get(mode);node.loop=true;
       node.connect(gain);gain.connect(ctx.destination);
       node.start(0);
       decodedMusicNode=node;decodedMusicGain=gain;decodedMusicMode=mode;
+      if(mode==='game')startStageMotif();
       // Never play an HTMLAudio track and its WebAudio copy simultaneously.
       for(const media of [menuTheme,gameTheme,els.menuMusic])media.pause();
       console.info('Mobil müzik Web Audio üzerinden oynatılıyor:',mode);
@@ -2977,6 +3428,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     menuTheme.volume=Math.min(1,.85*masterVolume/100);
     gameTheme.volume=Math.min(1,.88*masterVolume/100);
     els.menuMusic.volume=Math.min(1,.59*masterVolume/100);
+    if(stageMotifGain&&audio)stageMotifGain.gain.setTargetAtTime(.29*masterVolume/100,audio.currentTime,.04);
     if(decodedMusicGain&&audio){
       const now=audio.currentTime;
       decodedMusicGain.gain.setTargetAtTime(musicVolumeFactor(decodedMusicMode)*masterVolume/100,now,.035);
@@ -3004,15 +3456,18 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
   }
   function setMusicMode(mode){
     if(mode!==musicMode){
+      if(mode!=='game')stopStageMotif();
       stopDecodedMusic();
       menuTheme.pause();gameTheme.pause();els.menuMusic.pause();
       musicMode=mode;
     }
     if(mode==='none'){
+      stopStageMotif();
       stopDecodedMusic();
       menuTheme.pause();gameTheme.pause();els.menuMusic.pause();return;
     }
     applyMusicVolume();
+    if(mode==='game')startStageMotif();
     // Prefer the sound engine used by candy effects on mobile browsers,
     // including Xiaomi Mi Browser, while retaining HTMLAudio as a fallback.
     if(mobileMusicCompat&&!musicDecodeFailed.has(mode)){
@@ -3029,7 +3484,9 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     if(!musicOn||masterVolume<=0)updateSoundPrompt(false);
     const finished=gameStatus==='won'&&level===MAX_LEVEL&&!els.overlay.classList.contains('hidden');
     const nextMode=!musicOn||masterVolume<=0||document.hidden?'none':finished?'final':isMenuVisible()?'menu':isGameVisible()?'game':'none';
+    if(nextMode==='game')configureStageMusic();
     setMusicMode(nextMode);
+    if(nextMode==='game')startStageMotif();
   }
   function activateSoundOnGesture(event){
     if(event?.isTrusted===false||masterVolume<=0||document.hidden)return;
@@ -3142,15 +3599,15 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     for(const id of ids){const t=tiles.get(id);if(!t)continue;
       sumX+=(t.c+.5)*12.5;sumY+=(t.r+.5)*12.5;count++;
       for(let n=0;n<2&&particles<limit;n++,particles++){
-        const sp=document.createElement('i');sp.className='spark';sp.style.left=`${(t.c+.5)*12.5}%`;sp.style.top=`${(t.r+.5)*12.5}%`;
-        sp.style.width=sp.style.height=`${3+Math.random()*6}px`;sp.style.background=pick(['#fff','#ffdf72','#ff9bdd']);
+        const sp=document.createElement('i');const sy55Theme=t.type===WORLD_TYPE?getWorld(level).theme:null;sp.className=sy55Theme?'spark sy55-world-shard sy55-shard-'+sy55Theme:'spark';sp.style.left=`${(t.c+.5)*12.5}%`;sp.style.top=`${(t.r+.5)*12.5}%`;
+        sp.style.width=sp.style.height=sy55Theme?`${8+Math.random()*6}px`:`${3+Math.random()*6}px`;sp.style.background=sy55Theme?SY55_BURST_COLORS[sy55Theme]:pick(['#fff','#ffdf72','#ff9bdd']);if(sy55Theme)sp.style.setProperty('--sy55-rotation',`${Math.floor(Math.random()*240-120)}deg`);
         sp.style.setProperty('--dx',`${(Math.random()-.5)*95}px`);sp.style.setProperty('--dy',`${(Math.random()-.5)*95}px`);
         fragment.appendChild(sp);setTimeout(()=>sp.remove(),580);
       }
     }
     if(!count)return;
     els.board.appendChild(fragment);
-    {const ring=document.createElement('i');ring.className='sy-ring';ring.style.left=`${sumX/count}%`;ring.style.top=`${sumY/count}%`;els.board.appendChild(ring);setTimeout(()=>ring.remove(),620);if(chain>=3||count>=7){const f=els.board.parentElement;f.classList.remove('sy-shake');void f.offsetWidth;f.classList.add('sy-shake');setTimeout(()=>f.classList.remove('sy-shake'),420)}}
+    {const ring=document.createElement('i');const sy55RingTheme=[...ids].some(id=>tiles.get(id)?.type===WORLD_TYPE)?getWorld(level).theme:null;ring.className=sy55RingTheme?'sy-ring sy55-burst-ring sy55-ring-'+sy55RingTheme:'sy-ring';ring.style.left=`${sumX/count}%`;ring.style.top=`${sumY/count}%`;els.board.appendChild(ring);setTimeout(()=>ring.remove(),620);if(chain>=3||count>=7){const f=els.board.parentElement;f.classList.remove('sy-shake');void f.offsetWidth;f.classList.add('sy-shake');setTimeout(()=>f.classList.remove('sy-shake'),420)}}
     const txt=document.createElement('span');txt.className='pop-score';txt.style.left=`${sumX/count}%`;txt.style.top=`${sumY/count}%`;
     txt.textContent='+'+fmt(points)+(chain>1?' · ×'+chain:'');els.board.appendChild(txt);setTimeout(()=>txt.remove(),850);
   }
@@ -3173,7 +3630,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
         let i=0;
         for(let r=SIZE-1;r>=0;r--){
           if(i<existing.length)board[r][c]=existing[i++];
-          else{const t=tile(pick(TYPES),r,c);t.spawn=r-(SIZE-existing.length);board[r][c]=t;newcomers.push(t)}
+          else{const t=tile(pick(PLAY_TYPES),r,c);t.spawn=r-(SIZE-existing.length);board[r][c]=t;newcomers.push(t)}
         }
         continue;
       }
@@ -3188,7 +3645,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
           let idx=0;
           for(let y=bottom;y>=top;y--){
             if(idx<surviving.length)board[y][c]=surviving[idx++];
-            else{const t=tile(pick(TYPES),y,c);t.spawn=top-1;board[y][c]=t;newcomers.push(t)}
+            else{const t=tile(pick(PLAY_TYPES),y,c);t.spawn=top-1;board[y][c]=t;newcomers.push(t)}
           }
         }
         bottom=r-1;
@@ -3203,9 +3660,9 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     return board.flat().filter(t => t && !protectedCandy(t) && t.special !== 'color' && t.type === type);
   }
   function frequentType(){
-    const counts=Object.fromEntries(TYPES.map(t=>[t,0]));
+    const counts=Object.fromEntries(PLAY_TYPES.map(t=>[t,0]));
     for(const row of board)for(const t of row)if(t && !protectedCandy(t) && t.special !== 'color')counts[t.type]++;
-    return [...TYPES].sort((a,b)=>counts[b]-counts[a])[0];
+    return [...PLAY_TYPES].sort((a,b)=>counts[b]-counts[a])[0];
   }
   function expandSpecials(initial,immune=new Set(),colorTriggers=new Map()){
     const clear=new Set([...initial].filter(id=>{const t=tiles.get(id);return t&&!protectedCandy(t)})),sources=new Map(colorTriggers),rainbowEvents=[];
@@ -3434,7 +3891,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
       const ray=document.createElement('i');ray.className='rainbow-sweep-ray';
       ray.style.left=x+'%';ray.style.top=y+'%';ray.style.width=len+'%';
       ray.style.transform='rotate('+Math.atan2(dy,dx)+'rad)';
-      ray.style.setProperty('--ray-color',type?GLOW_COLORS[type]:'#fff0b9');
+      ray.style.setProperty('--ray-color',type?(type===WORLD_TYPE?worldCandyGlow(level):GLOW_COLORS[type]):'#fff0b9');
       ray.style.animationDelay=(i%5*19)+'ms';layer.appendChild(ray);
     }
     els.board.appendChild(layer);
@@ -3560,7 +4017,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
       if(keyboardMove&&isGameVisible()&&!els.board.contains(document.activeElement))board[nr][nc].el?.focus({preventScroll:true});
     }
   }
-  function shareSummary(){return `🍬 ${playerName||'Bir oyuncu'} Şeker Yağmuru 5.0.0 oyununu bitirdi!
+  function shareSummary(){return `🍬 ${playerName||'Bir oyuncu'} Şeker Yağmuru 5.5.2 oyununu bitirdi!
 🏆 ${MAX_LEVEL}/${MAX_LEVEL} bölüm tamamlandı
 ⭐ Bu macera: ${runStars.reduce((a,b)=>a+b,0)} / ${MAX_LEVEL*3} yıldız
 🏅 Toplam puan: ${fmt(scoreTotal)}
@@ -3600,7 +4057,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     ctx.fillStyle='#f8ecff';ctx.font='bold 33px sans-serif';ctx.fillText('EN İYİ BÖLÜM  ·  '+fmt(Math.max(0,...completedScores)),540,1005);
     ctx.fillStyle='#ffe9ff';ctx.font='bold 38px sans-serif';ctx.fillText('ŞAMPİYON  ·  '+(playerName||'Oyuncu'),540,1060,870);
     ctx.fillStyle='#f5e5ff';ctx.font='29px sans-serif';ctx.fillText('MACERA YILDIZLARI  ·  '+runStars.reduce((a,b)=>a+b,0)+' / '+(MAX_LEVEL*3),540,1110);
-    ctx.fillStyle='#ffebff';ctx.font='28px sans-serif';ctx.fillText('Şeker Yağmuru 5.0.0  •  Arif Şahin',540,1250);
+    ctx.fillStyle='#ffebff';ctx.font='28px sans-serif';ctx.fillText('Şeker Yağmuru 5.5.2  •  Arif Şahin',540,1250);
   }
   async function cardBlob(type='image/png'){
     return new Promise((resolve,reject)=>els.finalCanvas.toBlob(b=>b?resolve(b):reject(new Error('Kart hazırlanamadı')),type,type==='image/jpeg'?.94:undefined));
@@ -3725,7 +4182,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     els.finalArea.classList.add('hidden');$('waCardLink').hidden=true;
     els.dialogIcon.textContent='☀️';els.dialogTitle.textContent='Günlük mücadele tamamlandı!';
     els.dialogText.textContent='18 hamlelik günlük tahtada puanın: '+fmt(score)+'. Kendi en iyi puanın: '+fmt(best)+'. Macera kaydın etkilenmedi.';
-    $('resultStars').textContent='☀️  GÜNLÜK REKOR';$('resultCriteria').textContent='Gün: '+dailyDate+' UTC · Başlangıç tahtası her oyuncu için aynıdır. Sıralama bu cihazdaki kişisel rekordur.';
+    $('resultStars').textContent='☀️  GÜNLÜK REKOR';$('syStarMilestones').replaceChildren();$('syWorldResult').hidden=true;$('resultCriteria').textContent='Gün: '+dailyDate+' UTC · Başlangıç tahtası her oyuncu için aynıdır. Sıralama bu cihazdaki kişisel rekordur.';
     $('resultBadges').textContent='Deneme sayısı: '+dailyRecords[dailyDate].played;
     els.dialogScoreLabel.textContent='GÜNLÜK PUAN';els.dialogScore.textContent=fmt(score);
     els.dialogBtn.textContent='↻ Günlük mücadeleyi tekrarla';
@@ -3760,13 +4217,25 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
       const bold=document.createElement('b'),small=document.createElement('small');bold.textContent=num;small.textContent=name;box.append(bold,small);return box;
     }));
     const day=utcDay(),rec=dailyRecords[day];
-    $('statsDaily').textContent='☀️ '+day+' UTC günlük mücadele: '+(rec&&Number.isFinite(rec.best)?fmt(rec.best)+' puan · '+rec.played+' deneme':'Henüz oynanmadı')+'. Günlük sıralama yalnızca kişiseldir.';
+    const streak=dailyStreak();
+    $('statsDaily').textContent='☀️ '+day+' UTC günlük mücadele: '+(rec&&Number.isFinite(rec.best)?fmt(rec.best)+' puan · '+rec.played+' deneme':'Henüz oynanmadı')+'. 🔥 Aktif seri: '+streak.current+' gün · En uzun seri: '+streak.best+' gün. Yalnızca kişisel kayıttır.';
+    fillDailyWeek();
     const list=document.createDocumentFragment();
     for(let i=1;i<=60;i++){
       const row=document.createElement('div');row.className='sy-record-item';
       const left=document.createElement('span'),right=document.createElement('strong'),r=stats[i];
-      left.textContent=String(i).padStart(2,'0')+'. bölüm · '+(bestStars[i-1]||0)+' ★';
-      right.textContent=r&&r.wins?('Rekor '+fmt(r.best||0)+' · '+r.minMoves+' hamle · '+r.bestSeconds+' sn'):completedScores[i-1]>0?('Önceki skor '+fmt(completedScores[i-1])):'Henüz veri yok';
+      const count=Math.max(0,Math.min(3,Number(bestStars[i-1])||0));
+      const chapter=document.createElement('span'),starLine=document.createElement('span');
+      chapter.className='sy-record-level-name';chapter.textContent=String(i).padStart(2,'0')+'. bölüm';
+      starLine.className='sy-record-level-stars';starLine.dataset.earned=String(count>0);
+      starLine.textContent='★'.repeat(count)+'☆'.repeat(3-count);
+      starLine.setAttribute('aria-label',count+' / 3 yıldız');left.append(chapter,starLine);
+      if(r&&Number(r.wins)>0){
+        const parts=['Rekor '+fmt(Number(r.best)||0)];
+        if(Number.isFinite(r.minMoves)&&r.minMoves!==null)parts.push(r.minMoves+' hamle');
+        if(Number.isFinite(r.bestSeconds)&&r.bestSeconds!==null)parts.push(r.bestSeconds+' sn');
+        right.textContent=parts.join(' · ');
+      }else right.textContent=completedScores[i-1]>0?'Önceki skor '+fmt(completedScores[i-1]):'Henüz veri yok';
       row.append(left,right);list.append(row);
     }
     $('statsLevels').replaceChildren(list);
@@ -3776,38 +4245,82 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     setAlbum();
     const done=Math.max(0,Math.min(MAX_LEVEL,Math.max(maxLevel-1,completedScores.filter(v=>Number.isFinite(v)&&v>0).length)));
     const displayLevel=Math.max(1,Math.min(MAX_LEVEL,level));
-    const el=$('menuRecord');if(el)el.textContent=`🏅 Bölüm ${displayLevel}/${MAX_LEVEL} · Rekor ${fmt(bestScore)}`;
+    // Home progress shows the number of completed stages once; record details live in Records.
     const current=$('menuCurrentLevel'),unlocked=$('menuUnlockedLevel'),high=$('menuHighScore');
     if(current)current.textContent=String(displayLevel).padStart(2,'0');
     if(unlocked)unlocked.textContent=String(Math.max(1,Math.min(MAX_LEVEL,maxLevel))).padStart(2,'0');
     if(high)high.textContent=fmt(bestScore);
-    if($('menuJourneyLabel'))$('menuJourneyLabel').textContent=`${done} / ${MAX_LEVEL} tamamlandı`;
+    if($('menuJourneyLabel'))$('menuJourneyLabel').textContent=`${done} / ${MAX_LEVEL}`;
     if($('menuJourneyFill'))$('menuJourneyFill').style.width=(done/MAX_LEVEL*100)+'%';
-    if($('menuJourneyProgress'))$('menuJourneyProgress').setAttribute('aria-valuenow',String(done));
+    if($('menuJourneyProgress')){ $('menuJourneyProgress').setAttribute('aria-valuenow',String(done)); $('menuJourneyProgress').setAttribute('aria-valuetext',done+' / '+MAX_LEVEL+' bölüm tamamlandı'); }
+    const streak=dailyStreak();
+    if($('dailyStreakLine'))$('dailyStreakLine').textContent=streak.current?'🔥 '+streak.current+' günlük seri · En uzun '+streak.best:'18 hamlelik yeni görev · Serini başlat';
     const continuing=displayLevel>1||moveCount||!shuffleLeft||hintLeft<5||gameStatus!=='playing'||timeLeft<levelConfig(displayLevel).seconds-1;
     if($('playBtnText'))$('playBtnText').textContent=gameStatus==='won'&&displayLevel===MAX_LEVEL?'FİNALİ GÖR':continuing?'DEVAM ET':'HEMEN OYNA';
     if($('playBtn'))$('playBtn').setAttribute('aria-label',continuing?'Oyuna devam et':'Oyuna başla');
     updatePlayerUI();
   }
   // Önceki bölümleri seçme: kayıt biçimini, bölüm kilitlerini ve yıldızları koru.
+  // Eight illustrated worlds. Build nodes only when the map is opened.
   function populateLevelPicker(){
-    const picker=$('levelPicker');if(!picker)return;
-    const fragment=document.createDocumentFragment();
-    for(let i=1;i<=MAX_LEVEL;i++){
-      const open=i<=maxLevel||bestStars[i-1]>0;
-      const stars=bestStars[i-1]||0;
-      const button=document.createElement('button');button.type='button';
-      button.className='sy-level-tile'+(stars?' is-complete':'')+(i===level?' is-current':'')+(!open?' is-locked':'');
-      button.disabled=!open;button.dataset.level=String(i);
-      button.setAttribute('aria-label',`${i}. bölüm${!open?', kilitli':`, ${stars} yıldız${i===level?', şu anki bölüm':''}`}`);
-      if(i===level)button.setAttribute('aria-current','step');
-      const number=document.createElement('span');number.textContent=String(i).padStart(2,'0');
-      const rating=document.createElement('span');rating.className='sy-level-rating';
-      rating.textContent=!open?'🔒':stars?'★'.repeat(stars)+'☆'.repeat(3-stars):i===level?'✦':'·';
-      button.append(number,rating);
-      fragment.appendChild(button);
+    const picker=$('levelPicker'),nav=$('worldNavigation');if(!picker||!nav)return;
+    const collection=document.createDocumentFragment(),navFrag=document.createDocumentFragment();
+    const done=bestStars.filter(n=>n>0).length;
+    $('worldJourneyProgressText').textContent=done+' / 60 bölüm · '+bestStars.reduce((a,b)=>a+b,0)+' / 180 ★';
+    for(const world of WORLDS){
+      const opened=world.start<=maxLevel||bestStars.slice(world.start-1,world.end).some(n=>n>0);
+      const active=level>=world.start&&level<=world.end;
+      const worldStars=bestStars.slice(world.start-1,world.end);
+      const finished=worldStars.filter(n=>n>0).length;
+      const card=document.createElement('section');
+      card.className='sy-world-card sy-world-'+world.theme+(opened?'':' is-locked-world');
+      card.id='sy-world-'+world.start;
+      card.setAttribute('aria-label',world.name+'; '+world.start+'–'+world.end+'. bölümler');
+      const head=document.createElement('div');head.className='sy-world-card-top';
+      const emblem=document.createElement('img');emblem.className='sy-world-emblem sy541-world-sweet';emblem.src=worldCandyArt(world.start);emblem.alt='';emblem.draggable=false;emblem.setAttribute('aria-hidden','true');
+      const title=document.createElement('div');title.className='sy-world-heading';
+      const sub=document.createElement('small');sub.textContent=world.start+'–'+world.end+'. BÖLÜMLER';
+      const h=document.createElement('h3');h.textContent=world.name;
+      const desc=document.createElement('p');desc.textContent=world.desc;title.append(sub,h,desc);
+      const score=document.createElement('div');score.className='sy-world-score';
+      const count=document.createElement('b');count.textContent=finished+' / '+worldStars.length;
+      const star=document.createElement('small');star.textContent=worldStars.reduce((a,b)=>a+b,0)+' ★';score.append(count,star);
+      head.append(emblem,title,score);
+      const meter=document.createElement('div');meter.className='sy-world-meter';
+      const bar=document.createElement('span');bar.style.width=finished/worldStars.length*100+'%';meter.appendChild(bar);
+      const backdrop=document.createElement('div');backdrop.className='sy-world-landscape';backdrop.textContent=world.scene;backdrop.setAttribute('aria-hidden','true');
+      const path=document.createElement('div');path.className='sy-world-path';
+      const total=world.end-world.start+1,rows=Math.ceil(total/5),points=[];
+      for(let j=0;j<total;j++){
+        const i=world.start+j,openedLevel=i<=maxLevel||bestStars[i-1]>0,stars=bestStars[i-1]||0;
+        const row=Math.floor(j/5),pos=j%5,col=row%2===0?pos:4-pos;
+        points.push((col*100+50)+','+(row*100+50));
+        const button=document.createElement('button');button.type='button';button.dataset.level=String(i);
+        button.className='sy-world-node'+(stars?' is-complete':'')+(i===level?' is-current':'')+(!openedLevel?' is-locked':'')+(i%10===0?' is-boss':'');
+        button.style.gridRow=String(row+1);button.style.gridColumn=String(col+1);
+        button.disabled=!openedLevel;
+        button.setAttribute('aria-label',i+'. bölüm, '+world.name+(!openedLevel?', kilitli':', '+stars+' yıldız'+(i===level?', şu anki bölüm':'')));
+        if(i===level)button.setAttribute('aria-current','step');
+        button.classList.add('sy54-candy-node');
+        const art=document.createElement('img');art.className='sy54-map-sweet';art.src=worldCandyArt(i);art.alt='';art.draggable=false;art.setAttribute('aria-hidden','true');
+        const num=document.createElement('span');num.className='sy54-level-number';num.textContent=String(i).padStart(2,'0');
+        const rating=document.createElement('span');rating.className='sy-level-rating';
+        rating.textContent=!openedLevel?'🔒':stars?'★'.repeat(stars)+'☆'.repeat(3-stars):i===level?'✦':'·';
+        button.append(art,num,rating);path.append(button);
+      }
+      const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+      svg.setAttribute('viewBox','0 0 500 '+(rows*100));svg.setAttribute('preserveAspectRatio','none');
+      svg.setAttribute('class','sy-world-route');svg.setAttribute('aria-hidden','true');
+      const route=document.createElementNS('http://www.w3.org/2000/svg','path');route.setAttribute('d','M '+points.join(' L '));svg.appendChild(route);path.prepend(svg);
+      const foot=document.createElement('div');foot.className='sy-world-bottom';
+      const f1=document.createElement('span');f1.textContent=opened?'⭐ '+finished+' tamamlandı':'🔒 Önceki dünyayı keşfet';
+      const f2=document.createElement('span');f2.textContent=active?'✦ Şu an bu dünyadasın':finished===total?'✓ Dünya tamamlandı':'✨ '+(worldStars.length*3-worldStars.reduce((a,b)=>a+b,0))+' yıldız daha';
+      foot.append(f1,f2);card.append(head,meter,backdrop,path,foot);collection.append(card);
+      const jump=document.createElement('button');jump.type='button';jump.className='sy-world-nav'+(active?' is-active':'');
+      const pic=document.createElement('img');pic.className='sy541-nav-sweet';pic.src=worldCandyArt(world.start);pic.alt='';pic.draggable=false;pic.setAttribute('aria-hidden','true');jump.append(pic,document.createTextNode(world.name));jump.dataset.world=String(world.start);
+      jump.setAttribute('aria-label',world.name+' bölüm grubuna git');navFrag.append(jump);
     }
-    picker.replaceChildren(fragment);
+    picker.replaceChildren(collection);nav.replaceChildren(navFrag);
   }
   function chooseUnlockedLevel(next){
     if(!Number.isInteger(next)||next<1||next>MAX_LEVEL||(next>maxLevel&&!bestStars[next-1]))return;
@@ -3846,7 +4359,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     $('settingsHapticBtn').textContent=hapticOn?'Açık':'Kapalı';$('settingsHapticBtn').setAttribute('aria-pressed',String(hapticOn));
     $('settingsContrastBtn').textContent=contrastOn?'Açık':'Kapalı';$('settingsContrastBtn').setAttribute('aria-pressed',String(contrastOn));
     document.body.classList.toggle('syv5-high-contrast',contrastOn);
-    document.body.classList.toggle('reduce-motion',reduceMotion);
+    document.body.classList.toggle('reduce-motion',reduceMotion);applyVisualQuality();syncWorldAppearance();
   }
   function refreshBoardTheme(){
     document.body.dataset.boardTheme=boardTheme;
@@ -3918,6 +4431,16 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
   $('howPlayBtn').addEventListener('click',closeMenu);
   $('levelsBtn').addEventListener('click',()=>switchScreen('levels'));
   $('levelPicker').addEventListener('click',event=>{const button=event.target.closest('button[data-level]');if(button&&!button.disabled)chooseUnlockedLevel(Number(button.dataset.level))});
+  $('worldNavigation').addEventListener('click',event=>{
+    const btn=event.target.closest('button[data-world]');if(!btn)return;
+    const card=$('sy-world-'+btn.dataset.world);if(card)card.scrollIntoView({behavior:reduceMotion?'instant':'smooth',block:'start'});
+  });
+  $('settingsWorldAppearanceBtn').addEventListener('click',()=>{worldAppearanceOn=!worldAppearanceOn;setLocal(WORLD_APPEARANCE_KEY,worldAppearanceOn?'on':'off');syncWorldAppearance();showToast(worldAppearanceOn?'🌍 Dünya temaları açık':'🎨 Klasik tahta teması açık');});
+  $('syQualitySelect').addEventListener('change',event=>{
+    if(!['auto','full','eco'].includes(event.target.value))return;
+    visualQuality=event.target.value;setLocal(QUALITY_KEY,visualQuality);applyVisualQuality();
+    showToast('Görsel performans modu: '+(visualQuality==='eco'?'Akıcı':visualQuality==='full'?'Tam kalite':'Otomatik'));
+  });
   $('dailyBtn').addEventListener('click',()=>startDaily());
   $('recordsBtn').addEventListener('click',()=>switchScreen('records'));
   $('settingsBtn').addEventListener('click',()=>switchScreen('settings'));
@@ -3984,7 +4507,7 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     try{for(const k of [SAVE_KEY,V6_SAVE_KEY,PREVIOUS_SAVE_KEY,BACKUP_KEY,'sy_best','sy_level'])localStorage.removeItem(k)}
     catch{showToast('Tarayıcı kayıt silmeye izin vermedi.');return}
     protectedSave=false;lastStored=null;storageNotice('');
-    stats={};dailyRecords={};saveStats();saveDaily();setLocal(TUTORIAL_KEY,'{}');
+    stats={};dailyRecords={};dailyMeta={};saveStats();saveDaily();setLocal(TUTORIAL_KEY,'{}');
     bestStars=blankStars();feats={rainbow:false,chain:false};bestScore=0;maxLevel=1;scoreTotal=0;completedScores=[];hintLeft=5;startLevel(1,true);switchScreen('home');showToast('İlerleme sıfırlandı');
   });
 
@@ -3992,16 +4515,110 @@ body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .
     return {name:playerName,theme:boardTheme,volume:masterVolume,music:musicOn,motion:reduceMotion,candyLabels:candyLabelsOn};
   }
   $('exportSave').addEventListener('click',()=>{
-    const data={format:'seker-yagmuru',profile:profileSnapshot(),game:snapshot(),stats,dailyRecords};
+    const safeState=busy&&gameStatus==='playing'&&turnCheckpoint?turnCheckpoint:snapshot();
+    const data={format:'seker-yagmuru',profile:profileSnapshot(),game:safeState,stats,dailyRecords,dailyMeta};
     const blob=new Blob([JSON.stringify(data)],{type:'application/json'});
     const url=URL.createObjectURL(blob),a=document.createElement('a');
     a.href=url;a.download='Seker-Yagmuru-Kayit.json';document.body.appendChild(a);a.click();a.remove();
     setTimeout(()=>URL.revokeObjectURL(url),12000);
   });
+
+  // v5.5.2 · Restore the same JSON format that the export button produces.
+  // Validate before asking permission or touching any existing saved progress.
+  function cleanImportedStats(raw){
+    const output={};
+    if(!raw||typeof raw!=='object'||Array.isArray(raw))return output;
+    for(const [key,value] of Object.entries(raw)){
+      const n=Number(key);
+      if(!Number.isInteger(n)||n<1||n>MAX_LEVEL||String(n)!==key||!value||typeof value!=='object'||Array.isArray(value))continue;
+      const finite=(v,limit)=>Number.isFinite(v)&&v>=0?Math.min(limit,v):0;
+      const tries=Math.floor(finite(value.tries,999999));
+      const wins=Math.min(tries,Math.floor(finite(value.wins,999999)));
+      output[key]={tries,wins,best:finite(value.best,1e12),
+        minMoves:Number.isFinite(value.minMoves)&&value.minMoves>=0?Math.floor(finite(value.minMoves,1e6)):null,
+        bestSeconds:Number.isFinite(value.bestSeconds)&&value.bestSeconds>=0?Math.floor(finite(value.bestSeconds,1e6)):null};
+    }
+    return output;
+  }
+  function cleanImportedDailies(raw){
+    const output={};
+    if(!raw||typeof raw!=='object'||Array.isArray(raw))return output;
+    for(const [day,value] of Object.entries(raw).sort((a,b)=>a[0].localeCompare(b[0])).slice(-90)){
+      if(!/^\d{4}-\d{2}-\d{2}$/.test(day)||!value||typeof value!=='object'||Array.isArray(value))continue;
+      const best=Number(value.best),played=Number(value.played);
+      if(!Number.isFinite(best)||best<0||!Number.isFinite(played)||played<0)continue;
+      output[day]={best:Math.min(1e12,best),played:Math.min(999,Math.floor(played))};
+    }
+    return output;
+  }
+  $('importSaveBtn').addEventListener('click',()=>{
+    if(busy||dailyMode){showToast('Kaydı yüklemek için önce aktif hamleyi bitir veya günlük mücadeleden çık.');return;}
+    $('importSaveFile').value='';$('importSaveFile').click();
+  });
+  $('importSaveFile').addEventListener('change',async event=>{
+    const file=event.target.files?.[0];
+    event.target.value='';
+    if(!file)return;
+    if(busy||dailyMode){showToast('Oyun işlemi devam ederken kayıt yüklenemez.');return;}
+    if(file.size>1024*1024){showToast('Yedek dosyası beklenenden büyük (üst sınır 1 MB).');return;}
+    let incoming,decoded;
+    try{
+      incoming=JSON.parse(await file.text());
+      if(!incoming||incoming.format!=='seker-yagmuru'||!incoming.game)throw Error('Şeker Yağmuru yedeği değil.');
+      decoded=decodeState(incoming.game);
+    }catch(error){showToast('Yedek okunamadı: '+(error?.message||'Geçersiz dosya'));return;}
+    if(!window.confirm('İndirilen yedek mevcut oyun ilerlemesinin yerine yüklenecek. Önceki yerel kayıt ayrıca yedeklenecek. Devam edilsin mi?'))return;
+    // Re-check after user confirmation so an in-flight move never becomes a partial save.
+    if(busy||dailyMode){showToast('Hamle sırasında kayıt yüklenemez.');return;}
+    const previous=snapshot();
+    let beforeMain=null,beforeBackup=null;
+    try{
+      beforeMain=localStorage.getItem(SAVE_KEY);
+      beforeBackup=localStorage.getItem(BACKUP_KEY);
+      if(beforeMain)localStorage.setItem(BACKUP_KEY,beforeMain);
+      // Imported progress replaces (rather than merges with) the current unlocks/record.
+      bestScore=0;maxLevel=1;
+      installState(decoded);
+      const normalized=JSON.stringify(snapshot());
+      localStorage.setItem(SAVE_KEY,normalized);
+      if(localStorage.getItem(SAVE_KEY)!==normalized)throw Error('Kayıt yazılamadı.');
+      lastStored=normalized;protectedSave=false;storageNotice('');
+      stats=cleanImportedStats(incoming.stats);
+      dailyRecords=cleanImportedDailies(incoming.dailyRecords);
+      dailyMeta={best:Number.isFinite(incoming.dailyMeta?.best)&&incoming.dailyMeta.best>=0?Math.min(999,Math.floor(incoming.dailyMeta.best)):0};
+      saveStats();saveDaily();
+      const profile=incoming.profile;
+      if(profile&&typeof profile==='object'&&!Array.isArray(profile)){
+        const cleanName=sanitizePlayerName(profile.name);
+        if(cleanName.length>=2){playerName=cleanName;setLocal(PLAYER_KEY,cleanName);}
+        if(BOARD_THEMES.includes(profile.theme))changeBoardTheme(profile.theme);
+        if(Number.isFinite(profile.volume)&&profile.volume>=0&&profile.volume<=100)changeVolume(profile.volume);
+        if(typeof profile.music==='boolean'){musicOn=profile.music;setLocal('sy_music_v3',musicOn?'on':'off');}
+        if(typeof profile.motion==='boolean'){reduceMotion=profile.motion;setLocal('sy_motion_v2',reduceMotion?'off':'on');}
+        if(typeof profile.candyLabels==='boolean'){candyLabelsOn=profile.candyLabels;setLocal(CANDY_LABELS_KEY,candyLabelsOn?'on':'off');}
+      }
+      setLocal('sy_best',bestScore);setLocal('sy_level',maxLevel);
+      document.body.classList.toggle('sy-candy-labels',candyLabelsOn);
+      refreshSettings();render();updatePlayerUI();
+      els.overlay.classList.add('hidden');$('syTutorial').classList.add('hidden');
+      switchScreen('home');
+      showToast('✅ Yedek yüklendi. Bölümün ve ilerlemen geri getirildi.');
+    }catch(error){
+      // A failed import must not replace the player's existing in-memory state.
+      try{
+        if(beforeMain===null)localStorage.removeItem(SAVE_KEY);else localStorage.setItem(SAVE_KEY,beforeMain);
+        if(beforeBackup===null)localStorage.removeItem(BACKUP_KEY);else localStorage.setItem(BACKUP_KEY,beforeBackup);
+        lastStored=beforeMain;
+        installState(decodeState(previous));
+      }catch(restoreError){console.error('Kayıt içe aktarma geri alınamadı',restoreError);}
+      storageNotice('Yedek içe aktarımı tamamlanamadı. Eski kayıt korunmaya çalışıldı.');
+      showToast('Yedek yüklenemedi: '+(error?.message||'Tarayıcı kaydı yazılamadı'));
+    }
+  });
   function feedbackMessage(){
     const message=$('feedbackText').value.trim();
     if(message.length<8){$('feedbackText').focus();showToast('Lütfen en az 8 karakterlik açıklama yaz.');return null}
-    return `SEKER YAGMURU 5.0.0 - GERI BILDIRIM\nOyuncu: ${playerName||'Oyuncu'}\nTur: ${$('feedbackKind').value}\nBolum: ${level} / ${MAX_LEVEL}\n\nAciklama:\n${message}\n\nOyun baglantisi: ${PUBLIC_GAME_URL}\nOyuncu geri bildirimi`;
+    return `SEKER YAGMURU 5.5.2 - GERI BILDIRIM\nOyuncu: ${playerName||'Oyuncu'}\nTur: ${$('feedbackKind').value}\nBolum: ${level} / ${MAX_LEVEL}\n\nAciklama:\n${message}\n\nOyun baglantisi: ${PUBLIC_GAME_URL}\nOyuncu geri bildirimi`;
   }
   $('shareFeedbackBtn').addEventListener('click',()=>{
     const msg=feedbackMessage();if(!msg)return;
