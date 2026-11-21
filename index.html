@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="tr">
+<html lang="tr" data-sy-theme="hareketli">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
@@ -10,8 +10,9 @@
 <meta content="Şeker Yağmuru" name="application-name"/>
 <meta content="Şeker Yağmuru" name="apple-mobile-web-app-title"/>
 <meta content="yes" name="mobile-web-app-capable"/>
-<link href="game-icon-256.png" rel="icon" sizes="256x256" type="image/png"/>
-<link href="game-icon-256.png" rel="apple-touch-icon" sizes="256x256"/>
+<link rel="manifest" href="./manifest.webmanifest"/>
+<link href="./game-icon-256.png" rel="icon" sizes="256x256" type="image/png"/>
+<link href="./game-icon-256.png" rel="apple-touch-icon" sizes="256x256"/>
 <style>
     :root{--ink:#2c1c52;--purple:#6d36c7;--soft:#806b9a;--white:#fff;--pink:#ff5fa7;--bg:#f7efff;--line:#e9dcfa;--cell:12.5%}
     *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -1784,14 +1785,14 @@ body.syv5-daily .sy-progress-card .sy-goal-detail{font-size:11px;line-height:1.5
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Şeker Yağmuru 🍬 | 60 Bölüm"/>
 <meta property="og:description" content="60 bölümlük ücretsiz şeker eşleştirme macerası. Kaydın bu tarayıcıda otomatik korunur."/>
-<meta property="og:url" content="https://judge98judge.github.io/seker-yagmuru-oyna/"/>
-<meta property="og:image" content="https://judge98judge.github.io/seker-yagmuru-oyna/icon-512.png"/>
+<meta property="og:url" content="https://ai-lidge.github.io/seker-yagmuru-oyna/"/>
+<meta property="og:image" content="https://ai-lidge.github.io/seker-yagmuru-oyna/icon-512.png"/>
 <meta name="twitter:card" content="summary"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 <meta name="referrer" content="strict-origin-when-cross-origin"/>
-<link rel="manifest" href="manifest.webmanifest"/>
-<link rel="apple-touch-icon" href="icon-192.png"/>
+
+<link rel="apple-touch-icon" href="./icon-192.png"/>
 <style>
 
 /* 4.8.2 — Durability and accessibility: optional labels, obstacle progress and GPU-friendly micro-effects. */
@@ -1812,6 +1813,7 @@ body.syv5-daily .sy-progress-card .sy-goal-detail{font-size:11px;line-height:1.5
 .sy-device-check output[hidden]{display:none}
 @media(prefers-reduced-motion:reduce){#board .piece .sy-obstacle-impact,#board .piece .sy-choco-spread-flash{animation:none!important}}
 body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .piece .sy-choco-spread-flash{animation:none!important}
+</style>
 <style id="sy-world-playstyle">
 /* 5.5.2 — Oyun içi sekiz dünya. Tamamı statik CSS; 64 şeker ve patlama katmanı değişmedi. */
 body[data-sy-world]{
@@ -1919,13 +1921,1201 @@ body[data-sy-world] .icon-button{background:#ffffff2b!important;border-color:#ff
 /* The level badge stays clean even when old CSS/classes are present. */
 .sy-level-card img.sy54-hud-candy{display:none!important}
 </style>
+<style id="sy-pastane-visual-skin">
+/* ŞEKER YAĞMURU v5.5.2 — PASTANE SOKAĞI / SADECE GÖRSEL KATMAN
+   Oyun kodu, rastgelelik, eşleşmeler, hedefler, zamanlayıcı, puanlar, kayıt ve olay bağlantıları değiştirilmez.
+   Tasarım denemesi, 21.11.2026. */
+:root{
+ --pat-plum:#612754; --pat-ink:#572e39; --pat-cream:#fff3da;
+ --pat-gold:#ffc74f; --pat-rose:#ec4684; --pat-shadow:rgba(95,39,50,.3);
+}
+/* Fotoğraftan yalnızca çevre görüntüsü kullanılır: menü yazıları / düğmeleri statik resim değildir. */
+.screen-layer:has(#homeScreen:not(.hidden)){
+ background:#f8cfb7 url('./sy-pastane-background.webp') center center / cover no-repeat fixed!important;
+ padding:0!important;
+}
+.screen-layer:has(#homeScreen:not(.hidden)) .menu-shell{
+ width:min(100%,520px)!important;max-height:100%!important;
+ margin:auto!important;
+}
+#homeScreen.premium-home{
+ display:flex!important;flex-direction:column!important;align-items:stretch!important;
+ box-sizing:border-box!important;width:100%!important;min-height:100dvh!important;
+ overflow:visible!important;
+ padding:clamp(16px,3vh,23px) clamp(16px,5vw,28px) 20px!important;
+ border:0!important;border-radius:0!important;
+ background:linear-gradient(90deg,rgba(255,238,215,.54) 0%,rgba(255,244,222,.70) 25%,rgba(255,244,225,.68) 76%,rgba(255,235,219,.40) 100%),url('./sy-pastane-background.webp') center / cover no-repeat!important;
+ box-shadow:none!important;isolation:isolate!important;
+ color:var(--pat-ink)!important;
+}
+#homeScreen.premium-home::before{
+ content:""!important;inset:0!important;position:absolute!important;z-index:-1!important;
+ background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,224,191,.09) 44%,rgba(255,225,198,.22))!important;
+ border-radius:0!important;pointer-events:none!important;
+}
+#homeScreen.premium-home::after{
+ content:""!important;position:absolute!important;left:0;right:0;bottom:0;height:28px;z-index:-1;
+ background:linear-gradient(180deg,transparent,rgba(124,42,63,.11));pointer-events:none;
+}
+#homeScreen .premium-particles,#homeScreen .premium-hero,#homeScreen .home-credits{display:none!important}
+#homeScreen .home-headline{order:1!important;margin:0 auto 1px!important;display:flex!important;justify-content:center!important}
+#homeScreen .home-trophy{
+ color:#704323!important;font-weight:950!important;letter-spacing:.6px!important;font-size:11px!important;
+ background:linear-gradient(#fffef5,#ffe7c4)!important;border:2px solid #fff!important;
+ border-radius:99px!important;padding:6px 17px!important;
+ box-shadow:0 3px 0 #c48b72,0 6px 15px #8c46662d!important;
+}
+#homeScreen .home-title-wrap{
+ order:2!important;position:relative!important;display:flex!important;
+ margin:5px auto 8px!important;width:min(100%,365px)!important;
+ height:clamp(118px,18.5vh,180px)!important;max-height:180px!important;
+ align-items:center!important;justify-content:center!important;
+ filter:drop-shadow(0 6px 6px #6f2f4e35);
+}
+#homeScreen .home-title-wrap::before{
+ content:"";position:absolute;inset:0;
+ background:url('./sy-pastane-title.png') center / contain no-repeat;
+}
+#homeScreen .home-title-wrap h2{
+ position:absolute!important;width:1px!important;height:1px!important;padding:0!important;
+ overflow:hidden!important;white-space:nowrap!important;clip-path:inset(50%)!important;
+}
+#homeScreen .home-progress{
+ order:3!important;position:relative!important;
+ margin:0 0 6px!important;padding:11px 12px 12px!important;
+ border:2px solid rgba(255,254,234,.96)!important;border-radius:19px!important;
+ color:var(--pat-ink)!important;
+ background:linear-gradient(150deg,rgba(255,254,240,.94),rgba(255,224,197,.92))!important;
+ box-shadow:0 4px 0 #be927b,0 9px 20px #95556f27,inset 0 1px 1px #fff!important;
+}
+#homeScreen .home-progress-top{margin-bottom:7px!important;color:#85405b!important}
+#homeScreen .progress-heading{color:#78445d!important;font-size:10px!important;letter-spacing:.3px!important}
+#homeScreen .home-progress-top strong{color:#79305e!important;font-size:12px!important;font-variant-numeric:tabular-nums!important}
+#homeScreen .home-progress-track{
+ height:9px!important;min-height:9px!important;border:1px solid #b85b91!important;border-radius:99px!important;
+ background:#e8c2e4!important;box-shadow:inset 0 2px 3px #51214b2c!important;
+}
+#homeScreen .home-progress-fill{background:linear-gradient(90deg,#ef83bd,#e53a8e,#b144c0)!important;box-shadow:0 0 7px #f06cab!important}
+#homeScreen .home-metrics{gap:6px!important;margin-top:10px!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important}
+#homeScreen .home-metric{
+ display:flex!important;flex-direction:row!important;gap:5px!important;align-items:center!important;justify-content:center!important;
+ min-width:0!important;padding:7px 4px!important;
+ border:1px solid #fef2dc!important;border-radius:12px!important;
+ background:linear-gradient(160deg,#ffffffca,#ffd5b3b5)!important;
+ box-shadow:0 2px 0 #b98673ab!important;
+}
+#homeScreen .home-metric .metric-symbol{font-size:16px!important;flex:0 0 auto!important}
+#homeScreen .home-metric small{display:block!important;color:#7b4961!important;font-size:clamp(7px,2vw,9px)!important;line-height:1.14!important;letter-spacing:0!important}
+#homeScreen .home-metric strong{color:#752547!important;font-weight:1000!important;font-size:clamp(13px,3vw,18px)!important;line-height:1.15!important}
+#homeScreen .home-personal{
+ order:4!important;min-height:0!important;margin:6px 0 9px!important;padding:2px 8px!important;
+ color:#793955!important;text-align:center!important;line-height:1.4!important;
+ text-shadow:0 1px #fff!important;
+}
+#homeScreen .hello-dot{color:#e85e96!important}
+#homeScreen #menuGreeting{font-size:clamp(12px,3.5vw,16px)!important;font-weight:850!important;color:#743e50!important;line-height:1.3!important}
+#homeScreen .menu-buttons.premium-menu-buttons{
+ order:5!important;display:flex!important;flex-direction:column!important;gap:9px!important;
+ margin:0!important;width:100%!important;
+}
+#homeScreen .menu-button{
+ position:relative!important;box-sizing:border-box!important;
+ min-height:55px!important;height:auto!important;padding:11px 15px!important;
+ border:3px solid #fff7de!important;border-radius:999px!important;
+ font-family:ui-rounded,'Trebuchet MS','Segoe UI',sans-serif!important;
+ font-size:clamp(16px,4.5vw,21px)!important;letter-spacing:.15px!important;font-weight:1000!important;
+ text-shadow:0 1px 0 #ffffff6b!important;
+ transition:transform .14s ease,filter .14s ease,box-shadow .14s ease!important;
+}
+#homeScreen .menu-button:active{transform:translateY(3px) scale(.992)!important;filter:brightness(.96)!important;box-shadow:0 1px 0 #90505c!important}
+#homeScreen .menu-button:focus-visible{outline:3px solid #b42a7e!important;outline-offset:3px!important}
+#homeScreen #playBtn{
+ min-height:79px!important;border:4px solid #fff9e9!important;
+ color:#fff!important;text-shadow:0 2px 0 #2e6c00,0 3px 4px #123a0050!important;
+ background:radial-gradient(ellipse at 45% 2%,#c2fd59 0%,#85df21 34%,#53b20a 72%,#297e03 100%)!important;
+ box-shadow:inset 0 4px 3px #eeffa38a,inset 0 -5px 6px #1967009c,0 5px 0 #a86232,0 9px 18px #783e336e!important;
+}
+#homeScreen #playBtn:before{content:"";position:absolute;left:15px;right:15px;top:5px;height:22%;border-radius:50%;background:linear-gradient(#fff8,transparent);pointer-events:none}
+#homeScreen #playBtn .play-btn-emblem{font-size:27px!important;filter:drop-shadow(0 2px 1px #2b5609)!important}
+#homeScreen #playBtn #playBtnText{font-size:clamp(22px,6vw,29px)!important;font-weight:1000!important;color:white!important}
+#homeScreen #playBtn .play-btn-copy small{font-size:9px!important;color:#f6ffe1!important;letter-spacing:.3px!important}
+#homeScreen #playBtn .play-btn-arrow{font-size:19px!important;color:#fff!important}
+#homeScreen #levelsBtn{
+ color:#fff!important;text-shadow:0 2px 0 #b53162!important;
+ background:linear-gradient(180deg,#ffb5d0 0%,#f25496 39%,#dc2269 79%,#b01454)!important;
+ box-shadow:inset 0 4px 5px #fff8,inset 0 -4px 4px #950c4770,0 5px 0 #9a4c60,0 9px 18px #783e3344!important;
+}
+#homeScreen .home-shortcuts{display:contents!important}
+#homeScreen #recordsBtn{
+ order:3!important;color:#fff!important;text-shadow:0 2px 0 #5e2589!important;
+ background:linear-gradient(180deg,#e8adff,#ad5ed8 45%,#7b35b6 85%,#65238e)!important;
+ box-shadow:inset 0 4px 5px #fff8,inset 0 -4px 4px #5c1e8b70,0 5px 0 #8f5264,0 9px 18px #783e3333!important;
+}
+#homeScreen #settingsBtn{
+ order:4!important;color:#70432d!important;
+ background:linear-gradient(180deg,#fffef5,#ffe3bd 53%,#efc295)!important;
+ box-shadow:inset 0 4px 5px #fff9,inset 0 -3px 4px #c48b7270,0 5px 0 #b27d5f,0 9px 18px #783e3333!important;
+}
+#homeScreen #dailyBtn{
+ order:5!important;min-height:60px!important;margin-top:5px!important;
+ border-color:#ffdb80!important;color:#fff!important;text-shadow:0 1px 2px #491849!important;
+ background:linear-gradient(105deg,#7c2aa4,#d042b8 55%,#9d33af)!important;
+ box-shadow:inset 0 2px 4px #ffe6ff93,0 5px 0 #773f76,0 8px 16px #66305355!important;
+}
+#homeScreen #dailyBtn .sy-daily-copy strong{font-size:clamp(13px,3.5vw,17px)!important;color:#fff!important}
+#homeScreen #dailyBtn .sy-daily-copy small{font-size:clamp(9px,2.4vw,11px)!important;color:#ffe7f7!important}
+#homeScreen #dailyBtn .sy-daily-symbol{font-size:24px!important}
+#homeScreen #howBtn,#homeScreen #creditsBtn,#homeScreen #feedbackBtn{
+ min-height:43px!important;padding:8px 11px!important;font-size:12px!important;color:#6f3e59!important;
+ background:linear-gradient(180deg,#fffcf0,#f6d7bb)!important;
+ box-shadow:0 3px 0 #c58d7a,inset 0 1px 2px #fff!important;
+ border-width:2px!important;
+}
+#homeScreen #howBtn{order:6!important}#homeScreen #creditsBtn{order:7!important}#homeScreen #feedbackBtn{order:8!important}
+#homeScreen #howBtn .shortcut-icon,#homeScreen #creditsBtn .shortcut-icon,#homeScreen #feedbackBtn .shortcut-icon{font-size:15px!important}
+#homeScreen .home-footer{order:9!important;margin-top:14px!important;color:#683e53!important;font-weight:750!important;text-shadow:0 1px #fff8!important}
+#homeScreen .home-footer span{color:#683e53!important}
+#homeScreen .sy-owner-notice{order:10!important;color:#774b5a!important;font-size:9px!important;opacity:.9!important;margin:8px 0 0!important}
+/* Uyarlanmış oyun ekranı: gerçek HUD ve gerçek eşleşme tahtası */
+body[data-sy-world]:not(.screen-locked){
+ background:linear-gradient(90deg,#e6bdce66,#fff0d022 50%,#ffe1df44),url('./sy-pastane-background.webp') center top / cover fixed no-repeat!important;
+ color:#65334d!important;
+}
+body[data-sy-world]>.app{
+ width:min(100%,720px)!important;max-width:720px!important;
+ padding:7px 9px 18px!important;margin:0 auto!important;
+ background:linear-gradient(180deg,rgba(255,239,212,.22),rgba(255,238,218,.36))!important;
+ border-radius:0 0 22px 22px!important;
+ box-shadow:0 12px 42px rgba(74,34,58,.12)!important;
+}
+body[data-sy-world] .app>header{
+ position:relative!important;min-height:65px!important;max-height:82px!important;
+ display:flex!important;justify-content:space-between!important;align-items:center!important;
+ margin-bottom:5px!important;padding:4px 9px!important;
+ border:2px solid #fff4d6!important;border-radius:24px!important;
+ background:linear-gradient(170deg,#fff5dfeb,#ffe1c8e8)!important;
+ box-shadow:0 4px 0 #b78072,0 8px 20px #5a2e4850!important;
+}
+body[data-sy-world] header .brand{min-width:0!important;gap:0!important;flex:1!important}
+body[data-sy-world] header .brand .logo{display:none!important}
+body[data-sy-world] header .brand h1{
+ display:block!important;width:clamp(130px,46vw,205px)!important;height:68px!important;
+ font-size:0!important;line-height:0!important;margin:0!important;
+ background:url('./sy-pastane-title.png') center left / contain no-repeat!important;
+ text-shadow:none!important;
+}
+body[data-sy-world] header .brand p{display:none!important}
+body[data-sy-world] header .header-actions{display:flex!important;flex-shrink:0!important;gap:5px!important}
+body[data-sy-world] header .icon-button{
+ width:auto!important;min-width:38px!important;height:38px!important;min-height:38px!important;
+ padding:4px 7px!important;border:2px solid #fff8de!important;border-radius:13px!important;
+ background:linear-gradient(160deg,#ffabd5,#ba56c6,#8e3bad)!important;
+ box-shadow:inset 0 1px 2px #fff9,0 3px 0 #854b6e!important;color:#fff!important;
+ font-size:17px!important;text-shadow:0 1px #6e2880!important;
+}
+body[data-sy-world] header .icon-button span:not(.volume-icon){font-size:9px!important}
+body[data-sy-world] .player-strip{display:none!important}
+body[data-sy-world] .layout{display:block!important;width:100%!important;max-width:none!important;padding:0!important;margin:0!important}
+body[data-sy-world] .layout>section.primary{
+ display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:8px!important;
+ padding:8px 7px 10px!important;max-width:100%!important;
+ border:0!important;border-radius:20px!important;
+ background:linear-gradient(150deg,rgba(255,240,218,.56),rgba(255,236,209,.67))!important;
+ box-shadow:none!important;
+}
+body[data-sy-world] .match-dashboard.modern-dashboard{
+ order:1!important;display:block!important;padding:5px 4px 8px!important;margin:0!important;
+ border:0!important;background:transparent!important;box-shadow:none!important;
+}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact{
+ display:grid!important;grid-template-areas:'level moves score' 'goal goal timer'!important;
+ grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:auto auto!important;
+ align-items:stretch!important;gap:7px!important;
+}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card{grid-area:score!important;grid-column:auto!important}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-level-card{grid-area:level!important;grid-column:auto!important}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-move-card{grid-area:moves!important;grid-column:auto!important}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-timer-card{grid-area:timer!important;grid-column:auto!important}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-progress-card{grid-area:goal!important;grid-column:auto!important}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-mini-card,
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-status-card{
+ box-sizing:border-box!important;height:auto!important;max-height:none!important;min-height:61px!important;
+ margin:0!important;padding:9px 7px!important;gap:4px!important;
+ border:2px solid #fff8e5!important;border-radius:16px!important;
+ color:#6b3544!important;background:linear-gradient(165deg,#fffbee,#fce2c1)!important;
+ box-shadow:0 3px 0 #c58e75,0 5px 11px #6e405029!important;
+}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-mini-card{display:flex!important;justify-content:center!important;align-items:center!important;flex-direction:column!important;text-align:center!important}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-mini-card .stat-symbol{display:none!important}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-mini-card .stat-copy{min-width:0!important;text-align:center!important}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-mini-card .stat-label{color:#7e4662!important;font-size:9px!important;letter-spacing:.1px!important;font-weight:950!important;line-height:1.13!important}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-mini-card .stat-value{color:#822e65!important;font-size:clamp(19px,5vw,28px)!important;font-weight:1000!important;line-height:1.07!important;text-shadow:0 1px 0 white!important;font-variant-numeric:tabular-nums!important}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-level-card .stat-value{font-size:clamp(17px,4.5vw,26px)!important}
+body[data-sy-world] .sy-inline-total{font-size:11px!important;color:#875469!important}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-status-card{display:flex!important;flex-direction:column!important;justify-content:center!important;padding:8px 12px!important}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-progress-card{padding:10px 12px!important}
+body[data-sy-world] .sy-status-head{width:100%!important;gap:5px!important;justify-content:space-between!important;align-items:center!important}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-meter-name{color:#8d315f!important;font-size:clamp(10px,2.8vw,14px)!important;font-weight:1000!important;letter-spacing:0!important}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-status-head b{color:#803057!important;font-size:clamp(14px,3vw,18px)!important;font-weight:1000!important}
+body[data-sy-world] .sy-progress-card .sy-meter-name .sy-meter-symbol{color:#eb5b99!important}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .progress{
+ height:9px!important;min-height:9px!important;max-height:9px!important;
+ border:1px solid #ac5b85!important;border-radius:10px!important;
+ background:#e8b7d8!important;margin:6px 0!important;
+}
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .progress-fill{background:linear-gradient(90deg,#ffba67,#ef5c9d,#ae45b4)!important}
+body[data-sy-world] .sy-goal-detail{
+ display:block!important;text-align:left!important;white-space:normal!important;max-height:none!important;
+ color:#703e56!important;font-size:clamp(10px,2.6vw,12px)!important;line-height:1.3!important;
+ font-weight:900!important;opacity:1!important;padding-top:4px!important;
+}
+body[data-sy-world] .sy-timer-card .timer-track{
+ margin-top:5px!important;height:8px!important;border-radius:99px!important;background:#dfc2db!important;
+}
+body[data-sy-world] .sy-timer-card .timer-fill{background:linear-gradient(90deg,#fdb86e,#d44b92)!important}
+body[data-sy-world] .game-frame{
+ order:2!important;position:relative!important;box-sizing:border-box!important;
+ width:min(100%,510px)!important;max-width:510px!important;
+ margin:0 auto!important;padding:7px!important;
+ border:4px solid #fff0ca!important;border-radius:20px!important;
+ background:linear-gradient(140deg,#ffb0cf,#af63b9,#8f429e)!important;
+ box-shadow:0 5px 0 #a35b70,0 12px 22px #6c35615c,inset 0 2px 2px #fff!important;
+}
+body[data-sy-world] .game-frame::before{display:none!important}
+body[data-sy-world] .game-frame .sy-sheen{pointer-events:none!important}
+body[data-sy-world] #board{
+ width:100%!important;aspect-ratio:1!important;
+ border:2px solid rgba(248,218,244,.7)!important;border-radius:12px!important;
+ background:repeating-linear-gradient(0deg,transparent 0,transparent calc(12.5% - 1px),#ffffff1c calc(12.5% - 1px),#ffffff1c 12.5%),repeating-linear-gradient(90deg,transparent 0,transparent calc(12.5% - 1px),#ffffff1c calc(12.5% - 1px),#ffffff1c 12.5%),linear-gradient(135deg,#52316f,#6e428f 50%,#543376)!important;
+ box-shadow:inset 0 2px 11px #32194d79!important;
+}
+body[data-sy-world] .piece .gem{filter:drop-shadow(0 3px 2px rgba(41,13,48,.43)) drop-shadow(0 2px 5px rgba(28,16,68,.23))!important}
+body[data-sy-world] .piece.special-color .gem{filter:drop-shadow(0 0 7px #fff0b9) drop-shadow(0 4px 4px #3e1b59)!important}
+body[data-sy-world] .combo-banner .combo-word{font-family:ui-rounded,'Trebuchet MS',sans-serif!important;color:#ffd351!important;-webkit-text-stroke:1px #ad3a66!important;text-shadow:0 2px #9d316e,0 5px 7px #4d1959!important;font-weight:1000!important}
+body[data-sy-world] .helper-tools{
+ order:3!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:10px!important;width:min(100%,485px)!important;margin:4px auto 0!important;
+}
+body[data-sy-world] .helper-button{
+ min-height:62px!important;height:auto!important;display:flex!important;align-items:center!important;
+ padding:9px 8px!important;gap:7px!important;
+ border:3px solid #fff3d6!important;border-radius:20px!important;
+ color:#fff!important;text-shadow:0 1px #642d78!important;
+ background:linear-gradient(145deg,#d57cff,#8e45c4 60%,#65288d)!important;
+ box-shadow:inset 0 2px 3px #ffffff8c,0 4px 0 #9a5f71,0 7px 14px #61294f46!important;
+}
+body[data-sy-world] .helper-button.shuffle-button{
+ background:linear-gradient(145deg,#ffb563,#ee7647 55%,#ca4d48)!important;
+}
+body[data-sy-world] .helper-button .helper-icon{
+ width:36px!important;height:36px!important;min-width:36px!important;
+ border:2px solid #fff7d7!important;border-radius:50%!important;
+ display:grid!important;place-items:center!important;
+ background:linear-gradient(140deg,#efc5ff,#c056c8)!important;font-size:19px!important;
+ box-shadow:0 2px 4px #4e24513b!important;
+}
+body[data-sy-world] .helper-button .helper-content strong{font-size:clamp(12px,3.3vw,15px)!important;color:white!important}
+body[data-sy-world] .helper-button .helper-content small{font-size:9px!important;color:#fff4e5!important}
+body[data-sy-world] .helper-button .helper-count{
+ color:#703953!important;background:#fff3d5!important;border:1px solid #fefefe!important;
+ font-weight:1000!important;font-size:10px!important;padding:3px 5px!important;border-radius:20px!important;
+}
+body[data-sy-world] .game-bottom-info{
+ order:4!important;display:flex!important;gap:5px!important;justify-content:center!important;
+ padding:0!important;max-width:100%!important;margin:1px 0!important;
+}
+body[data-sy-world] .game-bottom-info span{
+ color:#7b4160!important;font-size:9px!important;font-weight:850!important;
+ padding:4px 5px!important;border-radius:8px!important;
+ background:rgba(255,248,226,.78)!important;
+}
+@media (max-width:500px){
+ #homeScreen.premium-home{padding:12px 16px 18px!important}
+ #homeScreen .home-title-wrap{height:clamp(110px,17vh,145px)!important;width:min(100%,330px)!important}
+ #homeScreen .home-progress{padding:9px 9px 10px!important}
+ #homeScreen .home-metric{padding:7px 2px!important}
+ #homeScreen .menu-buttons.premium-menu-buttons{gap:9px!important}
+ #homeScreen .menu-button{min-height:49px!important;padding:9px 13px!important}
+ #homeScreen #playBtn{min-height:66px!important}
+ #homeScreen #dailyBtn{min-height:56px!important}
+ body[data-sy-world]>.app{padding:5px 5px 9px!important}
+ body[data-sy-world] .app>header{min-height:57px!important;max-height:70px!important;padding:3px 5px!important;margin-bottom:4px!important}
+ body[data-sy-world] header .brand h1{height:57px!important;width:clamp(115px,41vw,175px)!important}
+ body[data-sy-world] header .icon-button{min-width:34px!important;height:34px!important;min-height:34px!important;padding:3px 4px!important;font-size:15px!important}
+ body[data-sy-world] header .icon-button span:not(.volume-icon){font-size:8px!important}
+ body[data-sy-world] .layout>section.primary{padding:5px 3px 6px!important;gap:6px!important}
+ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact{gap:5px!important}
+ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-mini-card{min-height:52px!important;padding:6px 3px!important;border-radius:12px!important}
+ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-status-card{min-height:64px!important;padding:7px 7px!important;border-radius:12px!important}
+ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-mini-card .stat-label{font-size:8px!important}
+ body[data-sy-world] .game-frame{padding:5px!important;border-width:3px!important;border-radius:16px!important}
+ body[data-sy-world] .helper-tools{gap:7px!important;margin-top:1px!important}
+ body[data-sy-world] .helper-button{min-height:52px!important;padding:6px 6px!important;border-radius:14px!important}
+ body[data-sy-world] .helper-button .helper-icon{width:31px!important;height:31px!important;min-width:31px!important;font-size:16px!important}
+ body[data-sy-world] .game-bottom-info span{font-size:8px!important;padding:2px 3px!important}
+}
+@media (max-height:720px) and (orientation:portrait){
+ #homeScreen .home-title-wrap{height:100px!important}
+ #homeScreen .home-personal{margin:3px 0 5px!important}
+ body[data-sy-world] .app>header{min-height:48px!important;max-height:59px!important}
+ body[data-sy-world] header .brand h1{height:51px!important}
+ body[data-sy-world] .game-bottom-info{display:none!important}
+}
+@media (orientation:landscape) and (max-height:530px){
+ /* Düşük yükseklikte mevcut geniş ekran yerleşimini korumak için, hud ve oyun tahtası birbirine engel olmasın. */
+ body[data-sy-world] .layout>section.primary{display:grid!important;grid-template-columns:minmax(170px,1fr) minmax(220px,1.25fr)!important;grid-template-areas:'dashboard board' 'tools board'!important;align-items:start!important}
+ body[data-sy-world] .match-dashboard.modern-dashboard{grid-area:dashboard!important}
+ body[data-sy-world] .game-frame{grid-area:board!important;width:min(100%,calc(100dvh - 65px))!important}
+ body[data-sy-world] .helper-tools{grid-area:tools!important}
+ body[data-sy-world] .game-bottom-info{display:none!important}
+}
+@media (prefers-reduced-motion:reduce){
+ #homeScreen .menu-button{transition:none!important}
+}
+
+</style>
+<meta name="sy-build-type" content="single-html-offline-pastane-v5.5.2"/>
+<style id="sy-pastane-visual-tweak-v2">
+/* 2026-11-21 menu top expansion + wider street background tweak */
+.screen-layer:has(#homeScreen:not(.hidden)){
+  position:fixed;
+  background:
+    radial-gradient(ellipse at 50% -10%, rgba(255,255,255,.88) 0%, rgba(255,255,255,.22) 28%, transparent 52%),
+    radial-gradient(circle at 12% 14%, rgba(255,220,234,.82) 0 8%, transparent 28%),
+    radial-gradient(circle at 87% 18%, rgba(255,236,198,.74) 0 8%, transparent 30%),
+    linear-gradient(180deg, #f7c8d7 0%, #ffdcb8 36%, #f6c5b2 60%, #efc8bc 100%) !important;
+}
+.screen-layer:has(#homeScreen:not(.hidden))::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(circle at 10% 19%, rgba(255,255,255,.55) 0 1.1%, transparent 1.2%),
+    radial-gradient(circle at 23% 11%, rgba(255,255,255,.5) 0 1.1%, transparent 1.2%),
+    radial-gradient(circle at 83% 17%, rgba(255,255,255,.5) 0 1.1%, transparent 1.2%),
+    radial-gradient(circle at 91% 10%, rgba(255,255,255,.55) 0 1.1%, transparent 1.2%),
+    linear-gradient(180deg, rgba(255,255,255,.18), transparent 26%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.08) 0 34px, rgba(255,222,200,.03) 34px 68px);
+  opacity:.75;
+}
+.screen-layer:has(#homeScreen:not(.hidden))::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:28vh;pointer-events:none;
+  background:
+    radial-gradient(circle at 50% 100%, rgba(255,206,171,.82), rgba(255,206,171,0) 65%),
+    repeating-radial-gradient(circle at 50% 125%, rgba(180,122,105,.14) 0 8px, rgba(255,243,224,.16) 8px 17px, rgba(0,0,0,0) 17px 26px);
+  opacity:.85;
+}
+.menu-shell{z-index:1;}
+#homeScreen.premium-home{
+  padding:26px 22px 18px !important;
+  overflow:hidden !important;
+  background:linear-gradient(180deg, rgba(255,249,246,.06), rgba(255,232,239,.03)), linear-gradient(165deg, rgba(112,56,141,.26) 0%, rgba(72,38,124,.16) 50%, rgba(40,24,90,.20) 100%) !important;
+  box-shadow:0 22px 46px rgba(74,24,77,.24), inset 0 1px 1px rgba(255,255,255,.78), 0 0 0 5px rgba(255,255,255,.16) !important;
+}
+#homeScreen.premium-home::after{
+  content:"";position:absolute;left:10px;right:10px;bottom:8px;height:115px;border-radius:0 0 26px 26px;pointer-events:none;
+  background:
+    radial-gradient(circle at 50% 100%, rgba(255,218,183,.52), rgba(255,218,183,0) 60%),
+    repeating-linear-gradient(-12deg, rgba(164,100,82,.08) 0 18px, rgba(255,239,221,.10) 18px 36px),
+    linear-gradient(180deg, rgba(255,250,240,0), rgba(255,241,219,.22));
+  opacity:.9;
+}
+#homeScreen .premium-hero{height:214px !important; margin:10px auto 6px !important;}
+#homeScreen .hero-halo{top:48% !important; width:245px !important; height:170px !important;}
+#homeScreen .hero-halo-inner{top:9% !important; bottom:10% !important;}
+#homeScreen .hero-orbit{top:8% !important;}
+#homeScreen .menu-candies{height:168px !important; width:min(100%,392px) !important;}
+#homeScreen .home-headline{margin-bottom:4px !important;}
+#homeScreen .home-progress{margin-top:2px !important;}
+#homeScreen .home-personal{margin:11px 0 9px !important;}
+@media(max-width:560px){
+  .screen-layer:has(#homeScreen:not(.hidden)){background-position:center top !important;background-size:cover !important;}
+  #homeScreen.premium-home{padding:24px 18px 16px !important;border-radius:28px !important;}
+  #homeScreen .premium-hero{height:228px !important;margin:12px auto 6px !important;}
+  #homeScreen .menu-candies{height:178px !important;width:min(100%,386px) !important;}
+  #homeScreen .hero-halo{top:46% !important;width:250px !important;height:176px !important;}
+}
+</style>
+<style id="sy-menu-style-collection">
+/* Şeker Yağmuru 5.5.2 — four alternative menu-only themes.
+   Game mechanics, board rendering, timers, save and audio code stay untouched. */
+html[data-sy-theme] .screen-layer:has(#homeScreen:not(.hidden)){
+  display:flex!important;align-items:flex-start!important;justify-content:center!important;
+  overflow-x:hidden!important;overflow-y:auto!important;overscroll-behavior-y:contain;
+  padding:0!important;scroll-padding-top:0!important;-webkit-overflow-scrolling:touch;
+  background-position:center top!important;background-size:cover!important;background-attachment:scroll!important;
+}
+html[data-sy-theme] .screen-layer:has(#homeScreen:not(.hidden)) .menu-shell{
+  position:relative!important;z-index:1!important;margin:0 auto!important;
+  max-height:none!important;min-height:100%!important;width:min(100%,520px)!important;
+}
+html[data-sy-theme] #homeScreen.premium-home{
+  display:flex!important;flex-direction:column!important;align-items:stretch!important;
+  box-sizing:border-box!important;min-height:100dvh!important;overflow:visible!important;
+  padding:max(36px,env(safe-area-inset-top) + 25px) 19px max(24px,env(safe-area-inset-bottom) + 15px)!important;
+  border:0!important;border-radius:0!important;isolation:isolate!important;
+}
+html[data-sy-theme] #homeScreen .home-headline{order:1!important;margin:0 0 5px!important;z-index:3!important}
+html[data-sy-theme] #homeScreen .home-title-wrap{
+  order:2!important;height:clamp(145px,23vh,220px)!important;min-height:145px!important;
+  max-height:none!important;margin:3px auto 12px!important;width:min(100%,400px)!important;
+  padding:0!important;filter:drop-shadow(0 11px 11px rgba(68,24,43,.26))!important;
+}
+html[data-sy-theme] #homeScreen .home-title-wrap::before{
+  background-size:contain!important;background-position:center center!important;
+  inset:0!important;
+}
+html[data-sy-theme] #homeScreen .home-progress{order:3!important;margin:0 0 10px!important;z-index:2!important}
+html[data-sy-theme] #homeScreen .home-personal{order:4!important;margin:6px 0 12px!important;z-index:2!important}
+html[data-sy-theme] #homeScreen .menu-buttons.premium-menu-buttons{
+  order:5!important;display:flex!important;flex-direction:column!important;gap:11px!important;
+  margin:0!important;width:100%!important;z-index:2!important;
+}
+html[data-sy-theme] #homeScreen .home-shortcuts{display:contents!important}
+html[data-sy-theme] #homeScreen .menu-button{
+  box-sizing:border-box!important;min-height:54px!important;height:auto!important;
+  padding:10px 16px!important;border-radius:20px!important;border-width:2px!important;
+  font-size:clamp(14px,4.3vw,19px)!important;line-height:1.23!important;
+  position:relative!important;z-index:1!important;
+}
+html[data-sy-theme] #homeScreen #playBtn{min-height:73px!important;}
+html[data-sy-theme] #homeScreen #playBtn #playBtnText{font-size:clamp(19px,5.6vw,27px)!important;}
+html[data-sy-theme] #homeScreen #howBtn,
+html[data-sy-theme] #homeScreen #creditsBtn,
+html[data-sy-theme] #homeScreen #feedbackBtn{min-height:42px!important;font-size:12px!important;}
+html[data-sy-theme] #homeScreen .home-metric small{font-size:clamp(8px,2vw,10px)!important;}
+html[data-sy-theme] #homeScreen .home-footer{order:9!important;margin-top:19px!important;z-index:2!important;}
+html[data-sy-theme] #homeScreen .sy-owner-notice{order:10!important;margin-top:11px!important;z-index:2!important;}
+html[data-sy-theme] #homeScreen .menu-button:focus-visible{
+  outline:3px solid #fff3b6!important;outline-offset:3px!important;
+}
+html[data-sy-theme] #homeScreen .menu-button:active{
+  transform:translateY(2px) scale(.992)!important;
+}
+/* The preview selector is shown only in the comparison HTML. */
+html[data-sy-theme] #homeScreen .sy-style-switcher{
+  order:0!important;position:relative!important;z-index:6!important;
+  display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px!important;
+  padding:5px!important;margin:0 0 16px!important;border-radius:18px!important;
+  background:rgba(255,255,255,.78)!important;box-shadow:0 7px 21px #50315120!important;
+  border:1px solid rgba(255,255,255,.98)!important;
+}
+html[data-sy-theme] #homeScreen .sy-style-switcher button{
+  font:800 11px/1.1 ui-rounded,'Trebuchet MS',Arial,sans-serif;
+  padding:11px 2px;border:0;border-radius:13px;background:#ffffff;color:#6b4d72;
+  cursor:pointer;min-width:0;min-height:37px;
+}
+html[data-sy-theme='premium'] #homeScreen .sy-style-switcher button[data-theme='premium'],
+html[data-sy-theme='sade'] #homeScreen .sy-style-switcher button[data-theme='sade'],
+html[data-sy-theme='pastel'] #homeScreen .sy-style-switcher button[data-theme='pastel'],
+html[data-sy-theme='hareketli'] #homeScreen .sy-style-switcher button[data-theme='hareketli']{
+  background:#5e2b6c;color:white;box-shadow:0 3px 9px #62325b52;
+}
+/* Premium — plum/chocolate with champagne-gold accents and rich depth. */
+html[data-sy-theme='premium'] #homeScreen.premium-home{
+  color:#fff1dc!important;
+  background:linear-gradient(180deg,rgba(41,13,43,.78) 0%,rgba(63,20,52,.67) 40%,rgba(39,10,43,.79) 100%)!important;
+  box-shadow:0 12px 48px #240f2870!important;
+}
+html[data-sy-theme='premium'] .screen-layer:has(#homeScreen:not(.hidden))::before{
+  background:linear-gradient(0deg,rgba(44,12,39,.48),rgba(50,19,52,.24)),radial-gradient(ellipse at 50% 0%,#ffdfb75c,transparent 62%)!important;
+}
+html[data-sy-theme='premium'] #homeScreen.premium-home::before{
+  content:''!important;display:block!important;position:absolute!important;inset:0!important;
+  background:linear-gradient(90deg,#391d2e99 0 5%,transparent 20% 80%,#391d2e99 95%)!important;
+  border:1px solid #ffe0aa2c!important;pointer-events:none!important;z-index:-1!important;
+}
+html[data-sy-theme='premium'] #homeScreen .home-trophy{
+  color:#5b2c33!important;letter-spacing:1.1px!important;
+  background:linear-gradient(145deg,#fff5d0,#d9a75d)!important;
+  border-color:#fdf1d6!important;box-shadow:0 4px 15px #21122277!important;
+}
+html[data-sy-theme='premium'] #homeScreen .home-title-wrap{
+  height:clamp(178px,27vh,245px)!important;
+  filter:drop-shadow(0 0 17px #ffd07c88) drop-shadow(0 12px 8px #1c061f88)!important;
+}
+html[data-sy-theme='premium'] #homeScreen .home-progress{
+  padding:16px 15px!important;border:1px solid #ffdf9b!important;border-radius:23px!important;
+  color:#ffeddf!important;
+  background:linear-gradient(135deg,rgba(105,45,69,.93),rgba(61,31,59,.95))!important;
+  box-shadow:inset 0 1px 0 #fff4ca72,0 13px 30px #200e2969!important;
+}
+html[data-sy-theme='premium'] #homeScreen .progress-heading,
+html[data-sy-theme='premium'] #homeScreen .home-progress-top strong{color:#ffe0a2!important;}
+html[data-sy-theme='premium'] #homeScreen .home-progress-track{background:#371a45!important;border-color:#d6ab76!important;}
+html[data-sy-theme='premium'] #homeScreen .home-progress-fill{background:linear-gradient(90deg,#f99fb2,#ffce80,#e5a642)!important;}
+html[data-sy-theme='premium'] #homeScreen .home-metric{
+  border-color:#be926b!important;border-radius:16px!important;
+  background:linear-gradient(145deg,#ffeacc,#f3cc96)!important;
+  box-shadow:0 2px 0 #a16656!important;
+}
+html[data-sy-theme='premium'] #homeScreen .home-metric small{color:#805356!important;}
+html[data-sy-theme='premium'] #homeScreen .home-metric strong{color:#5e293b!important;}
+html[data-sy-theme='premium'] #homeScreen #menuGreeting,
+html[data-sy-theme='premium'] #homeScreen .hello-dot{color:#ffe3a7!important;text-shadow:0 2px 9px #231027!important;}
+html[data-sy-theme='premium'] #homeScreen #playBtn{
+  border:3px solid #ffe6b5!important;color:#fffaf1!important;border-radius:19px!important;
+  background:linear-gradient(160deg,#e3a54d,#b86d34 60%,#8f402d)!important;
+  box-shadow:inset 0 2px 3px #ffe6b390,inset 0 -3px 5px #7a312844,0 6px 0 #573029,0 13px 26px #240b2766!important;
+}
+html[data-sy-theme='premium'] #homeScreen #playBtn #playBtnText{color:#fff8e6!important;text-shadow:0 2px #65331d!important;}
+html[data-sy-theme='premium'] #homeScreen #playBtn .play-btn-copy small{color:#ffe9b9!important;}
+html[data-sy-theme='premium'] #homeScreen #levelsBtn{
+  color:#fff4e5!important;text-shadow:none!important;
+  background:linear-gradient(135deg,#ad4b72,#74284d)!important;border-color:#f5bbbd!important;
+  box-shadow:0 5px 0 #492041,0 10px 18px #200b2455!important;
+}
+html[data-sy-theme='premium'] #homeScreen #recordsBtn,
+html[data-sy-theme='premium'] #homeScreen #settingsBtn{
+  color:#512f3a!important;text-shadow:none!important;
+  border-color:#fff0ce!important;background:linear-gradient(145deg,#fff3d9,#e1bc85)!important;
+  box-shadow:0 4px 0 #946a59,0 9px 17px #200b2454!important;
+}
+html[data-sy-theme='premium'] #homeScreen #dailyBtn{
+  color:#ffeccb!important;border-color:#e7b77b!important;
+  background:linear-gradient(110deg,#663052,#a24669,#663052)!important;
+  box-shadow:0 5px 0 #45283c,0 9px 18px #180e2755!important;
+}
+html[data-sy-theme='premium'] #homeScreen #howBtn,
+html[data-sy-theme='premium'] #homeScreen #creditsBtn,
+html[data-sy-theme='premium'] #homeScreen #feedbackBtn{
+  color:#ffe6c5!important;border-color:#bc8b72!important;
+  background:linear-gradient(135deg,#6f4157,#57334b)!important;
+  box-shadow:0 3px 0 #38253b!important;
+}
+html[data-sy-theme='premium'] #homeScreen .home-footer,
+html[data-sy-theme='premium'] #homeScreen .home-footer span,
+html[data-sy-theme='premium'] #homeScreen .sy-owner-notice{
+  color:#ffe4bb!important;text-shadow:0 1px 3px #1e0616!important;
+}
+/* Sade — text logo, flat modern typography and structured two-column shortcuts. */
+html[data-sy-theme='sade'] .screen-layer:has(#homeScreen:not(.hidden))::before{
+  background:linear-gradient(180deg,#ffffffad,#fff6f2b0)!important;
+}
+html[data-sy-theme='sade'] #homeScreen.premium-home{
+  color:#3b3d59!important;
+  background:linear-gradient(175deg,rgba(255,255,255,.97),rgba(248,246,255,.95) 65%,rgba(249,246,255,.98))!important;
+  box-shadow:0 12px 40px #4d446c3b!important;
+}
+html[data-sy-theme='sade'] #homeScreen .home-trophy{
+  background:#efeafa!important;color:#625378!important;
+  font-size:10px!important;box-shadow:none!important;border:0!important;
+}
+html[data-sy-theme='sade'] #homeScreen .home-title-wrap{
+  min-height:0!important;height:120px!important;margin:3px auto 5px!important;
+  filter:none!important;
+}
+html[data-sy-theme='sade'] #homeScreen .home-title-wrap::before{content:none!important;display:none!important;}
+html[data-sy-theme='sade'] #homeScreen .home-title-wrap h2{
+  position:static!important;display:block!important;width:auto!important;height:auto!important;
+  overflow:visible!important;white-space:normal!important;clip-path:none!important;
+  color:#6c3f87!important;text-align:center!important;font-size:clamp(36px,10vw,53px)!important;
+  line-height:1!important;letter-spacing:-2px!important;text-shadow:none!important;
+}
+html[data-sy-theme='sade'] #homeScreen .home-title-wrap h2 span{display:block!important;color:#51306d!important;}
+html[data-sy-theme='sade'] #homeScreen .home-title-wrap h2 em{display:block!important;color:#ce5797!important;-webkit-text-fill-color:#ce5797!important;text-shadow:none!important;}
+html[data-sy-theme='sade'] #homeScreen .home-progress{
+  padding:14px 12px!important;border:1px solid #eae4f2!important;border-radius:17px!important;
+  background:#fff!important;color:#524964!important;box-shadow:0 8px 18px #342f5710!important;
+}
+html[data-sy-theme='sade'] #homeScreen .home-progress-top strong,
+html[data-sy-theme='sade'] #homeScreen .progress-heading{color:#55406b!important;}
+html[data-sy-theme='sade'] #homeScreen .home-progress-track{background:#eee9f5!important;border:0!important;box-shadow:none!important;}
+html[data-sy-theme='sade'] #homeScreen .home-progress-fill{background:linear-gradient(90deg,#d58de5,#9564bc)!important;box-shadow:none!important;}
+html[data-sy-theme='sade'] #homeScreen .home-metric{
+  padding:10px 3px!important;border:1px solid #e9e5ef!important;border-radius:11px!important;
+  background:#faf9fc!important;box-shadow:none!important;
+}
+html[data-sy-theme='sade'] #homeScreen .home-metric small{color:#6f657b!important;}
+html[data-sy-theme='sade'] #homeScreen .home-metric strong{color:#4e3a64!important;}
+html[data-sy-theme='sade'] #homeScreen #menuGreeting{color:#6e6478!important;text-shadow:none!important;}
+html[data-sy-theme='sade'] #homeScreen .hello-dot{color:#b87db6!important;}
+html[data-sy-theme='sade'] #homeScreen .menu-buttons.premium-menu-buttons{gap:9px!important;}
+html[data-sy-theme='sade'] #homeScreen .menu-button{
+  border-radius:13px!important;border:1px solid #e7e1f0!important;text-shadow:none!important;
+  min-height:52px!important;font-size:15px!important;
+  box-shadow:0 2px 4px #4b3a6710!important;
+  background:#ffffff!important;color:#514663!important;
+}
+html[data-sy-theme='sade'] #homeScreen #playBtn{
+  min-height:65px!important;background:#644786!important;color:white!important;
+  border:1px solid #644786!important;box-shadow:0 6px 15px #7252923d!important;
+}
+html[data-sy-theme='sade'] #homeScreen #playBtn::before{display:none!important;}
+html[data-sy-theme='sade'] #homeScreen #playBtn #playBtnText{color:white!important;text-shadow:none!important;}
+html[data-sy-theme='sade'] #homeScreen #playBtn .play-btn-copy small{color:#ebdaf7!important;}
+html[data-sy-theme='sade'] #homeScreen #levelsBtn{background:#f2eaf7!important;color:#5f437c!important;border-color:#eadcf2!important;}
+html[data-sy-theme='sade'] #homeScreen .home-shortcuts{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:9px!important;width:100%!important;
+}
+html[data-sy-theme='sade'] #homeScreen .home-shortcuts #dailyBtn{
+  grid-column:1 / -1!important;order:0!important;
+  min-height:55px!important;background:#f4e5f3!important;color:#683f75!important;
+  border-color:#efd8eb!important;text-shadow:none!important;
+}
+html[data-sy-theme='sade'] #homeScreen .home-shortcuts #dailyBtn .sy-daily-copy strong,
+html[data-sy-theme='sade'] #homeScreen .home-shortcuts #dailyBtn .sy-daily-copy small{color:#653e78!important;}
+html[data-sy-theme='sade'] #homeScreen .home-shortcuts #recordsBtn{order:1!important;}
+html[data-sy-theme='sade'] #homeScreen .home-shortcuts #settingsBtn{order:2!important;}
+html[data-sy-theme='sade'] #homeScreen .home-shortcuts #howBtn{order:3!important;}
+html[data-sy-theme='sade'] #homeScreen .home-shortcuts #creditsBtn{order:4!important;}
+html[data-sy-theme='sade'] #homeScreen .home-shortcuts #feedbackBtn{order:5!important;grid-column:1/-1!important;}
+html[data-sy-theme='sade'] #homeScreen .home-shortcuts button{font-size:clamp(11px,3.2vw,14px)!important;}
+html[data-sy-theme='sade'] #homeScreen .home-footer,
+html[data-sy-theme='sade'] #homeScreen .home-footer span,
+html[data-sy-theme='sade'] #homeScreen .sy-owner-notice{color:#6c5973!important;text-shadow:none!important;}
+/* Pastel — romantic clouds and gently tinted soft raised buttons. */
+html[data-sy-theme='pastel'] .screen-layer:has(#homeScreen:not(.hidden))::before{
+  background:radial-gradient(ellipse at 25% 5%,#ffffff7e,transparent 48%),linear-gradient(180deg,#fcdff170,#efd9ff80)!important;
+}
+html[data-sy-theme='pastel'] #homeScreen.premium-home{
+  color:#775280!important;
+  background:linear-gradient(180deg,rgba(255,241,249,.92),rgba(251,231,255,.80) 48%,rgba(249,238,255,.91))!important;
+  box-shadow:0 15px 36px #ad83ad4c!important;
+}
+html[data-sy-theme='pastel'] #homeScreen .home-trophy{
+  color:#905c82!important;background:#fff7fb!important;border-color:#fff!important;
+  box-shadow:0 4px 12px #bf8aab2f!important;
+}
+html[data-sy-theme='pastel'] #homeScreen .home-title-wrap{
+  height:clamp(169px,25vh,234px)!important;
+  filter:drop-shadow(0 0 15px #fff0f3) drop-shadow(0 8px 9px #dba5cc7d)!important;
+}
+html[data-sy-theme='pastel'] #homeScreen .home-progress{
+  background:linear-gradient(140deg,rgba(255,254,255,.96),rgba(254,233,251,.96))!important;
+  border:2px solid white!important;border-radius:26px!important;
+  box-shadow:0 10px 20px #d79fc232!important;
+}
+html[data-sy-theme='pastel'] #homeScreen .progress-heading,
+html[data-sy-theme='pastel'] #homeScreen .home-progress-top strong{color:#9d5a98!important;}
+html[data-sy-theme='pastel'] #homeScreen .home-progress-track{background:#f6deef!important;border-color:#e0b4d4!important;}
+html[data-sy-theme='pastel'] #homeScreen .home-progress-fill{background:linear-gradient(90deg,#eea6d0,#ad99ec)!important;}
+html[data-sy-theme='pastel'] #homeScreen .home-metric{
+  border:1px solid #f8e4f7!important;background:#fff7ff!important;
+  border-radius:16px!important;box-shadow:0 4px 8px #bd9fce13!important;
+}
+html[data-sy-theme='pastel'] #homeScreen .home-metric small{color:#97759d!important;}
+html[data-sy-theme='pastel'] #homeScreen .home-metric strong{color:#875293!important;}
+html[data-sy-theme='pastel'] #homeScreen #menuGreeting{color:#96678c!important;text-shadow:0 1px #fff!important;}
+html[data-sy-theme='pastel'] #homeScreen .hello-dot{color:#e99bc6!important;}
+html[data-sy-theme='pastel'] #homeScreen .menu-button{
+  border-radius:24px!important;border:3px solid #fff!important;
+  box-shadow:0 7px 0 #dbb6d8,0 12px 20px #a883b627!important;
+}
+html[data-sy-theme='pastel'] #homeScreen #playBtn{
+  background:linear-gradient(135deg,#ffabc9,#f27bb2 65%,#d65b9f)!important;
+  color:white!important;border-color:#fff6fd!important;text-shadow:0 1px #bb5a98!important;
+  box-shadow:0 7px 0 #d08ab1,0 15px 24px #c07fac42!important;
+}
+html[data-sy-theme='pastel'] #homeScreen #playBtn #playBtnText{color:white!important;text-shadow:0 1px #b3578e!important;}
+html[data-sy-theme='pastel'] #homeScreen #playBtn .play-btn-copy small{color:#fff6ff!important;}
+html[data-sy-theme='pastel'] #homeScreen #levelsBtn{
+  color:#8753a9!important;text-shadow:none!important;
+  background:linear-gradient(140deg,#f6e2fe,#ddc9fa)!important;border-color:#fff!important;
+  box-shadow:0 6px 0 #c6a9de!important;
+}
+html[data-sy-theme='pastel'] #homeScreen #recordsBtn{
+  color:#50749b!important;text-shadow:none!important;
+  background:linear-gradient(135deg,#e3f7ff,#c8e9fe)!important;box-shadow:0 6px 0 #9bbedb!important;
+}
+html[data-sy-theme='pastel'] #homeScreen #settingsBtn{
+  color:#68876e!important;text-shadow:none!important;
+  background:linear-gradient(135deg,#e4ffec,#caefd8)!important;box-shadow:0 6px 0 #a9d5b9!important;
+}
+html[data-sy-theme='pastel'] #homeScreen #dailyBtn{
+  color:#a96390!important;text-shadow:none!important;border-color:#fff!important;
+  background:linear-gradient(145deg,#ffe4ee,#ffd1e5)!important;box-shadow:0 6px 0 #ddb6cb!important;
+}
+html[data-sy-theme='pastel'] #homeScreen #dailyBtn .sy-daily-copy strong,
+html[data-sy-theme='pastel'] #homeScreen #dailyBtn .sy-daily-copy small{color:#9a5984!important;}
+html[data-sy-theme='pastel'] #homeScreen #howBtn,
+html[data-sy-theme='pastel'] #homeScreen #creditsBtn,
+html[data-sy-theme='pastel'] #homeScreen #feedbackBtn{
+  color:#8b689b!important;text-shadow:none!important;background:#fffafe!important;
+  box-shadow:0 4px 0 #e3c9e8!important;
+}
+html[data-sy-theme='pastel'] #homeScreen .home-footer,
+html[data-sy-theme='pastel'] #homeScreen .home-footer span,
+html[data-sy-theme='pastel'] #homeScreen .sy-owner-notice{color:#997092!important;text-shadow:none!important;}
+/* Hareketli — brighter candy arcade, energetic gradients and optional subtle motion. */
+html[data-sy-theme='hareketli'] .screen-layer:has(#homeScreen:not(.hidden))::before{
+  background:radial-gradient(ellipse at 50% 0%,#3fe8ff75,transparent 53%),linear-gradient(180deg,#5823a0c7,#bb3282a0 70%,#2c1780cf)!important;
+}
+html[data-sy-theme='hareketli'] #homeScreen.premium-home{
+  color:white!important;
+  background:linear-gradient(145deg,rgba(37,12,91,.64),rgba(96,20,113,.48),rgba(24,19,91,.70))!important;
+  box-shadow:0 20px 50px #25095c99!important;
+}
+html[data-sy-theme='hareketli'] #homeScreen .premium-particles{display:block!important;z-index:0!important;}
+html[data-sy-theme='hareketli'] #homeScreen .premium-particles i{
+  width:6px!important;height:6px!important;box-shadow:0 0 17px #ffb7ff!important;opacity:.7;
+  animation:syArcadeSpark 3.7s ease-in-out infinite alternate!important;
+}
+@keyframes syArcadeSpark{0%{opacity:.25;transform:translateY(14px) scale(.6)}100%{opacity:1;transform:translateY(-10px) scale(1.45)}}
+html[data-sy-theme='hareketli'] #homeScreen .home-trophy{
+  color:#fff6bc!important;background:linear-gradient(115deg,#7436c3,#c64fd4)!important;
+  border-color:#ffd1ff!important;box-shadow:0 0 12px #ff9cf5!important;
+}
+html[data-sy-theme='hareketli'] #homeScreen .home-title-wrap{
+  height:clamp(163px,25vh,236px)!important;
+  animation:syArcadeFloat 3.6s ease-in-out infinite!important;
+  filter:drop-shadow(0 0 19px #ff4ffc) drop-shadow(0 13px 11px #190453)!important;
+}
+@keyframes syArcadeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+html[data-sy-theme='hareketli'] #homeScreen .home-progress{
+  background:linear-gradient(145deg,rgba(45,25,106,.95),rgba(101,27,124,.97))!important;
+  color:#fff!important;border:2px solid #fbbaff!important;border-radius:22px!important;
+  box-shadow:0 0 18px #fe7ce16e,0 12px 27px #2305508a!important;
+}
+html[data-sy-theme='hareketli'] #homeScreen .progress-heading,
+html[data-sy-theme='hareketli'] #homeScreen .home-progress-top strong{color:#ffe58a!important;}
+html[data-sy-theme='hareketli'] #homeScreen .home-progress-track{background:#32146b!important;border-color:#e675ef!important;}
+html[data-sy-theme='hareketli'] #homeScreen .home-progress-fill{
+  background:linear-gradient(90deg,#15dfff,#fb54e8,#ffde4c)!important;
+  box-shadow:0 0 9px #ff85fc!important;
+}
+html[data-sy-theme='hareketli'] #homeScreen .home-metric{
+  color:white!important;background:linear-gradient(135deg,#5c299c,#742d9c)!important;
+  border:1px solid #cf8bfa!important;border-radius:15px!important;
+  box-shadow:0 0 8px #f36ddd50!important;
+}
+html[data-sy-theme='hareketli'] #homeScreen .home-metric small{color:#f1d5ff!important;}
+html[data-sy-theme='hareketli'] #homeScreen .home-metric strong{color:white!important;}
+html[data-sy-theme='hareketli'] #homeScreen #menuGreeting{color:#fff0ba!important;text-shadow:0 2px 7px #2c0753!important;}
+html[data-sy-theme='hareketli'] #homeScreen .hello-dot{color:#ffb6ee!important;}
+html[data-sy-theme='hareketli'] #homeScreen .menu-button{
+  overflow:hidden!important;border-radius:999px!important;border:2px solid #fff7ff!important;
+  box-shadow:inset 0 2px 2px #fff9,0 5px 0 #5f2072,0 11px 17px #1b084e8c!important;
+  transition:transform .14s ease,filter .14s ease!important;
+}
+html[data-sy-theme='hareketli'] #homeScreen .menu-button:hover{filter:brightness(1.12)!important;}
+html[data-sy-theme='hareketli'] #homeScreen #playBtn{
+  color:#fff!important;border:3px solid white!important;
+  background:linear-gradient(135deg,#9bfa26 0%,#56c90d 47%,#159d38 100%)!important;
+  box-shadow:0 5px 0 #255c24,0 0 19px #8ffc65a8,0 15px 22px #1a093db8!important;
+}
+html[data-sy-theme='hareketli'] #homeScreen #playBtn #playBtnText{color:white!important;}
+html[data-sy-theme='hareketli'] #homeScreen #playBtn .play-btn-copy small{color:#edffdd!important;}
+html[data-sy-theme='hareketli'] #homeScreen #levelsBtn{
+  color:white!important;background:linear-gradient(145deg,#ff87b9,#f32f86,#b60c65)!important;
+  box-shadow:0 5px 0 #79205b,0 0 19px #ff7ab0a8!important;
+}
+html[data-sy-theme='hareketli'] #homeScreen #recordsBtn{
+  color:white!important;background:linear-gradient(145deg,#61deff,#228cd9,#2759c6)!important;
+  box-shadow:0 5px 0 #224a89,0 0 16px #33c8ffa8!important;
+}
+html[data-sy-theme='hareketli'] #homeScreen #settingsBtn{
+  color:white!important;background:linear-gradient(145deg,#bc85ff,#7e36ce,#6122bb)!important;
+  box-shadow:0 5px 0 #4d248d,0 0 16px #ae59ffa0!important;
+}
+html[data-sy-theme='hareketli'] #homeScreen #dailyBtn{
+  color:white!important;background:linear-gradient(145deg,#f7c548,#e78b30,#cf4b53)!important;
+  border-color:#ffeaa0!important;box-shadow:0 5px 0 #8d4359,0 0 18px #ffcb75b0!important;
+}
+html[data-sy-theme='hareketli'] #homeScreen #dailyBtn .sy-daily-copy strong,
+html[data-sy-theme='hareketli'] #homeScreen #dailyBtn .sy-daily-copy small{color:#fff!important;}
+html[data-sy-theme='hareketli'] #homeScreen #howBtn,
+html[data-sy-theme='hareketli'] #homeScreen #creditsBtn,
+html[data-sy-theme='hareketli'] #homeScreen #feedbackBtn{
+  color:#f5ebff!important;background:linear-gradient(130deg,#6926a8,#9d43b5)!important;
+  border-color:#cf9ce2!important;box-shadow:0 4px 0 #492479!important;
+}
+html[data-sy-theme='hareketli'] #homeScreen .home-footer,
+html[data-sy-theme='hareketli'] #homeScreen .home-footer span,
+html[data-sy-theme='hareketli'] #homeScreen .sy-owner-notice{
+  color:#f6d6ff!important;text-shadow:0 1px 4px #190c50!important;
+}
+@media(prefers-reduced-motion:reduce){
+ html[data-sy-theme='hareketli'] #homeScreen .premium-particles i,
+ html[data-sy-theme='hareketli'] #homeScreen .home-title-wrap{animation:none!important;}
+}
+body.reduce-motion #homeScreen .premium-particles i,body.reduce-motion #homeScreen .home-title-wrap{animation:none!important;}
+@media(max-width:410px){
+ html[data-sy-theme] #homeScreen.premium-home{padding-left:15px!important;padding-right:15px!important;}
+ html[data-sy-theme] #homeScreen .home-title-wrap{height:clamp(139px,21vh,193px)!important;}
+ html[data-sy-theme='premium'] #homeScreen .home-title-wrap,
+ html[data-sy-theme='pastel'] #homeScreen .home-title-wrap,
+ html[data-sy-theme='hareketli'] #homeScreen .home-title-wrap{height:clamp(156px,23vh,207px)!important;}
+ html[data-sy-theme='sade'] #homeScreen .home-title-wrap{height:116px!important;}
+ html[data-sy-theme] #homeScreen .menu-buttons.premium-menu-buttons{gap:9px!important;}
+ html[data-sy-theme] #homeScreen .home-metric{padding:7px 3px!important;}
+}
+
+/* Şeker Yağmuru — Hareketli menü: büyük / bütünleşik / giriş + sürekli animasyon */
+html[data-sy-theme='hareketli'] #homeScreen .home-title-wrap{
+  position:relative!important;
+  box-sizing:border-box!important;
+  order:2!important;
+  margin:10px auto 10px!important;
+  width:min(100%,448px)!important;
+  height:clamp(220px,30vh,310px)!important;
+  min-height:220px!important;
+  max-height:none!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:visible!important;
+  isolation:isolate!important;
+  filter:none!important;
+  animation:none!important;
+}
+/* Yüzeye yapıştırılmış levha yok; arka planla kaynaşan ışık */
+html[data-sy-theme='hareketli'] #homeScreen .home-title-wrap::before{
+  content:""!important;
+  position:absolute!important;
+  inset:-8px -9px -10px!important;
+  z-index:0!important;
+  pointer-events:none!important;
+  border:0!important;
+  border-radius:50%!important;
+  box-shadow:none!important;
+  background:
+    radial-gradient(ellipse 60% 48% at 50% 53%,rgba(79,18,113,.60) 0%,rgba(95,24,120,.25) 48%,transparent 99%),
+    radial-gradient(ellipse 34% 29% at 28% 53%,rgba(252,67,169,.27) 0%,transparent 100%),
+    radial-gradient(ellipse 33% 29% at 73% 51%,rgba(255,153,79,.26) 0%,transparent 100%)!important;
+  animation:syLogoAura 7.8s ease-in-out 1.6s infinite alternate!important;
+}
+html[data-sy-theme='hareketli'] #homeScreen .home-title-wrap::after{
+  content:"✦"!important;
+  position:absolute!important;
+  display:block!important;
+  z-index:4!important;
+  top:20%!important;
+  right:11%!important;
+  left:auto!important;
+  width:auto!important;
+  height:auto!important;
+  border:0!important;
+  background:none!important;
+  color:#fff5c6!important;
+  font-size:26px!important;
+  line-height:1!important;
+  text-shadow:0 0 8px #fff8c9,0 0 18px #ff82d5!important;
+  filter:none!important;
+  opacity:0;
+  transform:scale(.5)!important;
+  pointer-events:none!important;
+  animation:syLogoStar 4.8s ease-in-out 1.7s infinite!important;
+}
+html[data-sy-theme='hareketli'] #homeScreen .home-title-wrap h2{
+  box-sizing:border-box!important;
+  position:relative!important;
+  z-index:3!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:100%!important;
+  height:auto!important;
+  margin:0!important;
+  padding:16px 0 18px!important;
+  border:0!important;
+  overflow:visible!important;
+  white-space:normal!important;
+  clip-path:none!important;
+  color:#fff!important;
+  gap:0!important;
+  line-height:.98!important;
+  text-align:center!important;
+  letter-spacing:-2.4px!important;
+  font-family:system-ui,'Arial Rounded MT Bold','Trebuchet MS',sans-serif!important;
+  font-weight:1000!important;
+  filter:drop-shadow(0 13px 7px rgba(34,4,64,.28))!important;
+  transform-origin:50% 52%!important;
+  animation:syLogoIntro 1.3s cubic-bezier(.16,.95,.28,1.18) both, syLogoFloat 6s ease-in-out 1.4s infinite!important;
+}
+html[data-sy-theme='hareketli'] #homeScreen .home-title-wrap h2 span,
+html[data-sy-theme='hareketli'] #homeScreen .home-title-wrap h2 em{
+  position:relative!important;
+  display:block!important;
+  width:max-content!important;
+  max-width:100%!important;
+  font-style:normal!important;
+  font-weight:1000!important;
+  line-height:.99!important;
+  -webkit-background-clip:border-box!important;
+  background-clip:border-box!important;
+  -webkit-text-fill-color:currentColor!important;
+  white-space:nowrap!important;
+  background:none!important;
+  -webkit-text-stroke:1.65px #fff1e9!important;
+  transition:none!important;
+  animation:syLogoGloss 6.8s ease-in-out 1.6s infinite!important;
+}
+/* Şeker = çilekli pembe, Yağmuru = kayısı / karamelli mercan: aynı şeker renk ailesi */
+html[data-sy-theme='hareketli'] #homeScreen .home-title-wrap h2 span{
+  font-size:clamp(60px,19vw,90px)!important;
+  letter-spacing:-3.5px!important;
+  color:#ff63a7!important;
+  -webkit-text-fill-color:#ff63a7!important;
+  -webkit-text-stroke:1.75px #ffece8!important;
+  text-shadow:0 3px 0 #c33e7b,0 7px 0 #7d285f,0 10px 14px #451953,0 0 18px #fa79ce!important;
+}
+html[data-sy-theme='hareketli'] #homeScreen .home-title-wrap h2 em{
+  font-size:clamp(66px,19.4vw,95px)!important;
+  letter-spacing:-4px!important;
+  color:#ffaf5c!important;
+  -webkit-text-fill-color:#ffaf5c!important;
+  -webkit-text-stroke:1.65px #fff6d7!important;
+  text-shadow:0 3px 0 #dc6f5e,0 7px 0 #87335a,0 11px 14px #42194b,0 0 17px #ffd066!important;
+}
+@keyframes syLogoIntro{
+  0%{opacity:0;transform:translate3d(0,-48px,0) scale(.64) rotate(-3deg);filter:blur(7px)}
+  60%{opacity:1;transform:translate3d(0,6px,0) scale(1.055) rotate(1.2deg);filter:blur(0)}
+  79%{transform:translate3d(0,-2px,0) scale(.985) rotate(-.3deg)}
+  100%{opacity:1;transform:translate3d(0,0,0) scale(1) rotate(0);filter:blur(0)}
+}
+@keyframes syLogoFloat{
+  0%,100%{transform:translate3d(0,0,0) rotate(-.25deg)}
+  50%{transform:translate3d(0,-5px,0) rotate(.25deg)}
+}
+@keyframes syLogoGloss{
+  0%,100%{filter:brightness(1) saturate(1)}
+  45%{filter:brightness(1.13) saturate(1.12)}
+  60%{filter:brightness(1.05) saturate(1.04)}
+}
+@keyframes syLogoAura{
+  0%{opacity:.7;transform:scale(.96)}
+  100%{opacity:1;transform:scale(1.035)}
+}
+@keyframes syLogoStar{
+  0%,30%,100%{opacity:.15;transform:scale(.6) rotate(-8deg)}
+  43%{opacity:1;transform:scale(1.2) rotate(12deg)}
+  55%{opacity:.75;transform:scale(.91) rotate(23deg)}
+}
+@media(max-width:410px){
+  html[data-sy-theme='hareketli'] #homeScreen .home-title-wrap{
+    width:100%!important;
+    height:clamp(212px,28vh,274px)!important;
+    min-height:212px!important;
+    margin:7px auto 10px!important;
+  }
+  html[data-sy-theme='hareketli'] #homeScreen .home-title-wrap h2{
+    letter-spacing:-1.8px!important;
+    padding:10px 0 15px!important;
+  }
+  html[data-sy-theme='hareketli'] #homeScreen .home-title-wrap h2 span{
+    font-size:clamp(58px,19vw,76px)!important;
+    letter-spacing:-2.8px!important;
+  }
+  html[data-sy-theme='hareketli'] #homeScreen .home-title-wrap h2 em{
+    font-size:clamp(63px,19.4vw,79px)!important;
+    letter-spacing:-3px!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  html[data-sy-theme='hareketli'] #homeScreen .home-title-wrap,
+  html[data-sy-theme='hareketli'] #homeScreen .home-title-wrap::before,
+  html[data-sy-theme='hareketli'] #homeScreen .home-title-wrap::after,
+  html[data-sy-theme='hareketli'] #homeScreen .home-title-wrap h2,
+  html[data-sy-theme='hareketli'] #homeScreen .home-title-wrap h2 span,
+  html[data-sy-theme='hareketli'] #homeScreen .home-title-wrap h2 em{animation:none!important;opacity:1!important;transform:none!important;}
+}
+body.reduce-motion #homeScreen .home-title-wrap,
+body.reduce-motion #homeScreen .home-title-wrap::before,
+body.reduce-motion #homeScreen .home-title-wrap::after,
+body.reduce-motion #homeScreen .home-title-wrap h2,
+body.reduce-motion #homeScreen .home-title-wrap h2 span,
+body.reduce-motion #homeScreen .home-title-wrap h2 em{animation:none!important;opacity:1!important;transform:none!important;}
+
+/* === Şeker Yağmuru: Rengârenk, bağımsız harfli yeni logo ===
+   Yalnızca giriş menüsü. Şekerlerin davranışı ve oyun durumu değişmez. */
+html[data-sy-theme="hareketli"] #homeScreen .home-title-wrap{
+  width:min(100%,470px)!important;
+  height:clamp(217px,31vh,305px)!important;
+  min-height:217px!important;
+  margin:10px auto 15px!important;
+  padding:0 4px!important;
+  overflow:visible!important;
+}
+html[data-sy-theme="hareketli"] #homeScreen .home-title-wrap h2{
+  width:100%!important;
+  padding:15px 0 18px!important;
+  gap:13px!important;
+  font-family:"Trebuchet MS","Arial Rounded MT Bold",ui-rounded,system-ui,sans-serif!important;
+  line-height:1.2!important;
+  letter-spacing:0!important;
+  filter:none!important;
+}
+html[data-sy-theme="hareketli"] #homeScreen .home-title-wrap h2 .sy-rainbow-word{
+  display:flex!important;
+  flex-direction:row!important;
+  justify-content:center!important;
+  align-items:center!important;
+  width:max-content!important;
+  max-width:100%!important;
+  margin:0 auto!important;
+  padding:4px 2px 11px!important;
+  gap:clamp(3px,.9vw,7px)!important;
+  line-height:1.18!important;
+  font-size:initial!important;
+  font-style:normal!important;
+  letter-spacing:0!important;
+  white-space:nowrap!important;
+  overflow:visible!important;
+  text-shadow:none!important;
+  color:inherit!important;
+  -webkit-text-fill-color:initial!important;
+  -webkit-text-stroke:0!important;
+  animation:none!important;
+  filter:none!important;
+}
+html[data-sy-theme="hareketli"] #homeScreen .home-title-wrap h2 .sy-rainbow-first{
+  --sy-rainbow-font:clamp(44px,15.0vw,77px);
+}
+html[data-sy-theme="hareketli"] #homeScreen .home-title-wrap h2 .sy-rainbow-second{
+  --sy-rainbow-font:clamp(43px,14.6vw,73px);
+}
+html[data-sy-theme="hareketli"] #homeScreen .home-title-wrap h2 .sy-rainbow-letter{
+  display:inline-block!important;
+  flex:0 0 auto!important;
+  width:auto!important;
+  min-width:0!important;
+  margin:0!important;
+  padding:0!important;
+  font:950 var(--sy-rainbow-font)/1.12 "Trebuchet MS","Arial Rounded MT Bold",ui-rounded,system-ui,sans-serif!important;
+  font-kerning:none!important;
+  letter-spacing:0!important;
+  color:var(--sy-color)!important;
+  -webkit-text-fill-color:var(--sy-color)!important;
+  -webkit-text-stroke:1px rgba(255,255,255,.96)!important;
+  paint-order:stroke fill!important;
+  text-shadow:0 2px 0 #682d83,0 4px 6px rgba(34,8,68,.58)!important;
+  filter:drop-shadow(0 0 5px rgba(255,255,255,.18));
+  transform-origin:50% 70%!important;
+  animation:syRainbowLetterEnter .85s cubic-bezier(.2,.9,.23,1.26) both,
+            syRainbowLetterGlow 5s ease-in-out 1.7s infinite!important;
+  animation-delay:calc(.18s + (var(--sy-i) * .085s)), calc(1.75s + (var(--sy-i) * .17s))!important;
+}
+/* Letter spacing is positive; glyph boxes never overlap. */
+@keyframes syRainbowLetterEnter{
+  0%{opacity:0;transform:translateY(-30px) scale(.72) rotate(-6deg)}
+  66%{opacity:1;transform:translateY(5px) scale(1.06) rotate(1deg)}
+  100%{opacity:1;transform:translateY(0) scale(1) rotate(0)}
+}
+@keyframes syRainbowLetterGlow{
+  0%,100%{filter:brightness(1) saturate(1.02)}
+  50%{filter:brightness(1.11) saturate(1.13)}
+}
+html[data-sy-theme="hareketli"] #homeScreen .home-title-wrap::before{
+  background:
+    radial-gradient(ellipse 60% 44% at 50% 54%,rgba(72,21,122,.50),transparent 93%),
+    radial-gradient(ellipse 48% 40% at 40% 38%,rgba(255,109,207,.20),transparent 90%),
+    radial-gradient(ellipse 49% 40% at 61% 64%,rgba(63,216,255,.20),transparent 91%)!important;
+}
+@media(max-width:410px){
+  html[data-sy-theme="hareketli"] #homeScreen .home-title-wrap{
+    width:100%!important;
+    height:clamp(205px,28vh,260px)!important;
+    min-height:205px!important;
+    padding:0 2px!important;
+  }
+  html[data-sy-theme="hareketli"] #homeScreen .home-title-wrap h2{
+    gap:10px!important;
+    padding:10px 0 12px!important;
+  }
+  html[data-sy-theme="hareketli"] #homeScreen .home-title-wrap h2 .sy-rainbow-first{
+    --sy-rainbow-font:clamp(39px,14.9vw,61px);
+  }
+  html[data-sy-theme="hareketli"] #homeScreen .home-title-wrap h2 .sy-rainbow-second{
+    --sy-rainbow-font:clamp(38px,14.4vw,59px);
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  html[data-sy-theme="hareketli"] #homeScreen .home-title-wrap h2 .sy-rainbow-letter{
+    animation:none!important;opacity:1!important;transform:none!important;
+  }
+}
+body.reduce-motion #homeScreen .home-title-wrap h2 .sy-rainbow-letter{
+  animation:none!important;opacity:1!important;transform:none!important;
+}
+
+</style>
+
+<style id="sy-ui-layer-visibility-hotfix">
+/* Keep menu/section visibility rules stronger than theme decoration. */
+html[data-sy-theme] #screenLayer.screen-layer.hidden{display:none!important;visibility:hidden!important;pointer-events:none!important}
+html[data-sy-theme] #homeScreen.premium-home.hidden{display:none!important}
+html[data-sy-theme] #introOverlay.intro-overlay.hidden{display:none!important}
+html[data-sy-theme] #levelsScreen.screen-page.hidden,
+html[data-sy-theme] #recordsScreen.screen-page.hidden,
+html[data-sy-theme] #settingsScreen.screen-page.hidden,
+html[data-sy-theme] #howScreen.screen-page.hidden,
+html[data-sy-theme] #creditsScreen.screen-page.hidden,
+html[data-sy-theme] #feedbackScreen.screen-page.hidden{display:none!important}
+
+/* === Şeker Yağmuru oyun içi üst logo: menü stiliyle uyumlu === */
+body[data-sy-world] header .brand{align-items:center!important}
+body[data-sy-world] header .brand .game-brand-copy{
+ position:relative!important;display:flex!important;flex-direction:column!important;justify-content:center!important;
+ min-width:0!important;flex:1 1 auto!important;padding:1px 0 0!important;
+}
+body[data-sy-world] header .brand .game-brand-copy p{
+ margin:1px 0 0!important;font-size:8px!important;line-height:1.05!important;letter-spacing:.45px!important;
+ color:#8b5d73!important;font-weight:1000!important;text-shadow:0 1px 0 #fff7f0!important;
+}
+body[data-sy-world] header .brand h1.sy-game-title{
+ position:relative!important;z-index:2!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;
+ justify-content:center!important;gap:1px!important;margin:0!important;padding:0!important;
+ width:auto!important;max-width:100%!important;height:auto!important;background:none!important;
+ font-size:unset!important;line-height:1!important;letter-spacing:0!important;text-transform:none!important;
+ filter:drop-shadow(0 2px 0 #8e2b67) drop-shadow(0 4px 7px rgba(98,35,94,.22))!important;
+}
+body[data-sy-world] header .brand h1.sy-game-title .sy-rainbow-word{
+ display:flex!important;flex-wrap:nowrap!important;align-items:center!important;gap:1px!important;
+ font-style:normal!important;
+}
+body[data-sy-world] header .brand h1.sy-game-title .sy-rainbow-first{margin-left:0!important}
+body[data-sy-world] header .brand h1.sy-game-title .sy-rainbow-second{margin-left:8px!important}
+body[data-sy-world] header .brand h1.sy-game-title .sy-rainbow-letter{
+ position:relative!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ min-width:auto!important;padding:0 1px!important;
+ font-size:clamp(20px,5vw,31px)!important;line-height:.88!important;font-weight:1000!important;
+ color:var(--sy-color)!important;-webkit-text-stroke:1.2px #fff8f3!important;
+ text-shadow:0 2px 0 #8f2e66,0 4px 0 #6d244d,0 6px 10px rgba(92,29,77,.24)!important;
+ transform:translateY(calc((var(--sy-i) % 2) * -1px))!important;
+}
+body[data-sy-world] header .brand h1.sy-game-title .sy-rainbow-letter::after{
+ content:''!important;position:absolute!important;left:10%!important;top:12%!important;width:58%!important;height:34%!important;
+ border-radius:999px!important;background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,255,255,0))!important;
+ opacity:.72!important;pointer-events:none!important;
+}
+body[data-sy-world] header .brand .game-title-wrap{
+ position:absolute!important;left:-7px!important;top:-2px!important;width:calc(100% + 8px)!important;height:calc(100% + 4px)!important;
+ pointer-events:none!important;z-index:1!important;
+}
+body[data-sy-world] header .brand .game-title-wrap::before,
+body[data-sy-world] header .brand .game-title-wrap::after{
+ content:''!important;position:absolute!important;border-radius:999px!important;filter:blur(.2px)!important;
+}
+body[data-sy-world] header .brand .game-title-wrap::before{
+ inset:10px 18px 14px 0!important;
+ background:radial-gradient(circle at 26% 35%,rgba(255,255,255,.75) 0,rgba(255,255,255,.16) 16%,rgba(255,255,255,0) 50%),
+            linear-gradient(135deg,rgba(255,121,187,.17),rgba(255,207,95,.13) 26%,rgba(94,223,255,.12) 54%,rgba(176,123,255,.15) 100%)!important;
+}
+body[data-sy-world] header .brand .game-title-wrap::after{
+ width:13px!important;height:13px!important;right:10px!important;top:2px!important;
+ background:radial-gradient(circle at 35% 35%,#fff0ab 0 18%,#ff8ec7 18% 53%,#ff559d 53% 100%)!important;
+ box-shadow:-13px 17px 0 1px rgba(97,225,255,.95),-35px 3px 0 1px rgba(255,204,87,.95),-9px 29px 0 1px rgba(184,123,255,.92)!important;
+}
+@media (max-width:500px){
+ body[data-sy-world] header .brand h1.sy-game-title .sy-rainbow-letter{font-size:clamp(17px,4.4vw,25px)!important;-webkit-text-stroke:.95px #fff8f3!important}
+ body[data-sy-world] header .brand h1.sy-game-title .sy-rainbow-second{margin-left:5px!important}
+ body[data-sy-world] header .brand .game-brand-copy p{font-size:6.8px!important;letter-spacing:.28px!important}
+}
+@media (max-height:720px) and (orientation:portrait){
+ body[data-sy-world] header .brand .game-brand-copy p{display:none!important}
+ body[data-sy-world] header .brand h1.sy-game-title .sy-rainbow-letter{font-size:clamp(16px,4.25vw,22px)!important}
+}
+
+</style>
 </head>
 <body>
 <noscript><p role="alert" style="margin:16px auto;padding:16px;max-width:620px;border-radius:12px;background:#fff3d9;color:#432b43;font:16px/1.5 sans-serif">🍬 Şeker Yağmuru JavaScript gerektirir. iPhone'da Dosyalar uygulamasının HTML önizlemesi oyunu çalıştırmayabilir. Oyunu Chrome veya Safari'de yayımlanmış HTTPS bağlantısından açın.</p></noscript>
 
 <div class="app">
 <header>
-<div class="brand"><div aria-hidden="true" class="logo game-logo"><img alt="" src="game-icon-256.png"/></div><div><h1>Şeker Yağmuru</h1><p>RENKLERİ EŞLEŞTİR · PUANLARI TOPLA</p></div></div>
+<div class="brand"><div aria-hidden="true" class="logo game-logo"><img alt="" src="./game-icon-256.png"/></div><div class="game-brand-copy"><div class="game-title-wrap" aria-hidden="true"></div><h1 class="sy-game-title" aria-label="Şeker Yağmuru"><span class="sy-rainbow-word sy-rainbow-first" aria-label="Şeker"><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#ff4f90;--sy-i:0">Ş</b><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#ffbe32;--sy-i:1">e</b><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#51dbff;--sy-i:2">k</b><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#b5ef45;--sy-i:3">e</b><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#bd83ff;--sy-i:4">r</b></span><em class="sy-rainbow-word sy-rainbow-second" aria-label="Yağmuru"><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#ffcf43;--sy-i:0">Y</b><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#fd6bac;--sy-i:1">a</b><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#55d8c7;--sy-i:2">ğ</b><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#a87bff;--sy-i:3">m</b><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#ff9646;--sy-i:4">u</b><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#7fe24b;--sy-i:5">r</b><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#57b6ff;--sy-i:6">u</b></em></h1><p>RENKLERİ EŞLEŞTİR · PUANLARI TOPLA</p></div></div>
 <div class="header-actions"><button aria-label="Duraklat ve menüyü aç" class="icon-button" id="menuBtn" title="Duraklat ve menüyü aç" type="button">☰ <span>Menü</span></button><div class="volume-control" id="volumeControl">
 <button aria-controls="volumePopover" aria-expanded="false" aria-label="Ses düzeyini ayarla" class="icon-button volume-launch" id="soundBtn" title="Ses düzeyi" type="button"><span aria-hidden="true" class="volume-icon" id="volumeIcon">🔊</span><span class="volume-percentage" id="volumeTriggerText">72%</span></button>
 <div aria-label="Ses düzeyi" class="volume-popover hidden" id="volumePopover" role="group">
@@ -1989,7 +3179,7 @@ body[data-sy-world] .icon-button{background:#ffffff2b!important;border-color:#ff
 </div>
 <div aria-label="Oyuncu adı" aria-modal="true" class="intro-overlay hidden" id="introOverlay" role="dialog">
 <div class="intro-card">
-<div aria-hidden="true" class="intro-logo game-logo"><img alt="" src="game-icon-256.png"/></div>
+<div aria-hidden="true" class="intro-logo game-logo"><img alt="" src="./game-icon-256.png"/></div>
 <h2>Şeker Yağmuru</h2>
 <p class="intro-copy">Tatlı maceraya başlamadan önce oyuncu adını belirle. Bu cihazda bir kez kaydedilir ve rekabetçi macerada seninle birlikte görünür.</p>
 <label class="intro-label" for="playerNameInput">Oyuncu adı</label>
@@ -2010,7 +3200,7 @@ body[data-sy-world] .icon-button{background:#ffffff2b!important;border-color:#ff
 <div aria-hidden="true" class="menu-candies"><span class="menu-candy"></span><span class="menu-candy"></span><span class="menu-candy"></span><span class="menu-candy"></span><span class="menu-candy"></span><span class="menu-candy"></span><span class="menu-candy"></span><span class="menu-candy"></span></div>
 <div aria-hidden="true" class="hero-star star-a">✦</div><div aria-hidden="true" class="hero-star star-b">✧</div><div aria-hidden="true" class="hero-star star-c">✦</div>
 </div>
-<div class="home-title-wrap"><h2 id="homeTitle"><span>Şeker</span> <em>Yağmuru</em></h2></div>
+<div class="home-title-wrap"><h2 id="homeTitle" aria-label="Şeker Yağmuru"><span class="sy-rainbow-word sy-rainbow-first" aria-label="Şeker"><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#ff4f90;--sy-i:0">Ş</b><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#ffbe32;--sy-i:1">e</b><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#51dbff;--sy-i:2">k</b><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#b5ef45;--sy-i:3">e</b><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#bd83ff;--sy-i:4">r</b></span><em class="sy-rainbow-word sy-rainbow-second" aria-label="Yağmuru"><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#ffcf43;--sy-i:0">Y</b><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#fd6bac;--sy-i:1">a</b><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#55d8c7;--sy-i:2">ğ</b><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#a87bff;--sy-i:3">m</b><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#ff9646;--sy-i:4">u</b><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#7fe24b;--sy-i:5">r</b><b aria-hidden="true" class="sy-rainbow-letter" style="--sy-color:#57b6ff;--sy-i:6">u</b></em></h2></div>
 <div aria-label="Macera ilerlemesi" class="home-progress">
 <div class="home-progress-top"><div><span class="progress-crown">✦</span><span class="progress-heading">MACERA YOLCULUĞUN</span></div><strong id="menuJourneyLabel">0 / 60</strong></div>
 <div aria-label="Tamamlanan bölümler" aria-valuemax="60" aria-valuemin="0" aria-valuenow="0" class="home-progress-track" id="menuJourneyProgress" role="progressbar"><div class="home-progress-fill" id="menuJourneyFill"></div></div>
@@ -2034,7 +3224,7 @@ body[data-sy-world] .icon-button{background:#ffffff2b!important;border-color:#ff
 <button class="menu-button feedback-entry" id="feedbackBtn" type="button"><span class="shortcut-icon">💬</span><span>Hata / Öneri</span></button>
 </div>
 </div>
-<div class="home-footer"><span>✓ İlerlemen otomatik kaydedilir</span><span>Sürüm 5.5.2</span></div>
+<div class="home-footer"><span>✓ İlerlemen otomatik kaydedilir</span><span>Sürüm 5.5.2 · Hareketli menü alternatifi</span></div>
 <div class="home-credits"><span>✦</span> TATLI BİR OYUN DENEYİMİ</div><p class="sy-owner-notice">© 2026 <strong>Arif Şahin</strong> · Şeker Yağmuru · İzinsiz sahiplenilemez</p>
 </section>
 <section class="screen-page hidden sy-level-page" id="levelsScreen" aria-labelledby="levelsTitle">
@@ -2173,16 +3363,16 @@ body[data-sy-world] .icon-button{background:#ffffff2b!important;border-color:#ff
 <button id="syTutorialContinue" class="menu-button primary" type="button">Anladım, oynayalım →</button></div></div>
 <div aria-labelledby="dialogTitle" aria-modal="true" class="overlay hidden" id="overlay" role="dialog"><div class="dialog"><div class="dialog-icon" id="dialogIcon">🎉</div><h2 id="dialogTitle">Harika!</h2><p id="dialogText"></p><div id="resultStars" role="img"></div><div id="syStarMilestones" class="sy-star-milestones" aria-live="polite"></div><div id="syWorldResult" class="sy-world-result" hidden></div><p id="resultCriteria"></p><p id="resultBadges"></p><div class="dialog-score"><span id="dialogScoreLabel">BÖLÜM PUANIN</span><strong id="dialogScore">0</strong></div><div class="final-only hidden" id="finalArea"><canvas aria-label="Oyunu tamamladınız başarı kartı" height="1350" id="finalCanvas" width="1080"></canvas><div class="final-actions"><button class="save-action" id="savePngBtn" type="button">📥 PNG Kaydet</button><button class="save-action" id="saveJpgBtn" type="button">📥 JPG Kaydet</button><button class="share-action" id="shareWinBtn" type="button">🟢 WhatsApp / Paylaş</button></div><a class="wa-card-link" hidden="" id="waCardLink" rel="noopener noreferrer" target="_blank">Skor mesajını WhatsApp’ta aç ↗</a><small class="share-hint">Paylaş menüsünde WhatsApp'ı seçebilirsin. Desteklenmezse kartı kaydedip WhatsApp'ta görsel olarak gönder.</small></div><div class="result-navigation"><button class="cta" id="dialogBtn" type="button">Devam et →</button><button class="cta result-menu-cta" id="dialogMenuBtn" type="button">⌂ Ana Menüye Dön</button></div></div></div>
 <div aria-live="polite" class="toast" id="toast" role="status"></div>
-<audio aria-hidden="true" id="menuThemeMusic" loop="" playsinline="" preload="auto" src="music-1-aef72e2273a9.mp3"></audio>
-<audio aria-hidden="true" id="gameThemeMusic" loop="" playsinline="" preload="none" src="music-2-6fcd4246939e.mp3"></audio>
-<audio aria-hidden="true" id="menuMusic" loop="" playsinline="" preload="none" src="music-3-051abd2e50d3.mp3"></audio>
+<audio aria-hidden="true" id="menuThemeMusic" loop="" playsinline="" preload="auto" src="./music-1-aef72e2273a9.mp3"></audio>
+<audio aria-hidden="true" id="gameThemeMusic" loop="" playsinline="" preload="none" src="./music-2-6fcd4246939e.mp3"></audio>
+<audio aria-hidden="true" id="menuMusic" loop="" playsinline="" preload="none" src="./music-3-051abd2e50d3.mp3"></audio>
 <script>
 (() => {
   'use strict';
   const SIZE=8, MAX_LEVEL=60, TYPES=['kalp','portakal','yildiz','yesil','mavi','mor'];
   // Seventh, fully matchable candy; its art belongs to the current world, not the stage.
   const WORLD_TYPE='dunya', PLAY_TYPES=[...TYPES,WORLD_TYPE];
-  const PUBLIC_GAME_URL='https://judge98judge.github.io/seker-yagmuru-oyna/';
+  const PUBLIC_GAME_URL='https://ai-lidge.github.io/seker-yagmuru-oyna/';
   // Her bölüm yalnızca puanla dolan %100 ilerleme hedefine bağlıdır; şeker/zincir kotası yoktur.
   // İlk bölümler kolay, son bölümler daha zor; eski kayıtlar (v2-v8) korunur.
   const LEVEL_SCORE_TARGETS=[16000,16400,16900,17400,17900,18500,19100,19800,20400,21100,22000,22800,23600,24400,25200,26100,27000,28000,29000,30000,32500,33500,34500,35500,36500,37500,38700,39900,41100,42500,43600,44700,45900,47100,48400,49700,51100,52600,54200,55900,57000,58200,59600,60800,62000,65100,66400,68000,69400,71100,73700,75200,76850,78250,79800,77800,79500,81100,83100,85000];
@@ -3161,7 +4351,7 @@ body[data-sy-world] .icon-button{background:#ffffff2b!important;border-color:#ff
   // Separate from the short WebAudio candy effects, which retain their own controlled gain.
   let musicMode='none',masterBus=null;
   const menuTheme=$('menuThemeMusic'),gameTheme=$('gameThemeMusic');
-  const SY54_TRACKS={"garden":"sy54-garden.mp3","castle":"sy54-castle.mp3","ice":"sy54-ice.mp3","crystal":"sy54-crystal.mp3","chocolate":"sy54-chocolate.mp3","stone":"sy54-stone.mp3","gift":"sy54-gift.mp3","finale":"sy54-finale.mp3"};
+  const SY54_TRACKS={"garden":"./sy54-garden.mp3","castle":"./sy54-castle.mp3","ice":"./sy54-ice.mp3","crystal":"./sy54-crystal.mp3","chocolate":"./sy54-chocolate.mp3","stone":"./sy54-stone.mp3","gift":"./sy54-gift.mp3","finale":"./sy54-finale.mp3"};
   const ORIGINAL_GAME_SRC=gameTheme.getAttribute('src');
   let sy54LoadedWorld='legacy';
 
