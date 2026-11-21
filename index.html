@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <meta content="#241448" name="theme-color"/>
 <meta content="Şeker Yağmuru — telefon ve bilgisayarda oynanabilen renkli eşleştirme oyunu." name="description"/>
-<title>Şeker Yağmuru 5.5.2 🍬</title>
+<title>Şeker Yağmuru 5.5.4 🍬</title>
 <meta content="Şeker Yağmuru" name="application-name"/>
 <meta content="Şeker Yağmuru" name="apple-mobile-web-app-title"/>
 <meta content="yes" name="mobile-web-app-capable"/>
@@ -1585,7 +1585,7 @@ body:not(.sy-home-ambient) #syFloat{display:none!important}
 body.reduce-motion .sy-sheen::before{display:none!important}
 @media(prefers-reduced-motion:reduce){.sy-sheen::before{display:none!important}}
 
-/* 5.5.2 · Bölüm haritası: yalnızca açıldığında oluşturulan hafif düğmeler */
+/* 5.5.4 · Bölüm haritası: yalnızca açıldığında oluşturulan hafif düğmeler */
 #homeScreen .sy-level-entry{width:100%;min-height:40px;display:flex;align-items:center;justify-content:center;gap:10px;margin:5px 0 2px;font-weight:850;font-size:13px;background:linear-gradient(120deg,#f8d8ff,#e4d4ff);color:#552b86;border:1px solid #ffffff91;border-radius:14px;box-shadow:0 3px 10px #210d4618}
 #homeScreen .sy-level-entry:hover{filter:brightness(1.025)}
 .sy-level-page{max-width:630px;margin-inline:auto}
@@ -1605,7 +1605,7 @@ body.reduce-motion .sy-sheen::before{display:none!important}
 @media(prefers-reduced-motion:reduce){.sy-level-tile{transition:none!important}}
 
 
-/* 5.5.2 · compact, low-cost quality-of-life and accessibility UI. No idle animations. */
+/* 5.5.4 · compact, low-cost quality-of-life and accessibility UI. No idle animations. */
 #homeScreen .sy-daily-shortcut{background:linear-gradient(125deg,#fff1cf,#f6dbfd);color:#553480}
 .sy-records-page{max-width:630px;margin-inline:auto}
 .sy-record-sub{color:#68577d;font-size:13px;line-height:1.5;margin:10px 2px 15px}
@@ -1643,7 +1643,7 @@ body.syv5-daily .sy-status-head{filter:saturate(1.2)}
 @media(prefers-reduced-motion:reduce){.syv5-tutorial,.syv5-update{animation:none!important}}
 
 
-/* 5.5.2: eight lightweight adventure landscapes, no full-screen animation loop. */
+/* 5.5.4: eight lightweight adventure landscapes, no full-screen animation loop. */
 .sy-world-journey{display:grid;gap:12px;max-width:630px;margin:auto}
 .sy-world-overview{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:11px 13px;background:linear-gradient(110deg,#f8edff,#ffeaf5);border:1px solid #e8d2f7;border-radius:15px;color:#572d7d;font-size:13px}
 .sy-world-overview strong{font-size:16px}.sy-world-overview span{font-variant-numeric:tabular-nums;font-weight:800;font-size:12px}
@@ -1706,7 +1706,7 @@ body.sy-quality-eco .hero-halo{filter:none!important}
 .sy-world-result[hidden]{display:none!important}
 
 
-/* 5.5.2 — daily activity is a primary game mode, not a small utility shortcut. */
+/* 5.5.4 — daily activity is a primary game mode, not a small utility shortcut. */
 #homeScreen .home-shortcuts .menu-button.sy-daily-shortcut{
   grid-column:1/-1;box-sizing:border-box;width:100%;height:auto!important;min-height:76px!important;
   justify-content:flex-start;text-align:left;gap:12px;padding:12px 15px;
@@ -1751,7 +1751,7 @@ body.syv5-daily .sy-progress-card .sy-goal-detail{font-size:11px;line-height:1.5
 @media(prefers-reduced-motion:reduce){#homeScreen .home-shortcuts .menu-button.sy-daily-shortcut{transition:none}}
 
 
-/* Şeker Yağmuru 5.5.2 — oyuncu karşılama menüsü; eski kayıt anahtarları ve JS olayları korunur. */
+/* Şeker Yağmuru 5.5.4 — oyuncu karşılama menüsü; eski kayıt anahtarları ve JS olayları korunur. */
 #introOverlay.sy-welcome{background:linear-gradient(180deg,rgba(66,150,232,.17),rgba(241,165,214,.17)),url("./sy-pastane-background.webp") center / cover no-repeat,#8ed3ff!important;isolation:isolate;overflow-y:auto;overflow-x:hidden;padding:clamp(12px,3vw,28px)}
 #introOverlay.sy-welcome::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,#91d6ff24,#fbc5ea18 45%,#fcb2cb33)}
 #introOverlay .sy-welcome-card{z-index:2;width:min(480px,96vw);max-height:none;overflow:visible;padding:clamp(19px,4vw,29px) clamp(18px,4vw,32px) 20px;background:linear-gradient(180deg,#fff8f0 0%,#ffe2ce 100%);border:7px solid #ff92be;border-radius:35px;box-shadow:0 9px 0 #d63e89,0 23px 65px #5b1f7866, inset 0 0 0 3px #fff9fa}
@@ -1782,6 +1782,22 @@ body.syv5-daily .sy-progress-card .sy-goal-detail{font-size:11px;line-height:1.5
 @media(max-height:620px){#introOverlay.sy-welcome{place-items:start center}#introOverlay .sy-welcome-card{margin:auto}#introOverlay .sy-welcome-card h2{font-size:32px}#introOverlay .sy-welcome-ribbon{margin-top:8px;margin-bottom:8px;padding:7px}}
 @media(prefers-reduced-motion:reduce){#introOverlay .sy-sweet{animation:none}#introOverlay #playerNameSaveBtn{transition:none}}
 
+
+/* ===== Şeker Yağmuru 5.5.4: Akıllı PC ölçeği ===== */
+@media (min-width:900px) and (min-height:650px) {
+  .app { width:100%!important;max-width:min(96vw,1600px)!important; }
+  .layout { width:100%!important;max-width:none!important; }
+  .layout > .primary { grid-template-columns:minmax(255px,350px) minmax(0,1fr)!important;column-gap:clamp(12px,2vw,30px)!important; }
+  .game-frame { width:min(100%,var(--sy553-board-size,800px),calc(100dvh - 148px))!important;max-width:none!important; }
+}
+@media (min-width:900px) and (max-height:649px) {
+  .game-frame {width:min(100%,calc(100dvh - 118px))!important;}
+}
+.sy553-display-controls{display:flex;align-items:center;justify-content:flex-end;gap:7px;flex-wrap:wrap;margin-left:auto}
+.sy553-display-controls button,.sy553-display-controls select{background:#ffffff24;color:#fff;border:1px solid #ffffff55;border-radius:10px;padding:6px 9px;min-height:33px;font:700 12px/1.2 inherit;cursor:pointer}
+.sy553-display-controls select{background:#392064;color:#fff}
+.sy553-display-controls button:hover,.sy553-display-controls select:hover{background:#6743a0}
+@media (max-width:899px){.sy553-display-controls{display:none!important}}
 </style>
 <!--
   ŞEKER YAĞMURU — SAHİPLİK / KAYNAK BİLGİSİ
@@ -1847,7 +1863,7 @@ body.syv5-daily .sy-progress-card .sy-goal-detail{font-size:11px;line-height:1.5
 body.reduce-motion #board .piece .sy-obstacle-impact,body.reduce-motion #board .piece .sy-choco-spread-flash{animation:none!important}
 </style>
 <style id="sy-world-playstyle">
-/* 5.5.2 — Oyun içi sekiz dünya. Tamamı statik CSS; 64 şeker ve patlama katmanı değişmedi. */
+/* 5.5.4 — Oyun içi sekiz dünya. Tamamı statik CSS; 64 şeker ve patlama katmanı değişmedi. */
 body[data-sy-world]{
  --sy-sky:#2d164b;--sy-sky2:#56296e;--sy-aurora:#ed8ab050;
  --sy-rim:#ffd9c1;--sy-rim2:#af6fc8;--sy-deep:#44265f;
@@ -1906,12 +1922,12 @@ body[data-sy-world] .player-badge{color:#ffffff!important}
 body[data-sy-world] .player-badge strong{color:var(--sy-badge)!important}
 body[data-sy-world] .brand h1,body[data-sy-world] .brand p{color:#fff5ed!important}
 body[data-sy-world] .icon-button{background:#ffffff2b!important;border-color:#ffffff60!important;color:white!important}
-/* 5.5.2: Detached corner world icon removed; world sweets live on the actual board. */
+/* 5.5.4: Detached corner world icon removed; world sweets live on the actual board. */
 /* Alternatif görünümde eski tahta teması tekrar etkinleşir. */
 @media(max-width:370px){body[data-sy-world] #welcomeLine{font-size:10px!important}}
 @media(prefers-reduced-motion:reduce){}
 
-/* 5.5.2 · Bölüm haritasında gerçek oyun şekerlerinden oluşan ikonlar */
+/* 5.5.4 · Bölüm haritasında gerçek oyun şekerlerinden oluşan ikonlar */
 .sy-world-node.sy54-candy-node{position:relative;gap:0;padding:1px;overflow:visible}
 .sy-world-node .sy54-map-sweet{width:clamp(24px,8vw,34px);height:clamp(24px,8vw,34px);display:block;object-fit:contain;pointer-events:none;filter:drop-shadow(0 2px 3px #39226065);flex:none}
 .sy-world-node.sy54-candy-node .sy54-level-number{position:absolute;top:-8px;right:-8px;min-width:21px;height:21px;display:grid;place-items:center;border:1.5px solid white;border-radius:9px;background:#513080;color:#fff;box-shadow:0 2px 5px #2d174c66;font-size:11px;line-height:1;font-weight:950;z-index:2;padding:0 2px}
@@ -1926,7 +1942,7 @@ body[data-sy-world] .icon-button{background:#ffffff2b!important;border-color:#ff
 .sy54-soundtrack-line img{width:17px;height:17px;object-fit:contain}
 @media(max-width:370px){.sy-world-node .sy54-map-sweet{width:24px;height:24px}.sy-world-node.sy54-candy-node .sy54-level-number{font-size:9px;min-width:17px;height:17px;right:-5px;top:-6px}.sy54-soundtrack-line{font-size:9px}}
 
-/* 5.5.2 — one native illustrated candy per world, throughout its board and map. */
+/* 5.5.4 — one native illustrated candy per world, throughout its board and map. */
 .sy-world-emblem.sy541-world-sweet{display:block;width:48px;height:48px;object-fit:contain;filter:drop-shadow(0 2px 5px #26194c66);background:none;border:0;padding:0;flex-shrink:0}
 .sy-world-nav .sy541-nav-sweet{width:21px;height:21px;object-fit:contain;vertical-align:middle;flex-shrink:0;margin-right:5px}
 .sy-world-node.sy54-candy-node .sy54-map-sweet{width:clamp(26px,8vw,36px);height:clamp(26px,8vw,36px)}
@@ -1954,7 +1970,7 @@ body[data-sy-world] .icon-button{background:#ffffff2b!important;border-color:#ff
 .sy-level-card img.sy54-hud-candy{display:none!important}
 </style>
 <style id="sy-pastane-visual-skin">
-/* ŞEKER YAĞMURU v5.5.2 — PASTANE SOKAĞI / SADECE GÖRSEL KATMAN
+/* ŞEKER YAĞMURU v5.5.4 — PASTANE SOKAĞI / SADECE GÖRSEL KATMAN
    Oyun kodu, rastgelelik, eşleşmeler, hedefler, zamanlayıcı, puanlar, kayıt ve olay bağlantıları değiştirilmez.
    Tasarım denemesi, 21.11.2026. */
 :root{
@@ -2306,7 +2322,7 @@ body[data-sy-world] .game-bottom-info span{
 }
 
 </style>
-<meta name="sy-build-type" content="single-html-offline-pastane-v5.5.2"/>
+<meta name="sy-build-type" content="single-html-offline-pastane-v5.5.4"/>
 <style id="sy-pastane-visual-tweak-v2">
 /* 2026-11-21 menu top expansion + wider street background tweak */
 .screen-layer:has(#homeScreen:not(.hidden)){
@@ -2367,7 +2383,7 @@ body[data-sy-world] .game-bottom-info span{
 }
 </style>
 <style id="sy-menu-style-collection">
-/* Şeker Yağmuru 5.5.2 — four alternative menu-only themes.
+/* Şeker Yağmuru 5.5.4 — four alternative menu-only themes.
    Game mechanics, board rendering, timers, save and audio code stay untouched. */
 html[data-sy-theme] .screen-layer:has(#homeScreen:not(.hidden)){
   display:flex!important;align-items:flex-start!important;justify-content:center!important;
@@ -3140,6 +3156,28 @@ body[data-sy-world] header .brand .game-title-wrap::after{
  body[data-sy-world] header .brand h1.sy-game-title .sy-rainbow-letter{font-size:clamp(16px,4.25vw,22px)!important}
 }
 
+
+/* v5.5.4: Ensure the live score has enough contrast on the light pastry HUD. */
+body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
+  color:#822e65!important;
+  text-shadow:0 1px 0 #fff!important;
+}
+/* v5.5.4: restore working desktop board-size selector without changing narrow-screen layout. */
+@media (min-width:900px) and (min-height:650px){
+  body[data-sy-world] > .app{
+    width:min(96vw,1080px)!important;
+    max-width:min(96vw,1080px)!important;
+  }
+  body[data-sy-world] .layout > section.primary{
+    width:100%!important;
+    max-width:none!important;
+  }
+  body[data-sy-world] .game-frame{
+    width:min(100%,var(--sy553-board-size,min(720px,74dvh)))!important;
+    max-width:none!important;
+  }
+  body[data-sy-world] .sy553-display-controls label{color:#66354b!important}
+}
 </style>
 </head>
 <body>
@@ -3183,11 +3221,11 @@ body[data-sy-world] header .brand .game-title-wrap::after{
 <span aria-hidden="true" class="stat-symbol">♥</span>
 <div class="stat-copy">
 <div class="stat-label">KALAN HAMLE</div>
-<div class="stat-value" id="moves">32</div>
+<div class="stat-value" id="moves">38</div>
 </div>
 </div>
 <div aria-live="off" class="sy-status-card sy-timer-card timer-wrap">
-<div class="sy-status-head timer-text"><span class="sy-meter-name"><span aria-hidden="true" class="sy-meter-symbol">◷</span> KALAN SÜRE</span><b id="timeLeft" role="timer">02:10</b></div>
+<div class="sy-status-head timer-text"><span class="sy-meter-name"><span aria-hidden="true" class="sy-meter-symbol">◷</span> KALAN SÜRE</span><b id="timeLeft" role="timer">02:40</b></div>
 <span class="sy-visually-hidden" id="timerStage">1 / 60 BÖLÜM</span>
 <div class="timer-track"><div class="timer-fill" id="timerFill"></div></div>
 </div>
@@ -3258,7 +3296,7 @@ body[data-sy-world] header .brand .game-title-wrap::after{
 <button class="menu-button feedback-entry" id="feedbackBtn" type="button"><span class="shortcut-icon">💬</span><span>Hata / Öneri</span></button>
 </div>
 </div>
-<div class="home-footer"><span>✓ İlerlemen otomatik kaydedilir</span><span>Sürüm 5.5.2 · Hareketli menü alternatifi</span></div>
+<div class="home-footer"><span>✓ İlerlemen otomatik kaydedilir</span><span>Sürüm 5.5.4</span></div>
 <div class="home-credits"><span>✦</span> TATLI BİR OYUN DENEYİMİ</div><p class="sy-owner-notice">© 2026 <strong>Arif Şahin</strong> · Şeker Yağmuru · İzinsiz sahiplenilemez</p>
 </section>
 <section class="screen-page hidden sy-level-page" id="levelsScreen" aria-labelledby="levelsTitle">
@@ -3360,7 +3398,7 @@ body[data-sy-world] header .brand .game-title-wrap::after{
 <div class="syg-rule"><span class="syg-rule-number">10</span><div><h3>41–45 · Yayılan çikolata 🍫</h3><p>Her geçerli hamleden sonra, o hamlede hiç zarar görmediyse çikolata komşu bir şekere yayılabilir. Yanında eşleşme veya çizgi patlaması yaparak temizle. Yayılan çikolata bir hamle hakkı tüketmez; aynı hamlenin sonucudur.</p></div></div>
 <div class="syg-rule"><span class="syg-rule-number">11</span><div><h3>46–50 · Taş bloklar 🪨</h3><p>Taşlar hareket ettirilemez ve renk eşleşmesine katılamaz. Yanlarındaki <b>iki ayrı patlama dalgası</b> onları kırar; altlarından şeker çıkar.</p></div></div>
 <div class="syg-rule"><span class="syg-rule-number">12</span><div><h3>51–55 · Sürpriz şekerler 🎁</h3><p>Üzerinde hediye işareti bulunan şekeri patlatınca <b>puan</b>, <b>iki ek hamle</b> veya <b>gökkuşağı şekeri</b> kazanabilirsin. Hedef hâlâ yalnızca bölüm puanıdır.</p></div></div>
-<div class="syg-rule"><span class="syg-rule-number">14</span><div><h3>Şeker Dünyaları, günlük seri ve yıldızlar</h3><p>Bölüm Haritası sekiz tematik dünyadan oluşur. 5.5.2 ile sekiz dünyanın her birinin ayrı bir özel şekeri vardır; altı ana şekere ek olarak yedinci tür şeklinde eşleşir. Dünya boyunca aynı özel şeker tahtada ve haritada görünür. Bölüm kartındaki simge sadeleştirildi. Her dünyaya özgü beste çalar; her bölümde özgün melodik varyasyon bulunur. Her dünya artık oyun alanının renklerini, çerçevesini ve tahta zeminini de değiştirir; Ayarlar > Oyun içi dünya temaları ile istersen kapatabilirsin. Açtığın her bölüme haritadan geri dönebilirsin; tamamlanan bölümlerdeki yıldızları ve yeni rekorlarını görebilirsin. Günlük mücadele her gün UTC tarihine göre yenilenir. Arka arkaya oynadığın günler kişisel seri oluşturur; son yedi günü Rekorlarım ekranında izleyebilirsin. Ayarlarda akıcı görsel modu seçersen sadece dekorlar hafifler; patlama ve kombo efektleri kalır.</p></div></div>
+<div class="syg-rule"><span class="syg-rule-number">14</span><div><h3>Şeker Dünyaları, günlük seri ve yıldızlar</h3><p>Bölüm Haritası sekiz tematik dünyadan oluşur. Sekiz dünyanın her birinin ayrı bir özel şekeri vardır; altı ana şekere ek olarak yedinci tür şeklinde eşleşir. Dünya boyunca aynı özel şeker tahtada ve haritada görünür. Bölüm kartındaki simge sadeleştirildi. Her dünyaya özgü beste çalar; her bölümde özgün melodik varyasyon bulunur. Her dünya artık oyun alanının renklerini, çerçevesini ve tahta zeminini de değiştirir; Ayarlar > Oyun içi dünya temaları ile istersen kapatabilirsin. Açtığın her bölüme haritadan geri dönebilirsin; tamamlanan bölümlerdeki yıldızları ve yeni rekorlarını görebilirsin. Günlük mücadele her gün UTC tarihine göre yenilenir. Arka arkaya oynadığın günler kişisel seri oluşturur; son yedi günü Rekorlarım ekranında izleyebilirsin. Ayarlarda akıcı görsel modu seçersen sadece dekorlar hafifler; patlama ve kombo efektleri kalır.</p></div></div>
 <div class="syg-rule"><span class="syg-rule-number">13</span><div><h3>56–60 · Büyük final 🏆</h3><p>Kilit, buz, yayılan çikolata, taş ve sürpriz şekerleri birlikte kullan. Her beşinci bölüm bir ustalık sınavıdır; özel zorunlu hedef eklenmez.</p></div></div>
 
 </div>
@@ -3375,7 +3413,7 @@ body[data-sy-world] header .brand .game-title-wrap::after{
 <div class="credit-box">🤖 <b>Tasarım, programlama ve geliştirme desteği</b> ChatGPT · OpenAI</div>
 <div class="credit-box">✨ <b>Görsel yükseltme ve hata denetimi (4.4.0)</b> Claude · Anthropic</div>
 <div class="credit-box">💖 <b>Özel teşekkür</b> Oyunu deneyen ve geliştirmemize katkı sağlayan herkese.</div>
-<p class="menu-sub">Bağımsız bir eşleştirme oyunu · Sürüm 5.5.2</p>
+<p class="menu-sub">Bağımsız bir eşleştirme oyunu · Sürüm 5.5.4</p>
 </section>
 <section class="screen-page hidden" id="feedbackScreen">
 <div class="menu-top"><button aria-label="Geri" class="menu-back" data-back="1" type="button">←</button><h2>💬 Hata ve Öneriler</h2></div>
@@ -3409,10 +3447,10 @@ body[data-sy-world] header .brand .game-title-wrap::after{
   const PUBLIC_GAME_URL='https://ai-lidge.github.io/seker-yagmuru-oyna/';
   // Her bölüm yalnızca puanla dolan %100 ilerleme hedefine bağlıdır; şeker/zincir kotası yoktur.
   // İlk bölümler kolay, son bölümler daha zor; eski kayıtlar (v2-v8) korunur.
-  const LEVEL_SCORE_TARGETS=[16000,16400,16900,17400,17900,18500,19100,19800,20400,21100,22000,22800,23600,24400,25200,26100,27000,28000,29000,30000,32500,33500,34500,35500,36500,37500,38700,39900,41100,42500,43600,44700,45900,47100,48400,49700,51100,52600,54200,55900,57000,58200,59600,60800,62000,65100,66400,68000,69400,71100,73700,75200,76850,78250,79800,77800,79500,81100,83100,85000];
+  const LEVEL_SCORE_TARGETS=[8500,9000,9800,10700,11600,12800,14000,15200,16600,18000,19500,20800,22200,23700,25200,26100,27000,28000,29000,30000,32500,33500,34500,35500,36500,37500,38700,39900,41100,42500,43600,44700,45900,47100,48400,49700,51100,52600,54200,55900,57000,58200,59600,60800,62000,65100,66400,68000,69400,71100,73700,75200,76850,78250,79800,77800,79500,81100,83100,85000];
   const LEGACY_LEVEL_TARGETS_46_TO_55=[63200,64500,66000,67400,69000,70200,71600,73100,74500,76000];
-  const LEVEL_TIMES=[130,132,135,138,140,143,146,149,152,156,167,178,182,186,190,195,200,205,211,217,222,226,230,234,238,244,251,258,266,274,281,287,294,302,310,318,327,336,345,355,365,372,378,385,393,398,406,414,423,432,438,448,458,467,476,484,493,501,510,520];
-  const LEVEL_MOVES=[32,32,33,33,34,34,35,35,36,36,37,37,38,38,39,39,40,41,42,43,44,44,45,45,46,47,48,49,50,51,52,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80];
+  const LEVEL_TIMES=[160,164,168,172,175,178,181,184,186,188,189,190,190,190,190,195,200,205,211,217,222,226,230,234,238,244,251,258,266,274,281,287,294,302,310,318,327,336,345,355,365,372,378,385,393,398,406,414,423,432,438,448,458,467,476,484,493,501,510,520];
+  const LEVEL_MOVES=[38,38,39,39,40,39,40,40,41,41,40,40,41,41,42,39,40,41,42,43,44,44,45,45,46,47,48,49,50,51,52,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80];
   const levelConfig=l=>({target:LEVEL_SCORE_TARGETS[l-1],seconds:LEVEL_TIMES[l-1],moves:LEVEL_MOVES[l-1]});
   const levelPercent=(points,goal)=>Math.min(100,Math.max(0,Math.floor(points/goal*100)));
   const levelComplete=(points,goal)=>points>=goal;
@@ -3697,7 +3735,11 @@ body[data-sy-world] header .brand .game-title-wrap::after{
     }
     return best;
   }
-  function makeBoard(){
+  // 5.5.4: Keep six candy types through the entire first five adventure levels,
+  // including refills. Daily challenge always retains the original seven types.
+  const activeCandyTypes=(stage=level)=>!dailyMode&&stage<=5?PLAY_TYPES.filter(t=>t!=='mor'):PLAY_TYPES;
+  function makeBoard(stage=level){
+    const availableTypes=activeCandyTypes(stage);
     for(let attempt=0;attempt<150;attempt++){
       const b=Array.from({length:SIZE},()=>Array(SIZE).fill(null));
       for(let r=0;r<SIZE;r++)for(let c=0;c<SIZE;c++){
@@ -3705,11 +3747,11 @@ body[data-sy-world] header .brand .game-title-wrap::after{
         if(c>=2&&b[r][c-1].type===b[r][c-2].type)forbidden.add(b[r][c-1].type);
         if(r>=2&&b[r-1][c].type===b[r-2][c].type)forbidden.add(b[r-1][c].type);
         if(r>=1&&c>=1&&b[r-1][c].type===b[r][c-1].type&&b[r-1][c].type===b[r-1][c-1].type)forbidden.add(b[r-1][c].type);
-        b[r][c]=tile(pick(PLAY_TYPES.filter(t=>!forbidden.has(t))),r,c);
+        b[r][c]=tile(pick(availableTypes.filter(t=>!forbidden.has(t))),r,c);
       }
       if(b.flat().filter(t=>t.type===WORLD_TYPE).length>=5&&possibleMove(b))return b;
     }
-    const b=Array.from({length:SIZE},(_,r)=>Array.from({length:SIZE},(_,c)=>tile(PLAY_TYPES[(2*r+c)%PLAY_TYPES.length],r,c)));
+    const b=Array.from({length:SIZE},(_,r)=>Array.from({length:SIZE},(_,c)=>tile(availableTypes[(2*r+c)%availableTypes.length],r,c)));
     b[0][2].type=b[0][0].type;b[1][1].type=b[0][0].type;
     return b;
   }
@@ -3754,11 +3796,28 @@ body[data-sy-world] header .brand .game-title-wrap::after{
     for(let i=0;i<stone;i++)choose(t=>t.shield={kind:'stone',hp:2});
     for(let i=0;i<gifts;i++)choose(t=>t.gift=true);
   }
+  // Keep several opening moves available so beginners aren't forced into a single obscure swap.
+  function hasOpeningChoices(b,minimum){
+    let found=0;
+    for(let r=0;r<SIZE;r++)for(let c=0;c<SIZE;c++)for(const [dr,dc] of [[0,1],[1,0]]){
+      const nr=r+dr,nc=c+dc;if(!inBounds(nr,nc))continue;
+      const a=b[r][c],z=b[nr][nc];if(protectedCandy(a)||protectedCandy(z))continue;
+      if(a.special==='color'||z.special==='color'||(a.special&&z.special)){if(++found>=minimum)return true;continue}
+      if(a.type===z.type)continue;
+      b[r][c]=z;b[nr][nc]=a;
+      const valid=matchesAt(b,r,c)||matchesAt(b,nr,nc);
+      b[r][c]=a;b[nr][nc]=z;
+      if(valid&&++found>=minimum)return true;
+    }
+    return false;
+  }
   function newLevelBoard(stage){
     const counts=shieldCounts(stage);
     for(let i=0;i<170;i++){
-      const b=makeBoard();seedShields(b,stage,counts);seedNewMechanics(b,stage);
-      if(possibleMove(b)&&!findGroups(b).length)return b;
+      const b=makeBoard(stage);seedShields(b,stage,counts);seedNewMechanics(b,stage);
+      // Do not change the fixed daily challenge's random-number sequence or its difficulty.
+      const minChoices=dailyMode?1:stage<=5?4:stage<=10?3:1;
+      if(possibleMove(b)&&!findGroups(b).length&&hasOpeningChoices(b,minChoices))return b;
     }
     throw Error('Bölüm tahtası için geçerli hamle üretilemedi.');
   }
@@ -4132,9 +4191,9 @@ body[data-sy-world] header .brand .game-title-wrap::after{
   const candyImageURLs=Object.fromEntries(Object.entries(sprites).map(([kind,svg])=>[
     kind,'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(svg.replace('<svg ','<svg xmlns="http://www.w3.org/2000/svg" '))
   ]));
-  // 5.5.2: One playable world candy per biome, beside the six familiar candy types.
+  // 5.5.4: One playable world candy per biome, beside the six familiar candy types.
   // Vector artwork is static and cached; no new animation loop is added.
-  // 5.5.2: Eight fully sculpted, independent world candy silhouettes (not emblems on a round base).
+  // 5.5.4: Eight fully sculpted, independent world candy silhouettes (not emblems on a round base).
   const WORLD_CANDY_VECTORS={"garden":"<svg viewBox=\"0 0 100 100\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"sy55-garden-body\" x1=\"9%\" y1=\"9%\" x2=\"89%\" y2=\"93%\"><stop stop-color=\"#fff1f9\"/><stop offset=\".48\" stop-color=\"#ff78b6\"/><stop offset=\"1\" stop-color=\"#ba3477\"/></linearGradient><radialGradient id=\"sy55-garden-glaze\" cx=\"27%\" cy=\"17%\" r=\"82%\"><stop stop-color=\"#fff\" stop-opacity=\".66\"/><stop offset=\".48\" stop-color=\"#fff\" stop-opacity=\".11\"/><stop offset=\"1\" stop-color=\"#26093c\" stop-opacity=\".10\"/></radialGradient></defs><path d=\"M50 17 C58 4 75 13 73 29 C90 22 96 39 82 52 C96 66 82 83 65 76 C61 96 39 96 35 76 C16 83 4 66 18 51 C4 39 11 22 28 29 C27 12 43 5 50 17Z\" transform=\"translate(0 3)\" fill=\"#ba3477\" opacity=\".73\"/><path d=\"M50 17 C58 4 75 13 73 29 C90 22 96 39 82 52 C96 66 82 83 65 76 C61 96 39 96 35 76 C16 83 4 66 18 51 C4 39 11 22 28 29 C27 12 43 5 50 17Z\" fill=\"url(#sy55-garden-body)\" stroke=\"#ba3477\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><path d=\"M50 17 C58 4 75 13 73 29 C90 22 96 39 82 52 C96 66 82 83 65 76 C61 96 39 96 35 76 C16 83 4 66 18 51 C4 39 11 22 28 29 C27 12 43 5 50 17Z\" fill=\"url(#sy55-garden-glaze)\"/><g fill=\"none\" stroke=\"#fff0f7\" stroke-linecap=\"round\" opacity=\".66\" stroke-width=\"3.2\"><path d=\"M50 49Q44 27 45 20M50 49Q63 31 70 30M50 49Q72 45 80 53M50 49Q70 68 64 73M50 49Q49 75 39 76M50 49Q28 67 22 51M50 49Q31 34 28 30\"/></g><path d=\"M49 38Q57 36 62 44Q68 54 58 61Q47 67 39 59Q34 47 49 38Z\" fill=\"#ffe7a1\" stroke=\"#d85c80\" stroke-width=\"2.5\"/><path d=\"M46 43Q56 40 58 49\" fill=\"none\" stroke=\"#fff8d7\" stroke-width=\"3\" stroke-linecap=\"round\"/><ellipse cx=\"32\" cy=\"30\" rx=\"8\" ry=\"4\" transform=\"rotate(-28 32 30)\" fill=\"#fff\" opacity=\".48\"/><path d=\"M26 36Q35 18 48 20\" fill=\"none\" stroke=\"#fff\" stroke-width=\"4\" opacity=\".7\" stroke-linecap=\"round\"/></svg>","castle":"<svg viewBox=\"0 0 100 100\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"sy55-castle-body\" x1=\"9%\" y1=\"9%\" x2=\"89%\" y2=\"93%\"><stop stop-color=\"#f7e7ff\"/><stop offset=\".48\" stop-color=\"#b29af0\"/><stop offset=\"1\" stop-color=\"#6136ad\"/></linearGradient><radialGradient id=\"sy55-castle-glaze\" cx=\"27%\" cy=\"17%\" r=\"82%\"><stop stop-color=\"#fff\" stop-opacity=\".66\"/><stop offset=\".48\" stop-color=\"#fff\" stop-opacity=\".11\"/><stop offset=\"1\" stop-color=\"#26093c\" stop-opacity=\".10\"/></radialGradient></defs><path d=\"M19 22Q19 18 24 18H35V29H43V14Q50 10 57 14V29H65V18H76Q81 18 81 24V43L75 47V76Q75 86 65 87H35Q25 86 25 76V47L19 43Z\" transform=\"translate(0 3)\" fill=\"#6136ad\" opacity=\".73\"/><path d=\"M19 22Q19 18 24 18H35V29H43V14Q50 10 57 14V29H65V18H76Q81 18 81 24V43L75 47V76Q75 86 65 87H35Q25 86 25 76V47L19 43Z\" fill=\"url(#sy55-castle-body)\" stroke=\"#6136ad\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><path d=\"M19 22Q19 18 24 18H35V29H43V14Q50 10 57 14V29H65V18H76Q81 18 81 24V43L75 47V76Q75 86 65 87H35Q25 86 25 76V47L19 43Z\" fill=\"url(#sy55-castle-glaze)\"/><path d=\"M29 48L29 72Q30 78 36 79H66Q71 76 71 70V46\" fill=\"none\" stroke=\"#fce1ff\" stroke-width=\"4\" opacity=\".53\"/><g stroke=\"#7046ac\" stroke-linecap=\"round\" stroke-width=\"2.5\" opacity=\".65\"><path d=\"M36 54V72M50 49V80M64 54V72\"/></g><path d=\"M20 33H35V40H43V27H57V40H65V32H80\" fill=\"none\" stroke=\"#fff0ff\" stroke-width=\"4.3\" stroke-linejoin=\"round\" opacity=\".68\"/><path d=\"M37 41Q48 36 60 41\" stroke=\"#fff7ff\" stroke-width=\"3\" opacity=\".45\" fill=\"none\"/><path d=\"M34 56l6-8m19 3 5-6\" stroke=\"#fff\" stroke-width=\"2.8\" opacity=\".55\"/><path d=\"M24 30L24 41M46 21L46 31\" fill=\"none\" stroke=\"#fff\" stroke-width=\"4\" opacity=\".58\" stroke-linecap=\"round\"/></svg>","ice":"<svg viewBox=\"0 0 100 100\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"sy55-ice-body\" x1=\"9%\" y1=\"9%\" x2=\"89%\" y2=\"93%\"><stop stop-color=\"#f7ffff\"/><stop offset=\".48\" stop-color=\"#88e7ff\"/><stop offset=\"1\" stop-color=\"#2588b8\"/></linearGradient><radialGradient id=\"sy55-ice-glaze\" cx=\"27%\" cy=\"17%\" r=\"82%\"><stop stop-color=\"#fff\" stop-opacity=\".66\"/><stop offset=\".48\" stop-color=\"#fff\" stop-opacity=\".11\"/><stop offset=\"1\" stop-color=\"#26093c\" stop-opacity=\".10\"/></radialGradient></defs><path d=\"M50 6L61 27L80 19L73 41L92 50L73 61L80 82L61 74L50 95L39 74L20 82L27 61L8 50L27 39L20 19L39 27Z\" transform=\"translate(0 3)\" fill=\"#2588b8\" opacity=\".73\"/><path d=\"M50 6L61 27L80 19L73 41L92 50L73 61L80 82L61 74L50 95L39 74L20 82L27 61L8 50L27 39L20 19L39 27Z\" fill=\"url(#sy55-ice-body)\" stroke=\"#2588b8\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><path d=\"M50 6L61 27L80 19L73 41L92 50L73 61L80 82L61 74L50 95L39 74L20 82L27 61L8 50L27 39L20 19L39 27Z\" fill=\"url(#sy55-ice-glaze)\"/><path d=\"M50 13V87M13 50H87M29 29L71 71M71 29L29 71\" fill=\"none\" stroke=\"#e7ffff\" stroke-width=\"5\" opacity=\".71\" stroke-linecap=\"round\"/><path d=\"M50 14L58 39L50 50L42 39ZM50 50L73 42L84 50L73 58ZM50 50L58 72L50 88L42 72ZM50 50L28 58L16 50L28 42Z\" fill=\"#ecffff\" opacity=\".28\"/><path d=\"M50 15V44M16 50H44M56 50H84\" stroke=\"#fff\" stroke-width=\"2.4\" stroke-linecap=\"round\" opacity=\".92\"/><path d=\"M34 30L43 21M29 38L37 31\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3\" opacity=\".8\" stroke-linecap=\"round\"/></svg>","crystal":"<svg viewBox=\"0 0 100 100\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"sy55-crystal-body\" x1=\"9%\" y1=\"9%\" x2=\"89%\" y2=\"93%\"><stop stop-color=\"#f6faff\"/><stop offset=\".48\" stop-color=\"#9aaaff\"/><stop offset=\"1\" stop-color=\"#515dbb\"/></linearGradient><radialGradient id=\"sy55-crystal-glaze\" cx=\"27%\" cy=\"17%\" r=\"82%\"><stop stop-color=\"#fff\" stop-opacity=\".66\"/><stop offset=\".48\" stop-color=\"#fff\" stop-opacity=\".11\"/><stop offset=\"1\" stop-color=\"#26093c\" stop-opacity=\".10\"/></radialGradient></defs><path d=\"M28 23L42 7L55 20L68 12L84 33L76 74L57 92L30 82L13 55Z\" transform=\"translate(0 3)\" fill=\"#515dbb\" opacity=\".73\"/><path d=\"M28 23L42 7L55 20L68 12L84 33L76 74L57 92L30 82L13 55Z\" fill=\"url(#sy55-crystal-body)\" stroke=\"#515dbb\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><path d=\"M28 23L42 7L55 20L68 12L84 33L76 74L57 92L30 82L13 55Z\" fill=\"url(#sy55-crystal-glaze)\"/><path d=\"M42 8L44 59L30 82L13 55Z\" fill=\"#bceeff\" opacity=\".82\"/><path d=\"M42 8L55 20L44 59Z\" fill=\"#fff\" opacity=\".48\"/><path d=\"M55 20L68 12L84 33L64 57L44 59Z\" fill=\"#9d95f6\" opacity=\".62\"/><path d=\"M44 59L64 57L57 92L30 82Z\" fill=\"#4a81d0\" opacity=\".51\"/><path d=\"M64 57L84 33L76 74L57 92Z\" fill=\"#e1f4ff\" opacity=\".38\"/><path d=\"M28 24L42 9L44 58M68 13L64 57L58 90\" fill=\"none\" stroke=\"#fafdff\" opacity=\".82\" stroke-width=\"2.8\" stroke-linejoin=\"round\"/><path d=\"M24 40L41 13\" stroke=\"#fff\" stroke-width=\"3\" opacity=\".68\" stroke-linecap=\"round\"/></svg>","chocolate":"<svg viewBox=\"0 0 100 100\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"sy55-chocolate-body\" x1=\"9%\" y1=\"9%\" x2=\"89%\" y2=\"93%\"><stop stop-color=\"#ffe9c7\"/><stop offset=\".48\" stop-color=\"#c48661\"/><stop offset=\"1\" stop-color=\"#603522\"/></linearGradient><radialGradient id=\"sy55-chocolate-glaze\" cx=\"27%\" cy=\"17%\" r=\"82%\"><stop stop-color=\"#fff\" stop-opacity=\".66\"/><stop offset=\".48\" stop-color=\"#fff\" stop-opacity=\".11\"/><stop offset=\"1\" stop-color=\"#26093c\" stop-opacity=\".10\"/></radialGradient></defs><path d=\"M24 15Q31 10 40 12L63 8Q78 8 83 22L88 63Q88 74 76 82L39 90Q25 88 20 76L12 39Q13 25 24 15Z\" transform=\"translate(0 3)\" fill=\"#603522\" opacity=\".73\"/><path d=\"M24 15Q31 10 40 12L63 8Q78 8 83 22L88 63Q88 74 76 82L39 90Q25 88 20 76L12 39Q13 25 24 15Z\" fill=\"url(#sy55-chocolate-body)\" stroke=\"#603522\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><path d=\"M24 15Q31 10 40 12L63 8Q78 8 83 22L88 63Q88 74 76 82L39 90Q25 88 20 76L12 39Q13 25 24 15Z\" fill=\"url(#sy55-chocolate-glaze)\"/><path d=\"M24 26Q32 19 43 20L66 16Q76 17 78 28L81 64Q79 75 67 76L38 82Q28 80 25 70L18 42Q17 32 24 26Z\" fill=\"#6b3728\" opacity=\".78\" stroke=\"#e6ab79\" stroke-width=\"2.6\"/><g fill=\"#b67b58\" stroke=\"#572c25\" stroke-width=\"2.4\"><path d=\"M29 30L45 27L47 47L32 50Z\"/><path d=\"M50 26L69 22L72 42L51 46Z\"/><path d=\"M34 54L47 51L49 71L37 74Z\"/><path d=\"M52 50L74 46L76 65L54 70Z\"/></g><g fill=\"none\" stroke=\"#ffe2b5\" opacity=\".54\" stroke-width=\"2.5\" stroke-linecap=\"round\"><path d=\"M30 34L40 32M53 30L64 27M35 58L44 56\"/></g><path d=\"M23 31Q29 18 40 19\" fill=\"none\" stroke=\"#fff2d9\" stroke-width=\"4\" opacity=\".51\" stroke-linecap=\"round\"/></svg>","stone":"<svg viewBox=\"0 0 100 100\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"sy55-stone-body\" x1=\"9%\" y1=\"9%\" x2=\"89%\" y2=\"93%\"><stop stop-color=\"#f4ffff\"/><stop offset=\".48\" stop-color=\"#b5cad3\"/><stop offset=\"1\" stop-color=\"#5f7780\"/></linearGradient><radialGradient id=\"sy55-stone-glaze\" cx=\"27%\" cy=\"17%\" r=\"82%\"><stop stop-color=\"#fff\" stop-opacity=\".66\"/><stop offset=\".48\" stop-color=\"#fff\" stop-opacity=\".11\"/><stop offset=\"1\" stop-color=\"#26093c\" stop-opacity=\".10\"/></radialGradient></defs><path d=\"M46 8L70 20L88 43L80 70L57 90L29 82L12 60L20 30Z\" transform=\"translate(0 3)\" fill=\"#5f7780\" opacity=\".73\"/><path d=\"M46 8L70 20L88 43L80 70L57 90L29 82L12 60L20 30Z\" fill=\"url(#sy55-stone-body)\" stroke=\"#5f7780\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><path d=\"M46 8L70 20L88 43L80 70L57 90L29 82L12 60L20 30Z\" fill=\"url(#sy55-stone-glaze)\"/><path d=\"M20 30L46 8L50 43L31 59L12 60Z\" fill=\"#d7f2ee\" opacity=\".67\"/><path d=\"M46 8L70 20L88 43L50 43Z\" fill=\"#f7feff\" opacity=\".5\"/><path d=\"M50 43L88 43L80 70L57 90L45 67Z\" fill=\"#75929b\" opacity=\".43\"/><path d=\"M31 59L50 43L45 67L57 90L29 82L12 60Z\" fill=\"#b7dbd9\" opacity=\".52\"/><path d=\"M20 30L46 8L50 43L31 59L29 82M50 43L88 43M45 67L57 90\" stroke=\"#effcff\" stroke-width=\"2.3\" fill=\"none\" opacity=\".71\"/><path d=\"M32 31l10-11m17 8 9 8\" stroke=\"#fff\" stroke-width=\"3\" opacity=\".66\"/><path d=\"M23 34L42 16\" fill=\"none\" stroke=\"#fff\" stroke-width=\"4\" opacity=\".71\" stroke-linecap=\"round\"/></svg>","gift":"<svg viewBox=\"0 0 100 100\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"sy55-gift-body\" x1=\"9%\" y1=\"9%\" x2=\"89%\" y2=\"93%\"><stop stop-color=\"#fff3c4\"/><stop offset=\".48\" stop-color=\"#ffba68\"/><stop offset=\"1\" stop-color=\"#d25a90\"/></linearGradient><radialGradient id=\"sy55-gift-glaze\" cx=\"27%\" cy=\"17%\" r=\"82%\"><stop stop-color=\"#fff\" stop-opacity=\".66\"/><stop offset=\".48\" stop-color=\"#fff\" stop-opacity=\".11\"/><stop offset=\"1\" stop-color=\"#26093c\" stop-opacity=\".10\"/></radialGradient></defs><path d=\"M26 31L12 21L15 43L5 50L16 60L12 80L27 68Q36 84 50 83Q65 84 74 68L88 80L84 60L95 50L84 42L88 21L73 31Q62 15 50 19Q38 15 26 31Z\" transform=\"translate(0 3)\" fill=\"#d25a90\" opacity=\".73\"/><path d=\"M26 31L12 21L15 43L5 50L16 60L12 80L27 68Q36 84 50 83Q65 84 74 68L88 80L84 60L95 50L84 42L88 21L73 31Q62 15 50 19Q38 15 26 31Z\" fill=\"url(#sy55-gift-body)\" stroke=\"#d25a90\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><path d=\"M26 31L12 21L15 43L5 50L16 60L12 80L27 68Q36 84 50 83Q65 84 74 68L88 80L84 60L95 50L84 42L88 21L73 31Q62 15 50 19Q38 15 26 31Z\" fill=\"url(#sy55-gift-glaze)\"/><path d=\"M14 27L27 38L27 61L14 75L19 58L10 50L19 42Z\" fill=\"#ffd9a6\" stroke=\"#e67e83\" stroke-width=\"2\" opacity=\".88\"/><path d=\"M86 27L73 38L73 61L86 75L81 58L90 50L81 42Z\" fill=\"#ffe7a9\" stroke=\"#db668a\" stroke-width=\"2\" opacity=\".86\"/><path d=\"M31 34Q48 22 68 34Q75 46 69 66Q51 83 31 67Q25 51 31 34Z\" fill=\"#ffa766\" stroke=\"#e36c79\" stroke-width=\"2.7\"/><path d=\"M35 34Q45 42 34 66M48 28Q58 48 48 76M62 31Q71 48 62 72\" stroke=\"#fff1be\" stroke-width=\"6\" fill=\"none\" opacity=\".73\" stroke-linecap=\"round\"/><path d=\"M29 40Q42 28 55 32\" stroke=\"#fff\" stroke-width=\"3\" fill=\"none\" opacity=\".65\"/><path d=\"M34 34Q43 27 53 30\" fill=\"none\" stroke=\"#fff\" stroke-width=\"4\" opacity=\".72\" stroke-linecap=\"round\"/></svg>","finale":"<svg viewBox=\"0 0 100 100\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"sy55-finale-body\" x1=\"9%\" y1=\"9%\" x2=\"89%\" y2=\"93%\"><stop stop-color=\"#fff9d0\"/><stop offset=\".48\" stop-color=\"#ffd966\"/><stop offset=\"1\" stop-color=\"#a56719\"/></linearGradient><radialGradient id=\"sy55-finale-glaze\" cx=\"27%\" cy=\"17%\" r=\"82%\"><stop stop-color=\"#fff\" stop-opacity=\".66\"/><stop offset=\".48\" stop-color=\"#fff\" stop-opacity=\".11\"/><stop offset=\"1\" stop-color=\"#26093c\" stop-opacity=\".10\"/></radialGradient></defs><path d=\"M50 5L62 26L84 17L79 42L96 52L78 63L81 86L61 78L50 96L39 78L19 86L22 63L4 52L21 42L16 17L38 26Z\" transform=\"translate(0 3)\" fill=\"#a56719\" opacity=\".73\"/><path d=\"M50 5L62 26L84 17L79 42L96 52L78 63L81 86L61 78L50 96L39 78L19 86L22 63L4 52L21 42L16 17L38 26Z\" fill=\"url(#sy55-finale-body)\" stroke=\"#a56719\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><path d=\"M50 5L62 26L84 17L79 42L96 52L78 63L81 86L61 78L50 96L39 78L19 86L22 63L4 52L21 42L16 17L38 26Z\" fill=\"url(#sy55-finale-glaze)\"/><g fill=\"#fff1b4\" opacity=\".56\"><path d=\"M50 8L56 38L50 55L44 38Z\"/><path d=\"M18 19L41 41L47 56L26 45Z\"/><path d=\"M84 19L59 41L53 56L74 45Z\"/><path d=\"M20 84L39 65L50 56L44 78Z\"/><path d=\"M80 84L61 65L50 56L56 78Z\"/></g><path d=\"M50 21L55 42L77 50L57 59L50 80L43 59L24 50L45 42Z\" fill=\"#ffe7a4\" stroke=\"#c88b35\" stroke-width=\"2.7\" opacity=\".65\"/><path d=\"M37 33L49 15M62 34L76 24M33 67L22 78\" stroke=\"#fffaf0\" stroke-width=\"3\" stroke-linecap=\"round\" opacity=\".79\"/><circle cx=\"50\" cy=\"51\" r=\"8\" fill=\"#fff6cc\" stroke=\"#efad3a\" stroke-width=\"2.5\"/><circle cx=\"48\" cy=\"48\" r=\"2.3\" fill=\"#fff\"/><path d=\"M32 35L43 25M54 17L58 28\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3\" opacity=\".78\" stroke-linecap=\"round\"/></svg>"};
   const WORLD_CANDY_ART=Object.fromEntries(Object.entries(WORLD_CANDY_VECTORS).map(([theme,svg])=>[theme,
     'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(svg.replace('<svg ','<svg xmlns="http://www.w3.org/2000/svg" '))]));
@@ -4846,6 +4905,7 @@ body[data-sy-world] header .brand .game-title-wrap::after{
   }
   function collapseBoard(){
     const newcomers=[];
+    const availableTypes=activeCandyTypes();
     const guarded=board.some(row=>row.some(protectedCandy));
     for(let c=0;c<SIZE;c++){
       if(!guarded){
@@ -4854,7 +4914,7 @@ body[data-sy-world] header .brand .game-title-wrap::after{
         let i=0;
         for(let r=SIZE-1;r>=0;r--){
           if(i<existing.length)board[r][c]=existing[i++];
-          else{const t=tile(pick(PLAY_TYPES),r,c);t.spawn=r-(SIZE-existing.length);board[r][c]=t;newcomers.push(t)}
+          else{const t=tile(pick(availableTypes),r,c);t.spawn=r-(SIZE-existing.length);board[r][c]=t;newcomers.push(t)}
         }
         continue;
       }
@@ -4869,7 +4929,7 @@ body[data-sy-world] header .brand .game-title-wrap::after{
           let idx=0;
           for(let y=bottom;y>=top;y--){
             if(idx<surviving.length)board[y][c]=surviving[idx++];
-            else{const t=tile(pick(PLAY_TYPES),y,c);t.spawn=top-1;board[y][c]=t;newcomers.push(t)}
+            else{const t=tile(pick(availableTypes),y,c);t.spawn=top-1;board[y][c]=t;newcomers.push(t)}
           }
         }
         bottom=r-1;
@@ -5216,6 +5276,8 @@ body[data-sy-world] header .brand .game-title-wrap::after{
       render();chirp('bad');await wait(250);busy=false;startDecisionClock();refreshUI();showToast('Bu hamlede eşleşme yok — tekrar dene!');return;
     }
     moves--;moveCount++;vibrateTick();
+    // Update remaining moves immediately, before the matching/cascade animations.
+    refreshUI();
     if(areaCombo)await resolveStripeBombSwap(a,b,direction);
     else if(doubleStripe)await resolveDoubleStripeSwap(a,b,false,direction);
     else if(color)await resolveColorSwap(a,b,direction);
@@ -5241,7 +5303,7 @@ body[data-sy-world] header .brand .game-title-wrap::after{
       if(keyboardMove&&isGameVisible()&&!els.board.contains(document.activeElement))board[nr][nc].el?.focus({preventScroll:true});
     }
   }
-  function shareSummary(){return `🍬 ${playerName||'Bir oyuncu'} Şeker Yağmuru 5.5.2 oyununu bitirdi!
+  function shareSummary(){return `🍬 ${playerName||'Bir oyuncu'} Şeker Yağmuru 5.5.4 oyununu bitirdi!
 🏆 ${MAX_LEVEL}/${MAX_LEVEL} bölüm tamamlandı
 ⭐ Bu macera: ${runStars.reduce((a,b)=>a+b,0)} / ${MAX_LEVEL*3} yıldız
 🏅 Toplam puan: ${fmt(scoreTotal)}
@@ -5281,7 +5343,7 @@ body[data-sy-world] header .brand .game-title-wrap::after{
     ctx.fillStyle='#f8ecff';ctx.font='bold 33px sans-serif';ctx.fillText('EN İYİ BÖLÜM  ·  '+fmt(Math.max(0,...completedScores)),540,1005);
     ctx.fillStyle='#ffe9ff';ctx.font='bold 38px sans-serif';ctx.fillText('ŞAMPİYON  ·  '+(playerName||'Oyuncu'),540,1060,870);
     ctx.fillStyle='#f5e5ff';ctx.font='29px sans-serif';ctx.fillText('MACERA YILDIZLARI  ·  '+runStars.reduce((a,b)=>a+b,0)+' / '+(MAX_LEVEL*3),540,1110);
-    ctx.fillStyle='#ffebff';ctx.font='28px sans-serif';ctx.fillText('Şeker Yağmuru 5.5.2  •  Arif Şahin',540,1250);
+    ctx.fillStyle='#ffebff';ctx.font='28px sans-serif';ctx.fillText('Şeker Yağmuru 5.5.4  •  Arif Şahin',540,1250);
   }
   async function cardBlob(type='image/png'){
     return new Promise((resolve,reject)=>els.finalCanvas.toBlob(b=>b?resolve(b):reject(new Error('Kart hazırlanamadı')),type,type==='image/jpeg'?.94:undefined));
@@ -5641,6 +5703,11 @@ body[data-sy-world] header .brand .game-title-wrap::after{
     if(busy)return;
     pauseDecisionClock();
     if(timeLeft<=0){endGame(false,'time');return}
+    if(dailyMode){
+      if(window.confirm('Günlük mücadeleyi aynı başlangıç tahtasıyla ve 18 hamleyle yeniden başlatmak istiyor musun?'))startDaily(true);
+      else startDecisionClock();
+      return;
+    }
     const fresh=!moveCount&&timeLeft>=levelConfig(level).seconds-1&&shuffleLeft===1;
     if(fresh||window.confirm('Bu bölümü sıfırdan başlatmak istiyor musun? Mevcut bölüm ilerlemesi silinir.'))startLevel(level);
     else startDecisionClock();
@@ -5747,7 +5814,7 @@ body[data-sy-world] header .brand .game-title-wrap::after{
     setTimeout(()=>URL.revokeObjectURL(url),12000);
   });
 
-  // v5.5.2 · Restore the same JSON format that the export button produces.
+  // v5.5.4 · Restore the same JSON format that the export button produces.
   // Validate before asking permission or touching any existing saved progress.
   function cleanImportedStats(raw){
     const output={};
@@ -5842,7 +5909,7 @@ body[data-sy-world] header .brand .game-title-wrap::after{
   function feedbackMessage(){
     const message=$('feedbackText').value.trim();
     if(message.length<8){$('feedbackText').focus();showToast('Lütfen en az 8 karakterlik açıklama yaz.');return null}
-    return `SEKER YAGMURU 5.5.2 - GERI BILDIRIM\nOyuncu: ${playerName||'Oyuncu'}\nTur: ${$('feedbackKind').value}\nBolum: ${level} / ${MAX_LEVEL}\n\nAciklama:\n${message}\n\nOyun baglantisi: ${PUBLIC_GAME_URL}\nOyuncu geri bildirimi`;
+    return `SEKER YAGMURU 5.5.4 - GERI BILDIRIM\nOyuncu: ${playerName||'Oyuncu'}\nTur: ${$('feedbackKind').value}\nBolum: ${level} / ${MAX_LEVEL}\n\nAciklama:\n${message}\n\nOyun baglantisi: ${PUBLIC_GAME_URL}\nOyuncu geri bildirimi`;
   }
   $('shareFeedbackBtn').addEventListener('click',()=>{
     const msg=feedbackMessage();if(!msg)return;
@@ -5990,6 +6057,50 @@ if('serviceWorker' in navigator && window.isSecureContext && /^https?:$/.test(lo
     }).catch(e=>console.info('Çevrimdışı kurulum kullanılamıyor:',e?.message||e));
   },{once:true});
 }
+</script>
+
+<script>
+/* 5.5.4: Boyut tercihi yalnızca yeni anahtarda saklanır; oyun kayıtlarına dokunulmaz. */
+(()=>{
+  'use strict';
+  const header=document.querySelector('.app > header');
+  if(!header)return;
+  const choices={auto:'min(720px, 74dvh)',large:'min(860px, 83dvh)',compact:'min(560px, 58dvh)'};
+  const key='sy553_desktop_board_size';
+  const controls=document.createElement('div');
+  controls.className='sy553-display-controls';
+  const label=document.createElement('label');
+  label.htmlFor='sy553Size';
+  label.textContent='🖥️ Oyun alanı';
+  label.style.cssText='color:#fff;font-size:12px;font-weight:800';
+  const selector=document.createElement('select');
+  selector.id='sy553Size';
+  selector.setAttribute('aria-label','Bilgisayarda oyun alanının boyutu');
+  for(const [value,text] of [['auto','Otomatik'],['large','Büyük'],['compact','Kompakt']]){
+    const option=document.createElement('option');option.value=value;option.textContent=text;selector.append(option);
+  }
+  const apply=(value)=>{const setting=Object.prototype.hasOwnProperty.call(choices,value)?value:'auto';
+    document.documentElement.style.setProperty('--sy553-board-size',choices[setting]);
+    selector.value=setting;
+  };
+  let saved='auto';try{saved=localStorage.getItem(key)||'auto'}catch(_){}
+  apply(saved);
+  selector.addEventListener('change',()=>{apply(selector.value);try{localStorage.setItem(key,selector.value)}catch(_){}});
+  controls.append(label,selector);
+  if(document.fullscreenEnabled&&typeof document.documentElement.requestFullscreen==='function'){
+    const full=document.createElement('button');full.type='button';full.textContent='⛶ Tam ekran';
+    full.setAttribute('aria-label','Tam ekran modunu aç veya kapat');
+    full.addEventListener('click',async()=>{
+      try{
+        if(document.fullscreenElement)await document.exitFullscreen();
+        else await document.documentElement.requestFullscreen();
+      }catch(e){console.info('Tam ekran bu tarayıcıda kullanılamıyor',e)}
+    });
+    document.addEventListener('fullscreenchange',()=>{full.textContent=document.fullscreenElement?'⛶ Tam ekrandan çık':'⛶ Tam ekran'});
+    controls.append(full);
+  }
+  header.append(controls);
+})();
 </script>
 </body>
 </html>
