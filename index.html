@@ -1750,6 +1750,38 @@ body.syv5-daily .sy-progress-card .sy-goal-detail{font-size:11px;line-height:1.5
 @media(max-width:380px){#badgeList.sy-record-badges{grid-template-columns:1fr}#homeScreen .home-shortcuts .menu-button.sy-daily-shortcut{min-height:74px!important;padding:10px 12px}#homeScreen .sy-daily-symbol{font-size:28px;width:43px;height:43px}#homeScreen .sy-daily-arrow{font-size:20px}}
 @media(prefers-reduced-motion:reduce){#homeScreen .home-shortcuts .menu-button.sy-daily-shortcut{transition:none}}
 
+
+/* Şeker Yağmuru 5.5.2 — oyuncu karşılama menüsü; eski kayıt anahtarları ve JS olayları korunur. */
+#introOverlay.sy-welcome{background:linear-gradient(180deg,rgba(66,150,232,.17),rgba(241,165,214,.17)),url("./sy-pastane-background.webp") center / cover no-repeat,#8ed3ff!important;isolation:isolate;overflow-y:auto;overflow-x:hidden;padding:clamp(12px,3vw,28px)}
+#introOverlay.sy-welcome::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,#91d6ff24,#fbc5ea18 45%,#fcb2cb33)}
+#introOverlay .sy-welcome-card{z-index:2;width:min(480px,96vw);max-height:none;overflow:visible;padding:clamp(19px,4vw,29px) clamp(18px,4vw,32px) 20px;background:linear-gradient(180deg,#fff8f0 0%,#ffe2ce 100%);border:7px solid #ff92be;border-radius:35px;box-shadow:0 9px 0 #d63e89,0 23px 65px #5b1f7866, inset 0 0 0 3px #fff9fa}
+#introOverlay .sy-welcome-card:before{width:100%;height:36px;top:-12px;left:0;right:0;border-radius:38% 40% 52% 50%;background:linear-gradient(#fff,#ffe5f6);opacity:1}
+#introOverlay .sy-welcome-card:after{display:none}
+#introOverlay .sy-welcome-card h2{font-size:clamp(34px,8vw,57px);line-height:.94;letter-spacing:-1px;font-weight:1000;color:#ff85bd;-webkit-text-stroke:1.2px #ae397c;text-shadow:0 3px #fff,0 7px 0 #c1358b,0 10px 13px #8719616b;margin:6px 0 14px}
+#introOverlay .sy-welcome-card h2 span{display:block;font-size:1.05em;color:#ffc034;-webkit-text-stroke:1.2px #b95d14;text-shadow:0 3px #fff7d7,0 7px 0 #b96c18,0 11px 14px #82420a58}
+#introOverlay .sy-welcome-ribbon{position:relative;z-index:2;margin:14px -34px 17px;padding:12px 8px;background:linear-gradient(#ff7db9,#ed338b);border:2px solid #ffb4d7;border-radius:16px;color:#fff;font-size:clamp(14px,3.3vw,20px);font-weight:1000;text-shadow:0 2px 2px #a51c66;box-shadow:0 5px 0 #be2e77,0 8px 16px #9d2f6840}
+#introOverlay .sy-welcome-form{position:relative;z-index:1;padding:7px 4px 0}
+#introOverlay .intro-label{text-align:center;font-size:clamp(18px,4vw,23px);font-weight:1000;color:#823153;margin-bottom:13px}
+#introOverlay .intro-input{border:3px solid #b62ffa;border-radius:25px;min-height:65px;background:#fff8ff;font-size:18px;text-align:center;color:#743271;box-shadow:0 4px 0 #a12bdd33, inset 0 3px 8px #b55aca14}
+#introOverlay .intro-input:focus-visible{outline:2px solid #fff;outline-offset:2px;box-shadow:0 0 0 5px #cf79fc66}
+#introOverlay .intro-actions{margin-top:21px}
+#introOverlay #playerNameSaveBtn{min-height:67px;border:3px solid #e4ff7b;border-radius:28px!important;background:linear-gradient(#a9f913,#36ca08)!important;color:#fff!important;font-size:clamp(17px,4vw,23px);font-weight:1000;text-shadow:0 2px 2px #287719;box-shadow:0 7px 0 #218d11,0 12px 19px #2f751b50;transition:transform .16s,box-shadow .16s}
+#introOverlay #playerNameSaveBtn:active{transform:translateY(4px);box-shadow:0 3px 0 #218d11}
+#introOverlay .intro-note{margin-top:22px;color:#895d77}
+#introOverlay .intro-signature,#introOverlay .intro-signature strong,#introOverlay .intro-privacy{color:#895d77}
+#introOverlay .sy-welcome-sweets{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+#introOverlay .sy-sweet{position:absolute;display:grid;place-items:center;font-size:clamp(35px,7vw,82px);font-weight:1000;line-height:1;text-shadow:0 5px 0 #ffffffa0,0 8px 10px #502a6e55;filter:drop-shadow(0 5px 2px #39244333);animation:syWelcomeFloat 5s ease-in-out infinite alternate}
+#introOverlay .sy-sweet-heart{left:4%;top:56%;color:#fb244f}
+#introOverlay .sy-sweet-blue{left:8%;bottom:7%;color:#149cff;animation-delay:-2s}
+#introOverlay .sy-sweet-star{right:4%;top:15%;color:#ffd022;animation-delay:-1.1s}
+#introOverlay .sy-sweet-green{right:5%;bottom:9%;color:#49e00d;animation-delay:-3s}
+#introOverlay .sy-sweet-grape{right:5%;top:53%;color:#952ae8;animation-delay:-1.6s}
+#introOverlay .sy-sweet-drop{left:7%;top:17%;color:#ffaf16;animation-delay:-3.7s}
+@keyframes syWelcomeFloat{to{transform:translateY(-11px) rotate(5deg)}}
+@media(max-width:650px){#introOverlay .sy-sweet{opacity:.65;font-size:45px}#introOverlay .sy-sweet-heart{left:-12px;top:58%}#introOverlay .sy-sweet-blue{left:-17px;bottom:8%}#introOverlay .sy-sweet-star{right:-14px;top:13%}#introOverlay .sy-sweet-green{right:-18px;bottom:9%}#introOverlay .sy-sweet-grape{right:-17px;top:54%}#introOverlay .sy-sweet-drop{left:-16px;top:18%}#introOverlay .sy-welcome-card{width:min(410px,92vw);padding:20px 18px 17px}#introOverlay .sy-welcome-ribbon{margin-left:-23px;margin-right:-23px}}
+@media(max-height:620px){#introOverlay.sy-welcome{place-items:start center}#introOverlay .sy-welcome-card{margin:auto}#introOverlay .sy-welcome-card h2{font-size:32px}#introOverlay .sy-welcome-ribbon{margin-top:8px;margin-bottom:8px;padding:7px}}
+@media(prefers-reduced-motion:reduce){#introOverlay .sy-sweet{animation:none}#introOverlay #playerNameSaveBtn{transition:none}}
+
 </style>
 <!--
   ŞEKER YAĞMURU — SAHİPLİK / KAYNAK BİLGİSİ
@@ -3177,14 +3209,16 @@ body[data-sy-world] header .brand .game-title-wrap::after{
 </section>
 </main>
 </div>
-<div aria-label="Oyuncu adı" aria-modal="true" class="intro-overlay hidden" id="introOverlay" role="dialog">
-<div class="intro-card">
-<div aria-hidden="true" class="intro-logo game-logo"><img alt="" src="./game-icon-256.png"/></div>
-<h2>Şeker Yağmuru</h2>
-<p class="intro-copy">Tatlı maceraya başlamadan önce oyuncu adını belirle. Bu cihazda bir kez kaydedilir ve rekabetçi macerada seninle birlikte görünür.</p>
-<label class="intro-label" for="playerNameInput">Oyuncu adı</label>
-<input autocomplete="nickname" class="intro-input" id="playerNameInput" maxlength="18" placeholder="Örneğin: Arif" type="text"/>
-<div class="intro-actions"><button class="menu-button primary" id="playerNameSaveBtn" type="button">▶ Menüye geç</button></div>
+<div aria-label="Oyuncu adı" aria-modal="true" class="intro-overlay hidden sy-welcome" id="introOverlay" role="dialog">
+<div class="sy-welcome-sweets" aria-hidden="true"><span class="sy-sweet sy-sweet-heart">♥</span><span class="sy-sweet sy-sweet-blue">◆</span><span class="sy-sweet sy-sweet-star">★</span><span class="sy-sweet sy-sweet-green">◆</span><span class="sy-sweet sy-sweet-grape">●</span><span class="sy-sweet sy-sweet-drop">●</span></div>
+<div class="intro-card sy-welcome-card">
+<h2>ŞEKER <span>YAĞMURU</span></h2>
+<div class="sy-welcome-ribbon">✦ MACERANA HOŞ GELDİN! ✦</div>
+<div class="sy-welcome-form">
+<label class="intro-label" for="playerNameInput">👑 Oyuncu Adın</label>
+<input autocomplete="nickname" class="intro-input" id="playerNameInput" maxlength="18" placeholder="Adını buraya yaz..." type="text"/>
+<div class="intro-actions"><button class="menu-button primary" id="playerNameSaveBtn" type="button">▶ MACERAYA BAŞLA</button></div>
+</div>
 <small class="intro-note"><span class="intro-signature">Oyun tasarımı ve geliştirme · <strong>Arif Şahin</strong></span><span class="intro-privacy">Oyuncu adını daha sonra ayarlardan değiştirebilirsin.</span></small>
 </div>
 </div>
