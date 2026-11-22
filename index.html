@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <meta content="#241448" name="theme-color"/>
 <meta content="Şeker Yağmuru — telefon ve bilgisayarda oynanabilen renkli eşleştirme oyunu." name="description"/>
-<title>Şeker Yağmuru 5.5.5 🍬</title>
+<title>Şeker Yağmuru 5.5.6 🍬</title>
 <meta content="Şeker Yağmuru" name="application-name"/>
 <meta content="Şeker Yağmuru" name="apple-mobile-web-app-title"/>
 <meta content="yes" name="mobile-web-app-capable"/>
@@ -2322,7 +2322,7 @@ body[data-sy-world] .game-bottom-info span{
 }
 
 </style>
-<meta name="sy-build-type" content="single-html-offline-pastane-v5.5.5"/>
+<meta name="sy-build-type" content="single-html-offline-pastane-v5.5.6"/>
 <style id="sy-pastane-visual-tweak-v2">
 /* 2026-11-21 menu top expansion + wider street background tweak */
 .screen-layer:has(#homeScreen:not(.hidden)){
@@ -3178,7 +3178,7 @@ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
   }
   body[data-sy-world] .sy553-display-controls label{color:#66354b!important}
 }
-/* v5.5.5 — PC ekranına sığan menü ve oyun ekranı. Mobil görünüm korunur. */
+/* v5.5.6 — PC ekranına sığan menü ve oyun ekranı. Mobil görünüm korunur. */
 @media (min-width:900px) {
   /* Sabit 510 px tahta + üst üste 5 HUD kartı yerine iki sütunlu masaüstü düzeni. */
   body[data-sy-world] > .app{
@@ -3318,6 +3318,15 @@ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
   html[data-sy-theme] #homeScreen #feedbackBtn{min-height:37px!important}
 }
 </style>
+<style id="sy-performance-positioning">
+/* v5.5.6 performance release: composited candy movement; full candy, glow and blast animations preserved. */
+#board .piece{
+  left:0!important;
+  top:0!important;
+  transition:transform .29s cubic-bezier(.18,.91,.26,1),opacity .22s!important;
+  will-change:transform!important;
+}
+</style>
 </head>
 <body>
 <noscript><p role="alert" style="margin:16px auto;padding:16px;max-width:620px;border-radius:12px;background:#fff3d9;color:#432b43;font:16px/1.5 sans-serif">🍬 Şeker Yağmuru JavaScript gerektirir. iPhone'da Dosyalar uygulamasının HTML önizlemesi oyunu çalıştırmayabilir. Oyunu Chrome veya Safari'de yayımlanmış HTTPS bağlantısından açın.</p></noscript>
@@ -3435,7 +3444,7 @@ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
 <button class="menu-button feedback-entry" id="feedbackBtn" type="button"><span class="shortcut-icon">💬</span><span>Hata / Öneri</span></button>
 </div>
 </div>
-<div class="home-footer"><span>✓ İlerlemen otomatik kaydedilir</span><span>Sürüm 5.5.5</span></div>
+<div class="home-footer"><span>✓ İlerlemen otomatik kaydedilir</span><span>Sürüm 5.5.6</span></div>
 <div class="home-credits"><span>✦</span> TATLI BİR OYUN DENEYİMİ</div><p class="sy-owner-notice">© 2026 <strong>Arif Şahin</strong> · Şeker Yağmuru · İzinsiz sahiplenilemez</p>
 </section>
 <section class="screen-page hidden sy-level-page" id="levelsScreen" aria-labelledby="levelsTitle">
@@ -4272,6 +4281,7 @@ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
   function createElement(t){
     const el=document.createElement('button');el.type='button';el.className='piece';
     el.style.left=`${t.c*12.5}%`;el.style.top=`${t.spawn!==null?t.spawn*12.5:t.r*12.5}%`;
+    el.style.transform=`translate3d(${t.c*100}%, ${(t.spawn!==null?t.spawn:t.r)*100}%, 0)`;
     const finishGesture=(x0,y0,x1,y1)=>{
       if(busy||gameStatus!=='playing'||!isGameVisible())return;
       const dx=x1-x0,dy=y1-y0;
@@ -4508,11 +4518,18 @@ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
       const x=`${c*12.5}%`,y=`${r*12.5}%`;
       if(t.el.style.left!==x)t.el.style.left=x;
       if(t.spawn===null&&t.el.style.top!==y)t.el.style.top=y;
+      // Preserve original 8x8 grid positions while moving on compositor-friendly translate.
+      const location=`translate3d(${c*100}%, ${(t.spawn!==null?t.spawn:r)*100}%, 0)`;
+      if(t.el.style.transform!==location)t.el.style.transform=location;
       paintTile(t);
     }
     for(const [id,t] of tiles)if(!active.has(id)){t.el?.remove();tiles.delete(id);t.el=null}
     highlightSelection();
   }
+  // Keep the HUD stable: setting identical text and ARIA attributes on every
+  // cascade used to invalidate layout/paint even though nothing looked different.
+  function setUiText(el,value){if(el&&el.textContent!==String(value))el.textContent=value;}
+  function setUiAttr(el,name,value){if(el&&el.getAttribute(name)!==String(value))el.setAttribute(name,value);}
   function refreshUI(){
     // Sadece gerçek değer değiştiğinde DOM'u güncelle. Geçersiz hamle, seçim,
     // süre tik'i veya panel yenilemesi skor animasyonunu tekrar tetiklemesin.
@@ -4524,7 +4541,7 @@ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
     document.body.classList.toggle('syv5-daily',dailyMode);
     syncWorldAppearance();
     const percent=levelPercent(score,target);
-    els.goalPercent.textContent=dailyMode?'🏆':percent+'%';
+    setUiText(els.goalPercent,dailyMode?'🏆':percent+'%');
     const goalDetail=$('syGoalDetail');
     if(goalDetail){
       const detail=dailyMode?'En yüksek puanı topla!':
@@ -4536,12 +4553,14 @@ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
       const text=dailyMode?' REKOR HEDEFİ':' BÖLÜM İLERLEMESİ';
       if(last.textContent!==text)last.textContent=text;
     }}
-    els.progress.setAttribute('aria-label',dailyMode?'Günlük yüksek puan denemesi':'Bölüm tamamlama yüzdesi');
-    els.progress.setAttribute('aria-valuetext',dailyMode?'Zorunlu puan hedefi yok. Amaç en yüksek skoru yapmak.':'Bölüm hedefinin yüzde '+percent+' kadarı tamamlandı. Hedef yüzde 100.');
-    els.progressFill.style.width=dailyMode?'0%':`${percent}%`;els.progress.setAttribute('aria-valuenow',dailyMode?0:percent);
-    const levelLabel=document.querySelector('.sy-level-card .stat-label');if(levelLabel)levelLabel.textContent=dailyMode?'GÜNLÜK':'BÖLÜM';
-    const levelNumber=$('levelNumber');    if(levelNumber)levelNumber.textContent=dailyMode?'☀':String(level).padStart(2,'0');
-    const levelTotal=$('levelTotal');    if(levelTotal)levelTotal.textContent=dailyMode?'GÜN':MAX_LEVEL;
+    setUiAttr(els.progress,'aria-label',dailyMode?'Günlük yüksek puan denemesi':'Bölüm tamamlama yüzdesi');
+    setUiAttr(els.progress,'aria-valuetext',dailyMode?'Zorunlu puan hedefi yok. Amaç en yüksek skoru yapmak.':'Bölüm hedefinin yüzde '+percent+' kadarı tamamlandı. Hedef yüzde 100.');
+    const goalWidth=dailyMode?'0%':`${percent}%`;
+    if(els.progressFill.style.width!==goalWidth)els.progressFill.style.width=goalWidth;
+    setUiAttr(els.progress,'aria-valuenow',dailyMode?0:percent);
+    const levelLabel=document.querySelector('.sy-level-card .stat-label');setUiText(levelLabel,dailyMode?'GÜNLÜK':'BÖLÜM');
+    const levelNumber=$('levelNumber');    setUiText(levelNumber,dailyMode?'☀':String(level).padStart(2,'0'));
+    const levelTotal=$('levelTotal');    setUiText(levelTotal,dailyMode?'GÜN':MAX_LEVEL);
     const hudSweet=document.querySelector('.sy-level-card .stat-symbol');
     if(hudSweet&&hudSweet.textContent!=='◈')hudSweet.textContent='◈';
 
@@ -4555,12 +4574,12 @@ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
       const enhanced=dailyMode?hint:hint+' · ♫'+String(level).padStart(2,'0');
       if(feature.textContent!==enhanced)feature.textContent=enhanced;
     }
-    els.bestScore.textContent=fmt(bestScore);els.shuffleBadge.textContent=shuffleLeft?`${shuffleLeft} hak`:'Bitti';
-    if(els.hintBadge)els.hintBadge.textContent=hintLeft?`${hintLeft} hak`:'Bitti';
+    setUiText(els.bestScore,fmt(bestScore));setUiText(els.shuffleBadge,shuffleLeft?`${shuffleLeft} hak`:'Bitti');
+    setUiText(els.hintBadge,hintLeft?`${hintLeft} hak`:'Bitti');
     els.shuffleBtn.disabled=!shuffleLeft||gameStatus!=='playing';els.hintBtn.disabled=!hintLeft||gameStatus!=='playing';els.restartBtn.disabled=busy;$('menuBtn').disabled=busy&&gameStatus==='playing';
     // Animation lock: block clicks but never alter the helper buttons' visual styling.
     els.shuffleBtn.classList.toggle('temporarily-locked',busy);els.hintBtn.classList.toggle('temporarily-locked',busy);
-    els.shuffleBtn.setAttribute('aria-busy',String(busy));els.hintBtn.setAttribute('aria-busy',String(busy));
+    setUiAttr(els.shuffleBtn,'aria-busy',busy);setUiAttr(els.hintBtn,'aria-busy',busy);
   }
   let highlighted=null;
   function highlightSelection(){
@@ -5076,7 +5095,7 @@ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
     }
     render();
     requestAnimationFrame(()=>requestAnimationFrame(()=>{
-      for(const t of newcomers){if(t.el)t.el.style.top=`${t.r*12.5}%`;t.spawn=null;}
+      for(const t of newcomers){if(t.el){t.el.style.top=`${t.r*12.5}%`;t.el.style.transform=`translate3d(${t.c*100}%, ${t.r*100}%, 0)`;}t.spawn=null;}
     }));
   }
   function candiesOfType(type){

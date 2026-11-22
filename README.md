@@ -1,4 +1,4 @@
-# 🍬 Şeker Yağmuru 5.5.5
+# 🍬 Şeker Yağmuru 5.5.6
 
 60 bölümlük eşleştirme oyunu. Yayımlama için bu klasörün **içindeki tüm dosyaları** GitHub deposunun köküne yükleyin; ZIP dosyasını tek başına yüklemeyin.
 
@@ -37,3 +37,11 @@
 - Oyun alanı boyutu tercihi (Otomatik/Büyük/Kompakt), dokunmatik mobil görünüm ve mevcut oyun kaydı korunur.
 - Tam ekran düğmesinin açık arka plan üzerindeki kontrastı artırıldı.
 - Servis çalışanı önbelleği sürüm yükseltildi.
+
+## v5.5.6 — Performans optimizasyonu
+
+- Şekerlerin hareketi yeniden yerleşim hesabı isteyen `left/top` animasyonu yerine GPU tarafından işlenebilen `transform: translate3d()` animasyonuyla yapılır. Oyun tahtası ve başlangıç konumları aynı kalır.
+- Bölüm hedefi, ilerleme ve yardımcı kontrollerin aynı DOM metnini ve erişilebilirlik özniteliklerini gereksiz yere tekrar yazması engellendi.
+- Patlama, parıltı, düşüş ve diğer görsel efektlerin yoğunluğu, müzikleri, süre ve hamle kuralları değiştirilmedi.
+- 1366×768, 900×600 ve 390×844 ekranlarda 64 şekerin yerleşimi doğrulandı. Otomatik Chromium karşılaştırmalarında daha az yerleşim hesabı görüldü; her fiziksel cihazda sabit FPS artışı garanti edilmez.
+- GitHub Pages/PWA çevrimdışı önbellek kimliği yenilendi. Eski kayıtlar korunur.
