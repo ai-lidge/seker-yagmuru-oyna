@@ -1,8 +1,8 @@
-# 🍬 Şeker Yağmuru 5.5.4
+# 🍬 Şeker Yağmuru 5.5.5
 
 60 bölümlük eşleştirme oyunu. Yayımlama için bu klasörün **içindeki tüm dosyaları** GitHub deposunun köküne yükleyin; ZIP dosyasını tek başına yüklemeyin.
 
-## v5.5.4 düzeltmeleri
+## v5.5.5 düzeltmeleri
 
 - Günlük mücadelede **Yenile** artık aynı günlük başlangıç tahtasını 18 hamle, 03:00 süre ve sıfır yardımcı hakla yeniden başlatır; normal bölüm haklarına geri dönmez.
 - Geçerli eşleştirmede **Kalan Hamle** sayısı, eşleşme animasyonunun bitmesini beklemeden hemen güncellenir. Geçersiz yer değiştirme hamle tüketmez.
@@ -29,3 +29,11 @@
 - Bölüm kayıtları tarayıcının yerel depolamasında tutulur. Aynı origin ve tarayıcıda sürüm değişimi bunları silmez.
 - Günlük mücadele başlangıç değerleri değiştirilmedi. Yeni başlayanlara özel kolaylaştırmalar günlük meydan okuma tahtalarına uygulanmaz.
 - Gerçek mobil cihazlarda, farklı tarayıcılarda ve dağıtımdan sonra HTTPS/PWA kurulumunda ayrıca kontrol önerilir.
+
+## v5.5.5 — PC ekranına sığdırma
+
+- 900 piksel ve üzeri masaüstü ekranlarda oyun tahtası solda, puan/süre/hamle ve yardımcı kontroller sağda görünür. Tahta ekran yüksekliğini aşmaz.
+- Ana menü geniş ekranlarda iki sütuna ayrıldı; alt düğmeler görünür alana taşındı.
+- Oyun alanı boyutu tercihi (Otomatik/Büyük/Kompakt), dokunmatik mobil görünüm ve mevcut oyun kaydı korunur.
+- Tam ekran düğmesinin açık arka plan üzerindeki kontrastı artırıldı.
+- Servis çalışanı önbelleği sürüm yükseltildi.

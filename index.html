@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <meta content="#241448" name="theme-color"/>
 <meta content="Şeker Yağmuru — telefon ve bilgisayarda oynanabilen renkli eşleştirme oyunu." name="description"/>
-<title>Şeker Yağmuru 5.5.4 🍬</title>
+<title>Şeker Yağmuru 5.5.5 🍬</title>
 <meta content="Şeker Yağmuru" name="application-name"/>
 <meta content="Şeker Yağmuru" name="apple-mobile-web-app-title"/>
 <meta content="yes" name="mobile-web-app-capable"/>
@@ -2322,7 +2322,7 @@ body[data-sy-world] .game-bottom-info span{
 }
 
 </style>
-<meta name="sy-build-type" content="single-html-offline-pastane-v5.5.4"/>
+<meta name="sy-build-type" content="single-html-offline-pastane-v5.5.5"/>
 <style id="sy-pastane-visual-tweak-v2">
 /* 2026-11-21 menu top expansion + wider street background tweak */
 .screen-layer:has(#homeScreen:not(.hidden)){
@@ -3178,6 +3178,145 @@ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
   }
   body[data-sy-world] .sy553-display-controls label{color:#66354b!important}
 }
+/* v5.5.5 — PC ekranına sığan menü ve oyun ekranı. Mobil görünüm korunur. */
+@media (min-width:900px) {
+  /* Sabit 510 px tahta + üst üste 5 HUD kartı yerine iki sütunlu masaüstü düzeni. */
+  body[data-sy-world] > .app{
+    width:min(96vw,1200px)!important;max-width:min(96vw,1200px)!important;
+    padding:8px 12px 10px!important;
+  }
+  body[data-sy-world] .app > header{
+    min-height:63px!important;max-height:none!important;margin-bottom:9px!important;
+    padding:5px 11px!important;
+  }
+  body[data-sy-world] .layout > section.primary{
+    display:grid!important;
+    grid-template-columns:minmax(0,1.45fr) minmax(315px,.8fr)!important;
+    grid-template-areas:'board dashboard' 'board tools' 'board info'!important;
+    gap:10px clamp(13px,1.8vw,24px)!important;
+    align-items:start!important;align-content:start!important;
+    padding:12px!important;min-width:0!important;
+  }
+  body[data-sy-world] .game-frame{
+    grid-area:board!important;justify-self:center!important;align-self:start!important;
+    width:min(100%,var(--sy553-board-size,74dvh),calc(100dvh - 118px))!important;
+    max-width:none!important;margin:0!important;
+  }
+  body[data-sy-world] .match-dashboard.modern-dashboard{
+    grid-area:dashboard!important;width:100%!important;min-width:0!important;
+    margin:0!important;padding:1px!important;
+  }
+  body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact{
+    grid-template-areas:'score level' 'moves timer' 'goal goal'!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-template-rows:auto auto auto!important;
+    gap:9px!important;
+  }
+  body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-mini-card,
+  body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-status-card{
+    min-height:68px!important;max-height:none!important;
+    padding:10px 8px!important;border-radius:15px!important;
+  }
+  body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-mini-card .stat-value{
+    font-size:clamp(19px,2.2vw,28px)!important;
+  }
+  body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-mini-card .stat-label{
+    font-size:10px!important;
+  }
+  body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-progress-card{
+    grid-column:1/-1!important;min-height:88px!important;padding:13px 12px!important;
+  }
+  body[data-sy-world] .helper-tools{
+    grid-area:tools!important;display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:9px!important;width:100%!important;max-width:none!important;
+    margin:0!important;
+  }
+  body[data-sy-world] .helper-button{min-height:64px!important;padding:8px 5px!important;gap:5px!important}
+  body[data-sy-world] .helper-button .helper-icon{
+    min-width:29px!important;width:29px!important;height:29px!important;font-size:16px!important;
+  }
+  body[data-sy-world] .helper-button .helper-content strong{font-size:13px!important}
+  body[data-sy-world] .game-bottom-info{
+    grid-area:info!important;display:flex!important;justify-content:center!important;
+    flex-wrap:wrap!important;margin:1px 0 0!important;min-width:0!important;
+  }
+  body[data-sy-world] .sy553-display-controls label{color:#66354b!important}
+  body[data-sy-world] .sy553-display-controls button{
+    color:#66354b!important;background:linear-gradient(160deg,#fffaf0,#ffe5cf)!important;
+    border:2px solid #fff6df!important;box-shadow:0 2px 0 #c69a89!important;
+  }
+
+  /* Masaüstü menüsü: solda logo/ilerleme, sağda tüm butonlar; sayfa aşağı taşmaz. */
+  html[data-sy-theme] .screen-layer:has(#homeScreen:not(.hidden)) .menu-shell{
+    width:min(94vw,900px)!important;max-width:900px!important;
+    min-height:100dvh!important;
+  }
+  html[data-sy-theme] #homeScreen.premium-home{
+    display:grid!important;
+    grid-template-columns:minmax(0,0.96fr) minmax(0,1.04fr)!important;
+    grid-template-areas:'trophy menu' 'logo menu' 'journey menu' 'greet menu' 'footer menu' 'legal menu'!important;
+    grid-template-rows:auto auto auto auto auto auto!important;
+    column-gap:clamp(17px,3vw,36px)!important;row-gap:6px!important;
+    align-items:center!important;align-content:center!important;
+    min-height:100dvh!important;
+    padding:17px 24px!important;
+  }
+  html[data-sy-theme] #homeScreen .home-headline{grid-area:trophy!important;margin:0 auto!important;order:initial!important}
+  html[data-sy-theme] #homeScreen.premium-home .home-title-wrap{
+    grid-area:logo!important;order:initial!important;
+    height:clamp(152px,25vh,220px)!important;min-height:0!important;max-height:220px!important;
+    width:100%!important;margin:2px auto 3px!important;
+  }
+  html[data-sy-theme] #homeScreen .home-progress{
+    grid-area:journey!important;order:initial!important;margin:0!important;padding:12px!important;
+  }
+  html[data-sy-theme] #homeScreen .home-personal{
+    grid-area:greet!important;order:initial!important;margin:3px 0!important;
+  }
+  html[data-sy-theme] #homeScreen .menu-buttons.premium-menu-buttons{
+    grid-area:menu!important;order:initial!important;
+    align-self:center!important;gap:7px!important;
+    width:100%!important;margin:0!important;
+  }
+  html[data-sy-theme] #homeScreen .menu-button{
+    min-height:46px!important;padding:8px 13px!important;font-size:16px!important;
+  }
+  html[data-sy-theme] #homeScreen #playBtn{min-height:65px!important}
+  html[data-sy-theme] #homeScreen #dailyBtn{min-height:53px!important;margin-top:0!important}
+  html[data-sy-theme] #homeScreen #howBtn,
+  html[data-sy-theme] #homeScreen #creditsBtn,
+  html[data-sy-theme] #homeScreen #feedbackBtn{min-height:40px!important;padding:7px 12px!important}
+  html[data-sy-theme] #homeScreen .home-footer{
+    grid-area:footer!important;order:initial!important;margin:4px 0 0!important;
+  }
+  html[data-sy-theme] #homeScreen .sy-owner-notice{
+    grid-area:legal!important;order:initial!important;margin:1px 0!important;
+  }
+}
+@media (min-width:900px) and (max-width:1070px) {
+  body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-timer-card .sy-meter-name{font-size:11px!important}
+  body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-status-head b{font-size:15px!important}
+}
+@media (min-width:900px) and (max-height:690px) {
+  body[data-sy-world] .app > header{min-height:56px!important;padding:3px 8px!important;margin-bottom:6px!important}
+  body[data-sy-world] .layout > section.primary{padding:8px!important;row-gap:6px!important}
+  body[data-sy-world] .game-frame{width:min(100%,var(--sy553-board-size,74dvh),calc(100dvh - 98px))!important}
+  body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact{gap:6px!important}
+  body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-mini-card,
+  body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-status-card{min-height:58px!important;padding:6px!important}
+  body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-progress-card{min-height:72px!important}
+  body[data-sy-world] .helper-button{min-height:52px!important}
+  html[data-sy-theme] #homeScreen.premium-home{padding:9px 20px!important;row-gap:3px!important}
+  html[data-sy-theme] #homeScreen.premium-home .home-title-wrap{height:clamp(115px,23vh,154px)!important}
+  html[data-sy-theme] #homeScreen .menu-buttons.premium-menu-buttons{gap:5px!important}
+  html[data-sy-theme] #homeScreen .menu-button{min-height:41px!important;padding:6px 12px!important}
+  html[data-sy-theme] #homeScreen #playBtn{min-height:56px!important}
+  html[data-sy-theme] #homeScreen #dailyBtn{min-height:47px!important}
+  html[data-sy-theme] #homeScreen #howBtn,
+  html[data-sy-theme] #homeScreen #creditsBtn,
+  html[data-sy-theme] #homeScreen #feedbackBtn{min-height:37px!important}
+}
 </style>
 </head>
 <body>
@@ -3296,7 +3435,7 @@ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
 <button class="menu-button feedback-entry" id="feedbackBtn" type="button"><span class="shortcut-icon">💬</span><span>Hata / Öneri</span></button>
 </div>
 </div>
-<div class="home-footer"><span>✓ İlerlemen otomatik kaydedilir</span><span>Sürüm 5.5.4</span></div>
+<div class="home-footer"><span>✓ İlerlemen otomatik kaydedilir</span><span>Sürüm 5.5.5</span></div>
 <div class="home-credits"><span>✦</span> TATLI BİR OYUN DENEYİMİ</div><p class="sy-owner-notice">© 2026 <strong>Arif Şahin</strong> · Şeker Yağmuru · İzinsiz sahiplenilemez</p>
 </section>
 <section class="screen-page hidden sy-level-page" id="levelsScreen" aria-labelledby="levelsTitle">

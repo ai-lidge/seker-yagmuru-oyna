@@ -1,5 +1,5 @@
-// Şeker Yağmuru 5.5.4 · fast startup: media fetched and cached on demand.
-const CACHE='sy-game-web-v554-desktop-20261121';
+// Şeker Yağmuru 5.5.5 · fast startup: media fetched and cached on demand.
+const CACHE='sy-game-web-v555-desktop-20261122';
 const PRECACHE=['./','./index.html','./manifest.webmanifest',"./game-icon-256.png","./icon-192.png","./icon-512.png","./sy-pastane-background.webp","./sy-pastane-title.png"];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(PRECACHE)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(Promise.all([caches.keys().then(names=>Promise.all(names.filter(n=>n.startsWith('sy-game-web-')&&n!==CACHE).map(n=>caches.delete(n)))),self.clients.claim()]))});
