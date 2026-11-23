@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <meta content="#241448" name="theme-color"/>
 <meta content="Şeker Yağmuru — telefon ve bilgisayarda oynanabilen renkli eşleştirme oyunu." name="description"/>
-<title>Şeker Yağmuru 5.5.6 🍬</title>
+<title>Şeker Yağmuru 5.5.7 🍬</title>
 <meta content="Şeker Yağmuru" name="application-name"/>
 <meta content="Şeker Yağmuru" name="apple-mobile-web-app-title"/>
 <meta content="yes" name="mobile-web-app-capable"/>
@@ -2322,7 +2322,7 @@ body[data-sy-world] .game-bottom-info span{
 }
 
 </style>
-<meta name="sy-build-type" content="single-html-offline-pastane-v5.5.6"/>
+<meta name="sy-build-type" content="single-html-offline-pastane-v5.5.7"/>
 <style id="sy-pastane-visual-tweak-v2">
 /* 2026-11-21 menu top expansion + wider street background tweak */
 .screen-layer:has(#homeScreen:not(.hidden)){
@@ -3319,12 +3319,18 @@ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
 }
 </style>
 <style id="sy-performance-positioning">
-/* v5.5.6 performance release: composited candy movement; full candy, glow and blast animations preserved. */
+/* v5.5.7: Compositor-only candy movement. Reserve GPU layers only during motion. */
 #board .piece{
   left:0!important;
   top:0!important;
   transition:transform .29s cubic-bezier(.18,.91,.26,1),opacity .22s!important;
-  will-change:transform!important;
+  will-change:auto!important;
+}
+#board .piece.sy-moving{will-change:transform!important}
+/* The user's own accessibility setting has higher specificity than the movement rule. */
+body.reduce-motion #board .piece{transition:none!important;will-change:auto!important}
+@media (prefers-reduced-motion:reduce){
+  #board .piece{transition:none!important;will-change:auto!important}
 }
 </style>
 </head>
@@ -3444,7 +3450,7 @@ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
 <button class="menu-button feedback-entry" id="feedbackBtn" type="button"><span class="shortcut-icon">💬</span><span>Hata / Öneri</span></button>
 </div>
 </div>
-<div class="home-footer"><span>✓ İlerlemen otomatik kaydedilir</span><span>Sürüm 5.5.6</span></div>
+<div class="home-footer"><span>✓ İlerlemen otomatik kaydedilir</span><span>Sürüm <span data-sy-app-version>5.5.7</span></span></div>
 <div class="home-credits"><span>✦</span> TATLI BİR OYUN DENEYİMİ</div><p class="sy-owner-notice">© 2026 <strong>Arif Şahin</strong> · Şeker Yağmuru · İzinsiz sahiplenilemez</p>
 </section>
 <section class="screen-page hidden sy-level-page" id="levelsScreen" aria-labelledby="levelsTitle">
@@ -3561,7 +3567,7 @@ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
 <div class="credit-box">🤖 <b>Tasarım, programlama ve geliştirme desteği</b> ChatGPT · OpenAI</div>
 <div class="credit-box">✨ <b>Görsel yükseltme ve hata denetimi (4.4.0)</b> Claude · Anthropic</div>
 <div class="credit-box">💖 <b>Özel teşekkür</b> Oyunu deneyen ve geliştirmemize katkı sağlayan herkese.</div>
-<p class="menu-sub">Bağımsız bir eşleştirme oyunu · Sürüm 5.5.4</p>
+<p class="menu-sub">Bağımsız bir eşleştirme oyunu · Sürüm <span data-sy-app-version>5.5.7</span></p>
 </section>
 <section class="screen-page hidden" id="feedbackScreen">
 <div class="menu-top"><button aria-label="Geri" class="menu-back" data-back="1" type="button">←</button><h2>💬 Hata ve Öneriler</h2></div>
@@ -3589,6 +3595,9 @@ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
 <script>
 (() => {
   'use strict';
+  const APP_VERSION='5.5.7';
+  const syReducedMotionMedia=window.matchMedia('(prefers-reduced-motion: reduce)');
+  document.querySelectorAll('[data-sy-app-version]').forEach(node=>{node.textContent=APP_VERSION});
   const SIZE=8, MAX_LEVEL=60, TYPES=['kalp','portakal','yildiz','yesil','mavi','mor'];
   // Seventh, fully matchable candy; its art belongs to the current world, not the stage.
   const WORLD_TYPE='dunya', PLAY_TYPES=[...TYPES,WORLD_TYPE];
@@ -4280,8 +4289,13 @@ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
   // Mouse/pen/keyboard keep the existing pointer/keyboard paths.
   function createElement(t){
     const el=document.createElement('button');el.type='button';el.className='piece';
-    el.style.left=`${t.c*12.5}%`;el.style.top=`${t.spawn!==null?t.spawn*12.5:t.r*12.5}%`;
     el.style.transform=`translate3d(${t.c*100}%, ${(t.spawn!==null?t.spawn:t.r)*100}%, 0)`;
+    // A moved candy gets a GPU hint only until its transform transition ends.
+    el.addEventListener('transitionend',event=>{
+      if(event.target!==el||event.propertyName!=='transform')return;
+      el.classList.remove('sy-moving');
+      clearTimeout(el._syMoveCleanup);el._syMoveCleanup=null;
+    });
     const finishGesture=(x0,y0,x1,y1)=>{
       if(busy||gameStatus!=='playing'||!isGameVisible())return;
       const dx=x1-x0,dy=y1-y0;
@@ -4509,18 +4523,26 @@ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
     const label=`${t.r+1}. satır ${t.c+1}. sütun, ${name}${status?', '+status:''}`;
     if(el.getAttribute('aria-label')!==label)el.setAttribute('aria-label',label);
   }
+  function positionCandy(t,row,col){
+    const el=t.el;if(!el)return;
+    const position=`translate3d(${col*100}%, ${row*100}%, 0)`;
+    if(el.style.transform===position)return;
+    // Only moving candies are promoted; no permanent 64-layer reservation.
+    if(el.isConnected&&!document.body.classList.contains('reduce-motion')&&
+       !syReducedMotionMedia.matches){
+      el.classList.add('sy-moving');
+      clearTimeout(el._syMoveCleanup);
+      el._syMoveCleanup=setTimeout(()=>{el.classList.remove('sy-moving');el._syMoveCleanup=null},390);
+    }
+    el.style.transform=position;
+  }
   function render(){
     const active=new Set();
     for(let r=0;r<SIZE;r++)for(let c=0;c<SIZE;c++){
       const t=board[r]?.[c];if(!t)continue;
       active.add(t.id);t.r=r;t.c=c;
       if(!t.el)createElement(t);
-      const x=`${c*12.5}%`,y=`${r*12.5}%`;
-      if(t.el.style.left!==x)t.el.style.left=x;
-      if(t.spawn===null&&t.el.style.top!==y)t.el.style.top=y;
-      // Preserve original 8x8 grid positions while moving on compositor-friendly translate.
-      const location=`translate3d(${c*100}%, ${(t.spawn!==null?t.spawn:r)*100}%, 0)`;
-      if(t.el.style.transform!==location)t.el.style.transform=location;
+      positionCandy(t,t.spawn!==null?t.spawn:r,c);
       paintTile(t);
     }
     for(const [id,t] of tiles)if(!active.has(id)){t.el?.remove();tiles.delete(id);t.el=null}
@@ -5095,7 +5117,7 @@ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
     }
     render();
     requestAnimationFrame(()=>requestAnimationFrame(()=>{
-      for(const t of newcomers){if(t.el){t.el.style.top=`${t.r*12.5}%`;t.el.style.transform=`translate3d(${t.c*100}%, ${t.r*100}%, 0)`;}t.spawn=null;}
+      for(const t of newcomers){if(t.el)positionCandy(t,t.r,t.c);t.spawn=null;}
     }));
   }
   function candiesOfType(type){
@@ -5461,7 +5483,7 @@ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
       if(keyboardMove&&isGameVisible()&&!els.board.contains(document.activeElement))board[nr][nc].el?.focus({preventScroll:true});
     }
   }
-  function shareSummary(){return `🍬 ${playerName||'Bir oyuncu'} Şeker Yağmuru 5.5.4 oyununu bitirdi!
+  function shareSummary(){return `🍬 ${playerName||'Bir oyuncu'} Şeker Yağmuru ${APP_VERSION} oyununu bitirdi!
 🏆 ${MAX_LEVEL}/${MAX_LEVEL} bölüm tamamlandı
 ⭐ Bu macera: ${runStars.reduce((a,b)=>a+b,0)} / ${MAX_LEVEL*3} yıldız
 🏅 Toplam puan: ${fmt(scoreTotal)}
@@ -5501,7 +5523,7 @@ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
     ctx.fillStyle='#f8ecff';ctx.font='bold 33px sans-serif';ctx.fillText('EN İYİ BÖLÜM  ·  '+fmt(Math.max(0,...completedScores)),540,1005);
     ctx.fillStyle='#ffe9ff';ctx.font='bold 38px sans-serif';ctx.fillText('ŞAMPİYON  ·  '+(playerName||'Oyuncu'),540,1060,870);
     ctx.fillStyle='#f5e5ff';ctx.font='29px sans-serif';ctx.fillText('MACERA YILDIZLARI  ·  '+runStars.reduce((a,b)=>a+b,0)+' / '+(MAX_LEVEL*3),540,1110);
-    ctx.fillStyle='#ffebff';ctx.font='28px sans-serif';ctx.fillText('Şeker Yağmuru 5.5.4  •  Arif Şahin',540,1250);
+    ctx.fillStyle='#ffebff';ctx.font='28px sans-serif';ctx.fillText(`Şeker Yağmuru ${APP_VERSION}  •  Arif Şahin`,540,1250);
   }
   async function cardBlob(type='image/png'){
     return new Promise((resolve,reject)=>els.finalCanvas.toBlob(b=>b?resolve(b):reject(new Error('Kart hazırlanamadı')),type,type==='image/jpeg'?.94:undefined));
@@ -6067,7 +6089,7 @@ body[data-sy-world] .sy-hud-grid.sy-hud-grid-compact .sy-score-card #score{
   function feedbackMessage(){
     const message=$('feedbackText').value.trim();
     if(message.length<8){$('feedbackText').focus();showToast('Lütfen en az 8 karakterlik açıklama yaz.');return null}
-    return `SEKER YAGMURU 5.5.4 - GERI BILDIRIM\nOyuncu: ${playerName||'Oyuncu'}\nTur: ${$('feedbackKind').value}\nBolum: ${level} / ${MAX_LEVEL}\n\nAciklama:\n${message}\n\nOyun baglantisi: ${PUBLIC_GAME_URL}\nOyuncu geri bildirimi`;
+    return `SEKER YAGMURU ${APP_VERSION} - GERI BILDIRIM\nOyuncu: ${playerName||'Oyuncu'}\nTur: ${$('feedbackKind').value}\nBolum: ${level} / ${MAX_LEVEL}\n\nAciklama:\n${message}\n\nOyun baglantisi: ${PUBLIC_GAME_URL}\nOyuncu geri bildirimi`;
   }
   $('shareFeedbackBtn').addEventListener('click',()=>{
     const msg=feedbackMessage();if(!msg)return;

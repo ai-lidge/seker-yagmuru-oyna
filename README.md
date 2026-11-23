@@ -1,8 +1,8 @@
-# 🍬 Şeker Yağmuru 5.5.6
+# 🍬 Şeker Yağmuru 5.5.7
 
 60 bölümlük eşleştirme oyunu. Yayımlama için bu klasörün **içindeki tüm dosyaları** GitHub deposunun köküne yükleyin; ZIP dosyasını tek başına yüklemeyin.
 
-## v5.5.5 düzeltmeleri
+## v5.5.4 — Günlük mücadele, başlangıç dengesi ve masaüstü ölçeği
 
 - Günlük mücadelede **Yenile** artık aynı günlük başlangıç tahtasını 18 hamle, 03:00 süre ve sıfır yardımcı hakla yeniden başlatır; normal bölüm haklarına geri dönmez.
 - Geçerli eşleştirmede **Kalan Hamle** sayısı, eşleşme animasyonunun bitmesini beklemeden hemen güncellenir. Geçersiz yer değiştirme hamle tüketmez.
@@ -45,3 +45,39 @@
 - Patlama, parıltı, düşüş ve diğer görsel efektlerin yoğunluğu, müzikleri, süre ve hamle kuralları değiştirilmedi.
 - 1366×768, 900×600 ve 390×844 ekranlarda 64 şekerin yerleşimi doğrulandı. Otomatik Chromium karşılaştırmalarında daha az yerleşim hesabı görüldü; her fiziksel cihazda sabit FPS artışı garanti edilmez.
 - GitHub Pages/PWA çevrimdışı önbellek kimliği yenilendi. Eski kayıtlar korunur.
+
+## v5.5.7 — Erişilebilirlik, performans ve çevrimdışı müzik
+
+- Ayarlardaki **Hareketleri azalt** seçeneği ve işletim sisteminin `prefers-reduced-motion` tercihi şeker konum geçişlerini de durdurur.
+- 64 şekere kalıcı GPU katmanı rezervasyonu kaldırıldı. `will-change:transform` yalnızca gerçekten hareket eden şekerlerde geçici olarak açılır ve geçiş bitince temizlenir.
+- Tahtadaki şekerlerde daha önce `transform` ile birlikte yazılan gereksiz `style.left/top` kodları temizlendi; rehber, kıvılcım ve diğer görsel efektlerin konumlandırılması korunmuştur.
+- Kullanıcıya gösterilen sürüm bilgileri tek `APP_VERSION` sabitinden üretilir. Emeği Geçenler, paylaşım mesajı, final başarı kartı ve geri bildirim sürüm numarası düzeltildi.
+- Güncel PWA servis çalışanı, temel varlıklara ek olarak 11 MP3'ü de ilk çevrimiçi kurulum sırasında önbelleğe almayı **dener**. Tam olarak önbelleğe alınmış müzikleri çevrimdışıyken HTTP `Range`/206 yanıtlarıyla dinlemek mümkün olur. Ağ/kota nedeniyle eksik dosyalar çevrimdışı çalmayabilir; indirme tamamlanmadan çevrimdışı moda geçmeyin.
+- İlk kurulum sırasında yaklaşık 3 MB ek müzik trafiği oluşabilir. Çevrimdışı müzik önbelleklemesi başarılı olsa da iOS/Android ve farklı tarayıcılarda gerçek cihaz testi önerilir.
+- Oyun kuralları, bölüm hedefleri, kayıt anahtarları, sesler ve görsel efektlerin yoğunluğu değiştirilmedi.
+
+**Not:** Depoda `index.html`, `manifest.webmanifest` ve `sw.js` birlikte güncellenmelidir. ZIP'i değil, içindeki dosyaları GitHub'a yükleyin. Bu paket otomatik olarak GitHub'da yayımlanmaz.
+
+## v5.5.7 — Erişilebilirlik, performans ve çevrimdışı müzik
+
+- Ayarlardaki **Hareketleri azalt** seçeneği ve işletim sisteminin `prefers-reduced-motion` tercihi şeker konum geçişlerini de durdurur.
+- 64 şekere kalıcı GPU katmanı rezervasyonu kaldırıldı. `will-change:transform` yalnızca gerçekten hareket eden şekerlerde geçici olarak açılır ve geçiş bitince temizlenir.
+- Tahtadaki şekerlerde daha önce `transform` ile birlikte yazılan gereksiz `style.left/top` kodları temizlendi; rehber, kıvılcım ve diğer görsel efektlerin konumlandırılması korunmuştur.
+- Kullanıcıya gösterilen sürüm bilgileri tek `APP_VERSION` sabitinden üretilir. Emeği Geçenler, paylaşım mesajı, final başarı kartı ve geri bildirim sürüm numarası düzeltildi.
+- Güncel PWA servis çalışanı, temel varlıklara ek olarak 11 MP3'ü de ilk çevrimiçi kurulum sırasında önbelleğe almayı **dener**. Tam olarak önbelleğe alınmış müzikleri çevrimdışıyken HTTP `Range`/206 yanıtlarıyla dinlemek mümkün olur. Ağ/kota nedeniyle eksik dosyalar çevrimdışı çalmayabilir; indirme tamamlanmadan çevrimdışı moda geçmeyin.
+- İlk kurulum sırasında yaklaşık 3 MB ek müzik trafiği oluşabilir. Çevrimdışı müzik önbelleklemesi başarılı olsa da iOS/Android ve farklı tarayıcılarda gerçek cihaz testi önerilir.
+- Oyun kuralları, bölüm hedefleri, kayıt anahtarları, sesler ve görsel efektlerin yoğunluğu değiştirilmedi.
+
+**Not:** Depoda `index.html`, `manifest.webmanifest` ve `sw.js` birlikte güncellenmelidir. ZIP'i değil, içindeki dosyaları GitHub'a yükleyin. Bu paket otomatik olarak GitHub'da yayımlanmaz.
+
+## v5.5.7 — Erişilebilirlik, performans ve çevrimdışı müzik
+
+- Ayarlardaki **Hareketleri azalt** seçeneği ve işletim sisteminin `prefers-reduced-motion` tercihi şeker konum geçişlerini de durdurur.
+- 64 şekere kalıcı GPU katmanı rezervasyonu kaldırıldı. `will-change:transform` yalnızca gerçekten hareket eden şekerlerde geçici olarak açılır ve geçiş bitince temizlenir.
+- Tahtadaki şekerlerde daha önce `transform` ile birlikte yazılan gereksiz `style.left/top` kodları temizlendi; rehber, kıvılcım ve diğer görsel efektlerin konumlandırılması korunmuştur.
+- Kullanıcıya gösterilen sürüm bilgileri tek `APP_VERSION` sabitinden üretilir. Emeği Geçenler, paylaşım mesajı, final başarı kartı ve geri bildirim sürüm numarası düzeltildi.
+- Güncel PWA servis çalışanı, temel varlıklara ek olarak 11 MP3'ü de ilk çevrimiçi kurulum sırasında önbelleğe almayı **dener**. Tam olarak önbelleğe alınmış müzikleri çevrimdışıyken HTTP `Range`/206 yanıtlarıyla dinlemek mümkün olur. Ağ/kota nedeniyle eksik dosyalar çevrimdışı çalmayabilir; indirme tamamlanmadan çevrimdışı moda geçmeyin.
+- İlk kurulum sırasında yaklaşık 3 MB ek müzik trafiği oluşabilir. Çevrimdışı müzik önbelleklemesi başarılı olsa da iOS/Android ve farklı tarayıcılarda gerçek cihaz testi önerilir.
+- Oyun kuralları, bölüm hedefleri, kayıt anahtarları, sesler ve görsel efektlerin yoğunluğu değiştirilmedi.
+
+**Not:** Depoda `index.html`, `manifest.webmanifest` ve `sw.js` birlikte güncellenmelidir. ZIP'i değil, içindeki dosyaları GitHub'a yükleyin. Bu paket otomatik olarak GitHub'da yayımlanmaz.
